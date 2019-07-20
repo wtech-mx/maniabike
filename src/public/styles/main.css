@@ -1,0 +1,88 @@
+@charset "utf-8";
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.banner-bg {
+    background-image: url(../img/banner-bg.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-area {
+    height: 100vh;
+}
+
+.container-nav {
+    position: absolute;
+    /* margin: 20px; */
+    margin-top: 20px;
+    width: 100vw;
+    z-index: 10;
+}
+
+.box-shadow {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+}
+
+.features-inner {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+    padding: 40px 0;
+}
+
+.single-features {
+    text-align: center;
+    border-right: 1px solid #eee;
+}
+
+.section-gap {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.bg-servicios {
+    background-image: url(../img/servicios1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-lightgrey {
+    background-color: #eee;
+}
+
+.wrap-1 {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.bg-footer {
+    background-image: url(../img/back-footer.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+footer h2::after {
+    content: "";
+    width: 150px;
+    height: 3px;
+    background-color: mediumseagreen;
+    position: relative;
+    display: block;
+    position: relative;
+    margin-top: 3px;
+}
