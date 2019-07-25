@@ -1,34 +1,91 @@
 @charset "utf-8";
 html, body {
-    height: 100%;
-    width: 100%;
     margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
 body {
-    font-family: 'Ubuntu', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: nunito, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nunito-font {
+    font-family: nunito, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .banner-bg {
-    background-image: url(../img/banner-bg.webp);
+    background-image: url(../img/bike-fucshia.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     position: relative;
     width: 100%;
     overflow: hidden;
+    box-sizing: border-box;
+}
+
+.rounded-bottom-corner {
+    -webkit-border-bottom-right-radius: 100px;
+    -moz-border-radius-bottomright: 100px;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 120px;
+}
+
+.rounded-wrap {
+    border-radius: 120px 0px 100px 0px;
+    -moz-border-radius: 120px 0px 100px 0px;
+    -webkit-border-radius: 120px 0px 100px 0px;
+    border: 0px solid #000000;
+    padding: 3rem;
 }
 
 .banner-area {
     height: 100vh;
 }
 
+@media (max-width: 576px) {
+    #banner-hide-img {
+        display: none;
+    }
+}
+
 .container-nav {
     position: absolute;
     /* margin: 20px; */
     margin-top: 20px;
-    width: 100vw;
+    width: 100%;
     z-index: 10;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+}
+
+.container-navFixed {
+    position: absolute;
+    width: 100%;
+    z-index: 1020;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.container-navFixed img {
+    width: 65px;
+}
+
+.navbar-Box {
+    width: 90vw;
+}
+
+.navbar-Box-full {
+    width: 100vw;
 }
 
 .box-shadow {
@@ -38,6 +95,7 @@ body {
 .features-inner {
     box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
     padding: 40px 0;
+    box-sizing: border-box;
 }
 
 .single-features {
@@ -51,10 +109,27 @@ body {
 }
 
 .bg-servicios {
-    background-image: url(../img/servicios1.jpg);
+    background-image: url(../img/2395.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 60vh;
+}
+
+.bg-servicios::after {
+    background: rgba(26, 26, 26, 0.55);
+    content: "";
+    height: 100%;
+    width: 100vw;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    z-index: 0;
+    position: absolute;
+    left: 0;
 }
 
 .bg-lightgrey {
@@ -74,6 +149,7 @@ body {
     position: relative;
     overflow: hidden;
     width: 100%;
+    box-sizing: border-box;
 }
 
 footer h2::after {
@@ -85,4 +161,62 @@ footer h2::after {
     display: block;
     position: relative;
     margin-top: 3px;
+}
+
+.icon {
+    width: 80px;
+}
+
+.parallax {
+    background-attachment: fixed;
+}
+
+.bg-gradient1 {
+    background: rgb(114, 166, 36);
+    background: linear-gradient(149deg, rgba(114, 166, 36, 1) 0%, rgba(242, 226, 5, 1) 83%);
+}
+
+.bg-gradient-green {
+    background: #11998e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #38ef7d, #11998e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-gradient-green2 {
+    background: #52c234;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #061700, #52c234);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #061700, #52c234);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Color Theme Swatches in RGBA */
+
+.Mania-1 {
+    /* color: #0df205; */
+    color: #3dca2d;
+}
+
+.Mania-2 {
+    color: #72a624;
+}
+
+.Mania-3 {
+    color: #9ebf6b;
+}
+
+.Mania-4 {
+    color: #f2e205;
+}
+
+.Mania-5 {
+    color: #0d0d0d;
+}
+
+.bg-banner-light {
+    background-color: #f0f0f0eb;
 }

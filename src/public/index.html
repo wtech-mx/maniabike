@@ -17,6 +17,8 @@
 
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/crs0syt.css">
+
 
     <!--ScriptJQUERY-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -27,9 +29,10 @@
 
 <body>
 
-    <div class="container-nav d-flex justify-content-center">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded box-shadow" style="width: 90vw;">
-            <a class="navbar-brand" href="#"><img src="img/Logo-Curvo-Manía-Bike-Boutique.png" alt="" width="85px"></a>
+    <div class="container-nav d-flex justify-content-center" id="navbar">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-banner-light rounded box-shadow navbar-Box" id="navbarBox">
+            <a class="navbar-brand" href="#"><img src="img/Logo-Curvo-Color.png" alt="" width="85px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -69,62 +72,64 @@
             </div>
         </nav>
     </div>
-    <section class="banner-bg">
+
+    <section class="bg-gradient1 banner-area">
+        <div class="container-fluid banner-bg rounded-bottom-corner" style="height: 95vh;">
 
 
+            <div class="container d-flex banner-area">
+                <div class="row align-self-center w-100">
+                    <div class="col-12 mx-auto">
+                        <div class="row align-self-center w-100">
 
-
-
-        <div class="container d-flex banner-area">
-            <div class="row align-self-center w-100">
-                <div class="col-12 mx-auto">
-                    <div class="row align-self-center w-100">
-                        <div class="col-6 align-self-center">
-                            <div class="">
-                                <h1 class="display-4"><strong> Nueva tienda en linea</strong></h1>
-                                <p class="lead">Muy pronto</p>
+                            <div class="col-sm-12 align-self-center text-center" id="banner-inf">
+                                <div class="">
+                                    <strong
+                                        style="font-size: 72px;line-height: 92px;letter-spacing: 0em;font-weight: 600;font-style: normal;">
+                                        Nueva tienda en linea</strong>
+                                    <p class="lead"
+                                        style="font-size: 1.9rem;line-height: 30px;letter-spacing: 0.079em;font-weight: 300;">
+                                        Esperalo muy pronto</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6">
+                            <!-- <div class="col-sm-6" id="banner-hide-img">
                             <img class="img-fluid" src="img/bike.png" alt="">
+                        </div> -->
                         </div>
                     </div>
-
-                    <!-- <div class="jumbotron">
-                        <h1 class="display-4">Jumbotron</h1>
-                        <p class="lead">This is a simple hero unit.</p>
-                        <p class="lead">
-                            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                        </p>
-                    </div> -->
                 </div>
             </div>
         </div>
 
     </section>
 
-    <!--Servicios-->
+
+    <!--contraste-->
 
     <section class="section-gap">
         <div class="container">
             <div class="row features-inner">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-features">
+                        <img class="img-fluid icon" src="./img/Icons PNG/004-repair.png" alt="repair">
                         <h6>Servicio especializado</h6>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-features">
+                        <img class="img-fluid icon" src="./img/Icons PNG/diamond.png" alt="exc">
                         <h6>Centro de distribucion</h6>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-features">
+                        <img class="img-fluid icon" src="./img/Icons PNG/003-order.png" alt="order">
                         <h6>lorem</h6>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-features">
+                        <img class="img-fluid icon" src="./img/Icons PNG/002-bike.png" alt="">
                         <h6>ipsum</h6>
                     </div>
                 </div>
@@ -134,82 +139,97 @@
 
     <!--Servicios-->
 
-    <section>
-        <div class="container mb-4">
-            <h1 class="display-3">Servicios</h1>
-        </div>
-        <div class="container bg-servicios p-5 text-light">
-            <h3 class="display-4">Todo lo que necesitas en un mismo lugar</h3>
-        </div>
 
-        <div class="container py-4">
-            <h2 class="display-4">Ofrecemos</h2>
+    <section class="bg-servicios py-5 parallax text-center text-light">
 
-            <div class="row features-inner mb-5">
-                <div class="col-md-6 single-features">
-                    <img class="img-fluid" src="./img/bicicleta.png" alt="" width="80px">
-                    <h3>Servicios</h3>
-                </div>
-                <div class="col-md-6 single-features">
-                    <img class="img-fluid" src="./img/bicicleta.png" alt="" width="80px">
-                    <h3>Servicios</h3>
-                </div>
-                <div class="col-md-6 single-features">
-                    <img class="img-fluid" src="./img/bicicleta.png" alt="" width="80px">
-                    <h3>Servicios</h3>
-                </div>
-                <div class="col-md-6 single-features">
-                    <img class="img-fluid" src="./img/bicicleta.png" alt="" width="80px">
-                    <h3>Servicios</h3>
-                </div>
-
+        <div class="container-fluid d-flex h-100">
+            <div class="d-flex flex-row-reverse align-self-center" style="z-index: 2;">
+                <h2 class="display-4 py-5">¡Has un upgrade a tu bici con los mejores productos!</h2>
             </div>
+        </div>
 
-            <h1>Escoge alguno de nuestros paquetes</h1>
-            <div class="row text-center features-inner">
-                <div class="col-md-4 single-features">
-                    <div class="py-3 bg-lightgrey">
-                        <h3>Paquete #</h3>
+
+
+    </section>
+
+    <section class="section-gap">
+        <div class="container-fluid mb-4">
+            <div class="container py-4">
+                <h2 class="display-4 nunito-font">Mantenimiento y servicio <span class="Mania-1">premium</span> a tu
+                    bicicleta</h2>
+
+                <div class="row features-inner mb-5">
+                    <div class="col-md-6 single-features my-4">
+                        <img class="img-fluid icon" src="./img/Icons PNG/customer-support.png" alt="">
+                        <h3>Servicios</h3>
                     </div>
-                    <div class="bg-dark text-light py-2">$$$</div>
-                    <div class="py-3">
-                        <p>Incluye:</p>
-                        <ul class="list-unstyled">
-                            <li>Text</li>
-                            <li>Text</li>
-                            <li>Text</li>
-                        </ul>
+                    <div class="col-md-6 single-features my-4">
+                        <img class="img-fluid icon" src="./img/Icons PNG/002-helmet.png" alt="">
+                        <h3>Servicios</h3>
                     </div>
-                </div>
-                <div class="col-md-4 single-features">
-                    <div class="py-3 bg-lightgrey">
-                        <h3>Paquete #</h3>
+                    <div class="col-md-6 single-features my-4">
+                        <img class="img-fluid icon" src="./img/Icons PNG/001-mountain.png" alt="">
+                        <h3>Servicios</h3>
                     </div>
-                    <div class="bg-dark text-light py-2">$$$</div>
-                    <div class="py-3">
-                        <p>Incluye:</p>
-                        <ul class="list-unstyled">
-                            <li>Text</li>
-                            <li>Text</li>
-                            <li>Text</li>
-                        </ul>
+                    <div class="col-md-6 single-features my-4">
+                        <img class="img-fluid icon" src="./img/Icons PNG/004-wheel.png" alt="">
+                        <h3>Servicios</h3>
                     </div>
-                </div>
-                <div class="col-md-4 single-features">
-                    <div class="py-3 bg-lightgrey">
-                        <h3>Paquete #</h3>
-                    </div>
-                    <div class="bg-dark text-light py-2">$$$</div>
-                    <div class="py-3">
-                        <p>Incluye:</p>
-                        <ul class="list-unstyled">
-                            <li>Text</li>
-                            <li>Text</li>
-                            <li>Text</li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
+        </div>
+
+        <div class="bg-gradient-green2 h-100 w-100">
+            <div class="rounded-wrap bg-light">
+
+                <h1>Escoge alguno de nuestros paquetes</h1>
+                <div class="row text-center features-inner">
+                    <div class="col-md-4 single-features">
+                        <div class="py-3 bg-lightgrey">
+                            <h3>Paquete #</h3>
+                        </div>
+                        <div class="bg-dark text-light py-2">$$$</div>
+                        <div class="py-3">
+                            <p>Incluye:</p>
+                            <ul class="list-unstyled">
+                                <li>Text</li>
+                                <li>Text</li>
+                                <li>Text</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 single-features">
+                        <div class="py-3 bg-lightgrey">
+                            <h3>Paquete #</h3>
+                        </div>
+                        <div class="bg-dark text-light py-2">$$$</div>
+                        <div class="py-3">
+                            <p>Incluye:</p>
+                            <ul class="list-unstyled">
+                                <li>Text</li>
+                                <li>Text</li>
+                                <li>Text</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 single-features">
+                        <div class="py-3 bg-lightgrey">
+                            <h3>Paquete #</h3>
+                        </div>
+                        <div class="bg-dark text-light py-2">$$$</div>
+                        <div class="py-3">
+                            <p>Incluye:</p>
+                            <ul class="list-unstyled">
+                                <li>Text</li>
+                                <li>Text</li>
+                                <li>Text</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         </div>
 
@@ -295,7 +315,7 @@
             <div class="row">
                 <!--about us-->
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <img class="img-fluid" src="img/Logo-Curvo-Manía-Bike-Boutique.png" alt="logo" width="100px">
+                    <img class="img-fluid" src="img/Logo-Curvo-Color.png" alt="logo" width="100px">
                     <p class="">Av. Patriotismo #888 Col.Insurgentes Mixcoac, Benito Juarez, CDMX, México</p>
                     <p class="lead">Tel. 5611 1034</p>
                     <p class="lead">Whatsapp 55 1963 7033</p>

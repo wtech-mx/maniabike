@@ -26,15 +26,17 @@
     margin: auto;
     overflow: hidden;
     position: relative;
-    width: 960px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .slider::before, .slider::after {
     background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
     content: "";
     height: 100px;
     position: absolute;
-    width: 200px;
+    width: 220px;
     z-index: 2;
+    box-sizing: border-box;
   }
   .slider::after {
     right: 0;
