@@ -12,7 +12,13 @@ body {
     font-weight: 400;
     font-style: normal;
 }
+a{
+    color: #9ebf6b;
+}
 
+a:hover{
+    color: #f2e205;
+}
 .nunito-font {
     font-family: nunito, sans-serif;
     font-weight: 400;
@@ -48,12 +54,40 @@ body {
     height: 100vh;
 }
 
+.banner-text strong {
+    font-size: 72px;
+    line-height: 92px;
+    letter-spacing: 0em;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.banner-text p {
+    font-size: 1.9rem;
+    line-height: 30px;
+    letter-spacing: 0.079em;
+    font-weight: 300;
+}
+
 @media (max-width: 576px) {
     #banner-hide-img {
         display: none;
     }
     .display-4.nunito-font {
         font-size: 2.8rem;
+    }
+    .banner-text strong {
+        font-size: 57px;
+        line-height: 55px;
+        letter-spacing: 0em;
+        font-weight: 600;
+        font-style: normal;
+    }
+    .banner-text p {
+        font-size: 1.3rem;
+        line-height: 80px;
+        letter-spacing: 0.079em;
+        font-weight: 300;
     }
 }
 
@@ -173,11 +207,23 @@ footer h2::after {
     background-attachment: fixed;
 }
 
+.link-footer a{
+    font-size: 20px;
+    line-height: 2;
+    color: #9ebf6b;
+}
+
+.link-footer a:hover{
+    color: #f2e205;
+}
+
 .bg-gradient1 {
-    background: #f7ff00;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #db36a4, #f7ff00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    background: #f7ff00;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #db36a4, #f7ff00);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-gradient-green {
