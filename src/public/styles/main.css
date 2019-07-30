@@ -20,7 +20,7 @@ body {
 }
 
 .banner-bg {
-    background-image: url(../img/bike-fucshia.jpg);
+    background-image: url(../img/bike-fucshia1.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -31,16 +31,15 @@ body {
 }
 
 .rounded-bottom-corner {
-    -webkit-border-bottom-right-radius: 100px;
-    -moz-border-radius-bottomright: 100px;
-    border-bottom-right-radius: 100px;
-    border-top-left-radius: 120px;
+    -webkit-border-bottom-right-radius: 160px;
+    -moz-border-radius-bottomright: 160px;
+    border-bottom-right-radius: 160px;
 }
 
 .rounded-wrap {
     border-radius: 120px 0px 100px 0px;
     -moz-border-radius: 120px 0px 100px 0px;
-    -webkit-border-radius: 120px 0px 100px 0px;
+    -webkit-border-radius: 120px 0px 160px 0px;
     border: 0px solid #000000;
     padding: 3rem;
 }
@@ -52,6 +51,9 @@ body {
 @media (max-width: 576px) {
     #banner-hide-img {
         display: none;
+    }
+    .display-4.nunito-font {
+        font-size: 2.8rem;
     }
 }
 
@@ -109,7 +111,7 @@ body {
 }
 
 .bg-servicios {
-    background-image: url(../img/2395.jpg);
+    background-image: url(../img/2395-min.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -142,7 +144,7 @@ body {
 }
 
 .bg-footer {
-    background-image: url(../img/back-footer.jpg);
+    background-image: url(../img/back-footer-min.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -172,8 +174,10 @@ footer h2::after {
 }
 
 .bg-gradient1 {
-    background: rgb(114, 166, 36);
-    background: linear-gradient(149deg, rgba(114, 166, 36, 1) 0%, rgba(242, 226, 5, 1) 83%);
+    background: #f7ff00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #db36a4, #f7ff00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 
 .bg-gradient-green {
@@ -202,7 +206,7 @@ footer h2::after {
 }
 
 .Mania-2 {
-    color: #72a624;
+    color: rgb(114, 166, 36);
 }
 
 .Mania-3 {
