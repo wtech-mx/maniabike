@@ -1,0 +1,30 @@
+Si vas a cambiar el nombre de las carpetas -tambien cambiarla en las rutas
+Modelos -> Rutas
+
+////
+Al iniciar sesion con google
+
+si metiste el archivo a una subcarpeta recuerda ponersela (La puedes meter manuelmente,cuando no te deje entrar)
+
+https://localhost/frontend/index.php  
+
+https://localhost/Maniabike/frontend/index.php
+
+
+////user//
+pepe@gmail.com
+
+pepe123
+
+
+///admin//
+dayanna@gmail.com
+admin123
+
+
+////////
+el archivo para modiicar lo que son las divisas y los costos de envio se llaman
+vistas -> js > carrito-de-compras.js
+line 149 CHECKOUT
+
+
