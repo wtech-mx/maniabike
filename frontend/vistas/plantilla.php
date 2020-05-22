@@ -6,13 +6,13 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<meta name="title" content="Tienda Virtual">
+	<meta name="title" content="Tienda Mania Bike">
 
-	<meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam accusantium enim esse eos officiis sit officia">
+	<meta name="description" content="SOMOS UNA TIENDA DE CICLISMO DONDE CONTAMOS CON VENTA DE BICICLETAS Y REFACCIONES Y TALLER PARA TODAS LAS NECESIDADES DE LOS CICLISTAS">
 
-	<meta name="keyword" content="Lorem ipsum, dolor sit amet, consectetur, adipisicing, elit, Quisquam, accusantium, enim, esse">
+	<meta name="keyword" content="Cto. Interior 889-875, Insurgentes Mixcoac, Benito Juárez, 03920 Ciudad de México, CDMX">
 
-	<title>Tienda Virtual</title>
+	<title>Tienda Mania Bike</title>
 
 	<?php
 
@@ -27,7 +27,7 @@
 		/*=============================================
 		MANTENER LA RUTA FIJA DEL PROYECTO
 		=============================================*/
-		
+
 		$url = Ruta::ctrRuta();
 
 	?>
@@ -130,7 +130,7 @@ if(isset($_GET["ruta"])){
 	$rutaSubCategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
 
 	foreach ($rutaSubCategorias as $key => $value) {
-		
+
 		if($rutas[0] == $value["ruta"]){
 
 			$ruta = $rutas[0];
@@ -144,7 +144,7 @@ if(isset($_GET["ruta"])){
 	=============================================*/
 
 	$rutaProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
-	
+
 	if($rutas[0] == $rutaProductos["ruta"]){
 
 		$infoProducto = $rutas[0];
@@ -234,9 +234,9 @@ https://developers.facebook.com/
       xfbml      : true,
       version    : 'v2.10'
     });
-      
-    FB.AppEvents.logPageView();   
-      
+
+    FB.AppEvents.logPageView();
+
   };
 
   (function(d, s, id){

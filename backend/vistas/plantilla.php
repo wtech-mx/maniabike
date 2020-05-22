@@ -9,12 +9,15 @@ session_start();
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Tienda Online | Panel de Control</title>
+  <title>Administrador Mania Bike</title>
 
   <link rel="icon" href="vistas/img/plantilla/icono.png">
+  <meta name="title" content="Administrador Mania Bike">
 
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  
+  <meta name="description" content="SOMOS UNA TIENDA DE CICLISMO DONDE CONTAMOS CON VENTA DE BICICLETAS Y REFACCIONES Y TALLER PARA TODAS LAS NECESIDADES DE LOS CICLISTAS">
+
+  <meta name="keyword" content="Cto. Interior 889-875, Insurgentes Mixcoac, Benito Juárez, 03920 Ciudad de México, CDMX">
+
   <!--=====================================
   PLUGINS DE CSS
   ======================================-->
@@ -29,7 +32,7 @@ session_start();
 
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/AdminLTE.min.css">
-  
+
   <link rel="stylesheet" href="vistas/dist/css/skins/skin-blue.min.css">
 
   <!-- iCheck -->
@@ -201,7 +204,7 @@ session_start();
 
  }
 
- 
+
 ?>
 
 <!--=====================================
