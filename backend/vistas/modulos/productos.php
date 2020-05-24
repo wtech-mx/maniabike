@@ -47,7 +47,6 @@
                <th>Tipo</th>
                <th>Descripción</th>
                <th>Palabras claves</th>
-               <th>Portada</th>
                <th>Imagen Principal</th>
                <th>Multimedia</th>
                <th>Detalles</th>
@@ -196,17 +195,16 @@ MODAL AGREGAR PRODUCTO
 
               </div>
 
-            </div>
-
             <!--=====================================
             AGREGAR DETALLES VIRTUALES
             ======================================
 
+
             <div class="detallesVirtual" style="display:none">
 
-              <div class="panel">DETALLES</div>-->
+              <div class="panel">DETALLES</div>
 
-                <!-- CLASES
+                 CLASES
 
                 <div class="form-group row">
 
@@ -218,9 +216,9 @@ MODAL AGREGAR PRODUCTO
                       <input type="text" class="form-control input-lg detalleClases" placeholder="Descripción">
                   </div>
 
-                </div>-->
+                </div>
 
-                <!-- TIEMPO
+                TIEMPO
 
                 <div class="form-group row">
 
@@ -232,9 +230,8 @@ MODAL AGREGAR PRODUCTO
                     <input type="text" class="form-control input-lg detalleTiempo" placeholder="Descripción">
                   </div>
 
-                </div>-->
-
-                <!-- NIVEL
+                </div>
+                 NIVEL
 
                 <div class="form-group row">
 
@@ -246,9 +243,9 @@ MODAL AGREGAR PRODUCTO
                       <input type="text" class="form-control input-lg detalleNivel" placeholder="Descripción">
                   </div>
 
-                </div>-->
+                </div>
 
-                <!-- ACCESO
+               ACCESO
 
                 <div class="form-group row">
 
@@ -260,9 +257,9 @@ MODAL AGREGAR PRODUCTO
                       <input type="text" class="form-control input-lg detalleAcceso" placeholder="Descripción">
                   </div>
 
-                </div>-->
+                </div>
 
-                <!-- DISPOSITIVO
+                DISPOSITIVO
 
                 <div class="form-group row">
 
@@ -274,9 +271,9 @@ MODAL AGREGAR PRODUCTO
                       <input type="text" class="form-control input-lg detalleDispositivo" placeholder="Descripción">
                   </div>
 
-                </div>-->
+                </div>
 
-                <!-- CERTIFICADO
+                CERTIFICADO
 
                 <div class="form-group row">
 
@@ -430,7 +427,7 @@ MODAL AGREGAR PRODUCTO
 
             <!--=====================================
             AGREGAR FOTO DE PORTADA
-            ======================================-->
+            ======================================
 
             <div class="form-group">
 
@@ -442,7 +439,7 @@ MODAL AGREGAR PRODUCTO
 
               <img src="vistas/img/cabeceras/default/default.jpg" class="img-thumbnail previsualizarPortada" width="100%">
 
-            </div>
+            </div>-->
 
             <!--=====================================
             AGREGAR FOTO DE MULTIMEDIA
@@ -652,11 +649,10 @@ MODAL AGREGAR PRODUCTO
 
        <!-- </form> -->
 
-     </div>
-
-   </div>
-
+    </div>
+  </div>
 </div>
+
 
 <!--=====================================
 MODAL EDITAR PRODUCTO
@@ -776,13 +772,13 @@ MODAL EDITAR PRODUCTO
 
             <!--=====================================
             AGREGAR DETALLES VIRTUALES
-            ======================================-->
+            ======================================
 
             <div class="detallesVirtual" style="display:none">
 
               <div class="panel">DETALLES</div>
 
-                <!-- CLASES -->
+                 CLASES
 
                 <div class="form-group row">
 
@@ -796,7 +792,7 @@ MODAL EDITAR PRODUCTO
 
                 </div>
 
-                <!-- TIEMPO -->
+                 TIEMPO
 
                 <div class="form-group row">
 
@@ -810,7 +806,7 @@ MODAL EDITAR PRODUCTO
 
                 </div>
 
-                <!-- NIVEL -->
+                NIVEL
 
                 <div class="form-group row">
 
@@ -824,7 +820,7 @@ MODAL EDITAR PRODUCTO
 
                 </div>
 
-                <!-- ACCESO -->
+                 ACCESO
 
                 <div class="form-group row">
 
@@ -838,7 +834,7 @@ MODAL EDITAR PRODUCTO
 
                 </div>
 
-                <!-- DISPOSITIVO -->
+                 DISPOSITIVO
 
                 <div class="form-group row">
 
@@ -852,7 +848,7 @@ MODAL EDITAR PRODUCTO
 
                 </div>
 
-                <!-- CERTIFICADO -->
+                 CERTIFICADO
 
                 <div class="form-group row">
 
@@ -865,8 +861,7 @@ MODAL EDITAR PRODUCTO
                   </div>
 
                 </div>
-
-            </div>
+            </div>-->
 
             <!--=====================================
             AGREGAR DETALLES FÍSICOS
@@ -881,14 +876,15 @@ MODAL EDITAR PRODUCTO
                 <div class="form-group row">
 
                   <div class="col-xs-3">
-                    <input class="form-control input-lg" type="text" value="Talla" readonly>
+                    <input class="form-control input-lg" type="text" value="Volumen" readonly>
                   </div>
 
-                  <div class="col-xs-9 editarTalla">
-                     <input class="form-control input-lg tagsInput detalleTalla" data-role="tagsinput" type="text" placeholder="Separe valores con coma"> -->
+                  <div class="col-xs-9">
+                    <input class="form-control input-lg tagsInput detalleTalla" data-role="tagsinput" type="text" placeholder="Separe valores con coma">
                   </div>
 
-              </div>
+              </div>-->
+
 
               <!-- COLOR -->
 
@@ -996,19 +992,18 @@ MODAL EDITAR PRODUCTO
 
             <div class="form-group editarPalabrasClaves">
 
-              <!--   <div class="input-group">
+                <div class="input-group">
 
                   <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
                   <input type="text" class="form-control input-lg tagsInput pClavesProducto" data-role="tagsinput"  placeholder="Ingresar palabras claves">
 
-                </div> -->
-
+                </div>
             </div>
 
             <!--=====================================
             AGREGAR FOTO DE PORTADA
-            ======================================-->
+            ======================================
 
             <div class="form-group">
 
@@ -1021,7 +1016,7 @@ MODAL EDITAR PRODUCTO
 
               <img src="vistas/img/cabeceras/default/default.jpg" class="img-thumbnail previsualizarPortada" width="100%">
 
-            </div>
+            </div>-->
 
             <!--=====================================
             AGREGAR FOTO DE MULTIMEDIA
