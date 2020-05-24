@@ -16,9 +16,9 @@ class TablaProductos{
 
   /*=============================================
   MOSTRAR LA TABLA DE PRODUCTOS
-  =============================================*/ 
+  =============================================*/
 
-  public function mostrarTablaProductos(){	
+  public function mostrarTablaProductos(){
 
   	$item = null;
   	$valor = null;
@@ -27,7 +27,7 @@ class TablaProductos{
 
   	$datosJson = '
 
-  		{	
+  		{
   			"data":[';
 
 	 	for($i = 0; $i < count($productos); $i++){
@@ -44,7 +44,7 @@ class TablaProductos{
 			if($categorias["categoria"] == ""){
 
 				$categoria = "SIN CATEGORÍA";
-			
+
 			}else{
 
 				$categoria = $categorias["categoria"];
@@ -62,7 +62,7 @@ class TablaProductos{
 			if($subcategorias[0]["subcategoria"] == ""){
 
 				$subcategoria = "SIN SUBCATEGORÍA";
-			
+
 			}else{
 
 				$subcategoria = $subcategorias[0]["subcategoria"];
@@ -166,7 +166,7 @@ class TablaProductos{
   			if($productos[$i]["precio"] == 0){
 
   				$precio = "Gratis";
-  			
+
   			}else{
 
   				$precio = "$ ".number_format($productos[$i]["precio"],2);
@@ -180,7 +180,7 @@ class TablaProductos{
   			if($productos[$i]["entrega"] == 0){
 
   				$entrega = "Inmediata";
-  			
+
   			}else{
 
   				$entrega = $productos[$i]["entrega"]. " días hábiles";
@@ -190,10 +190,10 @@ class TablaProductos{
   			/*=============================================
   			REVISAR SI HAY OFERTAS
   			=============================================*/
-  			
+
 			if($productos[$i]["oferta"] != 0){
 
-				if($productos[$i]["precioOferta"] != 0){	
+				if($productos[$i]["precioOferta"] != 0){
 
 					$tipoOferta = "PRECIO";
 					$valorOferta = "$ ".number_format($productos[$i]["precioOferta"],2);
@@ -201,15 +201,15 @@ class TablaProductos{
 				}else{
 
 					$tipoOferta = "DESCUENTO";
-					$valorOferta = $productos[$i]["descuentoOferta"]." %";	
+					$valorOferta = $productos[$i]["descuentoOferta"]." %";
 
-				}	
+				}
 
 			}else{
 
 				$tipoOferta = "No tiene oferta";
 				$valorOferta = 0;
-				
+
 			}
 
   			/*=============================================
@@ -236,9 +236,9 @@ class TablaProductos{
   			CONSTRUIR LOS DATOS JSON
   			=============================================*/
 
-
+ $operacion=$productos[$i]["largo"]*$productos[$i]["altura"]*$productos[$i]["ancho"]/5000;
 			$datosJson .='[
-					
+
 					"'.($i+1).'",
 					"'.$productos[$i]["titulo"].'",
 					"'.$categoria.'",
@@ -253,13 +253,16 @@ class TablaProductos{
 			 	  	"'.$vistaMultimedia.'",
 				  	"'.$vistaDetalles.'",
 		  			"'.$precio.'",
-				  	"'.$productos[$i]["peso"].' kg",
+				  	"'.$productos[$i]["ancho"].' cm",
+            "'.$productos[$i]["altura"].' cm",
+            "'.$productos[$i]["largo"].' cm",
+            "'.$operacion.' kg",
 				  	"'.$entrega.'",
 				  	"'.$tipoOferta.'",
 				  	"'.$valorOferta.'",
 				  	"'.$imgOferta.'",
-				  	"'.$productos[$i]["finOferta"].'",			
-				  	"'.$acciones.'"	   
+				  	"'.$productos[$i]["finOferta"].'",
+				  	"'.$acciones.'"
 
 			],';
 
@@ -280,6 +283,6 @@ class TablaProductos{
 
 /*=============================================
 ACTIVAR TABLA DE PRODUCTOS
-=============================================*/ 
+=============================================*/
 $activarProductos = new TablaProductos();
 $activarProductos -> mostrarTablaProductos();

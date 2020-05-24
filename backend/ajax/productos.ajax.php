@@ -16,7 +16,7 @@ class AjaxProductos{
 
 	/*=============================================
   	ACTIVAR PRODUCTOS
- 	=============================================*/	
+ 	=============================================*/
 
  	public $activarProducto;
 	public $activarId;
@@ -29,7 +29,7 @@ class AjaxProductos{
 		$valor1 = $this->activarProducto;
 
 		$item2 = "id";
-		$valor2 = $this->activarId;	
+		$valor2 = $this->activarId;
 
 		$respuesta = ModeloProductos::mdlActualizarProductos($tabla, $item1, $valor1, $item2, $valor2);
 
@@ -39,7 +39,7 @@ class AjaxProductos{
 
 	/*=============================================
 	VALIDAR NO REPETIR PRODUCTO
-	=============================================*/	
+	=============================================*/
 
 	public $validarProducto;
 
@@ -59,7 +59,7 @@ class AjaxProductos{
 	=============================================*/
 
 	public $imagenMultimedia;
-	public $rutaMultimedia;	
+	public $rutaMultimedia;
 
 	public function  ajaxRecibirMultimedia(){
 
@@ -74,18 +74,20 @@ class AjaxProductos{
 
 	/*=============================================
 	GUARDAR PRODUCTO Y EDITAR PRODUCTO
-	=============================================*/	
+	=============================================*/
 
 	public $tituloProducto;
 	public $rutaProducto;
 	public $seleccionarTipo;
-	public $detalles;			
+	public $detalles;
 	public $seleccionarCategoria;
 	public $seleccionarSubCategoria;
 	public $descripcionProducto;
 	public $pClavesProducto;
 	public $precio;
-	public $peso;
+	public $ancho;
+	public $altura;
+	public $largo;
 	public $entrega;
 	public $multimedia;
 	public $fotoPortada;
@@ -108,13 +110,15 @@ class AjaxProductos{
 			"tituloProducto"=>$this->tituloProducto,
 			"rutaProducto"=>$this->rutaProducto,
 			"tipo"=>$this->seleccionarTipo,
-			"detalles"=>$this->detalles,					
+			"detalles"=>$this->detalles,
 			"categoria"=>$this->seleccionarCategoria,
 			"subCategoria"=>$this->seleccionarSubCategoria,
 			"descripcionProducto"=>$this->descripcionProducto,
 			"pClavesProducto"=>$this->pClavesProducto,
 			"precio"=>$this->precio,
-			"peso"=>$this->peso,
+			"ancho"=>$this->ancho,
+			"altura"=>$this->altura,
+			"largo"=>$this->largo,
 			"entrega"=>$this->entrega,
 			"multimedia"=>$this->multimedia,
 			"fotoPortada"=>$this->fotoPortada,
@@ -134,7 +138,7 @@ class AjaxProductos{
 
 	/*=============================================
 	TRAER PRODUCTOS
-	=============================================*/	
+	=============================================*/
 
 	public $idProducto;
 
@@ -151,7 +155,7 @@ class AjaxProductos{
 
 	/*=============================================
 	EDITAR PRODUCTOS
-	=============================================*/	
+	=============================================*/
 
 	public function  ajaxEditarProducto(){
 
@@ -160,13 +164,15 @@ class AjaxProductos{
 			"tituloProducto"=>$this->tituloProducto,
 			"rutaProducto"=>$this->rutaProducto,
 			"tipo"=>$this->seleccionarTipo,
-			"detalles"=>$this->detalles,					
+			"detalles"=>$this->detalles,
 			"categoria"=>$this->seleccionarCategoria,
 			"subCategoria"=>$this->seleccionarSubCategoria,
 			"descripcionProducto"=>$this->descripcionProducto,
 			"pClavesProducto"=>$this->pClavesProducto,
 			"precio"=>$this->precio,
-			"peso"=>$this->peso,
+			"ancho"=>$this->ancho,
+			"altura"=>$this->altura,
+			"largo"=>$this->largo,
 			"entrega"=>$this->entrega,
 			"multimedia"=>$this->multimedia,
 			"fotoPortada"=>$this->fotoPortada,
@@ -184,7 +190,7 @@ class AjaxProductos{
 
 		$respuesta = ControladorProductos::ctrEditarProducto($datos);
 
-	
+
 		echo $respuesta;
 
 	}
@@ -193,7 +199,7 @@ class AjaxProductos{
 
 /*=============================================
 ACTIVAR PRODUCTOS
-=============================================*/	
+=============================================*/
 
 if(isset($_POST["activarProducto"])){
 
@@ -235,13 +241,15 @@ if(isset($_POST["tituloProducto"])){
 	$producto -> tituloProducto = $_POST["tituloProducto"];
 	$producto -> rutaProducto = $_POST["rutaProducto"];
 	$producto -> seleccionarTipo = $_POST["seleccionarTipo"];
-	$producto -> detalles = $_POST["detalles"];		
+	$producto -> detalles = $_POST["detalles"];
 	$producto -> seleccionarCategoria = $_POST["seleccionarCategoria"];
 	$producto -> seleccionarSubCategoria = $_POST["seleccionarSubCategoria"];
 	$producto -> descripcionProducto = $_POST["descripcionProducto"];
 	$producto -> pClavesProducto = $_POST["pClavesProducto"];
 	$producto -> precio = $_POST["precio"];
-	$producto -> peso = $_POST["peso"];
+	$producto -> ancho = $_POST["ancho"];
+	$producto -> altura = $_POST["altura"];
+	$producto -> largo = $_POST["largo"];
 	$producto -> entrega = $_POST["entrega"];
 	$producto -> multimedia = $_POST["multimedia"];
 
@@ -253,7 +261,7 @@ if(isset($_POST["tituloProducto"])){
 
 		$producto -> fotoPortada = null;
 
-	}	
+	}
 
 	if(isset($_FILES["fotoPrincipal"])){
 
@@ -263,11 +271,11 @@ if(isset($_POST["tituloProducto"])){
 
 		$producto -> fotoPrincipal = null;
 
-	}	
+	}
 
 	$producto -> selActivarOferta = $_POST["selActivarOferta"];
 	$producto -> precioOferta = $_POST["precioOferta"];
-	$producto -> descuentoOferta = $_POST["descuentoOferta"];	
+	$producto -> descuentoOferta = $_POST["descuentoOferta"];
 
 	if(isset($_FILES["fotoOferta"])){
 
@@ -277,7 +285,7 @@ if(isset($_POST["tituloProducto"])){
 
 		$producto -> fotoOferta = null;
 
-	}	
+	}
 
 	$producto -> finOferta = $_POST["finOferta"];
 
@@ -306,13 +314,15 @@ if(isset($_POST["id"])){
 	$editarProducto -> tituloProducto = $_POST["editarProducto"];
 	$editarProducto -> rutaProducto = $_POST["rutaProducto"];
 	$editarProducto -> seleccionarTipo = $_POST["seleccionarTipo"];
-	$editarProducto -> detalles = $_POST["detalles"];		
+	$editarProducto -> detalles = $_POST["detalles"];
 	$editarProducto -> seleccionarCategoria = $_POST["seleccionarCategoria"];
 	$editarProducto -> seleccionarSubCategoria = $_POST["seleccionarSubCategoria"];
 	$editarProducto -> descripcionProducto = $_POST["descripcionProducto"];
 	$editarProducto -> pClavesProducto = $_POST["pClavesProducto"];
 	$editarProducto -> precio = $_POST["precio"];
-	$editarProducto -> peso = $_POST["peso"];
+	$editarProducto -> ancho = $_POST["ancho"];
+	$editarProducto -> altura = $_POST["altura"];
+	$editarProducto -> largo = $_POST["largo"];
 	$editarProducto -> entrega = $_POST["entrega"];
 	$editarProducto -> multimedia = $_POST["multimedia"];
 
@@ -324,7 +334,7 @@ if(isset($_POST["id"])){
 
 		$editarProducto -> fotoPortada = null;
 
-	}	
+	}
 
 	if(isset($_FILES["fotoPrincipal"])){
 
@@ -334,11 +344,11 @@ if(isset($_POST["id"])){
 
 		$editarProducto -> fotoPrincipal = null;
 
-	}	
+	}
 
 	$editarProducto -> selActivarOferta = $_POST["selActivarOferta"];
 	$editarProducto -> precioOferta = $_POST["precioOferta"];
-	$editarProducto -> descuentoOferta = $_POST["descuentoOferta"];	
+	$editarProducto -> descuentoOferta = $_POST["descuentoOferta"];
 
 	if(isset($_FILES["fotoOferta"])){
 
@@ -348,7 +358,7 @@ if(isset($_POST["id"])){
 
 		$editarProducto -> fotoOferta = null;
 
-	}	
+	}
 
 	$editarProducto -> finOferta = $_POST["finOferta"];
 

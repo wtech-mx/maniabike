@@ -6,7 +6,7 @@ CARGAR LA TABLA DINÁMICA DE PRODUCTOS
 
 // 	url:"ajax/tablaProductos.ajax.php",
 // 	success:function(respuesta){
-		
+
 // 		console.log("respuesta", respuesta);
 
 // 	}
@@ -68,8 +68,8 @@ $('.tablaProductos tbody').on("click", ".btnActivar", function(){
 	  cache: false,
       contentType: false,
       processData: false,
-      success: function(respuesta){    
-          
+      success: function(respuesta){
+
           // console.log("respuesta", respuesta);
 
       }
@@ -136,7 +136,7 @@ RUTA PRODUCTO
 =============================================*/
 
 function limpiarUrl(texto){
-  var texto = texto.toLowerCase(); 
+  var texto = texto.toLowerCase();
   texto = texto.replace(/[á]/, 'a');
   texto = texto.replace(/[é]/, 'e');
   texto = texto.replace(/[í]/, 'i');
@@ -170,14 +170,14 @@ $(".seleccionarTipo").change(function(){
 
 		$(".detallesVirtual").show();
 		$(".detallesFisicos").hide();
-	
+
 	}else{
 
 		$(".multimediaFisica").show();
 		$(".multimediaVirtual").hide();
-		
+
 		$(".detallesFisicos").show();
-		$(".detallesVirtual").hide();	
+		$(".detallesVirtual").hide();
 
 	}
 })
@@ -243,7 +243,7 @@ $(".seleccionarCategoria").change(function(){
 	    processData: false,
 	    dataType: "json",
 	    success:function(respuesta){
-	    	
+
 	    	// console.log("respuesta", respuesta);
 
 	    	$(".entradaSubcategoria").show();
@@ -275,7 +275,7 @@ var imagenPortada = null;
 $(".fotoPortada").change(function(){
 
 	imagenPortada = this.files[0];
-	
+
 	/*=============================================
   	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
   	=============================================*/
@@ -328,7 +328,7 @@ var imagenFotoPrincipal = null;
 $(".fotoPrincipal").change(function(){
 
 	imagenFotoPrincipal = this.files[0];
-	
+
 	/*=============================================
   	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
   	=============================================*/
@@ -415,14 +415,14 @@ $("#modalCrearProducto .valorOferta").change(function(){
 
 			$(".precioOferta").prop("readonly",true);
 			$(".descuentoOferta").prop("readonly",false);
-			$(".descuentoOferta").val(Math.ceil(descuento));	
+			$(".descuentoOferta").val(Math.ceil(descuento));
 
 		}
 
 		if($(this).attr("tipo") == "descuento"){
 
 			var oferta = Number($(".precio").val())-(Number($(this).val())*Number($(".precio").val())/100);
-			
+
 			$(".descuentoOferta").prop("readonly",true);
 			$(".precioOferta").prop("readonly",false);
 			$(".precioOferta").val(oferta);
@@ -456,7 +456,7 @@ var imagenOferta = null;
 $(".fotoOferta").change(function(){
 
 	imagenOferta = this.files[0];
-	
+
 	/*=============================================
   	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
   	=============================================*/
@@ -515,7 +515,7 @@ GUARDAR EL PRODUCTO
 =============================================*/
 
 var multimediaFisica = null;
-var multimediaVirtual = null;	
+var multimediaVirtual = null;
 
 $(".guardarProducto").click(function(){
 
@@ -523,8 +523,8 @@ $(".guardarProducto").click(function(){
 	PREGUNTAMOS SI LOS CAMPOS OBLIGATORIOS ESTÁN LLENOS
 	=============================================*/
 
-	if($(".tituloProducto").val() != "" && 
-	   $(".seleccionarTipo").val() != "" && 
+	if($(".tituloProducto").val() != "" &&
+	   $(".seleccionarTipo").val() != "" &&
 	   $(".seleccionarCategoria").val() != "" &&
 	   $(".seleccionarSubCategoria").val() != "" &&
 	   $(".descripcionProducto").val() != "" &&
@@ -572,7 +572,7 @@ $(".guardarProducto").click(function(){
 						success: function(respuesta){
 
 							$("#status").remove();
-							
+
 							listaMultimedia.push({"foto" : respuesta.substr(3)})
 							multimediaFisica = JSON.stringify(listaMultimedia);
 							multimediaVirtual = null;
@@ -611,7 +611,7 @@ $(".guardarProducto").click(function(){
 	   		multimediaVirtual = $(".multimedia").val();
 	   		multimediaFisica = null;
 
-	   		if(multimediaVirtual == null){	
+	   		if(multimediaVirtual == null){
 
  			 swal({
 			      title: "El campo de multimedia no debe estar vacío",
@@ -620,10 +620,10 @@ $(".guardarProducto").click(function(){
 			    });
 
  			  return;
-			
+
 			}
 
-			agregarMiProducto(multimediaVirtual);		
+			agregarMiProducto(multimediaVirtual);
 
 	   	}
 
@@ -654,7 +654,9 @@ function agregarMiProducto(imagen){
 	    var descripcionProducto = $(".descripcionProducto").val();
 	    var pClavesProducto = $(".pClavesProducto").val();
 	    var precio = $(".precio").val();
-	    var peso = $(".peso").val();
+	    var ancho = $(".ancho").val();
+	    var altura = $(".altura").val();
+	    var largo = $(".largo").val();
 	    var entrega = $(".entrega").val();
 	    var selActivarOferta = $(".selActivarOferta").val();
 	    var precioOferta = $(".precioOferta").val();
@@ -681,18 +683,20 @@ function agregarMiProducto(imagen){
 	 	var datosProducto = new FormData();
 		datosProducto.append("tituloProducto", tituloProducto);
 		datosProducto.append("rutaProducto", rutaProducto);
-		datosProducto.append("seleccionarTipo", seleccionarTipo);	
-		datosProducto.append("detalles", detallesString);	
+		datosProducto.append("seleccionarTipo", seleccionarTipo);
+		datosProducto.append("detalles", detallesString);
 		datosProducto.append("seleccionarCategoria", seleccionarCategoria);
 		datosProducto.append("seleccionarSubCategoria", seleccionarSubCategoria);
 		datosProducto.append("descripcionProducto", descripcionProducto);
 		datosProducto.append("pClavesProducto", pClavesProducto);
 		datosProducto.append("precio", precio);
-		datosProducto.append("peso", peso);
-		datosProducto.append("entrega", entrega);	
+		datosProducto.append("ancho", ancho);
+		datosProducto.append("altura", altura);
+		datosProducto.append("largo", largo);
+		datosProducto.append("entrega", entrega);
 
 		datosProducto.append("multimedia", imagen);
-		
+
 		datosProducto.append("fotoPortada", imagenPortada);
 		datosProducto.append("fotoPrincipal", imagenFotoPrincipal);
 		datosProducto.append("selActivarOferta", selActivarOferta);
@@ -709,7 +713,7 @@ function agregarMiProducto(imagen){
 				contentType: false,
 				processData: false,
 				success: function(respuesta){
-					
+
 					// console.log("respuesta", respuesta);
 
 					if(respuesta == "ok"){
@@ -739,11 +743,11 @@ EDITAR PRODUCTO
 =============================================*/
 
 $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
-	
+
 	$(".previsualizarImgFisico").html("");
 
 	var idProducto = $(this).attr("idProducto");
-	
+
 	var datos = new FormData();
 	datos.append("idProducto", idProducto);
 
@@ -757,7 +761,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 		processData: false,
 		dataType: "json",
 		success: function(respuesta){
-			
+
 			$("#modalEditarProducto .idProducto").val(respuesta[0]["id"]);
 			$("#modalEditarProducto .tituloProducto").val(respuesta[0]["titulo"]);
 			$("#modalEditarProducto .rutaProducto").val(respuesta[0]["ruta"]);
@@ -773,7 +777,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 			=============================================*/
 
 			if(respuesta[0]["tipo"] == "virtual"){
-		
+
 				$(".multimediaVirtual").show();
 				$(".multimediaFisica").hide();
 
@@ -783,7 +787,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 				$(".detallesFisicos").hide();
 
 				var detalles = JSON.parse(respuesta[0]["detalles"]);
-				
+
 				$("#modalEditarProducto .detalleClases").val(detalles.Clases);
 				$("#modalEditarProducto .detalleTiempo").val(detalles.Tiempo);
 				$("#modalEditarProducto .detalleNivel").val(detalles.Nivel);
@@ -794,7 +798,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 			/*=============================================
 			CUANDO EL PRODUCTO ES FÍSICO
 			=============================================*/
-			
+
 			}else{
 
 				$(".multimediaVirtual").hide();
@@ -803,7 +807,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 				if(respuesta[0]["multimedia"] != ""){
 
 					var imagenesMultimedia = JSON.parse(respuesta[0]["multimedia"]);
-					
+
 					for(var i = 0; i < imagenesMultimedia.length; i++){
 
 						$(".previsualizarImgFisico").append(
@@ -820,7 +824,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 		                localStorage.setItem("multimediaFisica", JSON.stringify(imagenesMultimedia));
 
-					}		
+					}
 
 					/*=============================================
 					CUANDO ELIMINAMOS UNA IMAGEN DE LA LISTA
@@ -836,11 +840,11 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 						for(var i = 0; i < imagenesRestantes.length; i++){
 
 							arrayImgRestantes.push({"foto":$(imagenesRestantes[i]).attr("src")})
-							
+
 						}
 
 						localStorage.setItem("multimediaFisica", JSON.stringify(arrayImgRestantes));
-						
+
 					})
 
 				}
@@ -873,10 +877,10 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 				)
 
 				$("#modalEditarProducto .detalleMarca").tagsinput('items');
-				
+
 				$(".bootstrap-tagsinput").css({"padding":"12px",
 											   "width":"110%"})
-			
+
 			}
 
 			/*=============================================
@@ -884,10 +888,10 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 			=============================================*/
 
 			if(respuesta[0]["id_categoria"] != 0){
-			
+
 				var datosCategoria = new FormData();
 				datosCategoria.append("idCategoria", respuesta[0]["id_categoria"]);
-				
+
 
 				$.ajax({
 
@@ -903,14 +907,14 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 							$("#modalEditarProducto .seleccionarCategoria").val(respuesta["id"]);
 							$("#modalEditarProducto .optionEditarCategoria").html(respuesta["categoria"]);
 
-							
+
 						}
 
 					})
 
 			}else{
 
-				
+
 				$("#modalEditarProducto .optionEditarCategoria").html("SIN CATEGORÍA");
 
 			}
@@ -920,7 +924,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 			=============================================*/
 
 			if(respuesta[0]["id_subcategoria"] != 0){
-					
+
 				var datosSubCategoria = new FormData();
 				datosSubCategoria.append("idSubCategoria", respuesta[0]["id_subcategoria"]);
 
@@ -939,7 +943,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 							$("#modalEditarProducto .optionEditarSubCategoria").html(respuesta[0]["subcategoria"]);
 
 							var datosCategoria = new FormData();
-							datosCategoria.append("idCategoria", respuesta[0]["id_categoria"]);	
+							datosCategoria.append("idCategoria", respuesta[0]["id_categoria"]);
 
 							$.ajax({
 
@@ -966,14 +970,14 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 								}
 
-							})												
+							})
 
 						}
 
 					})
 
 			}else{
-				
+
 				$("#modalEditarProducto  .optionEditarSubCategoria").html("SIN CATEGORÍA");
 
 			}
@@ -1010,16 +1014,16 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 						/*=============================================
 						CARGAMOS LAS PALABRAS CLAVES
-						=============================================*/	
-						
+						=============================================*/
+
 						if(respuesta["palabrasClaves"] != null){
 
 							$("#modalEditarProducto .editarPalabrasClaves").html('<div class="input-group">'+
-	              
-	                		'<span class="input-group-addon"><i class="fa fa-key"></i></span>'+ 
+
+	                		'<span class="input-group-addon"><i class="fa fa-key"></i></span>'+
 
 							'<input type="text" class="form-control input-lg tagsInput pClavesProducto" value="'+respuesta["palabrasClaves"]+'" data-role="tagsinput">'+
-							
+
 
 							'</div>');
 
@@ -1028,8 +1032,8 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 						}else{
 
 							$("#modalEditarProducto .editarPalabrasClaves").html('<div class="input-group">'+
-	              
-	                		'<span class="input-group-addon"><i class="fa fa-key"></i></span>'+ 
+
+	                		'<span class="input-group-addon"><i class="fa fa-key"></i></span>'+
 
 							'<input type="text" class="form-control input-lg tagsInput pClavesProducto" value="" data-role="tagsinput">'+
 
@@ -1045,9 +1049,9 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 						$("#modalEditarProducto .previsualizarPortada").attr("src", respuesta["portada"]);
 						$("#modalEditarProducto .antiguaFotoPortada").val(respuesta["portada"]);
-					
+
 					}
-					
+
 			});
 
 			/*=============================================
@@ -1058,10 +1062,12 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 			$("#modalEditarProducto .antiguaFotoPrincipal").val(respuesta[0]["portada"]);
 
 			/*=============================================
-			CARGAMOS EL PRECIO, PESO Y DIAS DE ENTREGA
+			CARGAMOS EL PRECIO, ANCHO, ALTURA, LARGO Y DIAS DE ENTREGA
 			=============================================*/
 			$("#modalEditarProducto .precio").val(respuesta[0]["precio"]);
-			$("#modalEditarProducto .peso").val(respuesta[0]["peso"]);
+			$("#modalEditarProducto .ancho").val(respuesta[0]["ancho"]);
+			$("#modalEditarProducto .altura").val(respuesta[0]["altura"]);
+			$("#modalEditarProducto .largo").val(respuesta[0]["largo"]);
 			$("#modalEditarProducto .entrega").val(respuesta[0]["entrega"]);
 
 			/*=============================================
@@ -1091,12 +1097,12 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 					$("#modalEditarProducto .precioOferta").prop("readonly",false);
 
 				}
-	
+
 				$("#modalEditarProducto .previsualizarOferta").attr("src", respuesta[0]["imgOferta"]);
 
 				$("#modalEditarProducto .antiguaFotoOferta").val(respuesta[0]["imgOferta"]);
-				
-				$("#modalEditarProducto .finOferta").val(respuesta[0]["finOferta"]);						
+
+				$("#modalEditarProducto .finOferta").val(respuesta[0]["finOferta"]);
 
 			}else{
 
@@ -1132,7 +1138,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 				if($(this).attr("tipo") == "descuento"){
 
-					var oferta = Number($("#modalEditarProducto .precio").val())-(Number($(this).val())*Number($("#modalEditarProducto .precio").val())/100);	
+					var oferta = Number($("#modalEditarProducto .precio").val())-(Number($(this).val())*Number($("#modalEditarProducto .precio").val())/100);
 
 					$("#modalEditarProducto .descuentoOferta").prop("readonly",true);
 					$("#modalEditarProducto .precioOferta").prop("readonly",false);
@@ -1144,10 +1150,10 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 			/*=============================================
 			GUARDAR CAMBIOS DEL PRODUCTO
-			=============================================*/	
+			=============================================*/
 
 			var multimediaFisica = null;
-			var multimediaVirtual = null;	
+			var multimediaVirtual = null;
 
 			$(".guardarCambiosProducto").click(function(){
 
@@ -1155,8 +1161,8 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 					PREGUNTAMOS SI LOS CAMPOS OBLIGATORIOS ESTÁN LLENOS
 					=============================================*/
 
-					if($("#modalEditarProducto .tituloProducto").val() != "" && 
-					   $("#modalEditarProducto .seleccionarTipo").val() != "" && 
+					if($("#modalEditarProducto .tituloProducto").val() != "" &&
+					   $("#modalEditarProducto .seleccionarTipo").val() != "" &&
 					   $("#modalEditarProducto .seleccionarCategoria").val() != "" &&
 					   $("#modalEditarProducto .seleccionarSubCategoria").val() != "" &&
 					   $("#modalEditarProducto .descripcionProducto").val() != "" &&
@@ -1166,7 +1172,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 					   	PREGUNTAMOS SI VIENEN IMÁGENES PARA MULTIMEDIA O LINK DE YOUTUBE
 					   	=============================================*/
 
-					   	if($("#modalEditarProducto .seleccionarTipo").val() != "virtual"){	
+					   	if($("#modalEditarProducto .seleccionarTipo").val() != "virtual"){
 
 						   	if(arrayFiles.length > 0 && $("#modalEditarProducto .rutaProducto").val() != ""){
 
@@ -1174,7 +1180,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 						   		var finalFor = 0;
 
 								for(var i = 0; i < arrayFiles.length; i++){
-									
+
 									var datosMultimedia = new FormData();
 									datosMultimedia.append("file", arrayFiles[i]);
 									datosMultimedia.append("ruta", $("#modalEditarProducto .rutaProducto").val());
@@ -1207,16 +1213,16 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 											listaMultimedia.push({"foto" : respuesta.substr(3)});
 											multimediaFisica = JSON.stringify(listaMultimedia);
-											
+
 											if(localStorage.getItem("multimediaFisica") != null){
 
 												var jsonLocalStorage = JSON.parse(localStorage.getItem("multimediaFisica"));
 
 												var jsonMultimediaFisica = listaMultimedia.concat(jsonLocalStorage);
 
-												multimediaFisica = JSON.stringify(jsonMultimediaFisica);												
+												multimediaFisica = JSON.stringify(jsonMultimediaFisica);
 											}
-																			
+
 											multimediaVirtual = null;
 
 											if(multimediaFisica == null){
@@ -1238,8 +1244,8 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 											}
 
-											finalFor++;							
-								
+											finalFor++;
+
 										}
 
 									})
@@ -1247,13 +1253,13 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 								}
 
 							}else{
-					
+
 								var jsonLocalStorage = JSON.parse(localStorage.getItem("multimediaFisica"));
 
 								multimediaFisica = JSON.stringify(jsonLocalStorage);
 
-								editarMiProducto(multimediaFisica);												
-								
+								editarMiProducto(multimediaFisica);
+
 							}
 
 						}else{
@@ -1270,10 +1276,10 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 								    });
 
 					 			  return;
-							}	
+							}
 
-							editarMiProducto(multimediaVirtual);	
-							
+							editarMiProducto(multimediaVirtual);
+
 						}
 
 					}else{
@@ -1286,10 +1292,10 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 						return;
 
-					}					
+					}
 
 			})
-					
+
 		}
 
 	})
@@ -1307,7 +1313,9 @@ function editarMiProducto(imagen){
 	var descripcionProducto = $("#modalEditarProducto .descripcionProducto").val();
 	var pClavesProducto = $("#modalEditarProducto .pClavesProducto").val();
 	var precio = $("#modalEditarProducto .precio").val();
-	var peso = $("#modalEditarProducto .peso").val();
+	var ancho = $("#modalEditarProducto .ancho").val();
+	var altura = $("#modalEditarProducto .altura").val();
+	var largo = $("#modalEditarProducto .largo").val();
 	var entrega = $("#modalEditarProducto .entrega").val();
 	var selActivarOferta = $("#modalEditarProducto .selActivarOferta").val();
 	var precioOferta = $("#modalEditarProducto .precioOferta").val();
@@ -1324,7 +1332,7 @@ function editarMiProducto(imagen){
 	   					"Certificado": $("#modalEditarProducto .detalleCertificado").val()};
 	}else{
 
-		var detalles = {/*"Talla": $("#modalEditarProducto .detalleTalla").tagsinput('items'),*/							
+		var detalles = {/*"Talla": $("#modalEditarProducto .detalleTalla").tagsinput('items'),*/
 		       			"Color": $("#modalEditarProducto .detalleColor").tagsinput('items'),
 		       			"Marca": $("#modalEditarProducto .detalleMarca").tagsinput('items')};
 
@@ -1332,7 +1340,7 @@ function editarMiProducto(imagen){
 
 	var detallesString = JSON.stringify(detalles);
 
-	
+
 	var antiguaFotoPortada = $("#modalEditarProducto .antiguaFotoPortada").val();
 	var antiguaFotoPrincipal = $("#modalEditarProducto .antiguaFotoPrincipal").val();
 	var antiguaFotoOferta = $("#modalEditarProducto .antiguaFotoOferta").val();
@@ -1343,14 +1351,16 @@ function editarMiProducto(imagen){
 	datosProducto.append("id", idProducto);
 	datosProducto.append("editarProducto", tituloProducto);
 	datosProducto.append("rutaProducto", rutaProducto);
-	datosProducto.append("seleccionarTipo", seleccionarTipo);	
-	datosProducto.append("detalles", detallesString);	
+	datosProducto.append("seleccionarTipo", seleccionarTipo);
+	datosProducto.append("detalles", detallesString);
 	datosProducto.append("seleccionarCategoria", seleccionarCategoria);
 	datosProducto.append("seleccionarSubCategoria", seleccionarSubCategoria);
 	datosProducto.append("descripcionProducto", descripcionProducto);
 	datosProducto.append("pClavesProducto", pClavesProducto);
 	datosProducto.append("precio", precio);
-	datosProducto.append("peso", peso);
+	datosProducto.append("ancho", ancho);
+	datosProducto.append("altura", altura);
+	datosProducto.append("largo", largo);
 	datosProducto.append("entrega", entrega);
 
 	if(imagen == null){
@@ -1361,7 +1371,7 @@ function editarMiProducto(imagen){
 	}else{
 
 		datosProducto.append("multimedia", imagen);
-	}	
+	}
 
 	datosProducto.append("fotoPortada", imagenPortada);
 	datosProducto.append("fotoPrincipal", imagenFotoPrincipal);
@@ -1383,8 +1393,8 @@ function editarMiProducto(imagen){
 			contentType: false,
 			processData: false,
 			success: function(respuesta){
-									
-				
+
+
 				if(respuesta == "ok"){
 
 					swal({
@@ -1406,7 +1416,7 @@ function editarMiProducto(imagen){
 			}
 
 	})
-	
+
 }
 
 

@@ -6,10 +6,10 @@ class ModeloProductos{
 
 	/*=============================================
 	MOSTRAR EL TOTAL DE VENTAS
-	=============================================*/	
+	=============================================*/
 
 	static public function mdlMostrarTotalProductos($tabla, $orden){
-	
+
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $orden DESC");
 
 		$stmt -> execute();
@@ -24,7 +24,7 @@ class ModeloProductos{
 
 	/*=============================================
 	MOSTRAR SUMA VENTAS
-	=============================================*/	
+	=============================================*/
 
 	static public function mdlMostrarSumaVentas($tabla){
 
@@ -54,17 +54,17 @@ class ModeloProductos{
 		if($stmt -> execute()){
 
 			return "ok";
-		
+
 		}else{
 
-			return "error";	
+			return "error";
 
 		}
 
 		$stmt -> close();
 
 		$stmt = null;
-		
+
 	}
 
 	/*=============================================
@@ -89,7 +89,7 @@ class ModeloProductos{
 		}else{
 
 			return "error";
-		
+
 		}
 
 		$stmt->close();
@@ -137,7 +137,7 @@ class ModeloProductos{
 
 	static public function mdlIngresarProducto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, id_subcategoria, tipo, ruta, estado, titulo, titular, descripcion, multimedia, detalles, precio, portada, oferta, precioOferta, descuentoOferta, imgOferta, finOferta, peso, entrega) VALUES (:id_categoria, :id_subcategoria, :tipo, :ruta, :estado, :titulo, :titular, :descripcion, :multimedia, :detalles, :precio, :portada, :oferta, :precioOferta, :descuentoOferta, :imgOferta, :finOferta,  :peso, :entrega)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, id_subcategoria, tipo, ruta, estado, titulo, titular, descripcion, multimedia, detalles, precio, portada, oferta, precioOferta, descuentoOferta, imgOferta, finOferta, ancho, altura, largo, entrega) VALUES (:id_categoria, :id_subcategoria, :tipo, :ruta, :estado, :titulo, :titular, :descripcion, :multimedia, :detalles, :precio, :portada, :oferta, :precioOferta, :descuentoOferta, :imgOferta, :finOferta,  :ancho,  :altura,  :largo, :entrega)");
 
 		$stmt->bindParam(":id_categoria", $datos["idCategoria"], PDO::PARAM_STR);
 		$stmt->bindParam(":id_subcategoria", $datos["idSubCategoria"], PDO::PARAM_STR);
@@ -156,7 +156,9 @@ class ModeloProductos{
 		$stmt->bindParam(":descuentoOferta", $datos["descuentoOferta"], PDO::PARAM_STR);
 		$stmt->bindParam(":imgOferta", $datos["imgOferta"], PDO::PARAM_STR);
 		$stmt->bindParam(":finOferta", $datos["finOferta"], PDO::PARAM_STR);
-		$stmt->bindParam(":peso", $datos["peso"], PDO::PARAM_STR);
+		$stmt->bindParam(":ancho", $datos["ancho"], PDO::PARAM_STR);
+		$stmt->bindParam(":altura", $datos["altura"], PDO::PARAM_STR);
+		$stmt->bindParam(":largo", $datos["largo"], PDO::PARAM_STR);
 		$stmt->bindParam(":entrega", $datos["entrega"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
@@ -166,7 +168,7 @@ class ModeloProductos{
 		}else{
 
 			return "error";
-		
+
 		}
 
 		$stmt->close();
@@ -180,7 +182,7 @@ class ModeloProductos{
 
 	static public function mdlEditarProducto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, id_subcategoria = :id_subcategoria, tipo = :tipo, ruta = :ruta, estado = :estado, titulo = :titulo, titular = :titular, descripcion = :descripcion, multimedia = :multimedia, detalles = :detalles, precio = :precio, portada = :portada, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta, peso = :peso, entrega = :entrega WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, id_subcategoria = :id_subcategoria, tipo = :tipo, ruta = :ruta, estado = :estado, titulo = :titulo, titular = :titular, descripcion = :descripcion, multimedia = :multimedia, detalles = :detalles, precio = :precio, portada = :portada, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta, ancho = :ancho, altura = :altura, largo = :largo, entrega = :entrega WHERE id = :id");
 
 		$stmt->bindParam(":id_categoria", $datos["idCategoria"], PDO::PARAM_STR);
 		$stmt->bindParam(":id_subcategoria", $datos["idSubCategoria"], PDO::PARAM_STR);
@@ -199,7 +201,9 @@ class ModeloProductos{
 		$stmt->bindParam(":descuentoOferta", $datos["descuentoOferta"], PDO::PARAM_STR);
 		$stmt->bindParam(":imgOferta", $datos["imgOferta"], PDO::PARAM_STR);
 		$stmt->bindParam(":finOferta", $datos["finOferta"], PDO::PARAM_STR);
-		$stmt->bindParam(":peso", $datos["peso"], PDO::PARAM_STR);
+		$stmt->bindParam(":ancho", $datos["ancho"], PDO::PARAM_STR);
+		$stmt->bindParam(":altura", $datos["altura"], PDO::PARAM_STR);
+		$stmt->bindParam(":largo", $datos["largo"], PDO::PARAM_STR);
 		$stmt->bindParam(":entrega", $datos["entrega"], PDO::PARAM_STR);
 		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
 
@@ -210,7 +214,7 @@ class ModeloProductos{
 		}else{
 
 			return "error";
-		
+
 		}
 
 		$stmt->close();
@@ -231,10 +235,10 @@ class ModeloProductos{
 		if($stmt -> execute()){
 
 			return "ok";
-		
+
 		}else{
 
-			return "error";	
+			return "error";
 
 		}
 

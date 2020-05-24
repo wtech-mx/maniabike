@@ -19,11 +19,11 @@
   <section class="content">
 
     <div class="box">
-       
+
       <div class="box-header with-border">
-         
+
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarProducto">
-          
+
           Agregar Producto
 
         </button>
@@ -33,18 +33,18 @@
       <div class="box-body">
 
         <table class="table table-bordered table-striped dt-responsive tablaProductos" width="100%">
-        
+
           <thead>
-         
+
             <tr>
-             
+
                <th style="width:10px">#</th>
                <th>Titulo</th>
                <th>Categoria</th>
                <th>Subcategoria</th>
                <th>Ruta</th>
                <th>Estado</th>
-               <th>Tipo</th>  
+               <th>Tipo</th>
                <th>Descripción</th>
                <th>Palabras claves</th>
                <th>Portada</th>
@@ -52,7 +52,10 @@
                <th>Multimedia</th>
                <th>Detalles</th>
                <th>Precio</th>
-               <th>Peso</th>
+               <th>Ancho</th>
+               <th>Altura</th>
+               <th>Largo</th>
+               <th>Peso Volumetrico</th>
                <th>Tiempo de Entrega</th>
                <th>Tipo de Oferta</th>
                <th>Valor Oferta</th>
@@ -60,12 +63,12 @@
                <th>Fin Oferta</th>
                <th>Acciones</th>
 
-            </tr> 
+            </tr>
 
-          </thead>   
-     
+          </thead>
+
         </table>
-          
+
       </div>
 
     </div>
@@ -79,13 +82,13 @@ MODAL AGREGAR PRODUCTO
 ======================================-->
 
 <div id="modalAgregarProducto" class="modal fade" role="dialog">
-  
+
    <div class="modal-dialog">
-     
+
      <div class="modal-content">
-       
+
        <!-- <form role="form" method="post" enctype="multipart/form-data"> -->
-         
+
          <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
@@ -110,10 +113,10 @@ MODAL AGREGAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
 
                   <input type="text" class="form-control input-lg validarProducto tituloProducto"  placeholder="Ingresar título producto">
 
@@ -126,10 +129,10 @@ MODAL AGREGAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-link"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-link"></i></span>
 
                   <input type="text" class="form-control input-lg rutaProducto" placeholder="Ruta url del producto" readonly>
 
@@ -142,19 +145,19 @@ MODAL AGREGAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-bookmark-o"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-bookmark-o"></i></span>
 
                   <select class="form-control input-lg seleccionarTipo">
-                    
+
                     <option value="">Selecionar tipo de producto</option>
 
                     <!--<option value="virtual">Virtual</option>-->
 
-                    <option value="fisico">Físico</option>            
-    
+                    <option value="fisico">Físico</option>
+
                   </select>
 
                 </div>
@@ -170,11 +173,11 @@ MODAL AGREGAR PRODUCTO
               <!--=====================================
               SUBIR MULTIMEDIA DE PRODUCTO VIRTUAL
               ======================================
-              
+
               <div class="input-group multimediaVirtual" style="display:none">
-                
-                <span class="input-group-addon"><i class="fa fa-youtube-play"></i></span> 
-              
+
+                <span class="input-group-addon"><i class="fa fa-youtube-play"></i></span>
+
                  <input type="text" class="form-control input-lg multimedia" placeholder="Ingresar código video youtube">
 
               </div>-->
@@ -182,11 +185,11 @@ MODAL AGREGAR PRODUCTO
               <!--=====================================
               SUBIR MULTIMEDIA DE PRODUCTO FÍSICO
               ======================================-->
-              
+
               <div class="multimediaFisica needsclick dz-clickable" style="display:none">
 
                 <div class="dz-message needsclick">
-                  
+
                   Arrastrar o dar click para subir imagenes.
 
                 </div>
@@ -200,10 +203,10 @@ MODAL AGREGAR PRODUCTO
             ======================================
 
             <div class="detallesVirtual" style="display:none">
-              
+
               <div class="panel">DETALLES</div>-->
 
-                <!-- CLASES 
+                <!-- CLASES
 
                 <div class="form-group row">
 
@@ -217,7 +220,7 @@ MODAL AGREGAR PRODUCTO
 
                 </div>-->
 
-                <!-- TIEMPO 
+                <!-- TIEMPO
 
                 <div class="form-group row">
 
@@ -231,7 +234,7 @@ MODAL AGREGAR PRODUCTO
 
                 </div>-->
 
-                <!-- NIVEL 
+                <!-- NIVEL
 
                 <div class="form-group row">
 
@@ -245,7 +248,7 @@ MODAL AGREGAR PRODUCTO
 
                 </div>-->
 
-                <!-- ACCESO 
+                <!-- ACCESO
 
                 <div class="form-group row">
 
@@ -259,7 +262,7 @@ MODAL AGREGAR PRODUCTO
 
                 </div>-->
 
-                <!-- DISPOSITIVO 
+                <!-- DISPOSITIVO
 
                 <div class="form-group row">
 
@@ -291,13 +294,13 @@ MODAL AGREGAR PRODUCTO
 
             <!--=====================================
             AGREGAR DETALLES FÍSICOS
-            ======================================-->  
+            ======================================-->
 
             <div class="detallesFisicos" style="display:none">
-              
+
               <div class="panel">DETALLES</div>
 
-              <!-- TALLA 
+              <!-- TALLA
 
                 <div class="form-group row">
 
@@ -339,20 +342,20 @@ MODAL AGREGAR PRODUCTO
 
               </div>
 
-            </div> 
+            </div>
 
            <!--=====================================
             AGREGAR CATEGORÍA
             ======================================-->
 
             <div class="form-group">
-                
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                   <select class="form-control input-lg seleccionarCategoria">
-                  
+
                     <option value="">Selecionar categoría</option>
 
                     <?php
@@ -363,7 +366,7 @@ MODAL AGREGAR PRODUCTO
                     $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 
                     foreach ($categorias as $key => $value) {
-                      
+
                       echo '<option value="'.$value["id"].'">'.$value["categoria"].'</option>';
                     }
 
@@ -380,10 +383,10 @@ MODAL AGREGAR PRODUCTO
             ======================================-->
 
             <div class="form-group  entradaSubcategoria" style="display:none">
-              
+
                <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                   <select class="form-control input-lg seleccionarSubCategoria">
 
@@ -398,10 +401,10 @@ MODAL AGREGAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-pencil"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
                 <textarea type="text" maxlength="320" rows="3" class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción producto"></textarea>
 
@@ -414,10 +417,10 @@ MODAL AGREGAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
                   <input type="text" class="form-control input-lg tagsInput pClavesProducto" data-role="tagsinput"  placeholder="Ingresar palabras claves">
 
@@ -430,7 +433,7 @@ MODAL AGREGAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
               <div class="panel">SUBIR FOTO PORTADA</div>
 
               <input type="file" class="fotoPortada">
@@ -446,7 +449,7 @@ MODAL AGREGAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-                
+
               <div class="panel">SUBIR FOTO PRINCIPAL DEL PRODUCTO</div>
 
               <input type="file" class="fotoPrincipal">
@@ -458,20 +461,20 @@ MODAL AGREGAR PRODUCTO
             </div>
 
             <!--=====================================
-            AGREGAR PRECIO, PESO, Volumen Y ENTREGA
+            AGREGAR PRECIO, ANCHO, PESO, PESO Y ENTREGA
             ======================================-->
 
             <div class="form-group row">
-               
+
               <!-- PRECIO -->
 
               <div class="col-md-4 col-xs-12">
-  
+
                 <div class="panel">PRECIO</div>
-                
+
                 <div class="input-group">
-                
-                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span> 
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
                   <input type="number" class="form-control input-lg precio" min="0" step="any">
 
@@ -479,33 +482,49 @@ MODAL AGREGAR PRODUCTO
 
               </div>
 
-              <!-- PESO -->
+              <!-- ANCHO -->
 
               <div class="col-md-4 col-xs-12">
-  
-                <div class="panel">PESO</div>
-              
-                <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span> 
 
-                  <input type="number" class="form-control input-lg peso" min="0" step="any" value="0">
+                <div class="panel">ANCHO</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+
+                  <input type="number" class="form-control input-lg ancho" min="0" step="any" value="0" placeholder="cm">
 
                 </div>
 
               </div>
 
-              <!-- Volumen -->
+              <!-- ALTURA -->
 
               <div class="col-md-4 col-xs-12">
-  
-                <div class="panel">Volumen</div>
-              
-                <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span> 
 
-                  <input type="number" class="form-control input-lg volumen" min="0" step="any" value="0">
+                <div class="panel">ALTURA</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+
+                  <input type="number" class="form-control input-lg altura" min="0" step="any" value="0" placeholder="cm">
+
+                </div>
+
+              </div>
+
+              <!-- LARGO -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">LARGO</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+
+                  <input type="number" class="form-control input-lg largo" min="0" step="any" value="0" placeholder="cm">
 
                 </div>
 
@@ -514,12 +533,12 @@ MODAL AGREGAR PRODUCTO
               <!-- ENTREGA -->
 
               <div class="col-md-4 col-xs-12">
-  
+
                 <div class="panel">DÍAS DE ENTREGA</div>
-              
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-truck"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-truck"></i></span>
 
                   <input type="number" class="form-control input-lg entrega" min="0" value="0">
 
@@ -534,30 +553,30 @@ MODAL AGREGAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
               <select class="form-control input-lg selActivarOferta">
-                
+
                 <option value="">No tiene oferta</option>
                 <option value="oferta">Activar oferta</option>
-               
+
               </select>
 
             </div>
 
             <div class="datosOferta" style="display:none">
-            
+
               <!--=====================================
               VALOR OFERTAS
               ======================================-->
 
               <div class="form-group row">
-                  
+
                 <div class="col-xs-6">
 
                   <div class="input-group">
-                  
-                    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span> 
-                    
+
+                    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
                     <input class="form-control input-lg valorOferta precioOferta" tipo="oferta" type="number" value="0"   min="0" placeholder="Precio">
 
                   </div>
@@ -565,9 +584,9 @@ MODAL AGREGAR PRODUCTO
                 </div>
 
                 <div class="col-xs-6">
-                     
+
                   <div class="input-group">
-                       
+
                     <input class="form-control input-lg valorOferta descuentoOferta" tipo="descuento" type="number" value="0"  min="0" placeholder="Descuento">
                     <span class="input-group-addon"><i class="fa fa-percent"></i></span>
 
@@ -582,19 +601,19 @@ MODAL AGREGAR PRODUCTO
               ======================================-->
 
               <div class="form-group">
-                  
+
                 <div class="input-group date">
-                      
+
                   <input type='text' class="form-control datepicker input-lg valorOferta finOferta">
-                      
+
                   <span class="input-group-addon">
-                          
+
                       <span class="glyphicon glyphicon-calendar"></span>
-                      
+
                   </span>
-                 
+
                 </div>
-              
+
               </div>
 
               <!--=====================================
@@ -602,7 +621,7 @@ MODAL AGREGAR PRODUCTO
               ======================================-->
 
               <div class="form-group">
-                
+
                 <div class="panel">SUBIR FOTO OFERTA</div>
 
                 <input type="file" class="fotoOferta valorOferta">
@@ -614,7 +633,7 @@ MODAL AGREGAR PRODUCTO
               </div>
 
             </div>
-          
+
           </div>
 
         </div>
@@ -624,7 +643,7 @@ MODAL AGREGAR PRODUCTO
         ======================================-->
 
         <div class="modal-footer">
-  
+
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
           <button type="button" class="btn btn-primary guardarProducto">Guardar producto</button>
@@ -644,11 +663,11 @@ MODAL EDITAR PRODUCTO
 ======================================-->
 
 <div id="modalEditarProducto" class="modal fade" role="dialog">
-  
+
    <div class="modal-dialog">
-     
+
      <div class="modal-content">
-          
+
         <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
@@ -673,10 +692,10 @@ MODAL EDITAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
 
                   <input type="text" class="form-control input-lg validarProducto tituloProducto" readonly>
 
@@ -692,10 +711,10 @@ MODAL EDITAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-link"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-link"></i></span>
 
                   <input type="text" class="form-control input-lg rutaProducto" readonly>
 
@@ -708,10 +727,10 @@ MODAL EDITAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-bookmark-o"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-bookmark-o"></i></span>
 
                    <input type="text" class="form-control input-lg seleccionarTipo" readonly>
 
@@ -723,16 +742,16 @@ MODAL EDITAR PRODUCTO
             ENTRADA PARA AGREGAR MULTIMEDIA
             ======================================-->
 
-            <div class="form-group agregarMultimedia"> 
+            <div class="form-group agregarMultimedia">
 
               <!--=====================================
               SUBIR MULTIMEDIA DE PRODUCTO VIRTUAL
               ======================================-->
-              
+
               <div class="input-group multimediaVirtual" style="display:none">
-                
-                <span class="input-group-addon"><i class="fa fa-youtube-play"></i></span> 
-              
+
+                <span class="input-group-addon"><i class="fa fa-youtube-play"></i></span>
+
                  <input type="text" class="form-control input-lg multimedia">
 
               </div>
@@ -742,17 +761,17 @@ MODAL EDITAR PRODUCTO
               ======================================-->
 
               <div class="row previsualizarImgFisico"></div>
-              
+
               <div class="multimediaFisica needsclick dz-clickable" style="display:none">
 
                 <div class="dz-message needsclick">
-                  
+
                   Arrastrar o dar click para subir imagenes.
 
                 </div>
 
               </div>
-   
+
             </div>
 
             <!--=====================================
@@ -760,7 +779,7 @@ MODAL EDITAR PRODUCTO
             ======================================-->
 
             <div class="detallesVirtual" style="display:none">
-              
+
               <div class="panel">DETALLES</div>
 
                 <!-- CLASES -->
@@ -851,13 +870,13 @@ MODAL EDITAR PRODUCTO
 
             <!--=====================================
             AGREGAR DETALLES FÍSICOS
-            ======================================-->  
+            ======================================-->
 
             <div class="detallesFisicos" style="display:none">
-              
+
               <div class="panel">DETALLES</div>
 
-              <!-- TALLA 
+              <!-- TALLA
 
                 <div class="form-group row">
 
@@ -899,20 +918,20 @@ MODAL EDITAR PRODUCTO
 
               </div>
 
-            </div> 
+            </div>
 
            <!--=====================================
             AGREGAR CATEGORÍA
             ======================================-->
 
             <div class="form-group">
-                
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                   <select class="form-control input-lg seleccionarCategoria">
-                  
+
                     <option class="optionEditarCategoria"></option>
 
                     <?php
@@ -923,7 +942,7 @@ MODAL EDITAR PRODUCTO
                     $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 
                     foreach ($categorias as $key => $value) {
-                      
+
                       echo '<option value="'.$value["id"].'">'.$value["categoria"].'</option>';
                     }
 
@@ -940,13 +959,13 @@ MODAL EDITAR PRODUCTO
             ======================================-->
 
             <div class="form-group entradaSubcategoria">
-                
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                   <select class="form-control input-lg seleccionarSubCategoria">
-                  
+
                     <option class="optionEditarSubCategoria"></option>
 
                   </select>
@@ -960,10 +979,10 @@ MODAL EDITAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-pencil"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
                 <textarea type="text" maxlength="320" rows="3" class="form-control input-lg descripcionProducto"></textarea>
 
@@ -976,10 +995,10 @@ MODAL EDITAR PRODUCTO
             ======================================-->
 
             <div class="form-group editarPalabrasClaves">
-              
+
               <!--   <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
                   <input type="text" class="form-control input-lg tagsInput pClavesProducto" data-role="tagsinput"  placeholder="Ingresar palabras claves">
 
@@ -992,7 +1011,7 @@ MODAL EDITAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
               <div class="panel">SUBIR FOTO PORTADA</div>
 
               <input type="file" class="fotoPortada">
@@ -1009,7 +1028,7 @@ MODAL EDITAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-                
+
               <div class="panel">SUBIR FOTO PRINCIPAL DEL PRODUCTO</div>
 
               <input type="file" class="fotoPrincipal">
@@ -1026,16 +1045,16 @@ MODAL EDITAR PRODUCTO
             ======================================-->
 
             <div class="form-group row">
-               
+
               <!-- PRECIO -->
 
               <div class="col-md-4 col-xs-12">
-  
+
                 <div class="panel">PRECIO</div>
-                
+
                 <div class="input-group">
-                
-                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span> 
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
                   <input type="number" class="form-control input-lg precio" min="0" step="any">
 
@@ -1043,17 +1062,49 @@ MODAL EDITAR PRODUCTO
 
               </div>
 
-              <!-- PESO -->
+              <!-- ANCHO -->
 
               <div class="col-md-4 col-xs-12">
-  
-                <div class="panel">PESO</div>
-              
-                <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span> 
 
-                  <input type="number" class="form-control input-lg peso" min="0" step="any" value="0">
+                <div class="panel">ANCHO</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+
+                  <input type="number" class="form-control input-lg ancho" min="0" step="any" value="0">
+
+                </div>
+
+              </div>
+
+              <!-- ALTURA -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">ALTURA</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+
+                  <input type="number" class="form-control input-lg altura" min="0" step="any" value="0">
+
+                </div>
+
+              </div>
+
+              <!-- LARGO -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">LARGO</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+
+                  <input type="number" class="form-control input-lg largo" min="0" step="any" value="0">
 
                 </div>
 
@@ -1062,12 +1113,12 @@ MODAL EDITAR PRODUCTO
               <!-- ENTREGA -->
 
               <div class="col-md-4 col-xs-12">
-  
+
                 <div class="panel">DÍAS DE ENTREGA</div>
-              
+
                 <div class="input-group">
-              
-                  <span class="input-group-addon"><i class="fa fa-truck"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-truck"></i></span>
 
                   <input type="number" class="form-control input-lg entrega" min="0" value="0">
 
@@ -1082,30 +1133,30 @@ MODAL EDITAR PRODUCTO
             ======================================-->
 
             <div class="form-group">
-              
+
               <select class="form-control input-lg selActivarOferta">
-                
+
                 <option value="">No tiene oferta</option>
                 <option value="oferta">Activar oferta</option>
-               
+
               </select>
 
             </div>
 
             <div class="datosOferta" style="display:none">
-            
+
               <!--=====================================
               VALOR OFERTAS
               ======================================-->
 
               <div class="form-group row">
-                  
+
                 <div class="col-xs-6">
 
                   <div class="input-group">
-                  
-                    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span> 
-                    
+
+                    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
                     <input class="form-control input-lg valorOferta precioOferta" tipo="oferta" type="number" value="0" min="0" placeholder="Precio">
 
                   </div>
@@ -1113,9 +1164,9 @@ MODAL EDITAR PRODUCTO
                 </div>
 
                 <div class="col-xs-6">
-                     
+
                   <div class="input-group">
-                       
+
                     <input class="form-control input-lg valorOferta descuentoOferta" tipo="descuento" type="number" value="0"  min="0" placeholder="Descuento">
                     <span class="input-group-addon"><i class="fa fa-percent"></i></span>
 
@@ -1130,19 +1181,19 @@ MODAL EDITAR PRODUCTO
               ======================================-->
 
               <div class="form-group">
-                  
+
                 <div class="input-group date">
-                      
+
                   <input type='text' class="form-control datepicker input-lg valorOferta finOferta">
-                      
+
                   <span class="input-group-addon">
-                          
+
                       <span class="glyphicon glyphicon-calendar"></span>
-                      
+
                   </span>
-                 
+
                 </div>
-              
+
               </div>
 
               <!--=====================================
@@ -1150,7 +1201,7 @@ MODAL EDITAR PRODUCTO
               ======================================-->
 
               <div class="form-group">
-                
+
                 <div class="panel">SUBIR FOTO OFERTA</div>
 
                 <input type="file" class="fotoOferta valorOferta">
@@ -1163,7 +1214,7 @@ MODAL EDITAR PRODUCTO
               </div>
 
             </div>
-          
+
           </div>
 
         </div>
@@ -1173,7 +1224,7 @@ MODAL EDITAR PRODUCTO
         ======================================-->
 
         <div class="modal-footer">
-  
+
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
           <button type="button" class="btn btn-primary guardarCambiosProducto">Guardar cambios</button>

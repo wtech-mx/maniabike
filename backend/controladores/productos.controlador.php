@@ -41,7 +41,7 @@ class ControladorProductos{
 		$respuesta = ModeloProductos::mdlMostrarProductos($tabla, $item, $valor);
 
 		return $respuesta;
-	
+
 	}
 
 	/*=============================================
@@ -56,7 +56,7 @@ class ControladorProductos{
 			DEFINIMOS LAS MEDIDAS
 			=============================================*/
 
-			list($ancho, $alto) = getimagesize($datos["tmp_name"]);	
+			list($ancho, $alto) = getimagesize($datos["tmp_name"]);
 
 			$nuevoAncho = 1000;
 			$nuevoAlto = 1000;
@@ -74,7 +74,7 @@ class ControladorProductos{
 			if (!file_exists($directorio)){
 
 				mkdir($directorio, 0755);
-			
+
 			}
 
 			/*=============================================
@@ -89,7 +89,7 @@ class ControladorProductos{
 
 				$rutaMultimedia = $directorio."/".$datos["name"];
 
-				$origen = imagecreatefromjpeg($datos["tmp_name"]);						
+				$origen = imagecreatefromjpeg($datos["tmp_name"]);
 
 				$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -107,12 +107,12 @@ class ControladorProductos{
 
 				$rutaMultimedia = $directorio."/".$datos["name"];
 
-				$origen = imagecreatefrompng($datos["tmp_name"]);						
+				$origen = imagecreatefrompng($datos["tmp_name"]);
 
 				$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 				imagealphablending($destino, FALSE);
-		
+
 				imagesavealpha($destino, TRUE);
 
 				imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -121,7 +121,7 @@ class ControladorProductos{
 
 			}
 
-			return $rutaMultimedia;	
+			return $rutaMultimedia;
 
 		}
 
@@ -149,7 +149,7 @@ class ControladorProductos{
 					DEFINIMOS LAS MEDIDAS
 					=============================================*/
 
-					list($ancho, $alto) = getimagesize($datos["fotoPortada"]["tmp_name"]);	
+					list($ancho, $alto) = getimagesize($datos["fotoPortada"]["tmp_name"]);
 
 					$nuevoAncho = 1280;
 					$nuevoAlto = 720;
@@ -169,7 +169,7 @@ class ControladorProductos{
 
 						$rutaPortada = "../vistas/img/cabeceras/".$datos["rutaProducto"].".jpg";
 
-						$origen = imagecreatefromjpeg($datos["fotoPortada"]["tmp_name"]);						
+						$origen = imagecreatefromjpeg($datos["fotoPortada"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -188,12 +188,12 @@ class ControladorProductos{
 
 						$rutaPortada = "../vistas/img/cabeceras/".$datos["rutaProducto"].".png";
 
-						$origen = imagecreatefrompng($datos["fotoPortada"]["tmp_name"]);						
+						$origen = imagecreatefrompng($datos["fotoPortada"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-				
+
 						imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -216,7 +216,7 @@ class ControladorProductos{
 					DEFINIMOS LAS MEDIDAS
 					=============================================*/
 
-					list($ancho, $alto) = getimagesize($datos["fotoPrincipal"]["tmp_name"]);	
+					list($ancho, $alto) = getimagesize($datos["fotoPrincipal"]["tmp_name"]);
 
 					$nuevoAncho = 400;
 					$nuevoAlto = 450;
@@ -235,7 +235,7 @@ class ControladorProductos{
 
 						$rutaFotoPrincipal = "../vistas/img/productos/".$datos["rutaProducto"].".jpg";
 
-						$origen = imagecreatefromjpeg($datos["fotoPrincipal"]["tmp_name"]);						
+						$origen = imagecreatefromjpeg($datos["fotoPrincipal"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -255,12 +255,12 @@ class ControladorProductos{
 
 						$rutaFotoPrincipal = "../vistas/img/productos/".$datos["rutaProducto"].".png";
 
-						$origen = imagecreatefrompng($datos["fotoPrincipal"]["tmp_name"]);						
+						$origen = imagecreatefrompng($datos["fotoPrincipal"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-				
+
 						imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -303,7 +303,7 @@ class ControladorProductos{
 
 						$rutaOferta = "../vistas/img/ofertas/".$datos["rutaProducto"].".jpg";
 
-						$origen = imagecreatefromjpeg($datos["fotoOferta"]["tmp_name"]);						
+						$origen = imagecreatefromjpeg($datos["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -322,11 +322,11 @@ class ControladorProductos{
 
 						$rutaOferta = "../vistas/img/ofertas/".$datos["rutaProducto"].".png";
 
-						$origen = imagecreatefrompng($datos["fotoOferta"]["tmp_name"]);						
+						$origen = imagecreatefrompng($datos["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-				
+
 						imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -356,8 +356,10 @@ class ControladorProductos{
 						   "descripcion"=> $datos["descripcionProducto"],
 						   "palabrasClaves"=> $datos["pClavesProducto"],
 						   "precio"=> $datos["precio"],
-						   "peso"=> $datos["peso"],
-						   "entrega"=> $datos["entrega"],  
+						   "ancho"=> $datos["ancho"],
+						   "altura"=> $datos["altura"],
+						   "largo"=> $datos["largo"],
+						   "entrega"=> $datos["entrega"],
 						   "imgPortada"=>substr($rutaPortada,3),
 						   "imgFotoPrincipal"=>substr($rutaFotoPrincipal,3),
 						   "oferta"=>1,
@@ -383,8 +385,10 @@ class ControladorProductos{
 						   "descripcion"=> $datos["descripcionProducto"],
 						   "palabrasClaves"=> $datos["pClavesProducto"],
 						   "precio"=> $datos["precio"],
-						   "peso"=> $datos["peso"],
-						   "entrega"=> $datos["entrega"],  
+						   "ancho"=> $datos["ancho"],
+						   "altura"=> $datos["altura"],
+						   "largo"=> $datos["largo"],
+						   "entrega"=> $datos["entrega"],
 						   "imgPortada"=>substr($rutaPortada,3),
 						   "imgFotoPrincipal"=>substr($rutaFotoPrincipal,3),
 						   "oferta"=>0,
@@ -401,7 +405,7 @@ class ControladorProductos{
 				$respuesta = ModeloProductos::mdlIngresarProducto("productos", $datosProducto);
 
 				return $respuesta;
-				
+
 
 			}else{
 
@@ -425,7 +429,7 @@ class ControladorProductos{
 
 
 			}
-		
+
 		}
 
 	}
@@ -452,7 +456,7 @@ class ControladorProductos{
 					$traerProductos = ModeloProductos::mdlMostrarProductos("productos", $item, $valor);
 
 					foreach ($traerProductos as $key => $value) {
-					
+
 						$multimediaBD = json_decode($value["multimedia"],true);
 						$multimediaEditar = json_decode($datos["multimedia"],true);
 
@@ -474,12 +478,12 @@ class ControladorProductos{
 						$borrarFoto = array_diff($objectMultimediaBD, $objectMultimediaEditar);
 
 						foreach ($borrarFoto as $key => $value) {
-							
+
 							unlink("../".$value);
 
 						}
 
-					}				
+					}
 
 				}
 
@@ -501,7 +505,7 @@ class ControladorProductos{
 					DEFINIMOS LAS MEDIDAS
 					=============================================*/
 
-					list($ancho, $alto) = getimagesize($datos["fotoPortada"]["tmp_name"]);	
+					list($ancho, $alto) = getimagesize($datos["fotoPortada"]["tmp_name"]);
 
 					$nuevoAncho = 1280;
 					$nuevoAlto = 720;
@@ -521,7 +525,7 @@ class ControladorProductos{
 
 						$rutaPortada = "../vistas/img/cabeceras/".$datos["rutaProducto"].".jpg";
 
-						$origen = imagecreatefromjpeg($datos["fotoPortada"]["tmp_name"]);						
+						$origen = imagecreatefromjpeg($datos["fotoPortada"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -540,12 +544,12 @@ class ControladorProductos{
 
 						$rutaPortada = "../vistas/img/cabeceras/".$datos["rutaProducto"].".png";
 
-						$origen = imagecreatefrompng($datos["fotoPortada"]["tmp_name"]);						
+						$origen = imagecreatefrompng($datos["fotoPortada"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-				
+
 						imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -574,7 +578,7 @@ class ControladorProductos{
 					DEFINIMOS LAS MEDIDAS
 					=============================================*/
 
-					list($ancho, $alto) = getimagesize($datos["fotoPrincipal"]["tmp_name"]);	
+					list($ancho, $alto) = getimagesize($datos["fotoPrincipal"]["tmp_name"]);
 
 					$nuevoAncho = 400;
 					$nuevoAlto = 450;
@@ -594,7 +598,7 @@ class ControladorProductos{
 
 						$rutaFotoPrincipal = "../vistas/img/productos/".$datos["rutaProducto"].".jpg";
 
-						$origen = imagecreatefromjpeg($datos["fotoPrincipal"]["tmp_name"]);						
+						$origen = imagecreatefromjpeg($datos["fotoPrincipal"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -614,12 +618,12 @@ class ControladorProductos{
 
 						$rutaFotoPrincipal = "../vistas/img/productos/".$datos["rutaProducto"].".png";
 
-						$origen = imagecreatefrompng($datos["fotoPrincipal"]["tmp_name"]);						
+						$origen = imagecreatefrompng($datos["fotoPrincipal"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-				
+
 						imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -672,7 +676,7 @@ class ControladorProductos{
 
 						$rutaOferta = "../vistas/img/ofertas/".$datos["rutaProducto"].".jpg";
 
-						$origen = imagecreatefromjpeg($datos["fotoOferta"]["tmp_name"]);						
+						$origen = imagecreatefromjpeg($datos["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -691,11 +695,11 @@ class ControladorProductos{
 
 						$rutaOferta = "../vistas/img/ofertas/".$datos["rutaProducto"].".png";
 
-						$origen = imagecreatefrompng($datos["fotoOferta"]["tmp_name"]);						
+						$origen = imagecreatefrompng($datos["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-				
+
 						imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -704,7 +708,7 @@ class ControladorProductos{
 
 					}
 
-				}			
+				}
 
 				/*=============================================
 				PREGUNTAMOS SI VIENE OFERTE EN CAMINO
@@ -727,8 +731,10 @@ class ControladorProductos{
 								   "descripcion"=> $datos["descripcionProducto"],
 								   "palabrasClaves"=> $datos["pClavesProducto"],
 								   "precio"=> $datos["precio"],
-								   "peso"=> $datos["peso"],
-								   "entrega"=> $datos["entrega"],  
+								   "ancho"=> $datos["ancho"],
+								   "altura"=> $datos["altura"],
+								   "largo"=> $datos["largo"],
+								   "entrega"=> $datos["entrega"],
 								   "imgPortada"=>substr($rutaPortada,3),
 								   "imgFotoPrincipal"=>substr($rutaFotoPrincipal,3),
 								   "oferta"=>1,
@@ -755,14 +761,16 @@ class ControladorProductos{
 								   "descripcion"=> $datos["descripcionProducto"],
 								   "palabrasClaves"=> $datos["pClavesProducto"],
 								   "precio"=> $datos["precio"],
-								   "peso"=> $datos["peso"],
+								   "ancho"=> $datos["ancho"],
+								   "altura"=> $datos["altura"],
+								   "largo"=> $datos["largo"],
 								   "entrega"=> $datos["entrega"],
 								   "imgPortada"=>substr($rutaPortada,3),
 								   "imgFotoPrincipal"=>substr($rutaFotoPrincipal,3),
 								   "oferta"=>0,
 								   "precioOferta"=>0,
 								   "descuentoOferta"=>0,
-								   "imgOferta"=>"",								   
+								   "imgOferta"=>"",
 								   "finOferta"=>""
 								   );
 
@@ -797,7 +805,7 @@ class ControladorProductos{
 			}
 
 		}
-		
+
 	}
 
 	/*=============================================
@@ -830,7 +838,7 @@ class ControladorProductos{
 
 			if($_GET["imgPrincipal"] != "" && $_GET["imgPrincipal"] != "vistas/img/productos/default/default.jpg"){
 
-				unlink($_GET["imgPrincipal"]);		
+				unlink($_GET["imgPrincipal"]);
 
 			}
 
@@ -840,7 +848,7 @@ class ControladorProductos{
 
 			if($_GET["imgOferta"] != ""){
 
-				unlink($_GET["imgOferta"]);		
+				unlink($_GET["imgOferta"]);
 
 			}
 
@@ -850,7 +858,7 @@ class ControladorProductos{
 
 			if($_GET["imgPortada"] != "" && $_GET["imgPortada"] != "vistas/img/cabeceras/default/default.jpg"){
 
-				unlink($_GET["imgPortada"]);		
+				unlink($_GET["imgPortada"]);
 
 			}
 
@@ -877,7 +885,7 @@ class ControladorProductos{
 
 				</script>';
 
-			}		
+			}
 
 
 
