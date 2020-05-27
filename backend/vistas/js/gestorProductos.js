@@ -268,17 +268,17 @@ $(".seleccionarCategoria").change(function(){
 
 /*=============================================
 SUBIENDO LA FOTO DE PORTADA
-=============================================*/
+=============================================
 
 var imagenPortada = null;
 
 $(".fotoPortada").change(function(){
 
-	imagenPortada = this.files[0];
+	imagenPortada = this.files[0];*/
 
 	/*=============================================
   	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
-  	=============================================*/
+  	=============================================
 
   	if(imagenPortada["type"] != "image/jpeg" && imagenPortada["type"] != "image/png"){
 
@@ -317,7 +317,7 @@ $(".fotoPortada").change(function(){
 
   	}
 
-})
+})*/
 
 /*=============================================
 SUBIENDO LA FOTO PRINCIPAL
