@@ -29,13 +29,13 @@ class TablaSubsubCategorias{
 		for($i = 0; $i < count($subsubcategorias); $i++){
 
 			/*=============================================
-  			TRAER LAS subCATEGORÍAS
+  			TRAER LAS SUBCATEGORÍAS
   			=============================================*/
 
 			$item = "id";
 			$valor = $subsubcategorias[$i]["id_subcategoria"];
 
-			$subcategorias = ControladorsubCategorias::ctrMostrarsubCategorias($item, $valor);
+			$subcategorias = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
 
 			if($subcategorias["subcategoria"] == ""){
 
@@ -60,7 +60,7 @@ class TablaSubsubCategorias{
 
   				$colorEstado = "btn-success";
   				$textoEstado = "Activado";
-  				$estadoSubCategoria = 0;
+  				$estadoSubsubCategoria = 0;
 
   			}
 
@@ -130,7 +130,7 @@ class TablaSubsubCategorias{
 			 [
 		      "'.($i+1).'",
 		      "'.$subsubcategorias[$i]["subsubcategoria"].'",
-		      "'.$categoria.'",
+		      "'.$subcategoria.'",
 		      "'.$subsubcategorias[$i]["ruta"].'",
 		      "'.$estado.'",
 		      "'.$cabeceras["descripcion"].'",
