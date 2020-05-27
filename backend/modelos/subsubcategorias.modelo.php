@@ -2,13 +2,13 @@
 
 require_once "conexion.php";
 
-class ModeloSubsubcategorias{
+class ModeloSubSubCategorias{
 
 	/*=============================================
-	ACTUALIZAR SUBCATEGORIAS
+	ACTUALIZAR SUB-SUBCATEGORIAS
 	=============================================*/
 
-	static public function mdlActualizarSubsubcategorias($tabla, $item1, $valor1, $item2, $valor2){
+	static public function mdlActualizarSubSubCategorias($tabla, $item1, $valor1, $item2, $valor2){
 
 		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $item1 = :$item1 WHERE $item2 = :$item2");
 
@@ -32,41 +32,10 @@ class ModeloSubsubcategorias{
 	}
 
 	/*=============================================
-	ACTUALIZAR OFERTA SUBCATEGORIAS
-	=============================================
-	static public function mdlActualizarOfertaSubsubcategorias($tabla, $datos, $ofertadoPor){
-
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $ofertadoPor = :$ofertadoPor, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta WHERE id_categoria = :id_categoria");
-
-		$stmt->bindParam(":".$ofertadoPor, $datos["oferta"], PDO::PARAM_STR);
-		$stmt->bindParam(":oferta", $datos["oferta"], PDO::PARAM_STR);
-		$stmt->bindParam(":precioOferta", $datos["precioOferta"], PDO::PARAM_STR);
-		$stmt->bindParam(":descuentoOferta", $datos["descuentoOferta"], PDO::PARAM_STR);
-		$stmt->bindParam(":imgOferta", $datos["imgOferta"], PDO::PARAM_STR);
-		$stmt->bindParam(":finOferta", $datos["finOferta"], PDO::PARAM_STR);
-		$stmt -> bindParam(":id_categoria", $datos["id"], PDO::PARAM_INT);
-
-		if($stmt->execute()){
-
-			return "ok";
-
-		}else{
-
-			return "error";
-
-		}
-
-		$stmt->close();
-		$stmt = null;
-
-
-	}
-
-	/*=============================================
-	MOSTRAR SUBCATEGORIAS
+	MOSTRAR SUB-SUBCATEGORIAS
 	=============================================*/
 
-	static public function mdlMostrarSubsubcategorias($tabla, $item, $valor){
+	static public function mdlMostrarSubSubCategorias($tabla, $item, $valor){
 
 		if($item != null){
 
@@ -95,15 +64,15 @@ class ModeloSubsubcategorias{
 	}
 
 	/*=============================================
-	CREAR SUBCATEGORIA
+	CREAR SUB-SUBCATEGORIA
 	=============================================*/
 
-	static public function mdlIngresarSubsubcategoria($tabla, $datos){
+	static public function mdlIngresarSubSubCategoria($tabla, $datos){
 
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(subsubcategoria, id_subcategoria, ruta, estado) VALUES (:subsubcategoria, :id_subcategoria, :ruta, :estado)");
 
 		$stmt->bindParam(":subsubcategoria", $datos["subsubcategoria"], PDO::PARAM_STR);
-		$stmt->bindParam(":id_subcategoria", $datos["idsubcategoria"], PDO::PARAM_STR);
+		$stmt->bindParam(":id_subcategoria", $datos["idSubCategoria"], PDO::PARAM_STR);
 		$stmt->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
 		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
 
@@ -123,15 +92,15 @@ class ModeloSubsubcategorias{
 	}
 
 	/*=============================================
-	EDITAR SUBCATEGORIA
+	EDITAR SUB-SUBCATEGORIA
 	=============================================*/
 
-	static public function mdlEditarSubsubcategoria($tabla, $datos){
+	static public function mdlEditarSubSubCategoria($tabla, $datos){
 
 		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET subsubcategoria = :subsubcategoria, id_subcategoria = :id_subcategoria, ruta = :ruta, estado = :estado WHERE id = :id");
 
 		$stmt->bindParam(":subsubcategoria", $datos["subsubcategoria"], PDO::PARAM_STR);
-		$stmt->bindParam(":id_subcategoria", $datos["idsubcategoria"], PDO::PARAM_STR);
+		$stmt->bindParam(":id_subcategoria", $datos["idSubCategoria"], PDO::PARAM_STR);
 		$stmt->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
 		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
 		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
@@ -152,10 +121,10 @@ class ModeloSubsubcategorias{
 	}
 
 	/*=============================================
-	ELIMINAR SUBCATEGORIA
+	ELIMINAR SUB-SUBCATEGORIA
 	=============================================*/
 
-	static public function mdlEliminarSubsubcategoria($tabla, $datos){
+	static public function mdlEliminarSubSubCategoria($tabla, $datos){
 
 		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
 

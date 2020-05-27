@@ -3,14 +3,14 @@
   <section class="content-header">
 
     <h1>
-      Gestor Sub-subcategorías
+      Gestor Sub-Subcategorías
     </h1>
 
     <ol class="breadcrumb">
 
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-      <li class="active">Gestor Sub-subcategorías</li>
+      <li class="active">Gestor Sub-Subcategorías</li>
 
     </ol>
 
@@ -22,9 +22,9 @@
 
       <div class="box-header with-border">
 
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarSubsubcategoria">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarSubSubCategoria">
 
-          Agregar Sub-subcategoría
+          Agregar sub-subcategoría
 
         </button>
 
@@ -32,7 +32,7 @@
 
       <div class="box-body">
 
-       <table class="table table-bordered table-striped dt-responsive tablaSubsubategorias" width="100%">
+       <table class="table table-bordered table-striped dt-responsive tablaSubSubCategorias" width="100%">
 
         <thead>
 
@@ -40,7 +40,7 @@
 
            <th style="width:10px">#</th>
            <th>Sub-subcategoria</th>
-           <th>Subcategoria</th>
+           <th>SubCategoria</th>
            <th>Ruta</th>
            <th>Estado</th>
            <th>Descripción</th>
@@ -62,10 +62,10 @@
 </div>
 
 <!--=====================================
-MODAL AGREGAR SUBCATEGORÍA
+MODAL AGREGAR SUB-SUBCATEGORÍA
 ======================================-->
 
-<div id="modalAgregarSubsubcategoria" class="modal fade" role="dialog">
+<div id="modalAgregarSubSubCategoria" class="modal fade" role="dialog">
 
   <div class="modal-dialog">
 
@@ -81,7 +81,7 @@ MODAL AGREGAR SUBCATEGORÍA
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Agregar Sub-subcategoría</h4>
+          <h4 class="modal-title">Agregar sub-subcategoría</h4>
 
         </div>
 
@@ -94,7 +94,7 @@ MODAL AGREGAR SUBCATEGORÍA
           <div class="box-body">
 
             <!--=====================================
-            ENTRADA PARA EL NOMBRE DE LA SUBCATEGORÍA
+            ENTRADA PARA EL NOMBRE DE LA SUB-SUBCATEGORÍA
             ======================================-->
 
             <div class="form-group">
@@ -103,14 +103,14 @@ MODAL AGREGAR SUBCATEGORÍA
 
                 <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                <input type="text" class="form-control input-lg validarSubsubcategoria tituloSubsubcategoria" name="tituloSubsubcategoria" placeholder="Ingresar Sub-subcategoría" required>
+                <input type="text" class="form-control input-lg validarSubSubCategoria tituloSubSubCategoria" name="tituloSubSubCategoria" placeholder="Ingresar sub-subcategoría" required>
 
               </div>
 
             </div>
 
             <!--=====================================
-            ENTRADA PARA LA RUTA DE LA SUBCATEGORÍA
+            ENTRADA PARA LA RUTA DE LA SUB-SUBCATEGORÍA
             ======================================-->
 
             <div class="form-group">
@@ -119,14 +119,14 @@ MODAL AGREGAR SUBCATEGORÍA
 
                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
 
-                <input type="text" class="form-control input-lg rutaSubsubcategoria" name="rutaSubsubcategoria" placeholder="Ruta url de la Sub-subcategoría" readonly required>
+                <input type="text" class="form-control input-lg rutaSubSubCategoria" name="rutaSubSubCategoria" placeholder="Ruta url de la sub-subcategoría" readonly required>
 
               </div>
 
             </div>
 
             <!--=====================================
-            ENTRADA PARA SELECCIONAR LA CATEGORÍA
+            ENTRADA PARA SELECCIONAR LA SUBCATEGORÍA
             ======================================-->
 
             <div class="form-group">
@@ -137,7 +137,7 @@ MODAL AGREGAR SUBCATEGORÍA
 
                 <select class="form-control input-lg seleccionarSubCategoria" name="seleccionarSubCategoria" required>
 
-                  <option value="">Selecionar Subcategoría</option>
+                  <option value="">Selecionar subcategoría</option>
 
                   <?php
 
@@ -169,7 +169,7 @@ MODAL AGREGAR SUBCATEGORÍA
 
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
-                <textarea type="text" maxlength="120" class="form-control input-lg"  name="descripcionSubsubcategoria" rows="3" placeholder="Ingresar descripción Sub-subcategoría" required></textarea>
+                <textarea type="text" maxlength="120" class="form-control input-lg"  name="descripcionSubSubCategoria" rows="3" placeholder="Ingresar descripción sub-subcategoría" required></textarea>
 
               </div>
 
@@ -185,7 +185,7 @@ MODAL AGREGAR SUBCATEGORÍA
 
                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
-                <input type="text" class="form-control input-lg tagsInput" data-role="tagsinput"  name="pClavesSubsubcategoria" placeholder="Ingresar palabras claves" required>
+                <input type="text" class="form-control input-lg tagsInput" data-role="tagsinput"  name="pClavesSubSubCategoria" placeholder="Ingresar palabras claves" required>
 
               </div>
 
@@ -203,14 +203,14 @@ MODAL AGREGAR SUBCATEGORÍA
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Guardar Sub-subcategoría</button>
+          <button type="submit" class="btn btn-primary">Guardar subcategoría</button>
 
         </div>
 
-        <?php
+         <?php
 
-          $crearSubsubcategoria = new ControladorSubsubcategorias();
-          $crearSubsubcategoria -> ctrCrearSubsubcategoria();
+          $crearSubSubCategoria = new ControladorSubSubCategorias();
+          $crearSubSubCategoria -> ctrCrearSubSubCategoria();
 
         ?>
 
@@ -223,10 +223,10 @@ MODAL AGREGAR SUBCATEGORÍA
 </div>
 
 <!--=====================================
-MODAL EDITAR SUBCATEGORÍA
+MODAL EDITAR SUB-SUBCATEGORÍA
 ======================================-->
 
-<div id="modalEditarSubsubcategoria" class="modal fade" role="dialog">
+<div id="modalEditarSubSubCategoria" class="modal fade" role="dialog">
 
   <div class="modal-dialog">
 
@@ -242,7 +242,7 @@ MODAL EDITAR SUBCATEGORÍA
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Editar Sub-subcategoría</h4>
+          <h4 class="modal-title">Editar sub-subcategoría</h4>
 
         </div>
 
@@ -255,7 +255,7 @@ MODAL EDITAR SUBCATEGORÍA
           <div class="box-body">
 
             <!--=====================================
-            ENTRADA PARA EDITAR EL TITULO DE LA SUBCATEGORÍA
+            ENTRADA PARA EDITAR EL TITULO DE LA SUB-SUBCATEGORÍA
             ======================================-->
 
             <div class="form-group">
@@ -264,9 +264,9 @@ MODAL EDITAR SUBCATEGORÍA
 
                 <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                <input type="text" class="form-control input-lg validarSubsubcategoria tituloSubsubcategoria"  name="editarTituloSubsubcategoria" required>
+                <input type="text" class="form-control input-lg validarSubSubCategoria tituloSubSubCategoria"  name="editarTituloSubSubCategoria" required>
 
-                <input type="hidden" class="editarIdSubsubcategoria" name="editarIdSubsubcategoria">
+                <input type="hidden" class="editarIdSubSubCategoria" name="editarIdSubSubCategoria">
                 <input type="hidden" class="editarIdCabecera" name="editarIdCabecera">
 
               </div>
@@ -274,7 +274,7 @@ MODAL EDITAR SUBCATEGORÍA
             </div>
 
             <!--=====================================
-            ENTRADA PARA EDITAR LA RUTA DE LA SUBCATEGORÍA
+            ENTRADA PARA EDITAR LA RUTA DE LA SUB-SUBCATEGORÍA
             ======================================-->
 
             <div class="form-group">
@@ -283,14 +283,14 @@ MODAL EDITAR SUBCATEGORÍA
 
                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
 
-                <input type="text" class="form-control input-lg rutaSubsubcategoria" name="rutaSubsubcategoria" readonly required>
+                <input type="text" class="form-control input-lg rutaSubSubCategoria" name="rutaSubSubCategoria" readonly required>
 
               </div>
 
             </div>
 
             <!--=====================================
-            ENTRADA PARA EDITAR LA SELECCIÓN DE LA CATEGORÍA
+            ENTRADA PARA EDITAR LA SELECCIÓN DE LA SUB-                                                                                    SUBCATEGORÍA
             ======================================-->
 
             <div class="form-group">
@@ -308,7 +308,7 @@ MODAL EDITAR SUBCATEGORÍA
                   $item = null;
                   $valor = null;
 
-                  $categorias = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
+                  $subcategorias = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
 
                   foreach ($subcategorias as $key => $value) {
 
@@ -333,7 +333,7 @@ MODAL EDITAR SUBCATEGORÍA
 
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
-                <textarea type="text" maxlength="120" class="form-control input-lg descripcionSubsubcategoria"  name="descripcionSubsubcategoria" required></textarea>
+                <textarea type="text" maxlength="120" class="form-control input-lg descripcionSubSubCategoria"  name="descripcionSubSubCategoria" required></textarea>
 
 
 
@@ -350,17 +350,11 @@ MODAL EDITAR SUBCATEGORÍA
 
             </div>
 
-
-
-
-
-            </div>
-
           </div>
 
         </div>
 
-        =====================================
+        <!--=====================================
         PIE DEL MODAL
         ======================================-->
 
@@ -374,8 +368,8 @@ MODAL EDITAR SUBCATEGORÍA
 
          <?php
 
-            $crearSubCategoria = new ControladorSubsubcategorias();
-            $crearSubCategoria -> ctrEditarSubsubcategoria();
+            $crearSubCategoria = new ControladorSubSubCategorias();
+            $crearSubCategoria -> ctrEditarSubSubCategoria();
 
         ?>
 
@@ -389,8 +383,8 @@ MODAL EDITAR SUBCATEGORÍA
 
 <?php
 
-  $eliminarSubCategoria = new ControladorSubsubcategorias();
-  $eliminarSubCategoria -> ctrEliminarSubsubcategoria();
+  $eliminarSubCategoria = new ControladorSubSubCategorias();
+  $eliminarSubCategoria -> ctrEliminarSubSubCategoria();
 
 ?>
 

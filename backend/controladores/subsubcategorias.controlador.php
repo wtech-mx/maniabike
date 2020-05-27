@@ -1,30 +1,69 @@
 <?php
 
-class ControladorSubsubcategorias{
+class ControladorSubSubCategorias{
 
 	/*=============================================
-	MOSTRAR SUBCATEGORIAS
+	MOSTRAR SUB-SUBCATEGORIAS
 	=============================================*/
 
-	static public function ctrMostrarSubsubcategorias($item, $valor){
+	static public function ctrMostrarSubSubCategorias($item, $valor){
 
 		$tabla = "subsubcategorias";
 
-		$respuesta = ModeloSubsubcategorias::mdlMostrarSubsubcategorias($tabla, $item, $valor);
+		$respuesta = ModeloSubSubCategorias::mdlMostrarSubSubCategorias($tabla, $item, $valor);
 
 		return $respuesta;
 
 	}
 
 	/*=============================================
-	CREAR SUBCATEGORIA
+	CREAR SUB-SUBCATEGORIA
 	=============================================*/
 
-	static public function ctrCrearSubsubcategoria(){
+	static public function ctrCrearSubSubCategoria(){
 
-		if(isset($_POST["tituloSubsubcategoria"])){
+		if(isset($_POST["tituloSubSubCategoria"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["tituloSubsubcategoria"]) && preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["descripcionSubsubcategoria"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["tituloSubSubCategoria"]) && preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["descripcionSubSubCategoria"])){
+
+				/*=============================================
+				PREGUNTAMOS SI VIENE OFERTE EN CAMINO
+				=============================================*/
+
+					$datos = array("subsubcategoria"=>$_POST["tituloSubSubCategoria"],
+								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
+								   "ruta"=>$_POST["rutaSubSubCategoria"],
+								   "estado"=> 1,
+								   "titulo"=>$_POST["tituloSubSubCategoria"],
+								   "descripcion"=> $_POST["descripcionSubSubCategoria"],
+								   "palabrasClaves"=> $_POST["pClavesSubSubCategoria"]);
+
+
+				ModeloCabeceras::mdlIngresarCabecera("cabeceras", $datos);
+
+				$respuesta = ModeloSubSubCategorias::mdlIngresarSubSubCategoria("subsubcategorias", $datos);
+
+				if($respuesta == "ok"){
+
+					echo'<script>
+
+					swal({
+						  type: "success",
+						  title: "La sub-subcategoría ha sido guardada correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
+
+									window.location = "subsubcategorias";
+
+									}
+								})
+
+					</script>';
+
+				}
+
 
 			}else{
 
@@ -32,13 +71,13 @@ class ControladorSubsubcategorias{
 
 					swal({
 						  type: "error",
-						  title: "¡La subcategoría no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡La sub-subcategoría no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "subcategorias";
+							window.location = "subsubcategorias";
 
 							}
 						})
@@ -52,14 +91,40 @@ class ControladorSubsubcategorias{
 	}
 
 	/*=============================================
-	EDITAR SUBCATEGORIA
+	EDITAR SUB-SUBCATEGORIA
 	=============================================*/
 
-	static public function ctreditarSubsubcategoria(){
+	static public function ctreditarSubSubCategoria(){
 
-		if(isset($_POST["editarTituloSubsubcategoria"])){
+		if(isset($_POST["editarTituloSubSubCategoria"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarTituloSubsubcategoria"])&& preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["descripcionSubsubcategoria"]) ){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarTituloSubSubCategoria"])&& preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["descripcionSubSubCategoria"]) ){
+
+				ModeloCabeceras::mdlEditarCabecera("cabeceras", $datos);
+
+				$respuesta = ModeloSubSubCategorias::mdleditarSubSubCategoria("subsubcategorias", $datos);
+
+				if($respuesta == "ok"){
+
+					echo'<script>
+
+					swal({
+						  type: "success",
+						  title: "La sub-subcategoría ha sido editada correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
+
+									window.location = "subsubcategorias";
+
+									}
+								})
+
+					</script>';
+
+				}
+
 
 			}else{
 
@@ -67,13 +132,13 @@ class ControladorSubsubcategorias{
 
 					swal({
 						  type: "error",
-						  title: "¡La subcategoría no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡La sub-subcategoría no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "subcategorias";
+							window.location = "subsubcategorias";
 
 							}
 						})
@@ -87,20 +152,27 @@ class ControladorSubsubcategorias{
 	}
 
 	/*=============================================
-	ELIMINAR SUBCATEGORIA
+	ELIMINAR SUB-SUBCATEGORIA
 	=============================================*/
 
-	static public function ctrEliminarSubCategoria(){
+	static public function ctrEliminarSubSubCategoria(){
 
-		if(isset($_GET["idSubsubcategoria"])){
+		if(isset($_GET["idSubSubCategoria"])){
 
-			$datos = $_GET["idSubsubcategoria"];
+			$datos = $_GET["idSubSubCategoria"];
+
 
 			/*=============================================
-			QUITAR LAS SUBATEGORIAS DE LOS PRODUCTOS
+			ELIMINAR CABECERA
 			=============================================*/
 
-			$traerProductos = ModeloProductos::mdlMostrarProductos("productos", "id_subsubcategoria", $_GET["idSubsubcategoria"]);
+			ModeloCabeceras::mdlEliminarCabecera("cabeceras", $_GET["rutaCabecera"]);
+
+			/*=============================================
+			QUITAR LAS SUB-SUBCATEGORIAS DE LOS PRODUCTOS
+			=============================================*/
+
+			$traerProductos = ModeloProductos::mdlMostrarProductos("productos", "id_subsubcategoria", $_GET["idSubSubCategoria"]);
 
 			foreach ($traerProductos as $key => $value) {
 
@@ -113,7 +185,7 @@ class ControladorSubsubcategorias{
 
 			}
 
-			$respuesta = ModeloSubsubcategorias::mdlEliminarSubsubcategoria("subsubcategorias", $datos);
+			$respuesta = ModeloSubSubCategorias::mdlEliminarSubSubCategoria("subsubcategorias", $datos);
 
 			if($respuesta == "ok"){
 
@@ -121,7 +193,7 @@ class ControladorSubsubcategorias{
 
 				swal({
 					  type: "success",
-					  title: "La Sub-subcategoría ha sido borrada correctamente",
+					  title: "La sub-subcategoría ha sido borrada correctamente",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
 					  }).then(function(result){

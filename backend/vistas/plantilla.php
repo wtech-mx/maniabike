@@ -217,7 +217,7 @@ JS PERSONALIZADO
 <script src="vistas/js/gestorSlide.js"></script>
 <script src="vistas/js/gestorCategorias.js"></script>
 <script src="vistas/js/gestorSubCategorias.js"></script>
-<script src="vistas/js/gestorsubsubcategorias.js"></script>
+<script src="vistas/js/gestorSubSubCategorias.js"></script>
 <script src="vistas/js/gestorProductos.js"></script>
 <script src="vistas/js/gestorBanner.js"></script>
 <script src="vistas/js/gestorVentas.js"></script>
