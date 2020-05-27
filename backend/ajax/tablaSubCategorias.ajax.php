@@ -13,9 +13,9 @@ class TablaSubCategorias{
 
   /*=============================================
   MOSTRAR LA TABLA DE SUBCATEGORÍAS
-  =============================================*/ 
+  =============================================*/
 
-  public function mostrarTablaSubCategoria(){	
+  public function mostrarTablaSubCategoria(){
 
   	$item = null;
   	$valor = null;
@@ -40,7 +40,7 @@ class TablaSubCategorias{
 			if($categorias["categoria"] == ""){
 
 				$categoria = "SIN CATEGORÍA";
-			
+
 			}else{
 
 				$categoria = $categorias["categoria"];
@@ -90,7 +90,7 @@ class TablaSubCategorias{
 
 			if($subcategorias[$i]["oferta"] != 0){
 
-				if($subcategorias[$i]["precioOferta"] != 0){	
+				if($subcategorias[$i]["precioOferta"] != 0){
 
 					$tipoOferta = "PRECIO";
 					$valorOferta = "$ ".number_format($subcategorias[$i]["precioOferta"],2);
@@ -98,15 +98,15 @@ class TablaSubCategorias{
 				}else{
 
 					$tipoOferta = "DESCUENTO";
-					$valorOferta = $subcategorias[$i]["descuentoOferta"]." %";	
+					$valorOferta = $subcategorias[$i]["descuentoOferta"]." %";
 
-				}	
+				}
 
 			}else{
 
 				$tipoOferta = "No tiene oferta";
 				$valorOferta = 0;
-				
+
 			}
 
   			if($subcategorias[$i]["imgOferta"] != ""){
@@ -139,27 +139,27 @@ class TablaSubCategorias{
 			  "'.$tipoOferta.'",
    	  		  "'.$valorOferta.'",
               "'.$imgOferta.'",
-              "'.$subcategorias[$i]["finOferta"].'",			
+              "'.$subcategorias[$i]["finOferta"].'",
 	          "'.$acciones.'"
 	    	],';
-									
+
 			}
 
 	        $datosJson =  substr($datosJson, 0, -1);
 	        $datosJson .=  '
-            
+
           ]
         }';
 
-    echo $datosJson;    
-  	
+    echo $datosJson;
+
   }
 
 }
 
 /*=============================================
 ACTIVAR TABLA DE SUBCATEGORÍAS
-=============================================*/ 
+=============================================*/
 $activarSubcategoria = new TablaSubCategorias();
 $activarSubcategoria -> mostrarTablaSubCategoria();
 

@@ -9,18 +9,18 @@ require_once "../modelos/subcategorias.modelo.php";
 require_once "../controladores/cabeceras.controlador.php";
 require_once "../modelos/cabeceras.modelo.php";
 
-class TablaSubCategorias{
+class TablaSubsubCategorias{
 
   /*=============================================
-  MOSTRAR LA TABLA DE SUB-SUBCATEGORÍAS
+  MOSTRAR LA TABLA DE SUBCATEGORÍAS
   =============================================*/
 
-  public function mostrarTablaSubSubSubCategoria(){
+  public function mostrarTablaSubsubCategoria(){
 
   	$item = null;
   	$valor = null;
 
-  	$subsubcategorias = ControladorSubSubCategorias::ctrMostrarSubSubCategorias($item, $valor);
+  	$subsubcategorias = ControladorSubsubCategorias::ctrMostrarSubsubCategorias($item, $valor);
 
   	$datosJson = '{
 
@@ -29,17 +29,17 @@ class TablaSubCategorias{
 		for($i = 0; $i < count($subsubcategorias); $i++){
 
 			/*=============================================
-  			TRAER LAS SUBCATEGORÍAS
+  			TRAER LAS subCATEGORÍAS
   			=============================================*/
 
 			$item = "id";
 			$valor = $subsubcategorias[$i]["id_subcategoria"];
 
-			$subcategorias = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
+			$subcategorias = ControladorsubCategorias::ctrMostrarsubCategorias($item, $valor);
 
 			if($subcategorias["subcategoria"] == ""){
 
-				$subcategoria = "SIN SUBCATEGORÍA";
+				$subcategoria = "SIN CATEGORÍA";
 
 			}else{
 
@@ -54,51 +54,51 @@ class TablaSubCategorias{
 
   				$colorEstado = "btn-danger";
   				$textoEstado = "Desactivado";
-  				$estadoSubSubCategoria = 1;
+  				$estadoSubsubCategoria = 1;
 
   			}else{
 
   				$colorEstado = "btn-success";
   				$textoEstado = "Activado";
-  				$estadoSubSubCategoria = 0;
+  				$estadoSubCategoria = 0;
 
   			}
 
-  			$estado = "<button class='btn btn-xs btnActivar ".$colorEstado."' idSubSubCategoria='". $subsubcategorias[$i]["id"]."' estadoSubSubCategoria='".$estadoSubSubCategoria."'>".$textoEstado."</button>";
+  			$estado = "<button class='btn btn-xs btnActivar ".$colorEstado."' idSubsubCategoria='". $subsubcategorias[$i]["id"]."' estadoSubsubCategoria='".$estadoSubsubCategoria."'>".$textoEstado."</button>";
 
   			/*=============================================
   			REVISAR IMAGEN PORTADA
-  			=============================================
+  			=============================================*/
 
 			$item2 = "ruta";
-			$valor2 = $subcategorias[$i]["ruta"];
+			$valor2 = $subsubcategorias[$i]["ruta"];
 
 			$cabeceras = ControladorCabeceras::ctrMostrarCabeceras($item2, $valor2);
 
   			if($cabeceras["portada"] != ""){
 
-  				$imagenPortada = "<img src='".$cabeceras["portada"]."' class='img-thumbnail imgPortadaSubCategorias' width='100px'>";
+  				$imagenPortada = "<img src='".$cabeceras["portada"]."' class='img-thumbnail imgPortadaSubsubCategorias' width='100px'>";
 
   			}else{
 
-  				$imagenPortada = "<img src='vistas/img/cabeceras/default/default.jpg' class='img-thumbnail imgPortadaSubCategorias' width='100px'>";
-  			}*/
+  				$imagenPortada = "<img src='vistas/img/cabeceras/default/default.jpg' class='img-thumbnail imgPortadaSubsubCategorias' width='100px'>";
+  			}
 
 			/*=============================================
 			REVISAR OFERTAS
-			=============================================
+			=============================================*/
 
-			if($subcategorias[$i]["oferta"] != 0){
+			if($subsubcategorias[$i]["oferta"] != 0){
 
-				if($subcategorias[$i]["precioOferta"] != 0){
+				if($subsubcategorias[$i]["precioOferta"] != 0){
 
 					$tipoOferta = "PRECIO";
-					$valorOferta = "$ ".number_format($subcategorias[$i]["precioOferta"],2);
+					$valorOferta = "$ ".number_format($subsubcategorias[$i]["precioOferta"],2);
 
 				}else{
 
 					$tipoOferta = "DESCUENTO";
-					$valorOferta = $subcategorias[$i]["descuentoOferta"]." %";
+					$valorOferta = $subsubcategorias[$i]["descuentoOferta"]." %";
 
 				}
 
@@ -109,13 +109,13 @@ class TablaSubCategorias{
 
 			}
 
-  			if($subcategorias[$i]["imgOferta"] != ""){
+  			if($subsubcategorias[$i]["imgOferta"] != ""){
 
-	  			$imgOferta = "<img src='".$subcategorias[$i]["imgOferta"]."' class='img-thumbnail imgTablaSubCategorias' width='100px'>";
+	  			$imgOferta = "<img src='".$subsubcategorias[$i]["imgOferta"]."' class='img-thumbnail imgTablaSubsubCategorias' width='100px'>";
 
 	  		}else{
 
-	  			$imgOferta = "<img src='vistas/img/ofertas/default/default.jpg' class='img-thumbnail imgTablaSubCategorias' width='100px'>";
+	  			$imgOferta = "<img src='vistas/img/ofertas/default/default.jpg' class='img-thumbnail imgTablaSubsubCategorias' width='100px'>";
 
 	  		}
 
@@ -123,18 +123,23 @@ class TablaSubCategorias{
   			CREAR LAS ACCIONES
   			=============================================*/
 
-  			$acciones = "<div class='btn-group'><button class='btn btn-warning btnEditarSubSubCategoria' idSubSubCategoria='".$subsubcategorias[$i]["id"]."' data-toggle='modal' data-target='#modalEditarSubSubCategoria'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarSubSubCategoria' idSubSubCategoria='".$subsubcategorias[$i]["id"]."' rutaCabecera='".$subcategorias[$i]["ruta"]."'><i class='fa fa-times'></i></button></div>";
+  			$acciones = "<div class='btn-group'><button class='btn btn-warning btnEditarSubsubCategoria' idSubsubCategoria='".$subsubcategorias[$i]["id"]."' data-toggle='modal' data-target='#modalEditarSubsubCategoria'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarSubsubCategoria' idSubsubCategoria='".$subsubcategorias[$i]["id"]."' imgOferta='".$subsubcategorias[$i]["imgOferta"]."' rutaCabecera='".$subsubcategorias[$i]["ruta"]."' imgPortada='".$cabeceras["portada"]."'><i class='fa fa-times'></i></button></div>";
 
 
 			 $datosJson .=  '
 			 [
 		      "'.($i+1).'",
 		      "'.$subsubcategorias[$i]["subsubcategoria"].'",
-		      "'.$subcategoria.'",
+		      "'.$categoria.'",
 		      "'.$subsubcategorias[$i]["ruta"].'",
 		      "'.$estado.'",
 		      "'.$cabeceras["descripcion"].'",
 		      "'.$cabeceras["palabrasClaves"].'",
+		      "'.$imagenPortada.'",
+			  "'.$tipoOferta.'",
+   	  		  "'.$valorOferta.'",
+              "'.$imgOferta.'",
+              "'.$subcategorias[$i]["finOferta"].'",
 	          "'.$acciones.'"
 	    	],';
 
@@ -153,8 +158,8 @@ class TablaSubCategorias{
 }
 
 /*=============================================
-ACTIVAR TABLA DE SUB-SUBCATEGORÍAS
+ACTIVAR TABLA DE SUBCATEGORÍAS
 =============================================*/
-$activarSubcategoria = new TablaSubCategorias();
-$activarSubcategoria -> mostrarTablaSubCategoria();
+$activarSubsubcategoria = new TablaSubsubCategorias();
+$activarSubsubcategoria -> mostrarTablaSubsubCategoria();
 

@@ -1,87 +1,88 @@
 <?php
 
+
 require_once "../controladores/subsubcategorias.controlador.php";
 require_once "../modelos/subsubcategorias.modelo.php";
 
-require_once "../controladores/subcategorias.controlador.php";
-require_once "../modelos/subcategorias.modelo.php";
+require_once "../controladores/categorias.controlador.php";
+require_once "../modelos/categorias.modelo.php";
 
 require_once "../controladores/productos.controlador.php";
 require_once "../modelos/productos.modelo.php";
 
-class AjaxSubSubCategorias{
+class AjaxSubsubCategorias{
 
 	/*=============================================
-  	ACTIVAR SUB-SUBCATEGORIA
+  	ACTIVAR SUBsubCATEGORIA
  	=============================================*/
 
-	public $activarSubSubCategoria;
+	public $activarSubsubCategoria;
 	public $activarId;
 
-	public function ajaxActivarSubSubCategoria(){
+	public function ajaxActivarSubsubCategoria(){
 
 		$tabla = "subsubcategorias";
 
 		$item1 = "estado";
-		$valor1 = $this->activarSubSubCategoria;
+		$valor1 = $this->activarSubsubCategoria;
 
 		$item2 = "id";
 		$valor2 = $this->activarId;
 
 		ModeloProductos::mdlActualizarProductos("productos", $item1, $valor1, "id_subsubcategoria", $valor2);
 
-		$respuesta = ModeloSubSubCategorias::mdlActualizarSubSubCategorias($tabla, $item1, $valor1, $item2, $valor2);
+		$respuesta = ModeloSubsubCategorias::mdlActualizarSubsubCategorias($tabla, $item1, $valor1, $item2, $valor2);
 
 		echo $respuesta;
 
 	}
 
 	/*=============================================
-	VALIDAR NO REPETIR SUB-SUBCATEGORÍA
+	VALIDAR NO REPETIR SUBsubCATEGORÍA
 	=============================================*/
 
-	public $validarSubSubCategoria;
+	public $validarSubsubCategoria;
 
-	public function ajaxValidarSubSubCategoria(){
+	public function ajaxValidarSubsubCategoria(){
 
 		$item = "subsubcategoria";
-		$valor = $this->validarSubCategoria;
+		$valor = $this->validarSubsubCategoria;
 
-		$respuesta = ControladorSubSubCategorias::ctrMostrarSubSubCategorias($item, $valor);
+		$respuesta = ControladorSubsubCategorias::ctrMostrarSubsubCategorias($item, $valor);
 
 		echo json_encode($respuesta);
 
 	}
 
 	/*=============================================
-	EDITAR SUB-SUBCATEGORIA
+	EDITAR SUBsubCATEGORIA
 	=============================================*/
 
-	public $idSubSubCategoria;
+	public $idSubsubCategoria;
 
-	public function ajaxEditarSubSubCategoria(){
+	public function ajaxEditarSubsubCategoria(){
 
 		$item = "id";
-		$valor = $this->idSubSubCategoria;
+		$valor = $this->idSubsubCategoria;
 
-		$respuesta = ControladorSubSubCategorias::ctrMostrarSubSubCategorias($item, $valor);
+		$respuesta = ControladorSubsubCategorias::ctrMostrarSubsubCategorias($item, $valor);
 
 		echo json_encode($respuesta);
 
 	}
 
 	/*=============================================
-	TRAER SUB-SUBCATEGORIAS DE ACUERDO A LA SUBCATEGORÍA
+	TRAER SUBsubCATEGORIAS DE ACUERDO A LA CATEGORÍA
 	=============================================*/
 
-	public $idSubCategoria;
+	public $idCategoria;
 
-	public function ajaxTraerSubSubCategoria(){
+	public function ajaxTraerSubsubCategoria(){
 
-		$item = "id_subcategoria";
-		$valor = $this->idSubCategoria;
+		$item = "id_categoria";
+		$valor = $this->idCategoria;
 
-		$respuesta = ControladorSubSubCategorias::ctrMostrarSubSubCategorias($item, $valor);
+		$respuesta = ControladorSubsubCategorias::ctrMostrarSubsubCategorias($item, $valor);
 
 		echo json_encode($respuesta);
 
@@ -90,48 +91,48 @@ class AjaxSubSubCategorias{
 }
 
 /*=============================================
-ACTIVAR SUB-SUBCATEGORIA
+ACTIVAR SUBsubCATEGORIA
 =============================================*/
 
-if(isset($_POST["activarSubSubSubCategoria"])){
+if(isset($_POST["activarSubsubCategoria"])){
 
-	$activarSubSubCategoria = new AjaxSubSubCategorias();
-	$activarSubSubCategoria -> activarSubSubCategoria = $_POST["activarSubSubCategoria"];
-	$activarSubSubCategoria -> activarId = $_POST["activarId"];
-	$activarSubSubCategoria -> ajaxActivarSubSubCategoria();
+	$activarSubsubCategoria = new AjaxSubsubCategorias();
+	$activarSubsubCategoria -> activarSubsubCategoria = $_POST["activarSubsubCategoria"];
+	$activarSubsubCategoria -> activarId = $_POST["activarId"];
+	$activarSubsubCategoria -> ajaxActivarSubsubCategoria();
 
 }
 
 /*=============================================
-VALIDAR NO REPETIR SUB-SUBCATEGORÍA
+VALIDAR NO REPETIR SUBsubCATEGORÍA
 =============================================*/
 
-if(isset( $_POST["validarSubSubCategoria"])){
+if(isset( $_POST["validarSubsubCategoria"])){
 
-	$valSubSubCategoria = new AjaxSubSubCategorias();
-	$valSubSubCategoria -> validarSubSubCategoria = $_POST["validarSubSubCategoria"];
-	$valSubSubCategoria -> ajaxValidarSubSubCategoria();
+	$valSubsubCategoria = new AjaxSubsubCategorias();
+	$valSubsubCategoria -> validarSubsubCategoria = $_POST["validarSubsubCategoria"];
+	$valSubsubCategoria -> ajaxValidarSubsubCategoria();
 
 }
 
 /*=============================================
-EDITAR SUB-SUBCATEGORIA
+EDITAR SUBsubCATEGORIA
 =============================================*/
-if(isset($_POST["idSubSubCategoria"])){
+if(isset($_POST["idSubsubCategoria"])){
 
-	$editarSubSubCategoria = new AjaxSubSubCategorias();
-	$editarSubSubCategoria -> idSubSubCategoria = $_POST["idSubSubCategoria"];
-	$editarSubSubCategoria -> ajaxEditarSubSubCategoria();
+	$editarSubsubCategoria = new AjaxSubsubCategorias();
+	$editarSubsubCategoria -> idSubsubCategoria = $_POST["idSubsubCategoria"];
+	$editarSubsubCategoria -> ajaxEditarSubsubCategoria();
 
 }
 
 /*=============================================
-TRAER SUB-SUBCATEGORIAS DE ACUERDO A LA SUBCATEGORÍA
+TRAER SUBsubCATEGORIAS DE ACUERDO A LA CATEGORÍA
 =============================================*/
-if(isset($_POST["idSubCategoria"])){
+if(isset($_POST["idsubCategoria"])){
 
-	$traerSubSubCategoria = new AjaxSubSubCategorias();
-	$traerSubSubCategoria -> idSubCategoria = $_POST["idSubCategoria"];
-	$traerSubSubCategoria -> ajaxTraerSubSubCategoria();
+	$traerSubsubCategoria = new AjaxSubsubCategorias();
+	$traerSubsubCategoria -> idCategoria = $_POST["idsubCategoria"];
+	$traerSubsubCategoria -> ajaxTraerSubsubCategoria();
 
 }
