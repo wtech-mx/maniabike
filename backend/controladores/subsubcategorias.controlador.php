@@ -163,7 +163,7 @@ class ControladorSubsubCategorias{
 				if($_POST["selActivarOferta"] == "oferta"){
 
 					$datos = array("subsubcategoria"=>$_POST["tituloSubsubCategoria"],
-								   "idCategoria"=>$_POST["seleccionarCategoria"],
+								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
 								   "ruta"=>$_POST["rutaSubsubCategoria"],
 								   "estado"=> 1,
 								   "titulo"=>$_POST["tituloSubsubCategoria"],
@@ -179,7 +179,7 @@ class ControladorSubsubCategorias{
 				}else{
 
 					$datos = array("subsubcategoria"=>$_POST["tituloSubsubCategoria"],
-								   "idCategoria"=>$_POST["seleccionarCategoria"],
+								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
 								   "ruta"=>$_POST["rutaSubsubCategoria"],
 								   "estado"=> 1,
 								   "titulo"=>$_POST["tituloSubsubCategoria"],
@@ -409,7 +409,7 @@ class ControladorSubsubCategorias{
 
 					$datos = array("id"=>$_POST["editarIdSubsubCategoria"],
 								   "subsubcategoria"=>$_POST["editarTituloSubsubCategoria"],
-								   "idCategoria"=>$_POST["seleccionarCategoria"],
+								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
 								   "ruta"=>$_POST["rutaSubsubCategoria"],
 								   "estado"=> 1,
 								   "idCabecera"=>$_POST["editarIdCabecera"],
@@ -427,7 +427,7 @@ class ControladorSubsubCategorias{
 
 					$datos = array("id"=>$_POST["editarIdSubsubCategoria"],
 								   "subsubcategoria"=>$_POST["editarTituloSubsubCategoria"],
-								   "idCategoria"=>$_POST["seleccionarCategoria"],
+								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
 								   "ruta"=>$_POST["rutaSubsubCategoria"],
 								   "estado"=> 1,
 								   "idCabecera"=>$_POST["editarIdCabecera"],

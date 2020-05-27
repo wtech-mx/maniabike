@@ -4,8 +4,8 @@
 require_once "../controladores/subsubcategorias.controlador.php";
 require_once "../modelos/subsubcategorias.modelo.php";
 
-require_once "../controladores/categorias.controlador.php";
-require_once "../modelos/categorias.modelo.php";
+require_once "../controladores/subcategorias.controlador.php";
+require_once "../modelos/subcategorias.modelo.php";
 
 require_once "../controladores/productos.controlador.php";
 require_once "../modelos/productos.modelo.php";
@@ -75,12 +75,12 @@ class AjaxSubsubCategorias{
 	TRAER SUBsubCATEGORIAS DE ACUERDO A LA CATEGORÍA
 	=============================================*/
 
-	public $idCategoria;
+	public $idSubCategoria;
 
 	public function ajaxTraerSubsubCategoria(){
 
-		$item = "id_categoria";
-		$valor = $this->idCategoria;
+		$item = "id_subcategoria";
+		$valor = $this->idSubCategoria;
 
 		$respuesta = ControladorSubsubCategorias::ctrMostrarSubsubCategorias($item, $valor);
 
@@ -129,10 +129,10 @@ if(isset($_POST["idSubsubCategoria"])){
 /*=============================================
 TRAER SUBsubCATEGORIAS DE ACUERDO A LA CATEGORÍA
 =============================================*/
-if(isset($_POST["idsubCategoria"])){
+if(isset($_POST["idSubCategoria"])){
 
 	$traerSubsubCategoria = new AjaxSubsubCategorias();
-	$traerSubsubCategoria -> idCategoria = $_POST["idsubCategoria"];
+	$traerSubsubCategoria -> idSubCategoria = $_POST["idSubCategoria"];
 	$traerSubsubCategoria -> ajaxTraerSubsubCategoria();
 
 }

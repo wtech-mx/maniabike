@@ -39,7 +39,7 @@ class TablaSubsubCategorias{
 
 			if($subcategorias["subcategoria"] == ""){
 
-				$subcategoria = "SIN CATEGORÍA";
+				$subcategoria = "SIN SUBCATEGORÍA";
 
 			}else{
 
