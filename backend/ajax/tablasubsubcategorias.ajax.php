@@ -37,13 +37,16 @@ class TablaSubsubCategorias{
 
 			$subcategorias = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
 
-			if($subcategorias["subcategoria"] == ""){
+			var_dump($subcategorias);
+			var_dump($subcategorias[0][1]);
+
+			if($subcategorias[0][1] == ""){
 
 				$subcategoria = "SIN SUBCATEGORÍA";
 
 			}else{
 
-				$subcategoria = $subcategorias["subcategoria"];
+				$subcategoria = $subcategorias[0][1];
 			}
 
 			/*=============================================
