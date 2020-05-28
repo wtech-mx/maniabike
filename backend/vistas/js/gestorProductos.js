@@ -268,17 +268,17 @@ $(".seleccionarCategoria").change(function(){
 
 /*=============================================
 SUBIENDO LA FOTO DE PORTADA
-=============================================
+=============================================*/
 
 var imagenPortada = null;
 
 $(".fotoPortada").change(function(){
 
-	imagenPortada = this.files[0];*/
+	imagenPortada = this.files[0];
 
 	/*=============================================
   	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
-  	=============================================
+  	=============================================*/
 
   	if(imagenPortada["type"] != "image/jpeg" && imagenPortada["type"] != "image/png"){
 
@@ -317,7 +317,7 @@ $(".fotoPortada").change(function(){
 
   	}
 
-})*/
+})
 
 /*=============================================
 SUBIENDO LA FOTO PRINCIPAL
@@ -674,7 +674,8 @@ function agregarMiProducto(imagen){
 		}else{
 
 			var detalles = {"Color": $(".detalleColor").tagsinput('items'),
-			       			"Marca": $(".detalleMarca").tagsinput('items')};
+			       			"Marca": $(".detalleMarca").tagsinput('items'),
+			       			"Medidas": $(".detalleMedidas").tagsinput('items')};
 
 		}
 
@@ -877,6 +878,15 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 				)
 
 				$("#modalEditarProducto .detalleMarca").tagsinput('items');
+
+				//MEDIDAS
+				$(".editarMedidas").html(
+
+					'<input class="form-control input-lg tagsInput detalleMedidas" value="'+detalles.Medidas+'" data-role="tagsinput" type="text" style="padding:20px">'
+
+				)
+
+				$("#modalEditarProducto .detalleMedidas").tagsinput('items');
 
 				$(".bootstrap-tagsinput").css({"padding":"12px",
 											   "width":"110%"})
@@ -1334,7 +1344,8 @@ function editarMiProducto(imagen){
 
 		var detalles = {/*"Talla": $("#modalEditarProducto .detalleTalla").tagsinput('items'),*/
 		       			"Color": $("#modalEditarProducto .detalleColor").tagsinput('items'),
-		       			"Marca": $("#modalEditarProducto .detalleMarca").tagsinput('items')};
+		       			"Marca": $("#modalEditarProducto .detalleMarca").tagsinput('items'),
+		       			"Medidas": $("#modalEditarProducto .detalleMedidas").tagsinput('items')};
 
 	}
 

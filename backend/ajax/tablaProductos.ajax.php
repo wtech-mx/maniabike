@@ -148,9 +148,10 @@ class TablaProductos{
   				/*$talla = json_encode($detalles["Talla"]);*/
 				$color = json_encode($detalles["Color"]);
 				$marca = json_encode($detalles["Marca"]);
+        $medidas = json_encode($detalles["Medidas"]);
 
-				$vistaDetalles ="Color: ".str_replace(array("[","]",'"'), "", $color)." - Marca: ".str_replace(array("[","]",'"'), "", $marca);
-
+				$vistaDetalles ="Color: ".str_replace(array("[","]",'"'), "", $color)." - Marca: ".str_replace(array("[","]",'"'), "", $marca)." - Medidas: ".str_replace(array("[","]",'"'), "", $medidas);
+        var_dump($vistaDetalles);
 
   			}else{
 

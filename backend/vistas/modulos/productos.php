@@ -118,9 +118,6 @@ MODAL AGREGAR PRODUCTO
                   <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
 
                   <input type="text" class="form-control input-lg validarProducto tituloProducto"  placeholder="Ingresar título producto">
-                  <div>
-
-                  </div>
 
                 </div>
 
@@ -166,6 +163,24 @@ MODAL AGREGAR PRODUCTO
 
             </div>
 
+            <!--=====================================
+            ENTRADA PARA AGREGAR MULTIMEDIA
+            ======================================
+
+            <div class="form-group agregarMultimedia"> -->
+
+              <!--=====================================
+              SUBIR MULTIMEDIA DE PRODUCTO VIRTUAL
+              ======================================
+
+              <div class="input-group multimediaVirtual" style="display:none">
+
+                <span class="input-group-addon"><i class="fa fa-youtube-play"></i></span>
+
+                 <input type="text" class="form-control input-lg multimedia" placeholder="Ingresar código video youtube">
+
+              </div>-->
+
               <!--=====================================
               SUBIR MULTIMEDIA DE PRODUCTO FÍSICO
               ======================================-->
@@ -181,12 +196,120 @@ MODAL AGREGAR PRODUCTO
               </div>
 
             <!--=====================================
+            AGREGAR DETALLES VIRTUALES
+            ======================================
+
+
+            <div class="detallesVirtual" style="display:none">
+
+              <div class="panel">DETALLES</div>
+
+                 CLASES
+
+                <div class="form-group row">
+
+                  <div class="col-xs-3">
+                    <input class="form-control input-lg" type="text" value="Clases" readonly>
+                  </div>
+
+                  <div class="col-xs-9">
+                      <input type="text" class="form-control input-lg detalleClases" placeholder="Descripción">
+                  </div>
+
+                </div>
+
+                TIEMPO
+
+                <div class="form-group row">
+
+                  <div class="col-xs-3">
+                    <input class="form-control input-lg" type="text" value="Tiempo" readonly>
+                  </div>
+
+                  <div class="col-xs-9">
+                    <input type="text" class="form-control input-lg detalleTiempo" placeholder="Descripción">
+                  </div>
+
+                </div>
+                 NIVEL
+
+                <div class="form-group row">
+
+                  <div class="col-xs-3">
+                    <input class="form-control input-lg" type="text" value="Nivel" readonly>
+                  </div>
+
+                  <div class="col-xs-9">
+                      <input type="text" class="form-control input-lg detalleNivel" placeholder="Descripción">
+                  </div>
+
+                </div>
+
+               ACCESO
+
+                <div class="form-group row">
+
+                  <div class="col-xs-3">
+                    <input class="form-control input-lg" type="text" value="Acceso" readonly>
+                  </div>
+
+                  <div class="col-xs-9">
+                      <input type="text" class="form-control input-lg detalleAcceso" placeholder="Descripción">
+                  </div>
+
+                </div>
+
+                DISPOSITIVO
+
+                <div class="form-group row">
+
+                  <div class="col-xs-3">
+                    <input class="form-control input-lg" type="text" value="Dispositivo" readonly>
+                  </div>
+
+                  <div class="col-xs-9">
+                      <input type="text" class="form-control input-lg detalleDispositivo" placeholder="Descripción">
+                  </div>
+
+                </div>
+
+                CERTIFICADO
+
+                <div class="form-group row">
+
+                  <div class="col-xs-3">
+                    <input class="form-control input-lg" type="text" value="Certificado" readonly>
+                  </div>
+
+                  <div class="col-xs-9">
+                      <input type="text" class="form-control input-lg detalleCertificado" placeholder="Descripción">
+                  </div>
+
+                </div>
+
+            </div> -->
+
+            <!--=====================================
             AGREGAR DETALLES FÍSICOS
             ======================================-->
 
             <div class="detallesFisicos" style="display:none">
 
               <div class="panel">DETALLES</div>
+
+              <!-- TALLA
+
+                <div class="form-group row">
+
+                  <div class="col-xs-3">
+                    <input class="form-control input-lg" type="text" value="Volumen" readonly>
+                  </div>
+
+                  <div class="col-xs-9">
+                    <input class="form-control input-lg tagsInput detalleTalla" data-role="tagsinput" type="text" placeholder="Separe valores con coma">
+                  </div>
+
+              </div>-->
 
               <!-- COLOR -->
 
@@ -212,6 +335,20 @@ MODAL AGREGAR PRODUCTO
 
                 <div class="col-xs-9">
                     <input class="form-control input-lg tagsInput detalleMarca" data-role="tagsinput" type="text" placeholder="Separe valores con coma">
+                </div>
+
+              </div>
+
+              <!-- Medidas -->
+
+              <div class="form-group row">
+
+                <div class="col-xs-3">
+                  <input class="form-control input-lg" type="text" value="Medidas" readonly>
+                </div>
+
+                <div class="col-xs-9">
+                    <input class="form-control input-lg tagsInput detalleMedidas" data-role="tagsinput" type="text" placeholder="Separe valores con coma">
                 </div>
 
               </div>
@@ -280,7 +417,7 @@ MODAL AGREGAR PRODUCTO
 
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
-                <textarea type="text" maxlength="600" rows="3" class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción producto"></textarea>
+                <textarea type="text" maxlength="320" rows="3" class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción producto"></textarea>
 
               </div>
 
@@ -750,7 +887,7 @@ MODAL EDITAR PRODUCTO
 
               <!-- TALLA
 
-              <div class="form-group row">
+                <div class="form-group row">
 
                   <div class="col-xs-3">
                     <input class="form-control input-lg" type="text" value="Volumen" readonly>
@@ -791,6 +928,20 @@ MODAL EDITAR PRODUCTO
 
               </div>
 
+              <!-- Medidas -->
+
+              <div class="form-group row">
+
+                <div class="col-xs-3">
+                  <input class="form-control input-lg" type="text" value="Medidas" readonly>
+                </div>
+
+                <div class="col-xs-9 editarMedidas">
+                  <!--   <input class="form-control input-lg tagsInput detalleMedidas" data-role="tagsinput" type="text" placeholder="Separe valores con coma"> -->
+                </div>
+
+              </div>
+
             </div>
 
            <!--=====================================
@@ -815,6 +966,7 @@ MODAL EDITAR PRODUCTO
                     $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 
                     foreach ($categorias as $key => $value) {
+
                       echo '<option value="'.$value["id"].'">'.$value["categoria"].'</option>';
                     }
 
@@ -856,7 +1008,7 @@ MODAL EDITAR PRODUCTO
 
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
-                <textarea type="text" maxlength="600" rows="3" class="form-control input-lg descripcionProducto"></textarea>
+                <textarea type="text" maxlength="320" rows="3" class="form-control input-lg descripcionProducto"></textarea>
 
               </div>
 
