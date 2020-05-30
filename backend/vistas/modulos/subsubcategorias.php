@@ -124,7 +124,7 @@ MODAL AGREGAR SUBCATEGORÍA
 
                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
 
-                <input type="text" class="form-control input-lg rutaSubSubCategoria" name="rutaSubSubCategoria" placeholder="Ruta url de la subcategoría" readonly required>
+                <input type="text" class="form-control input-lg rutaSubsubCategoria" name="rutaSubsubCategoria" placeholder="Ruta url de la subcategoría" readonly required>
 
               </div>
 
@@ -391,7 +391,7 @@ MODAL EDITAR SUBCATEGORÍA
 
                 <span class="input-group-addon"><i class="fa fa-link"></i></span>
 
-                <input type="text" class="form-control input-lg rutaSubSubCategoria" name="rutaSubSubCategoria" readonly required>
+                <input type="text" class="form-control input-lg rutaSubsubCategoria" name="rutaSubsubCategoria" readonly required>
 
               </div>
 

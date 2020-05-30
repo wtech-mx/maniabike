@@ -154,7 +154,7 @@ function limpiarUrl(texto){
 
 $(".tituloSubSubCategoria").change(function(){
 
-	$(".rutaSubSubCategoria").val(
+	$(".rutaSubsubCategoria").val(
 
 		limpiarUrl($(".tituloSubSubCategoria").val())
 
