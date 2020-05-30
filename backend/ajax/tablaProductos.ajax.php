@@ -509,7 +509,7 @@ class TablaProductos{
 
             "'.$operacion.' kg",
 
-            "'.$productos[$i]["Stock"].'",
+            "'.$productos[$i]["stock"].'",
 
 				  	"'.$entrega.'",
 
