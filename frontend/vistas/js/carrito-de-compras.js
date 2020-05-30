@@ -62,7 +62,7 @@ for(var i = 0; i < indice.length; i++){
 				processData:false,
 				dataType: "json",
 				success: function(respuesta){
-		
+
 					if(respuesta["precioOferta"] == 0){
 
 						precio = respuesta["precio"];
@@ -70,32 +70,32 @@ for(var i = 0; i < indice.length; i++){
 					}else{
 
 						precio = respuesta["precioOferta"];
-						
+
 					}
 
 					$(".cuerpoCarrito").append(
 
 						'<div clas="row itemCarrito">'+
-							
+
 							'<div class="col-sm-1 col-xs-12">'+
-								
+
 								'<br>'+
 
 								'<center>'+
-									
+
 									'<button class="btn btn-default backColor quitarItemCarrito" idProducto="'+item.idProducto+'" peso="'+item.peso+'">'+
-										
+
 										'<i class="fa fa-times"></i>'+
 
 									'</button>'+
 
-								'</center>'+	
+								'</center>'+
 
 							'</div>'+
 							'<div class="col-sm-1 col-xs-12">'+
-								
+
 								'<figure>'+
-									
+
 									'<img src="'+item.imagen+'" class="img-thumbnail">'+
 
 								'</figure>'+
@@ -120,13 +120,13 @@ for(var i = 0; i < indice.length; i++){
 
 							'<div class="col-md-2 col-sm-3 col-xs-8">'+
 
-								'<br>'+	
+								'<br>'+
 
 								'<div class="col-xs-8">'+
 
 									'<center>'+
-									
-										'<input type="number" class="form-control cantidadItem" min="1" value="'+item.cantidad+'" tipo="'+item.tipo+'" precio="'+precio+'" idProducto="'+item.idProducto+'" item="'+index+'">'+	
+
+										'<input type="number" class="form-control cantidadItem" min="1" value="'+item.cantidad+'" tipo="'+item.tipo+'" precio="'+precio+'" idProducto="'+item.idProducto+'" item="'+index+'">'+
 
 									'</center>'+
 
@@ -135,17 +135,17 @@ for(var i = 0; i < indice.length; i++){
 							'</div>'+
 
 							'<div class="col-md-2 col-sm-1 col-xs-4 text-center">'+
-								
+
 								'<br>'+
 
 								'<p class="subTotal'+index+' subtotales">'+
-									
+
 									'<strong>MXN $<span>'+(Number(item.cantidad)*Number(precio))+'</span></strong>'+
 
 								'</p>'+
 
 							'</div>'+
-							
+
 						'</div>'+
 
 						'<div class="clearfix"></div>'+
@@ -169,14 +169,14 @@ for(var i = 0; i < indice.length; i++){
 
 					cestaCarrito(precioCarritoCompra.length);
 
-					sumaSubtotales();		
-				
+					sumaSubtotales();
+
 				}
 
-			})	
+			})
 
-		}		
-		
+		}
+
 	}
 
 }
@@ -213,7 +213,7 @@ $(".agregarCarrito").click(function(){
 	}else{
 
 		var seleccionarDetalle = $(".seleccionarDetalle");
-		
+
 		for(var i = 0; i < seleccionarDetalle.length; i++){
 
 			console.log("seleccionarDetalle", $(seleccionarDetalle[i]).val());
@@ -221,7 +221,7 @@ $(".agregarCarrito").click(function(){
 			if($(seleccionarDetalle[i]).val() == ""){
 
 				swal({
-					  title: "Debe seleccionar Talla y Color",
+					  title: "Debe seleccionar caracteristicas del producto",
 					  text: "",
 					  type: "warning",
 					  showCancelButton: false,
@@ -240,7 +240,7 @@ $(".agregarCarrito").click(function(){
 
 			}
 
-		}		
+		}
 
 	}
 
@@ -308,7 +308,7 @@ $(".agregarCarrito").click(function(){
 
 		localStorage.setItem("cantidadCesta", cantidadCesta);
 		localStorage.setItem("sumaCesta", sumaCesta);
-		
+
 		/*=============================================
 		MOSTRAR ALERTA DE QUE EL PRODUCTO YA FUE AGREGADO
 		=============================================*/
@@ -324,9 +324,9 @@ $(".agregarCarrito").click(function(){
 			  closeOnConfirm: false
 			},
 			function(isConfirm){
-				if (isConfirm) {	   
+				if (isConfirm) {
 					 window.location = rutaOculta+"carrito-de-compras";
-				} 
+				}
 		});
 
 	}
@@ -389,12 +389,12 @@ $(document).on("click", ".quitarItemCarrito", function(){
 
 		/*=============================================
 		SI YA NO QUEDAN PRODUCTOS HAY QUE REMOVER TODO
-		=============================================*/	
+		=============================================*/
 
 		localStorage.removeItem("listaProductos");
 
 		localStorage.setItem("cantidadCesta","0");
-		
+
 		localStorage.setItem("sumaCesta","0");
 
 		$(".cantidadCesta").html("0");
@@ -474,15 +474,15 @@ function sumaSubtotales(){
 
 	var subtotales = $(".subtotales span");
 	var arraySumaSubtotales = [];
-	
+
 	for(var i = 0; i < subtotales.length; i++){
 
 		var subtotalesArray = $(subtotales[i]).html();
 		arraySumaSubtotales.push(Number(subtotalesArray));
-		
+
 	}
 
-	
+
 	function sumaArraySubtotales(total, numero){
 
 		return total + numero;
@@ -490,7 +490,7 @@ function sumaSubtotales(){
 	}
 
 	var sumaTotal = arraySumaSubtotales.reduce(sumaArraySubtotales);
-	
+
 	$(".sumaSubTotal").html('<strong>MXN $<span>'+(sumaTotal).toFixed(2)+'</span></strong>');
 
 	$(".sumaCesta").html((sumaTotal).toFixed(2));
@@ -514,18 +514,18 @@ function cestaCarrito(cantidadProductos){
 	=============================================*/
 
 	if(cantidadProductos != 0){
-		
+
 		var cantidadItem = $(".cuerpoCarrito .cantidadItem");
 
 		var arraySumaCantidades = [];
-	
+
 		for(var i = 0; i < cantidadItem .length; i++){
 
 			var cantidadItemArray = $(cantidadItem[i]).val();
 			arraySumaCantidades.push(Number(cantidadItemArray));
-			
+
 		}
-	
+
 		function sumaArrayCantidades(total, numero){
 
 			return total + numero;
@@ -533,7 +533,7 @@ function cestaCarrito(cantidadProductos){
 		}
 
 		var sumaTotalCantidades = arraySumaCantidades.reduce(sumaArrayCantidades);
-		
+
 		$(".cantidadCesta").html(sumaTotalCantidades );
 		localStorage.setItem("cantidadCesta", sumaTotalCantidades);
 
@@ -569,7 +569,7 @@ $("#btnCheckout").click(function(){
 	=============================================*/
 
 	var sumaSubTotal = $(".sumaSubTotal span")
-	
+
 	$(".valorSubtotal").html($(sumaSubTotal).html());
 	$(".valorSubtotal").attr("valor",$(sumaSubTotal).html());
 
@@ -578,21 +578,21 @@ $("#btnCheckout").click(function(){
 	=============================================*/
 
 	var impuestoTotal = ($(".valorSubtotal").html() * $("#tasaImpuesto").val()) /100;
-	
+
 	$(".valorTotalImpuesto").html((impuestoTotal).toFixed(2));
 	$(".valorTotalImpuesto").attr("valor",(impuestoTotal).toFixed(2));
 
 	sumaTotalCompra()
 
 	/*=============================================
-	VARIABLES ARRAY 
+	VARIABLES ARRAY
 	=============================================*/
 
 	for(var i = 0; i < titulo.length; i++){
 
 		var pesoArray = $(peso[i]).attr("peso");
 		var tituloArray = $(titulo[i]).html();
-		var cantidadArray = $(cantidad[i]).val();		
+		var cantidadArray = $(cantidad[i]).val();
 		var subtotalArray = $(subtotal[i]).html();
 
 		/*=============================================
@@ -608,7 +608,7 @@ $("#btnCheckout").click(function(){
 		}
 
 		var sumaTotalPeso = cantidadPeso.reduce(sumaArrayPeso);
-		
+
 		/*=============================================
 		MOSTRAR PRODUCTOS DEFINITIVOS A COMPRAR
 		=============================================*/
@@ -622,13 +622,13 @@ $("#btnCheckout").click(function(){
 		/*=============================================
 		SELECCIONAR PAÍS DE ENVÍO SI HAY PRODUCTOS FÍSICOS
 		=============================================*/
-	
+
 		tipoArray.push($(cantidad[i]).attr("tipo"));
-		
+
 		function checkTipo(tipo){
 
 			return tipo == "fisico";
-		
+
 		}
 
 	}
@@ -640,7 +640,7 @@ $("#btnCheckout").click(function(){
 	if(tipoArray.find(checkTipo) == "fisico"){
 
 		$(".seleccionePais").html('<select class="form-control" id="seleccionarPais" required>'+
-						
+
 						          '<option value="">Seleccione el país</option>'+
 
 					              '</select>');
@@ -669,7 +669,7 @@ $("#btnCheckout").click(function(){
 					var codPais = item.code;
 
 					$("#seleccionarPais").append('<option value="'+codPais+'">'+pais+'</option>');
-				
+
 				}
 
 			}
@@ -689,7 +689,7 @@ $("#btnCheckout").click(function(){
 			if(pais == tasaPais){
 
 				var resultadoPeso = sumaTotalPeso * $("#recojertienda").val();
-				
+
 				if(resultadoPeso < $("#tasaMinimaNal").val()){
 
 					$(".valorTotalEnvio").html($("#tasaMinimaNal").val());
@@ -702,7 +702,7 @@ $("#btnCheckout").click(function(){
 				}
 
 				var resultadoPeso = sumaTotalPeso * $("#envioNacional").val();
-				
+
 				if(resultadoPeso < $("#tasaMinimaNal").val()){
 
 					$(".valorTotalEnvio").html($("#tasaMinimaNal").val());
@@ -717,7 +717,7 @@ $("#btnCheckout").click(function(){
 			}else{
 
 				var resultadoPeso = sumaTotalPeso * $("#envioInternacional").val();
-				
+
 				if(resultadoPeso < $("#tasaMinimaInt").val()){
 
 					$(".valorTotalEnvio").html($("#tasaMinimaInt").val());
@@ -729,7 +729,7 @@ $("#btnCheckout").click(function(){
 					$(".valorTotalEnvio").attr("valor",resultadoPeso);
 				}
 
-			}	
+			}
 
 			sumaTotalCompra();
 			pagarConPayu();
@@ -752,8 +752,8 @@ SUMA TOTAL DE LA COMPRA
 =============================================*/
 function sumaTotalCompra(){
 
-	var sumaTotalTasas = Number($(".valorSubtotal").html())+ 
-	                     Number($(".valorTotalEnvio").html())+ 
+	var sumaTotalTasas = Number($(".valorSubtotal").html())+
+	                     Number($(".valorTotalEnvio").html())+
 	                     Number($(".valorTotalImpuesto").html());
 
 
@@ -850,7 +850,7 @@ $("#cambiarDivisa").change(function(){
 		return;
 
 	}
-	
+
 	var divisa = $(this).val();
 
 	$.ajax({
@@ -862,11 +862,11 @@ $("#cambiarDivisa").change(function(){
 	    processData: false,
 	    dataType:"jsonp",
 	    success:function(respuesta){
-	        	
+
 	    	var conversion = (respuesta["MXN_"+divisa]).toFixed(2);
 
 	    	$(".cambioDivisa").html(divisa);
-	    	
+
 	    	if(divisa == "MXN"){
 
 	    		$(".valorSubtotal").html($(".valorSubtotal").attr("valor"))
@@ -883,11 +883,11 @@ $("#cambiarDivisa").change(function(){
 		    		$(valorItem[i]).html($(valorItem[i]).attr("valor"));
 
 		    	}
-	    		
+
 	    	}else{
-	
+
 		    	$(".valorSubtotal").html(
-		    		
+
 		    		Math.ceil(Number(conversion) * Number($(".valorSubtotal").attr("valor"))*100)/100
 
 		    	)
@@ -917,7 +917,7 @@ $("#cambiarDivisa").change(function(){
 		    	for(var i = 0; i < valorItem.length; i++){
 
 		    		$(valorItem[i]).html(
-		    			
+
 		    			(Number(conversion) * Number($(valorItem[i]).attr("valor"))).toFixed(2)
 
 		    		);
@@ -932,9 +932,9 @@ $("#cambiarDivisa").change(function(){
 
 	    }
 
-	})	
+	})
 
-	
+
 
 })
 
@@ -1005,7 +1005,7 @@ $(".btnPagar").click(function(){
          contentType: false,
          processData: false,
          success:function(respuesta){
-         	   	
+
                window.location = respuesta;
 
          }
@@ -1027,9 +1027,9 @@ function pagarConPayu(){
 	if($("#seleccionarPais").val() == ""){
 
 		$(".formPayu").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
-		
+
 		$(".formPayu input[name='Submit']").attr("type","button");
-		
+
 		return;
 
 	}
@@ -1078,7 +1078,7 @@ function pagarConPayu(){
 	      contentType: false,
 	      processData: false,
 	      success:function(respuesta){
-	          
+
 	          var merchantId = JSON.parse(respuesta).merchantIdPayu;
 	          var accountId = JSON.parse(respuesta).accountIdPayu;
 	          var apiKey = JSON.parse(respuesta).apiKeyPayu;
@@ -1090,7 +1090,7 @@ function pagarConPayu(){
 	          var cantidadToString = cantidadArray.toString();
 	          var cantidad = cantidadToString.replace(/,/g, "-");
 	          var signature = hex_md5(apiKey+"~"+merchantId+"~"+referenceCode+"~"+total+"~"+divisa);
-	       
+
 
 	          if(divisa == "COP"){
 
@@ -1100,7 +1100,7 @@ function pagarConPayu(){
 
 	          	var taxReturnBase = 0;
 
-	          }        
+	          }
 
 	          if(modo == "sandbox"){
 
@@ -1117,7 +1117,7 @@ function pagarConPayu(){
 	      	  if(envio != 0){
 
 	      	  	var tipoEnvio = "YES";
-	      	  
+
 	      	  }else{
 
 	      	  	var tipoEnvio = "NO";
@@ -1183,7 +1183,7 @@ $(".agregarGratis").click(function(){
       	contentType: false,
       	processData: false,
       	success:function(respuesta){
-      	    
+
       	    if(respuesta != "false"){
 
   	    		swal({
@@ -1212,7 +1212,7 @@ $(".agregarGratis").click(function(){
 						if($(seleccionarDetalle[i]).val() == ""){
 
 								swal({
-									  title: "Debe seleccionar Marca y Color",
+									  title: "Debe seleccionar caracteristicas del producto",
 									  text: "",
 									  type: "warning",
 									  showCancelButton: false,
@@ -1229,7 +1229,7 @@ $(".agregarGratis").click(function(){
 
 						}
 
-					}		
+					}
 
 				}
 
@@ -1238,13 +1238,13 @@ $(".agregarGratis").click(function(){
 					window.location = rutaOculta+"index.php?ruta=finalizar-compra&gratis=true&producto="+idProducto+"&titulo="+titulo;
 
 				}
-    	    
+
       	    }
 
       	}
 
 	})
-	
+
 
 })
 

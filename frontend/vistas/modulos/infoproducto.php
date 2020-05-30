@@ -9,13 +9,13 @@ $url = Ruta::ctrRuta();
 BREADCRUMB INFOPRODUCTOS
 ======================================-->
 <div class="container-fluid well well-sm">
-	
+
 	<div class="container">
-		
+
 		<div class="row">
-			
+
 			<ul class="breadcrumb fondoBreadcrumb text-uppercase">
-				
+
 				<li><a href="<?php echo $url;  ?>">INICIO</a></li>
 				<li class="active pagActiva"><?php echo $rutas[0] ?></li>
 
@@ -31,9 +31,9 @@ BREADCRUMB INFOPRODUCTOS
 INFOPRODUCTOS
 ======================================-->
 <div class="container-fluid infoproducto">
-	
+
 	<div class="container">
-		
+
 		<div class="row">
 
 			<?php
@@ -52,7 +52,7 @@ INFOPRODUCTOS
 				if($infoproducto["tipo"] == "fisico"){
 
 					echo '<div class="col-md-5 col-sm-6 col-xs-12 visorImg">
-						
+
 							<figure class="visor">';
 
 							if($multimedia != null){
@@ -61,12 +61,12 @@ INFOPRODUCTOS
 
 									echo '<img id="lupa'.($i+1).'" class="img-thumbnail" src="'.$servidor.$multimedia[$i]["foto"].'">';
 
-								}								
+								}
 
 								echo '</figure>
 
 								<div class="flexslider">
-								  
+
 								  <ul class="slides">';
 
 								for($i = 0; $i < count($multimedia); $i ++){
@@ -77,13 +77,13 @@ INFOPRODUCTOS
 
 								}
 
-							}		
-							    						 
+							}
+
 							  echo '</ul>
 
 							</div>
 
-						</div>';			
+						</div>';
 
 				}else{
 
@@ -92,12 +92,12 @@ INFOPRODUCTOS
 					=============================================*/
 
 					echo '<div class="col-sm-6 col-xs-12">
-							
+
 						<iframe class="videoPresentacion" src="https://www.youtube.com/embed/'.$infoproducto["multimedia"].'?rel=0&autoplay=0" width="100%" frameborder="0" allowfullscreen></iframe>
 
 					</div>';
 
-				}			
+				}
 
 			?>
 
@@ -123,11 +123,11 @@ INFOPRODUCTOS
 				======================================-->
 
 				<div class="col-xs-6">
-					
+
 					<h6>
-						
+
 						<a href="javascript:history.back()" class="text-muted">
-							
+
 							<i class="fa fa-reply"></i> Continuar Comprando
 
 						</a>
@@ -141,11 +141,11 @@ INFOPRODUCTOS
 				======================================-->
 
 				<div class="col-xs-6">
-					
+
 					<h6>
-						
+
 						<a class="dropdown-toggle pull-right text-muted" data-toggle="dropdown" href="">
-							
+
 							<i class="fa fa-plus"></i> Compartir
 
 						</a>
@@ -165,7 +165,7 @@ INFOPRODUCTOS
 									Google
 								</p>
 							</li>
-							
+
 						</ul>
 
 					</h6>
@@ -183,7 +183,7 @@ INFOPRODUCTOS
 					echo '<div class="comprarAhora" style="display:none">
 
 
-						<button class="btn btn-default backColor quitarItemCarrito" idProducto="'.$infoproducto["id"].'" peso="'.$infoproducto["peso"].'"></button>
+						<button class="btn btn-default backColor quitarItemCarrito" idProducto="'.$infoproducto["id"].'"></button>
 
 						<p class="tituloCarritoCompra text-left">'.$infoproducto["titulo"].'</p>';
 
@@ -193,7 +193,7 @@ INFOPRODUCTOS
 							echo'<input class="cantidadItem" value="1" tipo="'.$infoproducto["tipo"].'" precio="'.$infoproducto["precio"].'" idProducto="'.$infoproducto["id"].'">
 
 							<p class="subTotal'.$infoproducto["id"].' subtotales">
-						
+
 								<strong>MXN $<span>'.$infoproducto["precio"].'</span></strong>
 
 							</p>
@@ -206,7 +206,7 @@ INFOPRODUCTOS
 							echo'<input class="cantidadItem" value="1" tipo="'.$infoproducto["tipo"].'" precio="'.$infoproducto["precioOferta"].'" idProducto="'.$infoproducto["id"].'">
 
 							<p class="subTotal'.$infoproducto["id"].' subtotales">
-						
+
 								<strong>MXN $<span>'.$infoproducto["precioOferta"].'</span></strong>
 
 							</p>
@@ -216,7 +216,7 @@ INFOPRODUCTOS
 
 						}
 
-					
+
 
 
 
@@ -225,8 +225,8 @@ INFOPRODUCTOS
 
 					/*=============================================
 					TITULO
-					=============================================*/				
-					
+					=============================================*/
+
 					if($infoproducto["oferta"] == 0){
 
 						$fecha = date('Y-m-d');
@@ -244,7 +244,7 @@ INFOPRODUCTOS
 							<br>
 
 							<small>
-						
+
 								<span class="label label-warning">Nuevo</span>
 
 							</small>
@@ -268,13 +268,13 @@ INFOPRODUCTOS
 							if($infoproducto["precio"] != 0){
 
 								echo '<small>
-							
+
 									<span class="label label-warning">'.$infoproducto["descuentoOferta"].'% off</span>
 
 								</small>';
 
 							}
-							
+
 							echo '</h1>';
 
 						}else{
@@ -286,13 +286,13 @@ INFOPRODUCTOS
 							if($infoproducto["precio"] != 0){
 
 								echo '<small>
-									<span class="label label-warning">Nuevo</span> 
-									<span class="label label-warning">'.$infoproducto["descuentoOferta"].'% off</span> 
+									<span class="label label-warning">Nuevo</span>
+									<span class="label label-warning">'.$infoproducto["descuentoOferta"].'% off</span>
 
 								</small>';
 
 							}
-							
+
 							echo '</h1>';
 
 						}
@@ -300,7 +300,7 @@ INFOPRODUCTOS
 
 					/*=============================================
 					TITULO
-					=============================================*/	
+					=============================================*/
 
 					if($infoproducto["precio"] == 0){
 
@@ -317,13 +317,13 @@ INFOPRODUCTOS
 							echo '<h2 class="text-muted">
 
 								<span>
-								
+
 									<strong class="oferta">MXN $'.$infoproducto["precio"].'</strong>
 
 								</span>
 
 								<span>
-									
+
 									$'.$infoproducto["precioOferta"].'
 
 								</span>
@@ -336,20 +336,21 @@ INFOPRODUCTOS
 
 					/*=============================================
 					DESCRIPCIÓN
-					=============================================*/		
+					=============================================*/
 
 					echo '<p>'.$infoproducto["descripcion"].'</p>';
 
 				?>
-				
+
 				<!--=====================================
 				CARACTERÍSTICAS DEL PRODUCTO
 				======================================-->
 
 				<hr>
 
+				<h4 class="text-muted text-uppercase">Seleccione Caracteristicas del Producto</h4>
 				<div class="form-group row">
-					
+
 				<?php
 
 					if($infoproducto["detalles"] != null){
@@ -358,17 +359,17 @@ INFOPRODUCTOS
 
 						if($infoproducto["tipo"] == "fisico"){
 
-							/*if($detalles["Talla"]!=null){
+							if($detalles["Medidas"]!=null){
 
 								echo '<div class="col-md-3 col-xs-12">
 
-									<select class="form-control seleccionarDetalle" id="seleccionarTalla">
-										
-										<option value="">Talla</option>';
+									<select class="form-control seleccionarDetalle" id="seleccionarMedidas">
 
-										for($i = 0; $i <= count($detalles["Talla"]); $i++){
+										<option value="">Medidas</option>';
 
-											echo '<option value="'.$detalles["Talla"][$i].'">'.$detalles["Talla"][$i].'</option>';
+										for($i = 0; $i <= count($detalles["Medidas"]); $i++){
+
+											echo '<option value="'.$detalles["Medidas"][$i].'">'.$detalles["Medidas"][$i].'</option>';
 
 										}
 
@@ -376,14 +377,14 @@ INFOPRODUCTOS
 
 								</div>';
 
-							}*/
+							}
 
 							if($detalles["Color"]!=null){
 
 								echo '<div class="col-md-3 col-xs-12">
 
 									<select class="form-control seleccionarDetalle" id="seleccionarColor">
-										
+
 										<option value="">Color</option>';
 
 										for($i = 0; $i <= count($detalles["Color"]); $i++){
@@ -403,7 +404,7 @@ INFOPRODUCTOS
 								echo '<div class="col-md-3 col-xs-12">
 
 									<select class="form-control seleccionarDetalle" id="seleccionarMarca">
-										
+
 										<option value="">Marca</option>';
 
 										for($i = 0; $i <= count($detalles["Marca"]); $i++){
@@ -462,7 +463,7 @@ INFOPRODUCTOS
 								<span class="label label-default" style="font-weight:100">
 
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata | 
+									Entrega inmediata |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' inscritos |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
@@ -515,7 +516,7 @@ INFOPRODUCTOS
 								<small>
 
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata <br> 
+									Entrega inmediata <br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventas"].' ventas <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
@@ -536,13 +537,13 @@ INFOPRODUCTOS
 								<hr>
 
 								<span class="label label-default" style="font-weight:100">
-								
+
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									'.$infoproducto["entrega"].' días hábiles para la entrega  |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' solicitudes  |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].'</span> personas  
+									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].'</span> personas
 
 								</span>
 
@@ -553,13 +554,13 @@ INFOPRODUCTOS
 								<hr>
 
 								<small>
-								
+
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									'.$infoproducto["entrega"].' días hábiles para la entrega  <br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' solicitudes  <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].' </span> personas 
+									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].' </span> personas
 
 								</small>
 
@@ -603,7 +604,7 @@ INFOPRODUCTOS
 
 						}
 
-					}				
+					}
 
 				?>
 
@@ -624,7 +625,7 @@ INFOPRODUCTOS
 						if(isset($_SESSION["validarSesion"]) && $_SESSION["validarSesion"] == "ok"){
 
 							if($infoproducto["tipo"]=="virtual"){
-						
+
 								echo '<button class="btn btn-default btn-block btn-lg backColor agregarGratis" idProducto="'.$infoproducto["id"].'" idUsuario="'.$_SESSION["id"].'" tipo="'.$infoproducto["tipo"].'" titulo="'.$infoproducto["titulo"].'">ACCEDER AHORA</button>';
 
 							}else{
@@ -675,7 +676,7 @@ INFOPRODUCTOS
 
 								echo '<a href="#modalIngreso" data-toggle="modal"><button class="btn btn-default btn-block btn-lg">
 									<small>COMPRAR AHORA</small></button></a>';
-			
+
 							}
 
 							echo '</div>
@@ -683,17 +684,17 @@ INFOPRODUCTOS
 								<div class="col-md-6 col-xs-12">';
 
 								if($infoproducto["oferta"] != 0){
-									
-									echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$infoproducto["id"].'" imagen="'.$servidor.$infoproducto["portada"].'" titulo="'.$infoproducto["titulo"].'" precio="'.$infoproducto["precioOferta"].'" tipo="'.$infoproducto["tipo"].'" peso="'.$infoproducto["peso"].'">';
+
+									echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$infoproducto["id"].'" imagen="'.$servidor.$infoproducto["portada"].'" titulo="'.$infoproducto["titulo"].'" precio="'.$infoproducto["precioOferta"].'" tipo="'.$infoproducto["tipo"].'">';
 
 								}else{
 
-									echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$infoproducto["id"].'" imagen="'.$servidor.$infoproducto["portada"].'" titulo="'.$infoproducto["titulo"].'" precio="'.$infoproducto["precio"].'" tipo="'.$infoproducto["tipo"].'" peso="'.$infoproducto["peso"].'">';
+									echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$infoproducto["id"].'" imagen="'.$servidor.$infoproducto["portada"].'" titulo="'.$infoproducto["titulo"].'" precio="'.$infoproducto["precio"].'" tipo="'.$infoproducto["tipo"].'">';
 
 
 								}
 
-								echo   '<small>ADICIONAR AL CARRITO</small> 
+								echo   '<small>ADICIONAR AL CARRITO</small>
 
 									<i class="fa fa-shopping-cart col-md-0"></i>
 
@@ -705,17 +706,17 @@ INFOPRODUCTOS
 							echo '<div class="col-lg-6 col-md-8 col-xs-12">';
 
 							if($infoproducto["oferta"] != 0){
-									
-									echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$infoproducto["id"].'" imagen="'.$servidor.$infoproducto["portada"].'" titulo="'.$infoproducto["titulo"].'" precio="'.$infoproducto["precioOferta"].'" tipo="'.$infoproducto["tipo"].'" peso="'.$infoproducto["peso"].'">';
+
+									echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$infoproducto["id"].'" imagen="'.$servidor.$infoproducto["portada"].'" titulo="'.$infoproducto["titulo"].'" precio="'.$infoproducto["precioOferta"].'" tipo="'.$infoproducto["tipo"].'">';
 
 								}else{
 
-									echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$infoproducto["id"].'" imagen="'.$servidor.$infoproducto["portada"].'" titulo="'.$infoproducto["titulo"].'" precio="'.$infoproducto["precio"].'" tipo="'.$infoproducto["tipo"].'" peso="'.$infoproducto["peso"].'">';
+									echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$infoproducto["id"].'" imagen="'.$servidor.$infoproducto["portada"].'" titulo="'.$infoproducto["titulo"].'" precio="'.$infoproducto["precio"].'" tipo="'.$infoproducto["tipo"].'">';
 
 								}
 
 
-									echo 'ADICIONAR AL CARRITO 
+									echo 'ADICIONAR AL CARRITO
 
 									<i class="fa fa-shopping-cart"></i>
 
@@ -730,19 +731,19 @@ INFOPRODUCTOS
 				?>
 
 				</div>
-				
+
 				<!--=====================================
 				ZONA DE LUPA
 				======================================-->
 
 				<figure class="lupa">
-					
+
 					<img src="">
 
 				</figure>
 
 			</div>
-			
+
 		</div>
 
 		<!--=====================================
@@ -762,7 +763,7 @@ INFOPRODUCTOS
 			$cantidad = 0;
 
 			foreach ($comentarios as $key => $value){
-				
+
 				if($value["comentario"] != ""){
 
 					$cantidad += count($value["id"]);
@@ -771,7 +772,7 @@ INFOPRODUCTOS
 			}
 
 			?>
-			
+
 			<ul class="nav nav-tabs">
 
 			<?php
@@ -911,7 +912,7 @@ INFOPRODUCTOS
 
 			?>
 
-					
+
 				</a></li>
 
 			</ul>
@@ -925,7 +926,7 @@ INFOPRODUCTOS
 		<?php
 
 		foreach ($comentarios as $key => $value) {
-			
+
 			if($value["comentario"] != ""){
 
 				$item = "id";
@@ -934,9 +935,9 @@ INFOPRODUCTOS
 				$usuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
 
 				echo '<div class="panel-group col-md-3 col-sm-6 col-xs-12 alturaComentarios">
-				
+
 					<div class="panel panel-default">
-				      
+
 				      <div class="panel-heading text-uppercase">
 
 				      	'.$usuario["nombre"].'
@@ -946,28 +947,28 @@ INFOPRODUCTOS
 
 				      		if($usuario["foto"] == ""){
 
-				      			echo '<img class="img-circle pull-right" src="'.$servidor.'vistas/img/usuarios/default/anonymous.png" width="20%">';	
+				      			echo '<img class="img-circle pull-right" src="'.$servidor.'vistas/img/usuarios/default/anonymous.png" width="20%">';
 
 				      		}else{
 
-				      			echo '<img class="img-circle pull-right" src="'.$url.$usuario["foto"].'" width="20%">';	
+				      			echo '<img class="img-circle pull-right" src="'.$url.$usuario["foto"].'" width="20%">';
 
 				      		}
-				      	
+
 				      	}else{
 
-				      		echo '<img class="img-circle pull-right" src="'.$usuario["foto"].'" width="20%">';	
+				      		echo '<img class="img-circle pull-right" src="'.$usuario["foto"].'" width="20%">';
 
 				      	}
 
 				      	echo '</span>
 
 				      </div>
-				     
+
 				      <div class="panel-body"><small>'.$value["comentario"].'</small></div>
 
 				      <div class="panel-footer">';
-				      	
+
 				      	switch($value["calificacion"]){
 
 							case 0.5:
@@ -1053,7 +1054,7 @@ INFOPRODUCTOS
 						}
 
 				      echo '</div>
-				    
+
 				    </div>
 
 				</div>';
@@ -1075,7 +1076,7 @@ INFOPRODUCTOS
 ARTÏCULOS RELACIONADOS
 ======================================-->
 <div class="container-fluid productos">
-	
+
 	<div class="container">
 
 		<div class="row">
@@ -1083,7 +1084,7 @@ ARTÏCULOS RELACIONADOS
 			<div class="col-xs-12 tituloDestacado">
 
 				<div class="col-sm-6 col-xs-12">
-			
+
 					<h1><small>PRODUCTOS RELACIONADOS</small></h1>
 
 				</div>
@@ -1098,9 +1099,9 @@ ARTÏCULOS RELACIONADOS
 					$rutaArticulosDestacados = ControladorProductos::ctrMostrarSubcategorias($item, $valor);
 
 					echo '<a href="'.$url.$rutaArticulosDestacados[0]["ruta"].'">
-						
+
 						<button class="btn btn-default backColor pull-right">
-							
+
 							VER MÁS <span class="fa fa-chevron-right"></span>
 
 						</button>
@@ -1147,13 +1148,13 @@ ARTÏCULOS RELACIONADOS
 				foreach ($relacionados as $key => $value) {
 
 				if($value["estado"] != 0){
-				
+
 					echo '<li class="col-md-3 col-sm-6 col-xs-12">
 
 						<figure>
-							
+
 							<a href="'.$url.$value["ruta"].'" class="pixelProducto">
-								
+
 								<img src="'.$servidor.$value["portada"].'" class="img-responsive">
 
 							</a>
@@ -1163,11 +1164,11 @@ ARTÏCULOS RELACIONADOS
 						'.$value["id"].'
 
 						<h4>
-				
+
 							<small>
-								
+
 								<a href="'.$url.$value["ruta"].'" class="pixelProducto">
-									
+
 									'.$value["titulo"].'<br>
 
 									<span style="color:rgba(0,0,0,0)">-</span>';
@@ -1188,9 +1189,9 @@ ARTÏCULOS RELACIONADOS
 
 									}
 
-								echo '</a>	
+								echo '</a>
 
-							</small>			
+							</small>
 
 						</h4>
 
@@ -1207,13 +1208,13 @@ ARTÏCULOS RELACIONADOS
 								echo '<h2>
 
 										<small>
-					
+
 											<strong class="oferta">MXN $'.$value["precio"].'</strong>
 
 										</small>
 
 										<small>$'.$value["precioOferta"].'</small>
-									
+
 									</h2>';
 
 							}else{
@@ -1221,17 +1222,17 @@ ARTÏCULOS RELACIONADOS
 								echo '<h2><small>MXN $'.$value["precio"].'</small></h2>';
 
 							}
-							
+
 						}
-										
+
 						echo '</div>
 
 						<div class="col-xs-6 enlaces">
-							
+
 							<div class="btn-group pull-right">
-								
+
 								<button type="button" class="btn btn-default btn-xs deseos" idProducto="'.$value["id"].'" data-toggle="tooltip" title="Agregar a mi lista de deseos">
-									
+
 									<i class="fa fa-heart" aria-hidden="true"></i>
 
 								</button>';
@@ -1259,13 +1260,13 @@ ARTÏCULOS RELACIONADOS
 								}
 
 								echo '<a href="'.$url.$value["ruta"].'" class="pixelProducto">
-								
+
 									<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
-										
+
 										<i class="fa fa-eye" aria-hidden="true"></i>
 
-									</button>	
-								
+									</button>
+
 								</a>
 
 							</div>
@@ -1292,11 +1293,11 @@ VENTANA MODAL PARA CHECKOUT
 ======================================-->
 
 <div id="modalComprarAhora" class="modal fade modalFormulario" role="dialog">
-	
+
 	 <div class="modal-content modal-dialog">
-	 	
+
 		<div class="modal-body modalTitulo">
-			
+
 			<h3 class="backColor">REALIZAR PAGO</h3>
 
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1317,14 +1318,14 @@ VENTANA MODAL PARA CHECKOUT
 				';
 
 				?>
-				
+
 				<div class="formEnvio row">
-					
+
 					<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
 
 					<div class="col-xs-12 seleccionePais">
-						
-						
+
+
 
 					</div>
 
@@ -1333,25 +1334,25 @@ VENTANA MODAL PARA CHECKOUT
 				<br>
 
 				<div class="formaPago row">
-					
+
 					<h4 class="text-center well text-muted text-uppercase">Elige la forma de pago</h4>
 
 					<figure class="col-xs-6">
-						
+
 						<center>
-							
+
 							<input id="checkPaypal" type="radio" name="pago" value="paypal" checked>
 
-						</center>	
-						
-						<img src="<?php echo $url; ?>vistas/img/plantilla/paypal.jpg" class="img-thumbnail">		
+						</center>
+
+						<img src="<?php echo $url; ?>vistas/img/plantilla/paypal.jpg" class="img-thumbnail">
 
 					</figure>
 
 					<figure class="col-xs-6">
-						
+
 						<center>
-							
+
 							<input id="checkPayu" type="radio" name="pago" value="payu">
 
 						</center>
@@ -1365,14 +1366,14 @@ VENTANA MODAL PARA CHECKOUT
 				<br>
 
 				<div class="listaProductos row">
-					
+
 					<h4 class="text-center well text-muted text-uppercase">Productos a comprar</h4>
 
 					<table class="table table-striped tablaProductos">
-						
+
 						 <thead>
-						 	
-							<tr>		
+
+							<tr>
 								<th>Producto</th>
 								<th>Cantidad</th>
 								<th>Precio</th>
@@ -1381,7 +1382,7 @@ VENTANA MODAL PARA CHECKOUT
 						 </thead>
 
 						 <tbody>
-						 	
+
 
 
 						 </tbody>
@@ -1389,42 +1390,42 @@ VENTANA MODAL PARA CHECKOUT
 					</table>
 
 					<div class="col-sm-6 col-xs-12 pull-right">
-						
+
 						<table class="table table-striped tablaTasas">
-							
+
 							<tbody>
-								
+
 								<tr>
-									<td>Subtotal</td>	
-									<td><span class="cambioDivisa">MXN</span> $<span class="valorSubtotal" valor="0">0</span></td>	
+									<td>Subtotal</td>
+									<td><span class="cambioDivisa">MXN</span> $<span class="valorSubtotal" valor="0">0</span></td>
 								</tr>
 
 								<tr>
-									<td>Envío</td>	
-									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalEnvio" valor="0">0</span></td>	
+									<td>Envío</td>
+									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalEnvio" valor="0">0</span></td>
 								</tr>
 
 								<tr>
-									<td>Impuesto</td>	
-									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalImpuesto" valor="0">0</span></td>	
+									<td>Impuesto</td>
+									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalImpuesto" valor="0">0</span></td>
 								</tr>
 
 								<tr>
-									<td><strong>Total</strong></td>	
-									<td><strong><span class="cambioDivisa">MXN</span> $<span class="valorTotalCompra" valor="0">0</span></strong></td>	
+									<td><strong>Total</strong></td>
+									<td><strong><span class="cambioDivisa">MXN</span> $<span class="valorTotalCompra" valor="0">0</span></strong></td>
 								</tr>
 
-							</tbody>	
+							</tbody>
 
 						</table>
 
 						 <div class="divisa">
 
 						 	<select class="form-control" id="cambiarDivisa" name="divisa">
-						 		
-							
 
-						 	</select>	
+
+
+						 	</select>
 
 						 	<br>
 
@@ -1435,11 +1436,11 @@ VENTANA MODAL PARA CHECKOUT
 					<div class="clearfix"></div>
 
 					<form class="formPayu" style="display:none">
-					 
+
 						<input name="merchantId" type="hidden" value=""/>
 						<input name="accountId" type="hidden" value=""/>
 						<input name="description" type="hidden" value=""/>
-						<input name="referenceCode" type="hidden" value=""/>	
+						<input name="referenceCode" type="hidden" value=""/>
 						<input name="amount" type="hidden" value=""/>
 						<input name="tax" type="hidden" value=""/>
 						<input name="taxReturnBase" type="hidden" value=""/>
@@ -1455,7 +1456,7 @@ VENTANA MODAL PARA CHECKOUT
 
 					  <input name="Submit" class="btn btn-block btn-lg btn-default backColor" type="submit"  value="PAGAR" >
 					</form>
-					
+
 					<button class="btn btn-block btn-lg btn-default backColor btnPagar">PAGAR</button>
 
 				</div>
@@ -1465,7 +1466,7 @@ VENTANA MODAL PARA CHECKOUT
 		</div>
 
 		<div class="modal-footer">
-      	
+
       	</div>
 
 	</div>
@@ -1490,10 +1491,10 @@ if($infoproducto["tipo"] == "fisico"){
 			  	echo $servidor.$multimedia[$i]["foto"].',';
 
 			  }
-			
+
 			  echo '],
 			  "description": "'.$infoproducto["descripcion"].'"
-	  
+
 			}
 
 		</script>';

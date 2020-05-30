@@ -657,6 +657,7 @@ function agregarMiProducto(imagen){
 	    var ancho = $(".ancho").val();
 	    var altura = $(".altura").val();
 	    var largo = $(".largo").val();
+	    var Stock = $(".Stock").val();
 	    var entrega = $(".entrega").val();
 	    var selActivarOferta = $(".selActivarOferta").val();
 	    var precioOferta = $(".precioOferta").val();
@@ -694,6 +695,7 @@ function agregarMiProducto(imagen){
 		datosProducto.append("ancho", ancho);
 		datosProducto.append("altura", altura);
 		datosProducto.append("largo", largo);
+		datosProducto.append("Stock", Stock);
 		datosProducto.append("entrega", entrega);
 
 		datosProducto.append("multimedia", imagen);
@@ -1072,12 +1074,13 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 			$("#modalEditarProducto .antiguaFotoPrincipal").val(respuesta[0]["portada"]);
 
 			/*=============================================
-			CARGAMOS EL PRECIO, ANCHO, ALTURA, LARGO Y DIAS DE ENTREGA
+			CARGAMOS EL PRECIO, ANCHO, ALTURA, LARGO ,STOCK Y DIAS DE ENTREGA
 			=============================================*/
 			$("#modalEditarProducto .precio").val(respuesta[0]["precio"]);
 			$("#modalEditarProducto .ancho").val(respuesta[0]["ancho"]);
 			$("#modalEditarProducto .altura").val(respuesta[0]["altura"]);
 			$("#modalEditarProducto .largo").val(respuesta[0]["largo"]);
+			$("#modalEditarProducto .Stock").val(respuesta[0]["Stock"]);
 			$("#modalEditarProducto .entrega").val(respuesta[0]["entrega"]);
 
 			/*=============================================
@@ -1326,6 +1329,7 @@ function editarMiProducto(imagen){
 	var ancho = $("#modalEditarProducto .ancho").val();
 	var altura = $("#modalEditarProducto .altura").val();
 	var largo = $("#modalEditarProducto .largo").val();
+	var Stock = $("#modalEditarProducto .Stock").val();
 	var entrega = $("#modalEditarProducto .entrega").val();
 	var selActivarOferta = $("#modalEditarProducto .selActivarOferta").val();
 	var precioOferta = $("#modalEditarProducto .precioOferta").val();
@@ -1372,6 +1376,7 @@ function editarMiProducto(imagen){
 	datosProducto.append("ancho", ancho);
 	datosProducto.append("altura", altura);
 	datosProducto.append("largo", largo);
+	datosProducto.append("Stock", Stock);
 	datosProducto.append("entrega", entrega);
 
 	if(imagen == null){

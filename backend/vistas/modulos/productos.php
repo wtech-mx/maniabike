@@ -55,6 +55,7 @@
                <th>Altura</th>
                <th>Largo</th>
                <th>Peso Volumetrico</th>
+               <th>Stock</th>
                <th>Tiempo de Entrega</th>
                <th>Tipo de Oferta</th>
                <th>Valor Oferta</th>
@@ -487,7 +488,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input type="number" class="form-control input-lg precio" min="0" step="any">
+                  <input type="number" placeholder="MXM" class="form-control input-lg precio" min="" step="any">
 
                 </div>
 
@@ -503,7 +504,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg ancho" min="0" step="any" value="0" placeholder="cm">
+                  <input type="number" class="form-control input-lg ancho" min="" step="any" value="" placeholder="cm">
 
                 </div>
 
@@ -519,7 +520,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg altura" min="0" step="any" value="0" placeholder="cm">
+                  <input type="number" class="form-control input-lg altura" min="" step="any" value="" placeholder="cm">
 
                 </div>
 
@@ -535,11 +536,28 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg largo" min="0" step="any" value="0" placeholder="cm">
+                  <input type="number" class="form-control input-lg largo" min="" step="any" value="" placeholder="cm">
 
                 </div>
 
               </div>
+
+              <!-- stock -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Stock</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-archive"></i></span>
+
+                  <input type="number" class="form-control input-lg Stock" min="" value="" placeholder="Cantidad">
+
+                </div>
+
+              </div>
+
 
               <!-- ENTREGA -->
 
@@ -1132,7 +1150,21 @@ MODAL EDITAR PRODUCTO
                 </div>
 
               </div>
+              <!-- Stock -->
 
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Stock</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-archive"></i></span>
+
+                  <input type="number" class="form-control input-lg Stock" min="0" value="0">
+
+                </div>
+
+              </div>
               <!-- ENTREGA -->
 
               <div class="col-md-4 col-xs-12">

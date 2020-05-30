@@ -509,6 +509,8 @@ class TablaProductos{
 
             "'.$operacion.' kg",
 
+            "'.$productos[$i]["Stock"].'",
+
 				  	"'.$entrega.'",
 
 				  	"'.$tipoOferta.'",
@@ -540,8 +542,6 @@ class TablaProductos{
 
 
 		}';
-
-
 
 		echo $datosJson;
 
