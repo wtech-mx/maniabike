@@ -276,7 +276,7 @@ class ModeloProductos{
 
 
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, id_subcategoria, tipo, ruta, estado, titulo, titular, descripcion, multimedia, detalles, precio, portada, oferta, precioOferta, descuentoOferta, imgOferta, finOferta, ancho, altura, largo,Stock, entrega) VALUES (:id_categoria, :id_subcategoria, :tipo, :ruta, :estado, :titulo, :titular, :descripcion, :multimedia, :detalles, :precio, :portada, :oferta, :precioOferta, :descuentoOferta, :imgOferta, :finOferta,  :ancho,  :altura,  :largo, :Stock, :entrega)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, id_subcategoria, tipo, ruta, estado, titulo, titular, descripcion, multimedia, detalles, precio, portada, oferta, precioOferta, descuentoOferta, imgOferta, finOferta, ancho, altura, largo,stock, entrega) VALUES (:id_categoria, :id_subcategoria, :tipo, :ruta, :estado, :titulo, :titular, :descripcion, :multimedia, :detalles, :precio, :portada, :oferta, :precioOferta, :descuentoOferta, :imgOferta, :finOferta,  :ancho,  :altura,  :largo, :stock, :entrega)");
 
 
 
@@ -320,7 +320,7 @@ class ModeloProductos{
 
 		$stmt->bindParam(":largo", $datos["largo"], PDO::PARAM_STR);
 
-		$stmt->bindParam(":Stock", $datos["Stock"], PDO::PARAM_STR);
+		$stmt->bindParam(":stock", $datos["stock"], PDO::PARAM_STR);
 
 		$stmt->bindParam(":entrega", $datos["entrega"], PDO::PARAM_STR);
 
@@ -368,7 +368,7 @@ class ModeloProductos{
 
 
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, id_subcategoria = :id_subcategoria, tipo = :tipo, ruta = :ruta, estado = :estado, titulo = :titulo, titular = :titular, descripcion = :descripcion, multimedia = :multimedia, detalles = :detalles, precio = :precio, portada = :portada, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta, ancho = :ancho, altura = :altura, largo = :largo, Stock = :Stock, entrega = :entrega WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, id_subcategoria = :id_subcategoria, tipo = :tipo, ruta = :ruta, estado = :estado, titulo = :titulo, titular = :titular, descripcion = :descripcion, multimedia = :multimedia, detalles = :detalles, precio = :precio, portada = :portada, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta, ancho = :ancho, altura = :altura, largo = :largo, stock = :stock, entrega = :entrega WHERE id = :id");
 
 
 
@@ -412,7 +412,7 @@ class ModeloProductos{
 
 		$stmt->bindParam(":largo", $datos["largo"], PDO::PARAM_STR);
 
-		$stmt->bindParam(":Stock", $datos["Stock"], PDO::PARAM_STR);
+		$stmt->bindParam(":stock", $datos["stock"], PDO::PARAM_STR);
 
 		$stmt->bindParam(":entrega", $datos["entrega"], PDO::PARAM_STR);
 

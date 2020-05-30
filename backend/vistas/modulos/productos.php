@@ -55,7 +55,7 @@
                <th>Altura</th>
                <th>Largo</th>
                <th>Peso Volumetrico</th>
-               <th>Stock</th>
+               <th>stock</th>
                <th>Tiempo de Entrega</th>
                <th>Tipo de Oferta</th>
                <th>Valor Oferta</th>
@@ -546,13 +546,13 @@ MODAL AGREGAR PRODUCTO
 
               <div class="col-md-4 col-xs-12">
 
-                <div class="panel">Stock</div>
+                <div class="panel">stock</div>
 
                 <div class="input-group">
 
                   <span class="input-group-addon"><i class="fa fa-archive"></i></span>
 
-                  <input type="number" class="form-control input-lg Stock" min="" value="" placeholder="Cantidad">
+                  <input type="number" class="form-control input-lg stock" min="" value="" placeholder="Cantidad">
 
                 </div>
 
@@ -1150,17 +1150,17 @@ MODAL EDITAR PRODUCTO
                 </div>
 
               </div>
-              <!-- Stock -->
+              <!-- stock -->
 
               <div class="col-md-4 col-xs-12">
 
-                <div class="panel">Stock</div>
+                <div class="panel">stock</div>
 
                 <div class="input-group">
 
                   <span class="input-group-addon"><i class="fa fa-archive"></i></span>
 
-                  <input type="number" class="form-control input-lg Stock" min="0" value="0">
+                  <input type="number" class="form-control input-lg stock" min="0" value="0">
 
                 </div>
 

@@ -717,7 +717,7 @@ class ControladorProductos{
 
 						   "largo"=> $datos["largo"],
 
-						   "Stock"=> $datos["Stock"],
+						   "stock"=> $datos["stock"],
 
 						   "entrega"=> $datos["entrega"],
 
@@ -777,7 +777,7 @@ class ControladorProductos{
 
 						   "largo"=> $datos["largo"],
 
-						   "Stock"=> $datos["Stock"],
+						   "stock"=> $datos["stock"],
 
 						   "entrega"=> $datos["entrega"],
 
@@ -1471,7 +1471,7 @@ class ControladorProductos{
 
 								   "largo"=> $datos["largo"],
 
-								   "Stock"=> $datos["Stock"],
+								   "stock"=> $datos["stock"],
 
 								   "entrega"=> $datos["entrega"],
 
@@ -1533,7 +1533,7 @@ class ControladorProductos{
 
 								   "largo"=> $datos["largo"],
 
-								   "Stock"=> $datos["Stock"],
+								   "stock"=> $datos["stock"],
 
 								   "entrega"=> $datos["entrega"],
 

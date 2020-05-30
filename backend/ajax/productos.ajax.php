@@ -178,7 +178,7 @@ class AjaxProductos{
 
 	public $largo;
 
-	public $Stock;
+	public $stock;
 
 	public $entrega;
 
@@ -242,7 +242,7 @@ class AjaxProductos{
 
 			"largo"=>$this->largo,
 
-			"Stock"=>$this->Stock,
+			"stock"=>$this->stock,
 
 			"entrega"=>$this->entrega,
 
@@ -508,7 +508,7 @@ if(isset($_POST["tituloProducto"])){
 
 	$producto -> largo = $_POST["largo"];
 
-	$producto -> Stock = $_POST["Stock"];
+	$producto -> stock = $_POST["stock"];
 
 	$producto -> entrega = $_POST["entrega"];
 
