@@ -37,13 +37,13 @@ class TablaSubsubCategorias{
 
 			$subcategorias = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
 
-			if($subcategorias[$i] == ""){
+			if($subcategorias[0][1] == ""){
 
-				$subcategoria = "SIN SUBCATEGORÍA";
+				$subcategoria = "SIN CATEGORÍA";
 
 			}else{
 
-				$subcategoria = $subcategorias[$i];
+				$subcategoria = $subcategorias[0][1];
 			}
 
 			/*=============================================
@@ -125,12 +125,11 @@ class TablaSubsubCategorias{
 
   			$acciones = "<div class='btn-group'><button class='btn btn-warning btnEditarSubsubCategoria' idSubsubCategoria='".$subsubcategorias[$i]["id"]."' data-toggle='modal' data-target='#modalEditarSubsubCategoria'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarSubsubCategoria' idSubsubCategoria='".$subsubcategorias[$i]["id"]."' imgOferta='".$subsubcategorias[$i]["imgOferta"]."' rutaCabecera='".$subsubcategorias[$i]["ruta"]."' imgPortada='".$cabeceras["portada"]."'><i class='fa fa-times'></i></button></div>";
 
-
 			 $datosJson .=  '
 			 [
 		      "'.($i+1).'",
 		      "'.$subsubcategorias[$i]["subsubcategoria"].'",
-		      "'.$subcategoria.'",
+		      "'.$subcategorias[0][1].'",
 		      "'.$subsubcategorias[$i]["ruta"].'",
 		      "'.$estado.'",
 		      "'.$cabeceras["descripcion"].'",
@@ -139,7 +138,7 @@ class TablaSubsubCategorias{
 			  "'.$tipoOferta.'",
    	  		  "'.$valorOferta.'",
               "'.$imgOferta.'",
-              "'.$subcategorias[$i]["finOferta"].'",
+              "'.$subcategorias[0][10].'",
 	          "'.$acciones.'"
 	    	],';
 

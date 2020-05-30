@@ -37,6 +37,10 @@ class TablaSubCategorias{
 
 			$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 
+			// print_r($categorias);
+			//var_dump($categorias["categoria"]);
+			// var_dump($categorias);
+
 			if($categorias["categoria"] == ""){
 
 				$categoria = "SIN CATEGORÍA";
@@ -45,6 +49,8 @@ class TablaSubCategorias{
 
 				$categoria = $categorias["categoria"];
 			}
+
+
 
 			/*=============================================
   			REVISAR ESTADO
@@ -125,7 +131,6 @@ class TablaSubCategorias{
 
   			$acciones = "<div class='btn-group'><button class='btn btn-warning btnEditarSubCategoria' idSubCategoria='".$subcategorias[$i]["id"]."' data-toggle='modal' data-target='#modalEditarSubCategoria'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarSubCategoria' idSubCategoria='".$subcategorias[$i]["id"]."' imgOferta='".$subcategorias[$i]["imgOferta"]."' rutaCabecera='".$subcategorias[$i]["ruta"]."' imgPortada='".$cabeceras["portada"]."'><i class='fa fa-times'></i></button></div>";
 
-
 			 $datosJson .=  '
 			 [
 		      "'.($i+1).'",
@@ -152,6 +157,7 @@ class TablaSubCategorias{
         }';
 
     echo $datosJson;
+
 
   }
 

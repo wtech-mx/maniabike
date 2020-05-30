@@ -2,17 +2,17 @@
 CARGAR LA TABLA DINÁMICA DE SUBCATEGORÍAS
 =============================================*/
 
-// $.ajax({
+$.ajax({
 
-// 	url:"ajax/tablaSubCategorias.ajax.php",
-// 	success:function(respuesta){
+	url:"ajax/tablasubsubcategorias.ajax.php",
+	success:function(respuesta){
 
-// 		console.log("respuesta", respuesta);
+		console.log("respuesta", respuesta);
 
-// 	}
+	}
 
 
-// })
+})
 
 var tablaSubSubCategorias = $('.tablaSubSubCategorias').DataTable({
 
@@ -57,23 +57,23 @@ ACTIVAR SUBCATEGORÍA
 
 $('.tablaSubSubCategorias tbody').on("click", ".btnActivar", function(){
 
-	var idSubSubCategoria = $(this).attr("idSubSubCategoria");
+	var idSubsubCategoria = $(this).attr("idSubsubCategoria");
 	var estadoSubSubCategoria = $(this).attr("estadoSubSubCategoria");
 
 	var datos = new FormData();
- 	datos.append("activarId", idSubSubCategoria);
+ 	datos.append("activarId", idSubsubCategoria);
   	datos.append("activarSubSubCategoria", estadoSubSubCategoria);
 
   	$.ajax({
 
-	  url:"ajax/subSubCategorias.ajax.php",
+	  url:"ajax/SubSubCategorias.ajax.php",
 	  method: "POST",
 	  data: datos,
 	  cache: false,
       contentType: false,
       processData: false,
       success: function(respuesta){
-          // console.log("respuesta", respuesta);
+           console.log("respuesta", respuesta);
 
       }
 
@@ -121,7 +121,7 @@ $(".validarSubSubCategoria").change(function(){
 	    dataType: "json",
 	    success:function(respuesta){
 
-	    	// console.log("respuesta", respuesta);
+	    	 console.log("respuesta", respuesta);
 
 	    	if(respuesta.length != 0){
 
@@ -393,9 +393,9 @@ $(".tablaSubCategorias tbody").on("click", ".btnEditarSubCategoria", function(){
 /*=============================================
 ELIMINAR SUBCATEGORÍA
 =============================================*/
-$(".tablaSubSubCategorias").on("click", ".btnEliminarSubSubCategoria", function(){
+$(".tablaSubSubCategorias").on("click", ".btnEliminarSubsubCategoria", function(){
 
-  var idSubSubCategoria = $(this).attr("idSubSubCategoria");
+  var idSubsubCategoria = $(this).attr("idSubsubCategoria");
   var rutaCabecera = $(this).attr("rutaCabecera");
 
   swal({
@@ -411,7 +411,7 @@ $(".tablaSubSubCategorias").on("click", ".btnEliminarSubSubCategoria", function(
 
     if(result.value){
 
-      window.location = "index.php?ruta=subsubcategorias&idSubSubCategoria="+idSubSubCategoria+"&rutaCabecera="+rutaCabecera;
+      window.location = "index.php?ruta=subsubcategorias&idSubsubCategoria="+idSubsubCategoria+"&rutaCabecera="+rutaCabecera;
 
     }
 

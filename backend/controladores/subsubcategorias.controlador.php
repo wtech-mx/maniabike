@@ -1,3 +1,5 @@
+
+
 <?php
 
 class ControladorSubsubCategorias{
@@ -471,6 +473,8 @@ class ControladorSubsubCategorias{
 
 					}
 
+
+
 					ModeloProductos::mdlActualizarOfertaProductos("productos", $datos, "ofertadoPorSubsubCategoria", $precioOfertaActualizado, $descuentoOfertaActualizado, $value["id"]);
 
 				}
@@ -576,7 +580,7 @@ class ControladorSubsubCategorias{
 			}
 
 			$respuesta = ModeloSubsubCategorias::mdlEliminarSubsubCategoria("subsubcategorias", $datos);
-
+			echo $respuesta;
 			if($respuesta == "ok"){
 
 				echo'<script>
