@@ -2,19 +2,19 @@
 CARGAR LA TABLA DINÁMICA DE SUBCATEGORÍAS
 =============================================*/
 
-$.ajax({
+//$.ajax({
 
-	url:"ajax/tablasubsubcategorias.ajax.php",
-	success:function(respuesta){
+//	url:"ajax/tablasubsubcategorias.ajax.php",
+//	success:function(respuesta){
 
-		console.log("respuesta", respuesta);
+//		console.log("respuesta", respuesta);
 
-	}
+//	}
 
 
-})
+//})
 
-var tablaSubSubCategorias = $('.tablaSubSubCategorias').DataTable({
+var tablaSubCategorias2 = $('.tablaSubCategorias2').DataTable({
 
 	"ajax":"ajax/tablasubsubcategorias.ajax.php",
 	"deferRender": true,
@@ -54,44 +54,43 @@ var tablaSubSubCategorias = $('.tablaSubSubCategorias').DataTable({
 ACTIVAR SUBCATEGORÍA
 =============================================*/
 
+$('.tablaSubCategorias2 tbody').on("click", ".btnActivar", function(){
 
-$('.tablaSubSubCategorias tbody').on("click", ".btnActivar", function(){
-
-	var idSubsubCategoria = $(this).attr("idSubsubCategoria");
-	var estadoSubSubCategoria = $(this).attr("estadoSubSubCategoria");
+	var idSubCategoria2 = $(this).attr("idSubCategoria2");
+	var estadoSubCategoria2 = $(this).attr("estadoSubCategoria2");
 
 	var datos = new FormData();
- 	datos.append("activarId", idSubsubCategoria);
-  	datos.append("activarSubSubCategoria", estadoSubSubCategoria);
+ 	datos.append("activarId", idSubCategoria2);
+  	datos.append("activarSubCategoria2", estadoSubCategoria2);
 
   	$.ajax({
 
-	  url:"ajax/SubSubCategorias.ajax.php",
+	  url:"ajax/subsubcategorias.ajax.php",
 	  method: "POST",
 	  data: datos,
 	  cache: false,
       contentType: false,
       processData: false,
       success: function(respuesta){
-           console.log("respuesta", respuesta);
+          // console.log("respuesta", respuesta);
 
       }
 
   	})
 
-  	if(estadoSubSubCategoria == 0){
+  	if(estadoSubCategoria2 == 0){
 
   		$(this).removeClass('btn-success');
   		$(this).addClass('btn-danger');
   		$(this).html('Desactivado');
-  		$(this).attr('estadoSubSubCategoria',1);
+  		$(this).attr('estadoSubCategoria2',1);
 
   	}else{
 
   		$(this).addClass('btn-success');
   		$(this).removeClass('btn-danger');
   		$(this).html('Activado');
-  		$(this).attr('estadoSubSubCategoria',0);
+  		$(this).attr('estadoSubCategoria2',0);
 
   	}
 
@@ -99,20 +98,20 @@ $('.tablaSubSubCategorias tbody').on("click", ".btnActivar", function(){
 
 
 /*=============================================
-REVISAR SI LA SUBCATEGORÍA YA EXISTE
+REVISAR SI LA SUBCATEGORÍA2 YA EXISTE
 =============================================*/
 
-$(".validarSubSubCategoria").change(function(){
+$(".validarSubCategoria2").change(function(){
 
 	$(".alert").remove();
 
-	var subSubCategoria = $(this).val();
+	var subCategoria2 = $(this).val();
 
 	var datos = new FormData();
-	datos.append("validarSubSubCategoria", subSubCategoria);
+	datos.append("validarSubCategoria2", subCategoria2);
 
 	 $.ajax({
-	    url:"ajax/subSubCategorias.ajax.php",
+	    url:"ajax/subsubcategorias.ajax.php",
 	    method:"POST",
 	    data: datos,
 	    cache: false,
@@ -121,13 +120,13 @@ $(".validarSubSubCategoria").change(function(){
 	    dataType: "json",
 	    success:function(respuesta){
 
-	    	 console.log("respuesta", respuesta);
+	    	// console.log("respuesta", respuesta);
 
 	    	if(respuesta.length != 0){
 
-	    		$(".validarSubSubCategoria").parent().after('<div class="alert alert-warning">Esta SubSubcategoría ya existe en la base de datos</div>');
+	    		$(".validarSubCategoria2").parent().after('<div class="alert alert-warning">Esta Subcategoría2 ya existe en la base de datos</div>');
 
-	    		$(".validarSubSubCategoria").val("");
+	    		$(".validarSubCategoria2").val("");
 
 	    	}
 
@@ -152,30 +151,184 @@ function limpiarUrl(texto){
       return texto;
    }
 
-$(".tituloSubSubCategoria").change(function(){
+$(".tituloSubCategoria2").change(function(){
 
-	$(".rutaSubsubCategoria").val(
+	$(".rutaSubCategoria2").val(
 
-		limpiarUrl($(".tituloSubSubCategoria").val())
+		limpiarUrl($(".tituloSubCategoria2").val())
 
 	);
 
 })
 
 /*=============================================
-EDITAR SUBCATEGORÍA
+SUBIENDO LA FOTO DE PORTADA
 =============================================*/
 
-$(".tablaSubCategorias tbody").on("click", ".btnEditarSubCategoria", function(){
+$(".fotoPortada").change(function(){
 
-	var idSubCategoria = $(this).attr("idSubCategoria");
+	var imagen = this.files[0];
+
+	/*=============================================
+  	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
+  	=============================================*/
+
+  	if(imagen["type"] != "image/jpeg" && imagen["type"] != "image/png"){
+
+  		$(".nuevaFotoPortada").val("");
+
+  		 swal({
+		      title: "Error al subir la imagen",
+		      text: "¡La imagen debe estar en formato JPG o PNG!",
+		      type: "error",
+		      confirmButtonText: "¡Cerrar!"
+		    });
+
+  	}else if(imagen["size"] > 2000000){
+
+  		$(".fotoPortada").val("");
+
+  		 swal({
+		      title: "Error al subir la imagen",
+		      text: "¡La imagen no debe pesar más de 2MB!",
+		      type: "error",
+		      confirmButtonText: "¡Cerrar!"
+		    });
+
+  	}else{
+
+  		var datosImagen = new FileReader;
+  		datosImagen.readAsDataURL(imagen);
+
+  		$(datosImagen).on("load", function(event){
+
+  			var rutaImagen = event.target.result;
+
+  			$(".previsualizarPortada").attr("src", rutaImagen);
+
+  		})
+
+  	}
+})
+
+/*=============================================
+ACTIVAR OFERTA
+=============================================*/
+
+function activarOferta(event){
+
+	if(event == "oferta"){
+
+		$(".datosOferta").show();
+		$(".valorOferta").prop("required",true);
+		$(".valorOferta").val("");
+
+
+
+	}else{
+
+		$(".datosOferta").hide();
+		$(".valorOferta").prop("required",false);
+		$(".valorOferta").val("");
+
+	}
+}
+
+
+$(".selActivarOferta").change(function(){
+
+	activarOferta($(this).val())
+
+})
+
+/*=============================================
+VALOR OFERTA
+=============================================*/
+$(".valorOferta").change(function(){
+
+	if($(this).attr("id") == "precioOferta"){
+
+		$("#precioOferta").prop("readonly",true);
+		$("#descuentoOferta").prop("readonly",false);
+		$("#descuentoOferta").val(0);
+
+	}
+
+	if($(this).attr("id") == "descuentoOferta"){
+
+		$("#descuentoOferta").prop("readonly",true);
+		$("#precioOferta").prop("readonly",false);
+		$("#precioOferta").val(0);
+
+	}
+
+
+})
+
+/*=============================================
+SUBIENDO LA FOTO DE LA OFERTA
+=============================================*/
+
+$(".fotoOferta").change(function(){
+
+	var imagen = this.files[0];
+
+	/*=============================================
+  	VALIDAMOS EL FORMATO DE LA IMAGEN SEA JPG O PNG
+  	=============================================*/
+
+  	if(imagen["type"] != "image/jpeg" && imagen["type"] != "image/png"){
+
+  		$(".fotoOferta").val("");
+
+  		 swal({
+		      title: "Error al subir la imagen",
+		      text: "¡La imagen debe estar en formato JPG o PNG!",
+		      type: "error",
+		      confirmButtonText: "¡Cerrar!"
+		    });
+
+  	}else if(imagen["size"] > 2000000){
+
+  		$(".fotoOferta").val("");
+
+  		 swal({
+		      title: "Error al subir la imagen",
+		      text: "¡La imagen no debe pesar más de 2MB!",
+		      type: "error",
+		      confirmButtonText: "¡Cerrar!"
+		    });
+
+  	}else{
+
+  		var datosImagen = new FileReader;
+  		datosImagen.readAsDataURL(imagen);
+
+  		$(datosImagen).on("load", function(event){
+
+  			var rutaImagen = event.target.result;
+
+  			$(".previsualizarOferta").attr("src", rutaImagen);
+
+  		})
+
+  	}
+})
+
+/*=============================================
+EDITAR SUBCATEGORÍA2
+=============================================*/
+
+$(".tablaSubCategorias2 tbody").on("click", ".btnEditarSubCategoria2", function(){
+
+	var idSubCategoria2 = $(this).attr("idSubCategoria2");
 
 	var datos = new FormData();
-	datos.append("idSubCategoria", idSubCategoria);
+	datos.append("idSubCategoria2", idSubCategoria2);
 
 	$.ajax({
 
-		url:"ajax/subCategorias.ajax.php",
+		url:"ajax/subsubcategorias.ajax.php",
 		method: "POST",
 		data: datos,
 		cache: false,
@@ -184,50 +337,50 @@ $(".tablaSubCategorias tbody").on("click", ".btnEditarSubCategoria", function(){
 		dataType: "json",
 		success: function(respuesta){
 
-			$("#modalEditarSubCategoria .editarIdSubCategoria").val(respuesta[0]["id"]);
-			$("#modalEditarSubCategoria .tituloSubCategoria").val(respuesta[0]["subcategoria"]);
-			$("#modalEditarSubCategoria .rutaSubCategoria").val(respuesta[0]["ruta"]);
+			$("#modalEditarSubCategoria2 .editarIdSubCategoria2").val(respuesta[0]["id"]);
+			$("#modalEditarSubCategoria2 .tituloSubCategoria2").val(respuesta[0]["subsubcategoria"]);
+			$("#modalEditarSubCategoria2 .rutaSubCategoria2").val(respuesta[0]["ruta"]);
 
 			/*=============================================
-			EDITAR NOMBRE SUBCATEGORÍA Y RUTA
+			EDITAR NOMBRE SUBCATEGORÍA2 Y RUTA
 			=============================================*/
 
-			$("#modalEditarSubCategoria .tituloSubCategoria").change(function(){
+			$("#modalEditarSubCategoria2 .tituloSubCategoria2").change(function(){
 
-				$("#modalEditarSubCategoria .rutaSubCategoria").val(limpiarUrl($("#modalEditarSubCategoria .tituloSubCategoria").val()));
+				$("#modalEditarSubCategoria2 .rutaSubCategoria2").val(limpiarUrl($("#modalEditarSubCategoria2 .tituloSubCategoria2").val()));
 
 			})
 
 			/*=============================================
-			TRAEMOS LA CATEGORIA
+			TRAEMOS LA SUBCATEGORIA
 			=============================================*/
 
-			if(respuesta[0]["id_categoria"] != 0){
+			if(respuesta[0]["id_subcategoria"] != 0){
 
-				var datosCategoria = new FormData();
-				datosCategoria.append("idCategoria", respuesta[0]["id_categoria"]);
+				var datosSubCategoria = new FormData();
+				datosSubCategoria.append("idSubCategoria", respuesta[0]["id_subcategoria"]);
 
 
 				$.ajax({
 
-						url:"ajax/categorias.ajax.php",
+						url:"ajax/subCategorias.ajax.php",
 						method: "POST",
-						data: datosCategoria,
+						data: datosSubCategoria,
 						cache: false,
 						contentType: false,
 						processData: false,
 						dataType: "json",
 						success: function(respuesta){
 
-							$("#modalEditarSubCategoria .seleccionarCategoria").val(respuesta["id"]);
-							$("#modalEditarSubCategoria .optionEditarCategoria").html(respuesta["categoria"]);
+							$("#modalEditarSubCategoria2 .seleccionarSubCategoria").val(respuesta["id"]);
+							$("#modalEditarSubCategoria2 .optionEditarSubCategoria").html(respuesta["subcategoria"]);
 						}
 
 					})
 
 			}else{
 
-				$("#modalEditarSubCategoria .optionEditarCategoria").html("SIN CATEGORÍA");
+				$("#modalEditarSubCategoria2 .optionEditarSubCategoria").html("SIN SUBCATEGORÍA");
 
 			}
 
@@ -254,13 +407,13 @@ $(".tablaSubCategorias tbody").on("click", ".btnEditarSubCategoria", function(){
 						CARGAMOS EL ID DE LA CABECERA
 						=============================================*/
 
-						$("#modalEditarSubCategoria .editarIdCabecera").val(respuesta["id"]);
+						$("#modalEditarSubCategoria2 .editarIdCabecera").val(respuesta["id"]);
 
 						/*=============================================
 						CARGAMOS LA DESCRIPCION
 						=============================================*/
 
-						$("#modalEditarSubCategoria .descripcionSubCategoria").val(respuesta["descripcion"]);
+						$("#modalEditarSubCategoria2 .descripcionSubCategoria2").val(respuesta["descripcion"]);
 
 						/*=============================================
 						CARGAMOS LAS PALABRAS CLAVES
@@ -272,11 +425,11 @@ $(".tablaSubCategorias tbody").on("click", ".btnEditarSubCategoria", function(){
 
 	                		'<span class="input-group-addon"><i class="fa fa-key"></i></span>'+
 
-							'<input type="text" class="form-control input-lg tagsInput pClavesSubCategoria" value="'+respuesta["palabrasClaves"]+'" data-role="tagsinput" name="pClavesSubCategoria">'+
+							'<input type="text" class="form-control input-lg tagsInput pClavesSubCategoria2" value="'+respuesta["palabrasClaves"]+'" data-role="tagsinput" name="pClavesSubCategoria2">'+
 
 							'</div>');
 
-							$("#modalEditarSubCategoria .pClavesSubCategoria").tagsinput('items');
+							$("#modalEditarSubCategoria2 .pClavesSubCategoria2").tagsinput('items');
 
 							$(".bootstrap-tagsinput").css({"padding":"11px",
 							   						   "width":"100%",
@@ -288,11 +441,11 @@ $(".tablaSubCategorias tbody").on("click", ".btnEditarSubCategoria", function(){
 
 	                		'<span class="input-group-addon"><i class="fa fa-key"></i></span>'+
 
-							'<input type="text" class="form-control input-lg tagsInput pClavesSubCategoria" value="" data-role="tagsinput" name="pClavesSubCategoria">'+
+							'<input type="text" class="form-control input-lg tagsInput pClavesSubCategoria2" value="" data-role="tagsinput" name="pClavesSubCategoria2">'+
 
 							'</div>');
 
-							$("#modalEditarSubCategoria .pClavesSubCategoria").tagsinput('items');
+							$("#modalEditarSubCategoria2 .pClavesSubCategoria2").tagsinput('items');
 
 							$(".bootstrap-tagsinput").css({"padding":"11px",
 							   						   "width":"100%",
@@ -304,8 +457,8 @@ $(".tablaSubCategorias tbody").on("click", ".btnEditarSubCategoria", function(){
 						CARGAMOS LA IMAGEN DE PORTADA
 						=============================================*/
 
-						$("#modalEditarSubCategoria .previsualizarPortada").attr("src", respuesta["portada"]);
-						$("#modalEditarSubCategoria .antiguaFotoPortada").val(respuesta["portada"]);
+						$("#modalEditarSubCategoria2 .previsualizarPortada").attr("src", respuesta["portada"]);
+						$("#modalEditarSubCategoria2 .antiguaFotoPortada").val(respuesta["portada"]);
 					}
 
 			});
@@ -316,41 +469,41 @@ $(".tablaSubCategorias tbody").on("click", ".btnEditarSubCategoria", function(){
 
 			if(respuesta[0]["oferta"] != 0){
 
-				$("#modalEditarSubCategoria .selActivarOferta").val("oferta");
+				$("#modalEditarSubCategoria2 .selActivarOferta").val("oferta");
 
-				$("#modalEditarSubCategoria .datosOferta").show();
-				$("#modalEditarSubCategoria .valorOferta").prop("required",true);
+				$("#modalEditarSubCategoria2 .datosOferta").show();
+				$("#modalEditarSubCategoria2 .valorOferta").prop("required",true);
 
-				$("#modalEditarSubCategoria #precioOferta").val(respuesta[0]["precioOferta"]);
-				$("#modalEditarSubCategoria #descuentoOferta").val(respuesta[0]["descuentoOferta"]);
+				$("#modalEditarSubCategoria2 #precioOferta").val(respuesta[0]["precioOferta"]);
+				$("#modalEditarSubCategoria2 #descuentoOferta").val(respuesta[0]["descuentoOferta"]);
 
 				if(respuesta[0]["precioOferta"] != 0){
 
-					$("#modalEditarSubCategoria #precioOferta").prop("readonly",true);
-					$("#modalEditarSubCategoria #descuentoOferta").prop("readonly",false);
+					$("#modalEditarSubCategoria2 #precioOferta").prop("readonly",true);
+					$("#modalEditarSubCategoria2 #descuentoOferta").prop("readonly",false);
 
 				}
 
 				if(respuesta[0]["descuentoOferta"] != 0){
 
-					$("#modalEditarSubCategoria #descuentoOferta").prop("readonly",true);
-					$("#modalEditarSubCategoria #precioOferta").prop("readonly",false);
+					$("#modalEditarSubCategoria2 #descuentoOferta").prop("readonly",true);
+					$("#modalEditarSubCategoria2 #precioOferta").prop("readonly",false);
 
 				}
 
-				$("#modalEditarSubCategoria .previsualizarOferta").attr("src", respuesta[0]["imgOferta"]);
+				$("#modalEditarSubCategoria2 .previsualizarOferta").attr("src", respuesta[0]["imgOferta"]);
 
-				$("#modalEditarSubCategoria .antiguaFotoOferta").val(respuesta[0]["imgOferta"]);
+				$("#modalEditarSubCategoria2 .antiguaFotoOferta").val(respuesta[0]["imgOferta"]);
 
-				$("#modalEditarSubCategoria .finOferta").val(respuesta[0]["finOferta"]);
+				$("#modalEditarSubCategoria2 .finOferta").val(respuesta[0]["finOferta"]);
 
 			}else{
 
-				$("#modalEditarSubCategoria .selActivarOferta").val("");
-				$("#modalEditarSubCategoria .datosOferta").hide();
-				$("#modalEditarSubCategoria .valorOferta").prop("required",false);
-				$("#modalEditarSubCategoria .previsualizarOferta").attr("src", "vistas/img/ofertas/default/default.jpg");
-				$("#modalEditarSubCategoria .antiguaFotoOferta").val(respuesta[0]["imgOferta"]);
+				$("#modalEditarSubCategoria2 .selActivarOferta").val("");
+				$("#modalEditarSubCategoria2 .datosOferta").hide();
+				$("#modalEditarSubCategoria2 .valorOferta").prop("required",false);
+				$("#modalEditarSubCategoria2 .previsualizarOferta").attr("src", "vistas/img/ofertas/default/default.jpg");
+				$("#modalEditarSubCategoria2 .antiguaFotoOferta").val(respuesta[0]["imgOferta"]);
 
 			}
 
@@ -358,27 +511,27 @@ $(".tablaSubCategorias tbody").on("click", ".btnEditarSubCategoria", function(){
 			CREAR NUEVA OFERTA AL EDITAR
 			=============================================*/
 
-			$("#modalEditarSubCategoria .selActivarOferta").change(function(){
+			$("#modalEditarSubCategoria2 .selActivarOferta").change(function(){
 
 				activarOferta($(this).val())
 
 			})
 
-			$("#modalEditarSubCategoria .valorOferta").change(function(){
+			$("#modalEditarSubCategoria2 .valorOferta").change(function(){
 
 				if($(this).attr("id") == "precioOferta"){
 
-					$("#modalEditarSubCategoria #precioOferta").prop("readonly",true);
-					$("#modalEditarSubCategoria #descuentoOferta").prop("readonly",false);
-					$("#modalEditarSubCategoria #descuentoOferta").val(0);
+					$("#modalEditarSubCategoria2 #precioOferta").prop("readonly",true);
+					$("#modalEditarSubCategoria2 #descuentoOferta").prop("readonly",false);
+					$("#modalEditarSubCategoria2 #descuentoOferta").val(0);
 
 				}
 
 				if($(this).attr("id") == "descuentoOferta"){
 
-					$("#modalEditarSubCategoria #descuentoOferta").prop("readonly",true);
-					$("#modalEditarSubCategoria #precioOferta").prop("readonly",false);
-					$("#modalEditarSubCategoria #precioOferta").val(0);
+					$("#modalEditarSubCategoria2 #descuentoOferta").prop("readonly",true);
+					$("#modalEditarSubCategoria2 #precioOferta").prop("readonly",false);
+					$("#modalEditarSubCategoria2 #precioOferta").val(0);
 
 				}
 
@@ -393,28 +546,32 @@ $(".tablaSubCategorias tbody").on("click", ".btnEditarSubCategoria", function(){
 /*=============================================
 ELIMINAR SUBCATEGORÍA
 =============================================*/
-$(".tablaSubSubCategorias").on("click", ".btnEliminarSubsubCategoria", function(){
+$(".tablaSubCategorias2").on("click", ".btnEliminarSubCategoria2", function(){
 
-  var idSubsubCategoria = $(this).attr("idSubsubCategoria");
+  var idSubCategoria2 = $(this).attr("idSubCategoria2");
+  var imgOferta = $(this).attr("imgOferta");
   var rutaCabecera = $(this).attr("rutaCabecera");
+  var imgPortada = $(this).attr("imgPortada");
 
   swal({
-    title: '¿Está seguro de borrar la sub-subcategoría?',
+    title: '¿Está seguro de borrar la subcategoría2?',
     text: "¡Si no lo está puede cancelar la accíón!",
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       cancelButtonText: 'Cancelar',
-      confirmButtonText: 'Si, borrar sub-subcategoría!'
+      confirmButtonText: 'Si, borrar subcategoría2!'
   }).then(function(result){
 
     if(result.value){
 
-      window.location = "index.php?ruta=subsubcategorias&idSubsubCategoria="+idSubsubCategoria+"&rutaCabecera="+rutaCabecera;
+      window.location = "index.php?ruta=subsubcategorias&idSubCategoria2="+idSubCategoria2+"&imgOferta="+imgOferta+"&rutaCabecera="+rutaCabecera+"&imgPortada="+imgPortada;
 
     }
 
   })
 
 })
+
+

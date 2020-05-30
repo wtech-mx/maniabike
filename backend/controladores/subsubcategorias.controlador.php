@@ -1,32 +1,30 @@
-
-
 <?php
 
-class ControladorSubsubCategorias{
+class ControladorSubCategorias2{
 
 	/*=============================================
-	MOSTRAR SUBsubCATEGORIAS
+	MOSTRAR SUBCATEGORIAS2
 	=============================================*/
 
-	static public function ctrMostrarSubsubCategorias($item, $valor){
+	static public function ctrMostrarSubCategorias2($item, $valor){
 
 		$tabla = "subsubcategorias";
 
-		$respuesta = ModeloSubsubCategorias::mdlMostrarSubsubCategorias($tabla, $item, $valor);
+		$respuesta = ModeloSubCategorias2::mdlMostrarSubCategorias2($tabla, $item, $valor);
 
 		return $respuesta;
 
 	}
 
 	/*=============================================
-	CREAR SUBsubCATEGORIA
+	CREAR SUBCATEGORIA2
 	=============================================*/
 
-	static public function ctrCrearSubsubCategoria(){
+	static public function ctrCrearSubCategoria2(){
 
-		if(isset($_POST["tituloSubsubCategoria"])){
+		if(isset($_POST["tituloSubCategoria2"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["tituloSubsubCategoria"]) && preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["descripcionSubsubCategoria"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["tituloSubCategoria2"]) && preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["descripcionSubCategoria2"])){
 
 				/*=============================================
 				VALIDAR IMAGEN PORTADA
@@ -56,7 +54,7 @@ class ControladorSubsubCategorias{
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
 						=============================================*/
 
-						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubsubCategoria"].".jpg";
+						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubCategoria2"].".jpg";
 
 						$origen = imagecreatefromjpeg($_FILES["fotoPortada"]["tmp_name"]);
 
@@ -74,7 +72,7 @@ class ControladorSubsubCategorias{
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
 						=============================================*/
 
-						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubsubCategoria"].".png";
+						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubCategoria2"].".png";
 
 						$origen = imagecreatefrompng($_FILES["fotoPortada"]["tmp_name"]);
 
@@ -122,7 +120,7 @@ class ControladorSubsubCategorias{
 
 						$aleatorio = mt_rand(100,999);
 
-						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubsubCategoria"].".jpg";
+						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubCategoria2"].".jpg";
 
 						$origen = imagecreatefromjpeg($_FILES["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
@@ -141,7 +139,7 @@ class ControladorSubsubCategorias{
 
 						$aleatorio = mt_rand(100,999);
 
-						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubsubCategoria"].".png";
+						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubCategoria2"].".png";
 
 						$origen = imagecreatefrompng($_FILES["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
@@ -164,13 +162,13 @@ class ControladorSubsubCategorias{
 
 				if($_POST["selActivarOferta"] == "oferta"){
 
-					$datos = array("subsubcategoria"=>$_POST["tituloSubsubCategoria"],
-								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
-								   "ruta"=>$_POST["rutaSubsubCategoria"],
+					$datos = array("subsubcategoria"=>$_POST["tituloSubCategoria2"],
+								   "idSubCategoria"=>$_POST["seleccionarCategoria"],
+								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
-								   "titulo"=>$_POST["tituloSubsubCategoria"],
-								   "descripcion"=> $_POST["descripcionSubsubCategoria"],
-								   "palabrasClaves"=> $_POST["pClavesSubsubCategoria"],
+								   "titulo"=>$_POST["tituloSubCategoria2"],
+								   "descripcion"=> $_POST["descripcionSubCategoria2"],
+								   "palabrasClaves"=> $_POST["pClavesSubCategoria2"],
 								   "imgPortada"=>$rutaPortada,
 								   "oferta"=>1,
 								   "precioOferta"=>$_POST["precioOferta"],
@@ -180,13 +178,13 @@ class ControladorSubsubCategorias{
 
 				}else{
 
-					$datos = array("subsubcategoria"=>$_POST["tituloSubsubCategoria"],
-								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
-								   "ruta"=>$_POST["rutaSubsubCategoria"],
+					$datos = array("subsubcategoria"=>$_POST["tituloSubCategoria2"],
+								   "idSubCategoria"=>$_POST["seleccionarCategoria"],
+								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
-								   "titulo"=>$_POST["tituloSubsubCategoria"],
-								   "descripcion"=> $_POST["descripcionSubsubCategoria"],
-								   "palabrasClaves"=> $_POST["pClavesSubsubCategoria"],
+								   "titulo"=>$_POST["tituloSubCategoria2"],
+								   "descripcion"=> $_POST["descripcionSubCategoria2"],
+								   "palabrasClaves"=> $_POST["pClavesSubCategoria2"],
 								   "imgPortada"=>$rutaPortada,
 								   "oferta"=>0,
 								   "precioOferta"=>0,
@@ -198,7 +196,7 @@ class ControladorSubsubCategorias{
 
 				ModeloCabeceras::mdlIngresarCabecera("cabeceras", $datos);
 
-				$respuesta = ModeloSubsubCategorias::mdlIngresarSubsubCategoria("subsubcategorias", $datos);
+				$respuesta = ModeloSubCategorias2::mdlIngresarSubCategoria2("subcategorias2", $datos);
 
 				if($respuesta == "ok"){
 
@@ -206,13 +204,13 @@ class ControladorSubsubCategorias{
 
 					swal({
 						  type: "success",
-						  title: "La subsubcategoría ha sido guardada correctamente",
+						  title: "La subcategoría2 ha sido guardada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "subsubcategorias";
+									window.location = "subcategorias";
 
 									}
 								})
@@ -228,13 +226,13 @@ class ControladorSubsubCategorias{
 
 					swal({
 						  type: "error",
-						  title: "¡La subsubcategoría no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡La subcategoría2 no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "subsubcategorias";
+							window.location = "subcategorias";
 
 							}
 						})
@@ -248,14 +246,14 @@ class ControladorSubsubCategorias{
 	}
 
 	/*=============================================
-	EDITAR SUBsubCATEGORIA
+	EDITAR SUBCATEGORIA2
 	=============================================*/
 
-	static public function ctreditarSubsubCategoria(){
+	static public function ctreditarSubCategoria2(){
 
-		if(isset($_POST["editarTituloSubsubCategoria"])){
+		if(isset($_POST["editarTituloSubCategoria2"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarTituloSubsubCategoria"])&& preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["descripcionSubsubCategoria"]) ){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarTituloSubCategoria2"])&& preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["descripcionSubCategoria2"]) ){
 
 				/*=============================================
 				VALIDAR IMAGEN PORTADA
@@ -293,7 +291,7 @@ class ControladorSubsubCategorias{
 
 						$aleatorio = mt_rand(100,999);
 
-						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubsubCategoria"].".jpg";
+						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubCategoria2"].".jpg";
 
 						$origen = imagecreatefromjpeg($_FILES["fotoPortada"]["tmp_name"]);
 
@@ -313,7 +311,7 @@ class ControladorSubsubCategorias{
 
 						$aleatorio = mt_rand(100,999);
 
-						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubsubCategoria"].".png";
+						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubCategoria"].".png";
 
 						$origen = imagecreatefrompng($_FILES["fotoPortada"]["tmp_name"]);
 
@@ -367,7 +365,7 @@ class ControladorSubsubCategorias{
 
 						$aleatorio = mt_rand(100,999);
 
-						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubsubCategoria"].".jpg";
+						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubCategoria2"].".jpg";
 
 						$origen = imagecreatefromjpeg($_FILES["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
@@ -386,7 +384,7 @@ class ControladorSubsubCategorias{
 
 						$aleatorio = mt_rand(100,999);
 
-						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubsubCategoria"].".png";
+						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubCategoria2"].".png";
 
 						$origen = imagecreatefrompng($_FILES["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
@@ -409,15 +407,15 @@ class ControladorSubsubCategorias{
 
 				if($_POST["selActivarOferta"] == "oferta"){
 
-					$datos = array("id"=>$_POST["editarIdSubsubCategoria"],
-								   "subsubcategoria"=>$_POST["editarTituloSubsubCategoria"],
+					$datos = array("id"=>$_POST["editarIdSubCategoria2"],
+								   "subsubcategoria"=>$_POST["editarTituloSubCategoria2"],
 								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
-								   "ruta"=>$_POST["rutaSubsubCategoria"],
+								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
 								   "idCabecera"=>$_POST["editarIdCabecera"],
-								   "titulo"=>$_POST["editarTituloSubsubCategoria"],
-								   "descripcion"=> $_POST["descripcionSubsubCategoria"],
-								   "palabrasClaves"=> $_POST["pClavesSubsubCategoria"],
+								   "titulo"=>$_POST["editarTituloSubCategoria2"],
+								   "descripcion"=> $_POST["descripcionSubCategoria2"],
+								   "palabrasClaves"=> $_POST["pClavesSubCategoria2"],
 								   "imgPortada"=>$rutaPortada,
 								   "oferta"=>1,
 								   "precioOferta"=>$_POST["precioOferta"],
@@ -427,15 +425,15 @@ class ControladorSubsubCategorias{
 
 				}else{
 
-					$datos = array("id"=>$_POST["editarIdSubsubCategoria"],
-								   "subsubcategoria"=>$_POST["editarTituloSubsubCategoria"],
+					$datos = array("id"=>$_POST["editarIdSubCategoria2"],
+								   "subsubcategoria"=>$_POST["editarTituloSubCategoria2"],
 								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
-								   "ruta"=>$_POST["rutaSubsubCategoria"],
+								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
 								   "idCabecera"=>$_POST["editarIdCabecera"],
-								   "titulo"=>$_POST["editarTituloSubsubCategoria"],
-								   "descripcion"=> $_POST["descripcionSubsubCategoria"],
-								   "palabrasClaves"=> $_POST["pClavesSubsubCategoria"],
+								   "titulo"=>$_POST["editarTituloSubCategoria2"],
+								   "descripcion"=> $_POST["descripcionSubCategoria2"],
+								   "palabrasClaves"=> $_POST["pClavesSubCategoria2"],
 								   "imgPortada"=>$rutaPortada,
 								   "oferta"=>0,
 								   "precioOferta"=>0,
@@ -473,15 +471,13 @@ class ControladorSubsubCategorias{
 
 					}
 
-
-
-					ModeloProductos::mdlActualizarOfertaProductos("productos", $datos, "ofertadoPorSubsubCategoria", $precioOfertaActualizado, $descuentoOfertaActualizado, $value["id"]);
+					ModeloProductos::mdlActualizarOfertaProductos("productos", $datos, "ofertadoPorSubCategoria2", $precioOfertaActualizado, $descuentoOfertaActualizado, $value["id"]);
 
 				}
 
 				ModeloCabeceras::mdlEditarCabecera("cabeceras", $datos);
 
-				$respuesta = ModeloSubsubCategorias::mdleditarSubsubCategoria("subsubcategorias", $datos);
+				$respuesta = ModeloSubCategorias2::mdleditarSubCategoria2("subcategorias2", $datos);
 
 				if($respuesta == "ok"){
 
@@ -489,13 +485,13 @@ class ControladorSubsubCategorias{
 
 					swal({
 						  type: "success",
-						  title: "La subsubcategoría ha sido editada correctamente",
+						  title: "La subcategoría2 ha sido editada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "subsubcategorias";
+									window.location = "subcategorias";
 
 									}
 								})
@@ -511,13 +507,13 @@ class ControladorSubsubCategorias{
 
 					swal({
 						  type: "error",
-						  title: "¡La subsubcategoría no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡La subcategoría2 no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "subsubcategorias";
+							window.location = "subcategorias";
 
 							}
 						})
@@ -531,14 +527,14 @@ class ControladorSubsubCategorias{
 	}
 
 	/*=============================================
-	ELIMINAR SUBsubCATEGORIA
+	ELIMINAR SUBCATEGORIA2
 	=============================================*/
 
-	static public function ctrEliminarSubsubCategoria(){
+	static public function ctrEliminarSubCategoria2(){
 
-		if(isset($_GET["idSubsubCategoria"])){
+		if(isset($_GET["idSubCategoria2"])){
 
-			$datos = $_GET["idSubsubCategoria"];
+			$datos = $_GET["idSubCategoria2"];
 
 			/*=============================================
 			ELIMINAR IMAGEN OFERTA
@@ -563,10 +559,10 @@ class ControladorSubsubCategorias{
 			ModeloCabeceras::mdlEliminarCabecera("cabeceras", $_GET["rutaCabecera"]);
 
 			/*=============================================
-			QUITAR LAS SUBsubATEGORIAS DE LOS PRODUCTOS
+			QUITAR LAS SUBATEGORIAS2 DE LOS PRODUCTOS
 			=============================================*/
 
-			$traerProductos = ModeloProductos::mdlMostrarProductos("productos", "id_subsubcategoria", $_GET["idSubsubCategoria"]);
+			$traerProductos = ModeloProductos::mdlMostrarProductos("productos", "id_subsubcategoria", $_GET["idSubCategoria2"]);
 
 			foreach ($traerProductos as $key => $value) {
 
@@ -579,21 +575,21 @@ class ControladorSubsubCategorias{
 
 			}
 
-			$respuesta = ModeloSubsubCategorias::mdlEliminarSubsubCategoria("subsubcategorias", $datos);
-			echo $respuesta;
+			$respuesta = ModeloSubCategorias2::mdlEliminarSubCategoria2("subcategorias2", $datos);
+
 			if($respuesta == "ok"){
 
 				echo'<script>
 
 				swal({
 					  type: "success",
-					  title: "La subsubcategoría ha sido borrada correctamente",
+					  title: "La subcategoría2 ha sido borrada correctamente",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
 					  }).then(function(result){
 								if (result.value) {
 
-								window.location = "subsubcategorias";
+								window.location = "subcategorias";
 
 								}
 							})
