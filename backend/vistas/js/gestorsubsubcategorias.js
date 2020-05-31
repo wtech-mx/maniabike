@@ -2,17 +2,17 @@
 CARGAR LA TABLA DINÁMICA DE SUBCATEGORÍAS
 =============================================*/
 
-//$.ajax({
+$.ajax({
 
-//	url:"ajax/tablasubsubcategorias.ajax.php",
-//	success:function(respuesta){
+	url:"ajax/tablasubsubcategorias.ajax.php",
+	success:function(respuesta){
 
-//		console.log("respuesta", respuesta);
+		console.log("respuesta", respuesta);
 
-//	}
+	}
 
 
-//})
+})
 
 var tablaSubCategorias2 = $('.tablaSubCategorias2').DataTable({
 
@@ -98,7 +98,7 @@ $('.tablaSubCategorias2 tbody').on("click", ".btnActivar", function(){
 
 
 /*=============================================
-REVISAR SI LA SUBCATEGORÍA2 YA EXISTE
+REVISAR SI LA SUBCATEGORÍA YA EXISTE
 =============================================*/
 
 $(".validarSubCategoria2").change(function(){
@@ -316,7 +316,7 @@ $(".fotoOferta").change(function(){
 })
 
 /*=============================================
-EDITAR SUBCATEGORÍA2
+EDITAR SUBCATEGORÍA
 =============================================*/
 
 $(".tablaSubCategorias2 tbody").on("click", ".btnEditarSubCategoria2", function(){
@@ -338,11 +338,11 @@ $(".tablaSubCategorias2 tbody").on("click", ".btnEditarSubCategoria2", function(
 		success: function(respuesta){
 
 			$("#modalEditarSubCategoria2 .editarIdSubCategoria2").val(respuesta[0]["id"]);
-			$("#modalEditarSubCategoria2 .tituloSubCategoria2").val(respuesta[0]["subsubcategoria"]);
+			$("#modalEditarSubCategoria2 .tituloSubCategoria2").val(respuesta[0]["subcategoria2"]);
 			$("#modalEditarSubCategoria2 .rutaSubCategoria2").val(respuesta[0]["ruta"]);
 
 			/*=============================================
-			EDITAR NOMBRE SUBCATEGORÍA2 Y RUTA
+			EDITAR NOMBRE SUBCATEGORÍA Y RUTA
 			=============================================*/
 
 			$("#modalEditarSubCategoria2 .tituloSubCategoria2").change(function(){
@@ -352,7 +352,7 @@ $(".tablaSubCategorias2 tbody").on("click", ".btnEditarSubCategoria2", function(
 			})
 
 			/*=============================================
-			TRAEMOS LA SUBCATEGORIA
+			TRAEMOS LA CATEGORIA
 			=============================================*/
 
 			if(respuesta[0]["id_subcategoria"] != 0){
@@ -554,7 +554,7 @@ $(".tablaSubCategorias2").on("click", ".btnEliminarSubCategoria2", function(){
   var imgPortada = $(this).attr("imgPortada");
 
   swal({
-    title: '¿Está seguro de borrar la subcategoría2?',
+    title: '¿Está seguro de borrar la subcategoría?',
     text: "¡Si no lo está puede cancelar la accíón!",
     type: 'warning',
     showCancelButton: true,
@@ -566,7 +566,7 @@ $(".tablaSubCategorias2").on("click", ".btnEliminarSubCategoria2", function(){
 
     if(result.value){
 
-      window.location = "index.php?ruta=subsubcategorias&idSubCategoria2="+idSubCategoria2+"&imgOferta="+imgOferta+"&rutaCabecera="+rutaCabecera+"&imgPortada="+imgPortada;
+      window.location = "index.php?ruta=subcategorias2&idSubCategoria2="+idSubCategoria2+"&imgOferta="+imgOferta+"&rutaCabecera="+rutaCabecera+"&imgPortada="+imgPortada;
 
     }
 

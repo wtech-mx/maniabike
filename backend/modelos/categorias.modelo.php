@@ -31,9 +31,9 @@ class ModeloCategorias{
 		}
 
 		$stmt -> close();
-		
+
 		$stmt = null;
-	
+
 	}
 
 	/*=============================================
@@ -50,10 +50,10 @@ class ModeloCategorias{
 		if($stmt -> execute()){
 
 			return "ok";
-		
+
 		}else{
 
-			return "error";	
+			return "error";
 
 		}
 
@@ -87,7 +87,7 @@ class ModeloCategorias{
 		}else{
 
 			return "error";
-		
+
 		}
 
 		$stmt->close();
@@ -120,7 +120,7 @@ class ModeloCategorias{
 		}else{
 
 			return "error";
-		
+
 		}
 
 		$stmt->close();
@@ -141,10 +141,10 @@ class ModeloCategorias{
 		if($stmt -> execute()){
 
 			return "ok";
-		
+
 		}else{
 
-			return "error";	
+			return "error";
 
 		}
 

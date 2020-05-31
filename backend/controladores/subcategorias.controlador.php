@@ -13,7 +13,7 @@ class ControladorSubCategorias{
 		$respuesta = ModeloSubCategorias::mdlMostrarSubCategorias($tabla, $item, $valor);
 
 		return $respuesta;
-	
+
 	}
 
 	/*=============================================
@@ -38,7 +38,7 @@ class ControladorSubCategorias{
 					DEFINIMOS LAS MEDIDAS
 					=============================================*/
 
-					list($ancho, $alto) = getimagesize($_FILES["fotoPortada"]["tmp_name"]);	
+					list($ancho, $alto) = getimagesize($_FILES["fotoPortada"]["tmp_name"]);
 
 					$nuevoAncho = 1280;
 					$nuevoAlto = 720;
@@ -56,7 +56,7 @@ class ControladorSubCategorias{
 
 						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubCategoria"].".jpg";
 
-						$origen = imagecreatefromjpeg($_FILES["fotoPortada"]["tmp_name"]);						
+						$origen = imagecreatefromjpeg($_FILES["fotoPortada"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -74,12 +74,12 @@ class ControladorSubCategorias{
 
 						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubCategoria"].".png";
 
-						$origen = imagecreatefrompng($_FILES["fotoPortada"]["tmp_name"]);						
+						$origen = imagecreatefrompng($_FILES["fotoPortada"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-    			
+
     					imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -122,7 +122,7 @@ class ControladorSubCategorias{
 
 						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubCategoria"].".jpg";
 
-						$origen = imagecreatefromjpeg($_FILES["fotoOferta"]["tmp_name"]);						
+						$origen = imagecreatefromjpeg($_FILES["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -141,11 +141,11 @@ class ControladorSubCategorias{
 
 						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubCategoria"].".png";
 
-						$origen = imagecreatefrompng($_FILES["fotoOferta"]["tmp_name"]);						
+						$origen = imagecreatefrompng($_FILES["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-    			
+
     					imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -154,7 +154,7 @@ class ControladorSubCategorias{
 
 					}
 
-				}			
+				}
 
 				/*=============================================
 				PREGUNTAMOS SI VIENE OFERTE EN CAMINO
@@ -189,11 +189,11 @@ class ControladorSubCategorias{
 								   "oferta"=>0,
 								   "precioOferta"=>0,
 								   "descuentoOferta"=>0,
-								   "imgOferta"=>"",								   
+								   "imgOferta"=>"",
 								   "finOferta"=>"");
 
 				}
-	
+
 				ModeloCabeceras::mdlIngresarCabecera("cabeceras", $datos);
 
 				$respuesta = ModeloSubCategorias::mdlIngresarSubCategoria("subcategorias", $datos);
@@ -273,7 +273,7 @@ class ControladorSubCategorias{
 					DEFINIMOS LAS MEDIDAS
 					=============================================*/
 
-					list($ancho, $alto) = getimagesize($_FILES["fotoPortada"]["tmp_name"]);	
+					list($ancho, $alto) = getimagesize($_FILES["fotoPortada"]["tmp_name"]);
 
 					$nuevoAncho = 1280;
 					$nuevoAlto = 720;
@@ -293,7 +293,7 @@ class ControladorSubCategorias{
 
 						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubCategoria"].".jpg";
 
-						$origen = imagecreatefromjpeg($_FILES["fotoPortada"]["tmp_name"]);						
+						$origen = imagecreatefromjpeg($_FILES["fotoPortada"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -313,12 +313,12 @@ class ControladorSubCategorias{
 
 						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubCategoria"].".png";
 
-						$origen = imagecreatefrompng($_FILES["fotoPortada"]["tmp_name"]);						
+						$origen = imagecreatefrompng($_FILES["fotoPortada"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-    			
+
     					imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -367,7 +367,7 @@ class ControladorSubCategorias{
 
 						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubCategoria"].".jpg";
 
-						$origen = imagecreatefromjpeg($_FILES["fotoOferta"]["tmp_name"]);						
+						$origen = imagecreatefromjpeg($_FILES["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -386,11 +386,11 @@ class ControladorSubCategorias{
 
 						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaSubCategoria"].".png";
 
-						$origen = imagecreatefrompng($_FILES["fotoOferta"]["tmp_name"]);						
+						$origen = imagecreatefrompng($_FILES["fotoOferta"]["tmp_name"]);
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-    			
+
     					imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -399,7 +399,7 @@ class ControladorSubCategorias{
 
 					}
 
-				}			
+				}
 
 				/*=============================================
 				PREGUNTAMOS SI VIENE OFERTE EN CAMINO
@@ -438,8 +438,8 @@ class ControladorSubCategorias{
 								   "oferta"=>0,
 								   "precioOferta"=>0,
 								   "descuentoOferta"=>0,
-								   "imgOferta"=>"",								   
-								   "finOferta"=>"");	
+								   "imgOferta"=>"",
+								   "finOferta"=>"");
 
 					if($_POST["antiguaFotoOferta"] != ""){
 
@@ -454,27 +454,27 @@ class ControladorSubCategorias{
 				foreach ($traerProductos as $key => $value) {
 
 					if($value["precio"] != 0){
-					
+
 						if($datos["oferta"] != 0 && $datos["precioOferta"] == 0){
 
 							$precioOfertaActualizado = $value["precio"]-($value["precio"]*$datos["descuentoOferta"]/100);
 							$descuentoOfertaActualizado = $datos["descuentoOferta"];
-					
+
 						}
 
-						if($datos["oferta"] != 0 && $datos["descuentoOferta"] == 0){	
+						if($datos["oferta"] != 0 && $datos["descuentoOferta"] == 0){
 
 							$precioOfertaActualizado = $datos["precioOferta"];
 							$descuentoOfertaActualizado = 100 - ($datos["precioOferta"]*100/$value["precio"]);
-					
+
 						}
 
 					}
 
 					ModeloProductos::mdlActualizarOfertaProductos("productos", $datos, "ofertadoPorSubCategoria", $precioOfertaActualizado, $descuentoOfertaActualizado, $value["id"]);
-				
+
 				}
-			
+
 				ModeloCabeceras::mdlEditarCabecera("cabeceras", $datos);
 
 				$respuesta = ModeloSubCategorias::mdleditarSubCategoria("subcategorias", $datos);
@@ -542,7 +542,7 @@ class ControladorSubCategorias{
 
 			if($_GET["imgOferta"] != ""){
 
-				unlink($_GET["imgOferta"]);		
+				unlink($_GET["imgOferta"]);
 
 			}
 
@@ -552,7 +552,7 @@ class ControladorSubCategorias{
 
 			if($_GET["imgPortada"] != "" && $_GET["imgPortada"] != "vistas/img/cabeceras/default/default.jpg"){
 
-				unlink($_GET["imgPortada"]);		
+				unlink($_GET["imgPortada"]);
 
 			}
 
@@ -571,8 +571,8 @@ class ControladorSubCategorias{
 				$item2 = "id";
 				$valor2 = $value["id"];
 
-				ModeloProductos::mdlActualizarProductos("productos", $item1, $valor1, $item2, $valor2);	
-				
+				ModeloProductos::mdlActualizarProductos("productos", $item1, $valor1, $item2, $valor2);
+
 			}
 
 			$respuesta = ModeloSubCategorias::mdlEliminarSubCategoria("subcategorias", $datos);
@@ -596,7 +596,7 @@ class ControladorSubCategorias{
 
 				</script>';
 
-			}		
+			}
 
 		}
 

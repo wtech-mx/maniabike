@@ -10,6 +10,7 @@ require_once "../modelos/subcategorias.modelo.php";
 require_once "../controladores/productos.controlador.php";
 require_once "../modelos/productos.modelo.php";
 
+
 class AjaxSubCategorias2{
 
 	/*=============================================
@@ -21,7 +22,7 @@ class AjaxSubCategorias2{
 
 	public function ajaxActivarSubCategoria2(){
 
-		$tabla = "subsubcategorias";
+		$tabla = "subcategorias2";
 
 		$item1 = "estado";
 		$valor1 = $this->activarSubCategoria2;
@@ -29,7 +30,7 @@ class AjaxSubCategorias2{
 		$item2 = "id";
 		$valor2 = $this->activarId;
 
-		ModeloProductos::mdlActualizarProductos("productos", $item1, $valor1, "id_subsubcategoria", $valor2);
+		ModeloProductos::mdlActualizarProductos("productos", $item1, $valor1, "id_subcategoria2", $valor2);
 
 		$respuesta = ModeloSubCategorias2::mdlActualizarSubCategorias2($tabla, $item1, $valor1, $item2, $valor2);
 
@@ -72,15 +73,15 @@ class AjaxSubCategorias2{
 	}
 
 	/*=============================================
-	TRAER SUBCATEGORIAS2 DE ACUERDO A LA SUBCATEGORÍA
+	TRAER SUBCATEGORIAS DE ACUERDO A LA CATEGORÍA
 	=============================================*/
 
-	public $idSubCategoria;
+	public $idCategoria2;
 
 	public function ajaxTraerSubCategoria2(){
 
-		$item = "id_subcategoria";
-		$valor = $this->idSubCategoria;
+		$item = "id_categoria2";
+		$valor = $this->idCategoria2;
 
 		$respuesta = ControladorSubCategorias2::ctrMostrarSubCategorias2($item, $valor);
 
@@ -91,7 +92,7 @@ class AjaxSubCategorias2{
 }
 
 /*=============================================
-ACTIVAR SUBCATEGORIA2
+ACTIVAR SUBCATEGORIA
 =============================================*/
 
 if(isset($_POST["activarSubCategoria2"])){
@@ -104,7 +105,7 @@ if(isset($_POST["activarSubCategoria2"])){
 }
 
 /*=============================================
-VALIDAR NO REPETIR SUBCATEGORÍA2
+VALIDAR NO REPETIR SUBCATEGORÍA
 =============================================*/
 
 if(isset( $_POST["validarSubCategoria2"])){
@@ -116,7 +117,7 @@ if(isset( $_POST["validarSubCategoria2"])){
 }
 
 /*=============================================
-EDITAR SUBCATEGORIA2
+EDITAR SUBCATEGORIA
 =============================================*/
 if(isset($_POST["idSubCategoria2"])){
 
@@ -127,12 +128,12 @@ if(isset($_POST["idSubCategoria2"])){
 }
 
 /*=============================================
-TRAER SUBCATEGORIAS2 DE ACUERDO A LA SUBCATEGORÍA
+TRAER SUBCATEGORIAS DE ACUERDO A LA CATEGORÍA
 =============================================*/
-if(isset($_POST["idSubCategoria"])){
+if(isset($_POST["idSubcategoria"])){
 
 	$traerSubCategoria2 = new AjaxSubCategorias2();
-	$traerSubCategoria2 -> idSubCategoria = $_POST["idSubCategoria"];
+	$traerSubCategoria2 -> idCategoria2 = $_POST["idSubcategoria"];
 	$traerSubCategoria2 -> ajaxTraerSubCategoria2();
 
 }

@@ -21,7 +21,6 @@ class TablaSubCategorias{
   	$valor = null;
 
   	$subcategorias = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
-
   	$datosJson = '{
 
       "data": [ ';
@@ -36,10 +35,7 @@ class TablaSubCategorias{
 			$valor = $subcategorias[$i]["id_categoria"];
 
 			$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
-
-			// print_r($categorias);
-			//var_dump($categorias["categoria"]);
-			// var_dump($categorias);
+			 // var_dump($categorias);
 
 			if($categorias["categoria"] == ""){
 
@@ -49,8 +45,6 @@ class TablaSubCategorias{
 
 				$categoria = $categorias["categoria"];
 			}
-
-
 
 			/*=============================================
   			REVISAR ESTADO

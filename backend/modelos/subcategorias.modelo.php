@@ -18,17 +18,17 @@ class ModeloSubCategorias{
 		if($stmt -> execute()){
 
 			return "ok";
-		
+
 		}else{
 
-			return "error";	
+			return "error";
 
 		}
 
 		$stmt -> close();
 
 		$stmt = null;
-		
+
 	}
 
 	/*=============================================
@@ -53,7 +53,7 @@ class ModeloSubCategorias{
 		}else{
 
 			return "error";
-		
+
 		}
 
 		$stmt->close();
@@ -119,7 +119,7 @@ class ModeloSubCategorias{
 		}else{
 
 			return "error";
-		
+
 		}
 
 		$stmt->close();
@@ -153,7 +153,7 @@ class ModeloSubCategorias{
 		}else{
 
 			return "error";
-		
+
 		}
 
 		$stmt->close();
@@ -174,10 +174,10 @@ class ModeloSubCategorias{
 		if($stmt -> execute()){
 
 			return "ok";
-		
+
 		}else{
 
-			return "error";	
+			return "error";
 
 		}
 

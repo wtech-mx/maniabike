@@ -32,7 +32,7 @@ class ModeloSubCategorias2{
 	}
 
 	/*=============================================
-	ACTUALIZAR OFERTA SUBCATEGORIAS2
+	ACTUALIZAR OFERTA SUBCATEGORIAS
 	=============================================*/
 	static public function mdlActualizarOfertaSubcategorias2($tabla, $datos, $ofertadoPor){
 
@@ -63,7 +63,7 @@ class ModeloSubCategorias2{
 	}
 
 	/*=============================================
-	MOSTRAR SUBCATEGORIAS2
+	MOSTRAR SUBCATEGORIAS
 	=============================================*/
 
 	static public function mdlMostrarSubCategorias2($tabla, $item, $valor){
@@ -95,15 +95,15 @@ class ModeloSubCategorias2{
 	}
 
 	/*=============================================
-	CREAR SUBCATEGORIA2
+	CREAR SUBCATEGORIA
 	=============================================*/
 
 	static public function mdlIngresarSubCategoria2($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(subsubcategoria, id_subcategoria, ruta, estado, oferta, precioOferta, descuentoOferta, imgOferta, finOferta) VALUES (:subsubcategoria, :id_subcategoria, :ruta, :estado, :oferta, :precioOferta, :descuentoOferta, :imgOferta, :finOferta)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(subcategoria2, id_subcategoria, ruta, estado, oferta, precioOferta, descuentoOferta, imgOferta, finOferta) VALUES (:subcategoria2, :id_subcategoria, :ruta, :estado, :oferta, :precioOferta, :descuentoOferta, :imgOferta, :finOferta)");
 
-		$stmt->bindParam(":subsubcategoria", $datos["subsubcategoria"], PDO::PARAM_STR);
-		$stmt->bindParam(":id_subcategoria", $datos["idSubCategoria"], PDO::PARAM_STR);
+		$stmt->bindParam(":subcategoria2", $datos["subcategoria2"], PDO::PARAM_STR);
+		$stmt->bindParam(":id_subcategoria", $datos["idSubcategoria"], PDO::PARAM_STR);
 		$stmt->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
 		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
 		$stmt->bindParam(":oferta", $datos["oferta"], PDO::PARAM_STR);
@@ -128,15 +128,15 @@ class ModeloSubCategorias2{
 	}
 
 	/*=============================================
-	EDITAR SUBCATEGORIA
+	EDITAR SUBCATEGORIA2
 	=============================================*/
 
 	static public function mdlEditarSubCategoria2($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET subsubcategoria = :subsubcategoria, id_subcategoria = :id_subcategoria, ruta = :ruta, estado = :estado, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET subcategoria2 = :subcategoria2, id_subcategoria = :id_subcategoria, ruta = :ruta, estado = :estado, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta WHERE id = :id");
 
-		$stmt->bindParam(":subsubcategoria", $datos["subsubcategoria"], PDO::PARAM_STR);
-		$stmt->bindParam(":id_subcategoria", $datos["idSubCategoria"], PDO::PARAM_STR);
+		$stmt->bindParam(":subcategoria2", $datos["subcategoria2"], PDO::PARAM_STR);
+		$stmt->bindParam(":id_subcategoria", $datos["idSubcategoria"], PDO::PARAM_STR);
 		$stmt->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
 		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
 		$stmt->bindParam(":oferta", $datos["oferta"], PDO::PARAM_STR);

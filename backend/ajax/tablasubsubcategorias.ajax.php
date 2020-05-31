@@ -21,7 +21,6 @@ class TablaSubCategorias2{
   	$valor = null;
 
   	$subcategorias2 = ControladorSubCategorias2::ctrMostrarSubCategorias2($item, $valor);
-
   	$datosJson = '{
 
       "data": [ ';
@@ -29,29 +28,18 @@ class TablaSubCategorias2{
 		for($i = 0; $i < count($subcategorias2); $i++){
 
 			/*=============================================
-  			TRAER LAS SUBCATEGORÍAS
+  			TRAER LAS CATEGORÍAS
   			=============================================*/
-
-			$item = "id";
-			$valor = $subcategorias2[$i]["id_subcategoria"];
-
 			$subcategorias = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
+			$TraerSubcategorias = $subcategorias [$i]["subcategoria"];
 
-			// print_r($categorias);
-			//var_dump($categorias["categoria"]);
-			// var_dump($categorias);
+			// var_dump($TraerSubcategorias);
 
-			if($subcategorias[0][1] == ""){
-
-				$subcategoria = "SIN CATEGORÍA";
-
+			if ($TraerSubcategorias == "") {
+				$subcategoria = "SIN SUB-CATEGORÍA";
 			}else{
-
-				$subcategoria = $subcategorias[0][1];
+				$subcategoria = $TraerSubcategorias;
 			}
-
-
-
 			/*=============================================
   			REVISAR ESTADO
   			=============================================*/
@@ -134,7 +122,7 @@ class TablaSubCategorias2{
 			 $datosJson .=  '
 			 [
 		      "'.($i+1).'",
-		      "'.$subcategorias[0][1].'",
+		      "'.$subcategorias2[$i]["subcategoria2"].'",
 		      "'.$subcategoria.'",
 		      "'.$subcategorias2[$i]["ruta"].'",
 		      "'.$estado.'",
@@ -144,7 +132,7 @@ class TablaSubCategorias2{
 			  "'.$tipoOferta.'",
    	  		  "'.$valorOferta.'",
               "'.$imgOferta.'",
-              "'.$subcategorias[0][10].'",
+              "'.$subcategorias2[$i]["finOferta"].'",
 	          "'.$acciones.'"
 	    	],';
 
@@ -164,7 +152,7 @@ class TablaSubCategorias2{
 }
 
 /*=============================================
-ACTIVAR TABLA DE SUBCATEGORÍAS2
+ACTIVAR TABLA DE SUBCATEGORÍAS
 =============================================*/
 $activarSubcategoria2 = new TablaSubCategorias2();
 $activarSubcategoria2 -> mostrarTablaSubCategoria2();

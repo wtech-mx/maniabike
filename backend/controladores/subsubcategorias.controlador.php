@@ -3,12 +3,12 @@
 class ControladorSubCategorias2{
 
 	/*=============================================
-	MOSTRAR SUBCATEGORIAS2
+	MOSTRAR SUBCATEGORIAS
 	=============================================*/
 
 	static public function ctrMostrarSubCategorias2($item, $valor){
 
-		$tabla = "subsubcategorias";
+		$tabla = "subcategorias2";
 
 		$respuesta = ModeloSubCategorias2::mdlMostrarSubCategorias2($tabla, $item, $valor);
 
@@ -17,7 +17,7 @@ class ControladorSubCategorias2{
 	}
 
 	/*=============================================
-	CREAR SUBCATEGORIA2
+	CREAR SUBCATEGORIA
 	=============================================*/
 
 	static public function ctrCrearSubCategoria2(){
@@ -162,13 +162,13 @@ class ControladorSubCategorias2{
 
 				if($_POST["selActivarOferta"] == "oferta"){
 
-					$datos = array("subsubcategoria"=>$_POST["tituloSubCategoria2"],
-								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
+					$datos = array("subcategoria2"=>$_POST["tituloSubCategoria2"],
+								   "idCategoria"=>$_POST["seleccionarCategoria"],
 								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
 								   "titulo"=>$_POST["tituloSubCategoria2"],
 								   "descripcion"=> $_POST["descripcionSubCategoria2"],
-								   "palabrasClaves"=> $_POST["pClavesSubCategoria2"],
+								   "palabrasClaves"=> $_POST["pClavesSubCategoria"],
 								   "imgPortada"=>$rutaPortada,
 								   "oferta"=>1,
 								   "precioOferta"=>$_POST["precioOferta"],
@@ -178,13 +178,13 @@ class ControladorSubCategorias2{
 
 				}else{
 
-					$datos = array("subsubcategoria"=>$_POST["tituloSubCategoria2"],
-								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
+					$datos = array("subcategoria2"=>$_POST["tituloSubCategoria2"],
+								   "idCategoria"=>$_POST["seleccionarCategoria"],
 								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
 								   "titulo"=>$_POST["tituloSubCategoria2"],
 								   "descripcion"=> $_POST["descripcionSubCategoria2"],
-								   "palabrasClaves"=> $_POST["pClavesSubCategoria2"],
+								   "palabrasClaves"=> $_POST["pClavesSubCategoria"],
 								   "imgPortada"=>$rutaPortada,
 								   "oferta"=>0,
 								   "precioOferta"=>0,
@@ -204,13 +204,13 @@ class ControladorSubCategorias2{
 
 					swal({
 						  type: "success",
-						  title: "La subcategoría2 ha sido guardada correctamente",
+						  title: "La subcategoría ha sido guardada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "subcategorias";
+									window.location = "subcategorias2";
 
 									}
 								})
@@ -226,13 +226,13 @@ class ControladorSubCategorias2{
 
 					swal({
 						  type: "error",
-						  title: "¡La subcategoría2 no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡La subcategoría no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "subcategorias";
+							window.location = "subcategorias2";
 
 							}
 						})
@@ -246,7 +246,7 @@ class ControladorSubCategorias2{
 	}
 
 	/*=============================================
-	EDITAR SUBCATEGORIA2
+	EDITAR SUBCATEGORIA
 	=============================================*/
 
 	static public function ctreditarSubCategoria2(){
@@ -311,7 +311,7 @@ class ControladorSubCategorias2{
 
 						$aleatorio = mt_rand(100,999);
 
-						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubCategoria"].".png";
+						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaSubCategoria2"].".png";
 
 						$origen = imagecreatefrompng($_FILES["fotoPortada"]["tmp_name"]);
 
@@ -407,15 +407,15 @@ class ControladorSubCategorias2{
 
 				if($_POST["selActivarOferta"] == "oferta"){
 
-					$datos = array("id"=>$_POST["editarIdSubCategoria2"],
-								   "subsubcategoria"=>$_POST["editarTituloSubCategoria2"],
-								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
+					$datos = array("id"=>$_POST["editarIdSubCategoria"],
+								   "subcategoria2"=>$_POST["editarTituloSubCategoria2"],
+								   "idCategoria"=>$_POST["seleccionarCategoria"],
 								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
 								   "idCabecera"=>$_POST["editarIdCabecera"],
 								   "titulo"=>$_POST["editarTituloSubCategoria2"],
 								   "descripcion"=> $_POST["descripcionSubCategoria2"],
-								   "palabrasClaves"=> $_POST["pClavesSubCategoria2"],
+								   "palabrasClaves"=> $_POST["pClavesSubCategoria"],
 								   "imgPortada"=>$rutaPortada,
 								   "oferta"=>1,
 								   "precioOferta"=>$_POST["precioOferta"],
@@ -425,15 +425,15 @@ class ControladorSubCategorias2{
 
 				}else{
 
-					$datos = array("id"=>$_POST["editarIdSubCategoria2"],
-								   "subsubcategoria"=>$_POST["editarTituloSubCategoria2"],
-								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
+					$datos = array("id"=>$_POST["editarIdSubCategoria"],
+								   "subcategoria2"=>$_POST["editarTituloSubCategoria2"],
+								   "idCategoria"=>$_POST["seleccionarCategoria"],
 								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
 								   "idCabecera"=>$_POST["editarIdCabecera"],
 								   "titulo"=>$_POST["editarTituloSubCategoria2"],
 								   "descripcion"=> $_POST["descripcionSubCategoria2"],
-								   "palabrasClaves"=> $_POST["pClavesSubCategoria2"],
+								   "palabrasClaves"=> $_POST["pClavesSubCategoria"],
 								   "imgPortada"=>$rutaPortada,
 								   "oferta"=>0,
 								   "precioOferta"=>0,
@@ -449,7 +449,7 @@ class ControladorSubCategorias2{
 
 				}
 
-				$traerProductos = ModeloProductos::mdlMostrarProductos("productos", "id_subsubcategoria", $datos["id"]);
+				$traerProductos = ModeloProductos::mdlMostrarProductos("productos", "id_subcategoria2", $datos["id"]);
 
 				foreach ($traerProductos as $key => $value) {
 
@@ -471,7 +471,7 @@ class ControladorSubCategorias2{
 
 					}
 
-					ModeloProductos::mdlActualizarOfertaProductos("productos", $datos, "ofertadoPorSubCategoria2", $precioOfertaActualizado, $descuentoOfertaActualizado, $value["id"]);
+					ModeloProductos::mdlActualizarOfertaProductos("productos", $datos, "ofertadoPorSubcategoria", $precioOfertaActualizado, $descuentoOfertaActualizado, $value["id"]);
 
 				}
 
@@ -485,13 +485,13 @@ class ControladorSubCategorias2{
 
 					swal({
 						  type: "success",
-						  title: "La subcategoría2 ha sido editada correctamente",
+						  title: "La subcategoría ha sido editada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "subcategorias";
+									window.location = "subcategorias2";
 
 									}
 								})
@@ -507,13 +507,13 @@ class ControladorSubCategorias2{
 
 					swal({
 						  type: "error",
-						  title: "¡La subcategoría2 no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡La subcategoría no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "subcategorias";
+							window.location = "subcategorias2";
 
 							}
 						})
@@ -527,7 +527,7 @@ class ControladorSubCategorias2{
 	}
 
 	/*=============================================
-	ELIMINAR SUBCATEGORIA2
+	ELIMINAR SUBCATEGORIA
 	=============================================*/
 
 	static public function ctrEliminarSubCategoria2(){
@@ -559,14 +559,14 @@ class ControladorSubCategorias2{
 			ModeloCabeceras::mdlEliminarCabecera("cabeceras", $_GET["rutaCabecera"]);
 
 			/*=============================================
-			QUITAR LAS SUBATEGORIAS2 DE LOS PRODUCTOS
+			QUITAR LAS SUBATEGORIAS DE LOS PRODUCTOS
 			=============================================*/
 
-			$traerProductos = ModeloProductos::mdlMostrarProductos("productos", "id_subsubcategoria", $_GET["idSubCategoria2"]);
+			$traerProductos = ModeloProductos::mdlMostrarProductos("productos", "id_subcategoria2", $_GET["idSubCategoria2"]);
 
 			foreach ($traerProductos as $key => $value) {
 
-				$item1 = "id_subsubcategoria";
+				$item1 = "id_subcategoria2";
 				$valor1 = 0;
 				$item2 = "id";
 				$valor2 = $value["id"];
@@ -583,13 +583,13 @@ class ControladorSubCategorias2{
 
 				swal({
 					  type: "success",
-					  title: "La subcategoría2 ha sido borrada correctamente",
+					  title: "La subcategoría ha sido borrada correctamente",
 					  showConfirmButton: true,
 					  confirmButtonText: "Cerrar"
 					  }).then(function(result){
 								if (result.value) {
 
-								window.location = "subcategorias";
+								window.location = "subcategorias2";
 
 								}
 							})
