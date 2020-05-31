@@ -163,7 +163,7 @@ class ControladorSubCategorias2{
 				if($_POST["selActivarOferta"] == "oferta"){
 
 					$datos = array("subsubcategoria"=>$_POST["tituloSubCategoria2"],
-								   "idSubCategoria"=>$_POST["seleccionarCategoria"],
+								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
 								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
 								   "titulo"=>$_POST["tituloSubCategoria2"],
@@ -179,7 +179,7 @@ class ControladorSubCategorias2{
 				}else{
 
 					$datos = array("subsubcategoria"=>$_POST["tituloSubCategoria2"],
-								   "idSubCategoria"=>$_POST["seleccionarCategoria"],
+								   "idSubCategoria"=>$_POST["seleccionarSubCategoria"],
 								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
 								   "titulo"=>$_POST["tituloSubCategoria2"],
