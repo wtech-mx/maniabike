@@ -30,15 +30,14 @@ class TablaSubCategorias2{
 			/*=============================================
   			TRAER LAS CATEGORÍAS
   			=============================================*/
+  			$item = "id";
+			$valor = $subcategorias2[$i]["id_subcategoria"];
 			$subcategorias = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
-			$TraerSubcategorias = $subcategorias [$i]["subcategoria"];
 
-			// var_dump($TraerSubcategorias);
-
-			if ($TraerSubcategorias == "") {
-				$subcategoria = "SIN SUB-CATEGORÍA";
+			if($subcategorias[0]["subcategoria"] == ""){
+				$subcategoria = "SIN SUBCATEGORÍA";
 			}else{
-				$subcategoria = $TraerSubcategorias;
+				$subcategoria = $subcategorias[0]["subcategoria"];
 			}
 			/*=============================================
   			REVISAR ESTADO

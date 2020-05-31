@@ -2,17 +2,17 @@
 CARGAR LA TABLA DINÁMICA DE SUBCATEGORÍAS
 =============================================*/
 
-$.ajax({
+// $.ajax({
 
-	url:"ajax/tablaSubCategorias.ajax.php",
-	success:function(respuesta){
+// 	url:"ajax/tablaSubCategorias.ajax.php",
+// 	success:function(respuesta){
 
-		console.log("respuesta", respuesta);
+// 		console.log("respuesta", respuesta);
 
-	}
+// 	}
 
 
-})
+// })
 
 var tablaSubCategorias = $('.tablaSubCategorias').DataTable({
 
