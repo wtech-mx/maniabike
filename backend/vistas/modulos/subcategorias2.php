@@ -3,7 +3,7 @@
   <section class="content-header">
 
     <h1>
-      Gestor Subcategorías
+      Gestor Sub-subcategorías
     </h1>
 
     <ol class="breadcrumb">
@@ -24,7 +24,7 @@
 
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarSubCategoria2">
 
-          Agregar subcategoría 2
+          Agregar sub-suncategoría
 
         </button>
 
@@ -149,9 +149,9 @@ MODAL AGREGAR SUBCATEGORÍA
                   $item = null;
                   $valor = null;
 
-                  $subcategorias2 = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
+                  $subcategorias = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
 
-                  foreach ($subcategorias2 as $key => $value) {
+                  foreach ($subcategorias as $key => $value) {
 
                     echo '<option value="'.$value["id"].'">'.$value["subcategoria"].'</option>';
                   }
@@ -190,7 +190,7 @@ MODAL AGREGAR SUBCATEGORÍA
 
                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
-                <input type="text" class="form-control input-lg tagsInput" data-role="tagsinput"  name="pClavesSubCategoria" placeholder="Ingresar palabras claves" required>
+                <input type="text" class="form-control input-lg tagsInput" data-role="tagsinput"  name="pClavesSubCategoria2" placeholder="Ingresar palabras claves" required>
 
               </div>
 

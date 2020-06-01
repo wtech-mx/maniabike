@@ -168,7 +168,7 @@ session_start();
            $_GET["ruta"]== "slide" ||
            $_GET["ruta"]== "categorias" ||
            $_GET["ruta"]== "subcategorias" ||
-           $_GET["ruta"]== "subsubcategorias" ||
+           $_GET["ruta"]== "subcategorias2" ||
            $_GET["ruta"]== "productos" ||
            $_GET["ruta"]== "banner" ||
            $_GET["ruta"]== "ventas" ||
@@ -217,7 +217,7 @@ JS PERSONALIZADO
 <script src="vistas/js/gestorSlide.js"></script>
 <script src="vistas/js/gestorCategorias.js"></script>
 <script src="vistas/js/gestorSubCategorias.js"></script>
-<script src="vistas/js/gestorsubsubcategorias.js"></script>
+<script src="vistas/js/gestorsubcategorias2.js"></script>
 <script src="vistas/js/gestorProductos.js"></script>
 <script src="vistas/js/gestorBanner.js"></script>
 <script src="vistas/js/gestorVentas.js"></script>

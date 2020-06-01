@@ -16,7 +16,7 @@ CARGAR LA TABLA DINÁMICA DE SUBCATEGORÍAS
 
 var tablaSubCategorias2 = $('.tablaSubCategorias2').DataTable({
 
-	"ajax":"ajax/tablasubsubcategorias.ajax.php",
+	"ajax":"ajax/tablasubcategorias2.ajax.php",
 	"deferRender": true,
 	"retrieve": true,
 	"processing": true,
@@ -58,7 +58,7 @@ $('.tablaSubCategorias2 tbody').on("click", ".btnActivar", function(){
 
 	var idSubCategoria2 = $(this).attr("idSubCategoria2");
 	var estadoSubCategoria2 = $(this).attr("estadoSubCategoria2");
-	console.log("idSubCategoria2",idSubCategoria2);
+//	console.log("idSubCategoria2",idSubCategoria2);
 
 	var datos = new FormData();
  	datos.append("activarId", idSubCategoria2);
@@ -66,14 +66,14 @@ $('.tablaSubCategorias2 tbody').on("click", ".btnActivar", function(){
 
   	$.ajax({
 
-	  url:"ajax/subsubcategorias.ajax.php",
+	  url:"ajax/subcategorias2.ajax.php",
 	  method: "POST",
 	  data: datos,
 	  cache: false,
       contentType: false,
       processData: false,
       success: function(respuesta){
-      console.log("respuesta", respuesta);
+      	console.log("respuesta", respuesta);
 
       }
 
@@ -112,7 +112,7 @@ $(".validarSubCategoria2").change(function(){
 	datos.append("validarSubCategoria2", subCategoria2);
 
 	 $.ajax({
-	    url:"ajax/subsubcategorias.ajax.php",
+	    url:"ajax/subcategorias2.ajax.php",
 	    method:"POST",
 	    data: datos,
 	    cache: false,
@@ -329,7 +329,7 @@ $(".tablaSubCategorias2 tbody").on("click", ".btnEditarSubCategoria2", function(
 
 	$.ajax({
 
-		url:"ajax/subsubcategorias.ajax.php",
+		url:"ajax/subcategorias2.ajax.php",
 		method: "POST",
 		data: datos,
 		cache: false,

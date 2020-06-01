@@ -1,7 +1,7 @@
 <?php
 
-require_once "../controladores/subsubcategorias.controlador.php";
-require_once "../modelos/subsubcategorias.modelo.php";
+require_once "../controladores/subcategorias.controlador2.php";
+require_once "../modelos/subcategorias.modelo2.php";
 
 require_once "../controladores/subcategorias.controlador.php";
 require_once "../modelos/subcategorias.modelo.php";
@@ -28,14 +28,17 @@ class TablaSubCategorias2{
 		for($i = 0; $i < count($subcategorias2); $i++){
 
 			/*=============================================
-  			TRAER LAS CATEGORÍAS
+  			TRAER LAS SUBCATEGORÍAS
   			=============================================*/
   			$item = "id";
 			$valor = $subcategorias2[$i]["id_subcategoria"];
+
 			$subcategorias = ControladorSubCategorias::ctrMostrarSubCategorias($item, $valor);
 
 			if($subcategorias[0]["subcategoria"] == ""){
+
 				$subcategoria = "SIN SUBCATEGORÍA";
+
 			}else{
 				$subcategoria = $subcategorias[0]["subcategoria"];
 			}
@@ -43,7 +46,7 @@ class TablaSubCategorias2{
   			REVISAR ESTADO
   			=============================================*/
 
-  			if( $subcategorias2[$i][4] == 0){
+  			if( $subcategorias2[$i]["estado"] == 0){
 
   				$colorEstado = "btn-danger";
   				$textoEstado = "Desactivado";
@@ -151,7 +154,7 @@ class TablaSubCategorias2{
 }
 
 /*=============================================
-ACTIVAR TABLA DE SUBCATEGORÍAS
+ACTIVAR TABLA DE SUBCATEGORÍAS2
 =============================================*/
 $activarSubcategoria2 = new TablaSubCategorias2();
 $activarSubcategoria2 -> mostrarTablaSubCategoria2();

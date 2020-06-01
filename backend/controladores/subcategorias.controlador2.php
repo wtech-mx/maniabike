@@ -163,12 +163,12 @@ class ControladorSubCategorias2{
 				if($_POST["selActivarOferta"] == "oferta"){
 
 					$datos = array("subcategoria2"=>$_POST["tituloSubCategoria2"],
-								   "idSubcategoria"=>$_POST["seleccionarSubcategoria"],
+								   "idSubcategoria"=>$_POST["seleccionarSubCategoria"],
 								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
 								   "titulo"=>$_POST["tituloSubCategoria2"],
 								   "descripcion"=> $_POST["descripcionSubCategoria2"],
-								   "palabrasClaves"=> $_POST["pClavesSubCategoria"],
+								   "palabrasClaves"=> $_POST["pClavesSubCategoria2"],
 								   "imgPortada"=>$rutaPortada,
 								   "oferta"=>1,
 								   "precioOferta"=>$_POST["precioOferta"],
@@ -179,12 +179,12 @@ class ControladorSubCategorias2{
 				}else{
 
 					$datos = array("subcategoria2"=>$_POST["tituloSubCategoria2"],
-								   "idSubcategoria"=>$_POST["seleccionarSubcategoria"],
+								   "idSubcategoria"=>$_POST["seleccionarSubCategoria"],
 								   "ruta"=>$_POST["rutaSubCategoria2"],
 								   "estado"=> 1,
 								   "titulo"=>$_POST["tituloSubCategoria2"],
 								   "descripcion"=> $_POST["descripcionSubCategoria2"],
-								   "palabrasClaves"=> $_POST["pClavesSubCategoria"],
+								   "palabrasClaves"=> $_POST["pClavesSubCategoria2"],
 								   "imgPortada"=>$rutaPortada,
 								   "oferta"=>0,
 								   "precioOferta"=>0,

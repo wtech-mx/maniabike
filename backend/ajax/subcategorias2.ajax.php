@@ -1,8 +1,7 @@
 <?php
 
-
-require_once "../controladores/subsubcategorias.controlador.php";
-require_once "../modelos/subsubcategorias.modelo.php";
+require_once "../controladores/subcategorias.controlador2.php";
+require_once "../modelos/subcategorias.modelo2.php";
 
 require_once "../controladores/subcategorias.controlador.php";
 require_once "../modelos/subcategorias.modelo.php";
@@ -26,6 +25,7 @@ class AjaxSubCategorias2{
 
 		$item1 = "estado";
 		$valor1 = $this->activarSubCategoria2;
+
 		$item2 = "id";
 		$valor2 = $this->activarId;
 

@@ -32,7 +32,7 @@ MENU
 
         <li><a href="categorias"><i class="fa fa-circle-o"></i> Categorías</a></li>
         <li><a href="subcategorias"><i class="fa fa-circle-o"></i> Subcategorías</a></li>
-        <li><a href="subsubcategorias"><i class="fa fa-circle-o"></i> Sub-Subcategorías</a></li>
+        <li><a href="subcategorias2"><i class="fa fa-circle-o"></i> Sub-Subcategorías</a></li>
 
       </ul>
 
