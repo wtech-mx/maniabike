@@ -43,7 +43,7 @@ class TablaSubCategorias2{
   			REVISAR ESTADO
   			=============================================*/
 
-  			if( $subcategorias2[$i]["estado"] == 0){
+  			if( $subcategorias2[$i][4] == 0){
 
   				$colorEstado = "btn-danger";
   				$textoEstado = "Desactivado";

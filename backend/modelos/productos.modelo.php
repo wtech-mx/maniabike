@@ -1,145 +1,55 @@
 <?php
-
-
-
 require_once "conexion.php";
 
-
-
 class ModeloProductos{
-
-
-
 	/*=============================================
-
 	MOSTRAR EL TOTAL DE VENTAS
-
 	=============================================*/
-
-
-
 	static public function mdlMostrarTotalProductos($tabla, $orden){
-
-
-
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $orden DESC");
-
-
-
 		$stmt -> execute();
-
-
-
 		return $stmt -> fetchAll();
-
-
-
 		$stmt-> close();
-
-
-
 		$stmt = null;
-
-
-
 	}
 
-
-
 	/*=============================================
-
 	MOSTRAR SUMA VENTAS
-
 	=============================================*/
-
-
 
 	static public function mdlMostrarSumaVentas($tabla){
-
-
-
 		$stmt = Conexion::conectar()->prepare("SELECT SUM(ventas) as total FROM $tabla");
-
-
-
 		$stmt -> execute();
 
-
-
 		return $stmt -> fetch();
-
-
-
 		$stmt -> close();
-
-
-
 		$stmt = null;
-
-
 
 	}
 
-
-
 	/*=============================================
-
 	ACTUALIZAR PRODUCTOS
-
 	=============================================*/
-
-
 
 	static public function mdlActualizarProductos($tabla, $item1, $valor1, $item2, $valor2){
 
-
-
 		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $item1 = :$item1 WHERE $item2 = :$item2");
 
-
-
 		$stmt -> bindParam(":".$item1, $valor1, PDO::PARAM_STR);
-
 		$stmt -> bindParam(":".$item2, $valor2, PDO::PARAM_STR);
 
-
-
 		if($stmt -> execute()){
-
-
-
 			return "ok";
-
-
-
 		}else{
-
-
-
 			return "error";
-
-
-
 		}
-
-
-
 		$stmt -> close();
-
-
-
 		$stmt = null;
-
-
 
 	}
 
-
-
 	/*=============================================
-
 	ACTUALIZAR OFERTA PRODUCTOS
-
 	=============================================*/
 
 	static public function mdlActualizarOfertaProductos($tabla, $datos, $ofertadoPor, $precioOfertaActualizado, $descuentoOfertaActualizado, $idOferta){
@@ -276,13 +186,15 @@ class ModeloProductos{
 
 
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, id_subcategoria, tipo, ruta, estado, titulo, titular, descripcion, multimedia, detalles, precio, portada, oferta, precioOferta, descuentoOferta, imgOferta, finOferta, ancho, altura, largo,stock, entrega) VALUES (:id_categoria, :id_subcategoria, :tipo, :ruta, :estado, :titulo, :titular, :descripcion, :multimedia, :detalles, :precio, :portada, :oferta, :precioOferta, :descuentoOferta, :imgOferta, :finOferta,  :ancho,  :altura,  :largo, :stock, :entrega)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_categoria, id_subcategoria, id_subcategoria2, tipo, ruta, estado, titulo, titular, descripcion, multimedia, detalles, precio, portada, oferta, precioOferta, descuentoOferta, imgOferta, finOferta, ancho, altura, largo,stock, entrega) VALUES (:id_categoria, :id_subcategoria, :id_subcategoria2, :tipo, :ruta, :estado, :titulo, :titular, :descripcion, :multimedia, :detalles, :precio, :portada, :oferta, :precioOferta, :descuentoOferta, :imgOferta, :finOferta,  :ancho,  :altura,  :largo, :stock, :entrega)");
 
 
 
 		$stmt->bindParam(":id_categoria", $datos["idCategoria"], PDO::PARAM_STR);
 
 		$stmt->bindParam(":id_subcategoria", $datos["idSubCategoria"], PDO::PARAM_STR);
+
+		$stmt->bindParam(":id_subcategoria2", $datos["idSubCategoria2"], PDO::PARAM_STR);
 
 		$stmt->bindParam(":tipo", $datos["tipo"], PDO::PARAM_STR);
 
@@ -357,9 +269,7 @@ class ModeloProductos{
 
 
 	/*=============================================
-
 	EDITAR PRODUCTO
-
 	=============================================*/
 
 
@@ -368,13 +278,15 @@ class ModeloProductos{
 
 
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, id_subcategoria = :id_subcategoria, tipo = :tipo, ruta = :ruta, estado = :estado, titulo = :titulo, titular = :titular, descripcion = :descripcion, multimedia = :multimedia, detalles = :detalles, precio = :precio, portada = :portada, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta, ancho = :ancho, altura = :altura, largo = :largo, stock = :stock, entrega = :entrega WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_categoria = :id_categoria, id_subcategoria = :id_subcategoria, id_subcategoria2 = :id_subcategoria2, tipo = :tipo, ruta = :ruta, estado = :estado, titulo = :titulo, titular = :titular, descripcion = :descripcion, multimedia = :multimedia, detalles = :detalles, precio = :precio, portada = :portada, oferta = :oferta, precioOferta = :precioOferta, descuentoOferta = :descuentoOferta, imgOferta = :imgOferta, finOferta = :finOferta, ancho = :ancho, altura = :altura, largo = :largo, stock = :stock, entrega = :entrega WHERE id = :id");
 
 
 
 		$stmt->bindParam(":id_categoria", $datos["idCategoria"], PDO::PARAM_STR);
 
 		$stmt->bindParam(":id_subcategoria", $datos["idSubCategoria"], PDO::PARAM_STR);
+
+		$stmt->bindParam(":id_subcategoria2", $datos["idSubCategoria2"], PDO::PARAM_STR);
 
 		$stmt->bindParam(":tipo", $datos["tipo"], PDO::PARAM_STR);
 

@@ -10,27 +10,27 @@ class TablaCategorias{
 
   /*=============================================
   MOSTRAR LA TABLA DE CATEGORÍAS
-  =============================================*/ 
+  =============================================*/
 
- 	public function mostrarTabla(){	
+ 	public function mostrarTabla(){
 
  	$item = null;
  	$valor = null;
 
- 	$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);	
+ 	$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 
  	$datosJson = '{
-		 
+
 		  "data": [ ';
 
 	for($i = 0; $i < count($categorias); $i++){
-	
+
 			/*=============================================
 			REVISAR ESTADO
-			=============================================*/ 
+			=============================================*/
 
-			if( $categorias[$i]["estado"] == 0){
-				
+			if( $categorias[$i][4] == 0){
+
 				$colorEstado = "btn-danger";
 				$textoEstado = "Desactivado";
 				$estadoCategoria = 1;
@@ -43,11 +43,11 @@ class TablaCategorias{
 
 			}
 
-		 	$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estadoCategoria='".$estadoCategoria."' idCategoria='".$categorias[$i]["id"]."'>".$textoEstado."</button>";
+		 	$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estadoCategoria='".$estadoCategoria."' idCategoria='".$categorias[$i][0]."'>".$textoEstado."</button>";
 
 		 	/*=============================================
 			REVISAR IMAGEN PORTADA
-			=============================================*/ 
+			=============================================*/
 
 			$item = "ruta";
 			$valor = $categorias[$i]["ruta"];
@@ -102,9 +102,9 @@ class TablaCategorias{
 			/*=============================================
   			CREAR LAS ACCIONES
   			=============================================*/
-	    
+
 		    $acciones = "<div class='btn-group'><button class='btn btn-warning btnEditarCategoria' idCategoria='".$categorias[$i]["id"]."' data-toggle='modal' data-target='#modalEditarCategoria'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarCategoria' idCategoria='".$categorias[$i]["id"]."' imgPortada='".$cabeceras["portada"]."'  rutaCabecera='".$categorias[$i]["ruta"]."' imgOferta='".$categorias[$i]["imgOferta"]."'><i class='fa fa-times'></i></button></div>";
-				    
+
 			$datosJson	 .= '[
 				      "'.($i+1).'",
 				      "'.$categorias[$i]["categoria"].'",
@@ -117,7 +117,7 @@ class TablaCategorias{
 				      "'.$valorOferta.'",
 				      "'.$imgOfertas.'",
 				      "'.$categorias[$i]["finOferta"].'",
-				      "'.$acciones.'"		    
+				      "'.$acciones.'"
 				    ],';
 
 	}
@@ -125,8 +125,8 @@ class TablaCategorias{
 	$datosJson = substr($datosJson, 0, -1);
 
 	$datosJson.=  ']
-		  
-	}'; 
+
+	}';
 
 	echo $datosJson;
 
@@ -138,6 +138,6 @@ class TablaCategorias{
 
 /*=============================================
 ACTIVAR TABLA DE CATEGORÍAS
-=============================================*/ 
+=============================================*/
 $activar = new TablaCategorias();
 $activar -> mostrarTabla();

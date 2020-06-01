@@ -42,6 +42,7 @@
                <th>Titulo</th>
                <th>Categoria</th>
                <th>Subcategoria</th>
+                <th>Sub-subcategoria</th>
                <th>Ruta</th>
                <th>Estado</th>
                <th>Tipo</th>
@@ -401,6 +402,24 @@ MODAL AGREGAR PRODUCTO
                   <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                   <select class="form-control input-lg seleccionarSubCategoria">
+
+                  </select>
+
+                </div>
+
+            </div>
+
+            <!--=====================================
+            AGREGAR SUBCATEGORÍA2
+            ======================================-->
+
+            <div class="form-group  entradaSubcategoria2" style="display:none">
+
+               <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                  <select class="form-control input-lg seleccionarSubCategoria2">
 
                   </select>
 
@@ -1009,6 +1028,26 @@ MODAL EDITAR PRODUCTO
                   <select class="form-control input-lg seleccionarSubCategoria">
 
                     <option class="optionEditarSubCategoria"></option>
+
+                  </select>
+
+                </div>
+
+            </div>
+
+            <!--=====================================
+            AGREGAR SUBCATEGORÍA2
+            ======================================-->
+
+            <div class="form-group entradaSubcategoria2">
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                  <select class="form-control input-lg seleccionarSubCategoria2">
+
+                    <option class="optionEditarSubCategoria2"></option>
 
                   </select>
 

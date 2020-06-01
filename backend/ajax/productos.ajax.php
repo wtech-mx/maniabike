@@ -3,140 +3,72 @@
 
 
 require_once "../controladores/productos.controlador.php";
-
 require_once "../modelos/productos.modelo.php";
 
-
-
 require_once "../controladores/categorias.controlador.php";
-
 require_once "../modelos/categorias.modelo.php";
 
-
-
 require_once "../controladores/subcategorias.controlador.php";
-
 require_once "../modelos/subcategorias.modelo.php";
 
-
-
 require_once "../controladores/cabeceras.controlador.php";
-
 require_once "../modelos/cabeceras.modelo.php";
-
-
 
 class AjaxProductos{
 
 
-
 	/*=============================================
-
   	ACTIVAR PRODUCTOS
-
  	=============================================*/
 
-
-
  	public $activarProducto;
-
 	public $activarId;
-
-
 
 	public function ajaxActivarProducto(){
 
 
 
 		$tabla = "productos";
-
-
-
 		$item1 = "estado";
-
 		$valor1 = $this->activarProducto;
-
-
-
 		$item2 = "id";
-
 		$valor2 = $this->activarId;
-
-
 
 		$respuesta = ModeloProductos::mdlActualizarProductos($tabla, $item1, $valor1, $item2, $valor2);
 
-
-
 		echo $respuesta;
-
-
-
 	}
 
 
-
 	/*=============================================
-
 	VALIDAR NO REPETIR PRODUCTO
-
 	=============================================*/
-
-
 
 	public $validarProducto;
 
-
-
 	public function ajaxValidarProducto(){
 
-
-
 		$item = "titulo";
-
 		$valor = $this->validarProducto;
 
-
-
 		$respuesta = ControladorProductos::ctrMostrarProductos($item, $valor);
-
-
-
 		echo json_encode($respuesta);
-
-
 
 	}
 
-
-
 	/*=============================================
-
 	RECIBIR MULTIMEDIA
-
 	=============================================*/
 
-
-
 	public $imagenMultimedia;
-
 	public $rutaMultimedia;
-
-
 
 	public function  ajaxRecibirMultimedia(){
 
-
-
 		$datos = $this->imagenMultimedia;
-
 		$ruta = $this->rutaMultimedia;
 
-
-
 		$respuesta = ControladorProductos::ctrSubirMultimedia($datos, $ruta);
-
-
 
 		echo $respuesta;
 

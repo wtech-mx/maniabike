@@ -2,17 +2,17 @@
 CARGAR LA TABLA DINÁMICA DE SUBCATEGORÍAS
 =============================================*/
 
-$.ajax({
+// $.ajax({
 
-	url:"ajax/tablasubsubcategorias.ajax.php",
-	success:function(respuesta){
+// 	url:"ajax/tablasubsubcategorias.ajax.php",
+// 	success:function(respuesta){
 
-		console.log("respuesta", respuesta);
+// 		console.log("respuesta", respuesta);
 
-	}
+// 	}
 
 
-})
+// })
 
 var tablaSubCategorias2 = $('.tablaSubCategorias2').DataTable({
 
@@ -58,6 +58,7 @@ $('.tablaSubCategorias2 tbody').on("click", ".btnActivar", function(){
 
 	var idSubCategoria2 = $(this).attr("idSubCategoria2");
 	var estadoSubCategoria2 = $(this).attr("estadoSubCategoria2");
+	console.log("idSubCategoria2",idSubCategoria2);
 
 	var datos = new FormData();
  	datos.append("activarId", idSubCategoria2);
@@ -72,7 +73,7 @@ $('.tablaSubCategorias2 tbody').on("click", ".btnActivar", function(){
       contentType: false,
       processData: false,
       success: function(respuesta){
-          // console.log("respuesta", respuesta);
+      console.log("respuesta", respuesta);
 
       }
 

@@ -5,6 +5,9 @@ require_once "../modelos/productos.modelo.php";
 require_once "../controladores/categorias.controlador.php";
 require_once "../modelos/categorias.modelo.php";
 
+require_once "../controladores/subsubcategorias.controlador.php";
+require_once "../modelos/subsubcategorias.modelo.php";
+
 require_once "../controladores/subcategorias.controlador.php";
 require_once "../modelos/subcategorias.modelo.php";
 
@@ -51,10 +54,23 @@ class TablaProductos{
 			}else{
 				$subcategoria = $subcategorias[0]["subcategoria"];
 			}
+
+      /*=============================================
+        TRAER LAS SUBCATEGORÍAS2
+        =============================================*/
+      $item2 = "id";
+      $valor2 = $productos[$i]["id_subcategoria"];
+      $subcategorias2 = ControladorSubCategorias2::ctrMostrarSubCategorias2($item2, $valor2);
+
+      if($subcategorias2[0]["subcategoria2"] == ""){
+        $subcategoria2 = "SIN SUB-SUBCATEGORÍA";
+      }else{
+        $subcategoria2 = $subcategorias2[0]["subcategoria2"];
+      }
+
+
 			/*=============================================
-
   			AGREGAR ETIQUETAS DE ESTADO
-
   			=============================================*/
 
 
@@ -268,217 +284,100 @@ class TablaProductos{
 
 
   			if($productos[$i]["entrega"] == 0){
-
-
-
   				$entrega = "Inmediata";
-
-
-
   			}else{
-
-
-
   				$entrega = $productos[$i]["entrega"]. " días hábiles";
 
-
-
   			}
-
-
-
   			/*=============================================
-
   			REVISAR SI HAY OFERTAS
-
   			=============================================*/
-
-
 
 			if($productos[$i]["oferta"] != 0){
 
-
-
 				if($productos[$i]["precioOferta"] != 0){
 
-
-
 					$tipoOferta = "PRECIO";
-
 					$valorOferta = "$ ".number_format($productos[$i]["precioOferta"],2);
-
-
 
 				}else{
 
-
-
 					$tipoOferta = "DESCUENTO";
-
 					$valorOferta = $productos[$i]["descuentoOferta"]." %";
-
-
-
 				}
 
-
-
 			}else{
-
-
-
 				$tipoOferta = "No tiene oferta";
-
 				$valorOferta = 0;
-
-
 
 			}
 
-
-
   			/*=============================================
-
   			TRAER IMAGEN OFERTA
-
   			=============================================*/
-
-
 
   			if($productos[$i]["imgOferta"] != ""){
 
-
-
 	  			$imgOferta = "<img src='".$productos[$i]["imgOferta"]."' class='img-thumbnail imgTablaProductos' width='100px'>";
-
-
 
 	  		}else{
 
-
-
 	  			$imgOferta = "<img src='vistas/img/ofertas/default/default.jpg' class='img-thumbnail imgTablaProductos' width='100px'>";
 
-
-
 	  		}
-
-
-
 	  		/*=============================================
-
   			TRAER LAS ACCIONES
-
   			=============================================*/
-
-
-
   			$acciones = "<div class='btn-group'><button class='btn btn-warning btnEditarProducto' idProducto='".$productos[$i]["id"]."' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarProducto' idProducto='".$productos[$i]["id"]."' imgOferta='".$productos[$i]["imgOferta"]."' rutaCabecera='".$productos[$i]["ruta"]."' imgPrincipal='".$productos[$i]["portada"]."'><i class='fa fa-times'></i></button></div>";
-
-
-
   			/*=============================================
-
   			CONSTRUIR LOS DATOS JSON
-
   			=============================================*/
-
-
-
  $operacion=$productos[$i]["largo"]*$productos[$i]["altura"]*$productos[$i]["ancho"]/5000;
 
 			$datosJson .='[
 
-
-
 					"'.($i+1).'",
-
 					"'.$productos[$i]["titulo"].'",
-
 					"'.$categoria.'",
-
 					"'.$subcategoria.'",
-
+          "'.$subcategoria2.'",
 					"'.$productos[$i]["ruta"].'",
-
 					"'.$estado.'",
-
 					"'.$productos[$i]["tipo"].'",
-
 					"'.$cabeceras["descripcion"].'",
-
-				  	"'.$cabeceras["palabrasClaves"].'",
-
-				  	"'.$imagenPrincipal.'",
-
-			 	  	"'.$vistaMultimedia.'",
-
-				  	"'.$vistaDetalles.'",
-
-		  			"'.$precio.'",
-
-				  	"'.$productos[$i]["ancho"].' cm",
-
-            "'.$productos[$i]["altura"].' cm",
-
-            "'.$productos[$i]["largo"].' cm",
-
-            "'.$operacion.' kg",
-
-            "'.$productos[$i]["stock"].'",
-
-				  	"'.$entrega.'",
-
-				  	"'.$tipoOferta.'",
-
-				  	"'.$valorOferta.'",
-
-				  	"'.$imgOferta.'",
-
-				  	"'.$productos[$i]["finOferta"].'",
-
-				  	"'.$acciones.'"
-
-
-
+			  	"'.$cabeceras["palabrasClaves"].'",
+			  	"'.$imagenPrincipal.'",
+		 	  	"'.$vistaMultimedia.'",
+			  	"'.$vistaDetalles.'",
+	  			"'.$precio.'",
+			  	"'.$productos[$i]["ancho"].' cm",
+          "'.$productos[$i]["altura"].' cm",
+          "'.$productos[$i]["largo"].' cm",
+          "'.$operacion.' kg",
+          "'.$productos[$i]["stock"].'",
+			  	"'.$entrega.'",
+			  	"'.$tipoOferta.'",
+			  	"'.$valorOferta.'",
+			  	"'.$imgOferta.'",
+			  	"'.$productos[$i]["finOferta"].'",
+			  	"'.$acciones.'"
 			],';
-
-
 
 		}
 
-
-
 		$datosJson = substr($datosJson, 0, -1);
-
-
-
 		$datosJson .= ']
-
-
-
 		}';
 
 		echo $datosJson;
 
-
-
   }
-
-
-
-
 
 }
 
-
-
 /*=============================================
-
 ACTIVAR TABLA DE PRODUCTOS
-
 =============================================*/
 
 $activarProductos = new TablaProductos();
-
 $activarProductos -> mostrarTablaProductos();

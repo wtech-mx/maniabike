@@ -26,7 +26,6 @@ class AjaxSubCategorias2{
 
 		$item1 = "estado";
 		$valor1 = $this->activarSubCategoria2;
-
 		$item2 = "id";
 		$valor2 = $this->activarId;
 

@@ -5,201 +5,75 @@ class ControladorProductos{
 
 
 	/*=============================================
-
 	MOSTRAR TOTAL PRODUCTOS
-
 	=============================================*/
-
-
-
 	static public function ctrMostrarTotalProductos($orden){
 
-
-
 		$tabla = "productos";
-
-
-
 		$respuesta = ModeloProductos::mdlMostrarTotalProductos($tabla, $orden);
-
-
 		return $respuesta;
-
-
-
 	}
 
-
-
 	/*=============================================
-
 	MOSTRAR SUMA VENTAS
-
 	=============================================*/
-
-
-
 	static public function ctrMostrarSumaVentas(){
 
-
-
 		$tabla = "productos";
-
-
-
 		$respuesta = ModeloProductos::mdlMostrarSumaVentas($tabla);
-
-
-
 		return $respuesta;
-
-
-
 	}
 
-
-
 	/*=============================================
-
 	MOSTRAR PRODUCTOS
-
 	=============================================*/
-
-
-
 	static public function ctrMostrarProductos($item, $valor){
 
-
-
 		$tabla = "productos";
-
-
-
 		$respuesta = ModeloProductos::mdlMostrarProductos($tabla, $item, $valor);
-
-
-
 		return $respuesta;
-
-
 
 	}
 
-
-
 	/*=============================================
-
 	SUBIR MULTIMEDIA
-
-	=============================================*/
-
-
-
+=============================================*/
 	static public function ctrSubirMultimedia($datos, $ruta){
-
-
-
 		if(isset($datos["tmp_name"]) && !empty($datos["tmp_name"])){
-
-
-
 			/*=============================================
-
 			DEFINIMOS LAS MEDIDAS
-
 			=============================================*/
-
-
-
 			list($ancho, $alto) = getimagesize($datos["tmp_name"]);
-
-
-
 			$nuevoAncho = 1000;
-
 			$nuevoAlto = 1000;
 
-
-
 			/*=============================================
-
 			CREAMOS EL DIRECTORIO DONDE VAMOS A GUARDAR LA FOTO DE LA MULTIMEDIA
-
 			=============================================*/
-
-
-
 			$directorio = "../vistas/img/multimedia/".$ruta;
 
-
-
 			/*=============================================
-
 			PRIMERO PREGUNTAMOS SI EXISTE UN DIRECTORIO DE MULTIMEDIA CON ESTA RUTA
-
 			=============================================*/
-
-
-
 			if (!file_exists($directorio)){
-
-
-
 				mkdir($directorio, 0755);
-
-
-
 			}
-
-
-
 			/*=============================================
-
 			DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
-
 			=============================================*/
-
-
 
 			if($datos["type"] == "image/jpeg"){
-
-
-
 				/*=============================================
-
 				GUARDAMOS LA IMAGEN EN EL DIRECTORIO
-
 				=============================================*/
-
-
-
 				$rutaMultimedia = $directorio."/".$datos["name"];
-
-
-
 				$origen = imagecreatefromjpeg($datos["tmp_name"]);
-
-
-
 				$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-
-
 				imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-
-
 				imagejpeg($destino, $rutaMultimedia);
-
-
-
 			}
 
-
-
 			if($datos["type"] == "image/png"){
-
-
 
 				/*=============================================
 
@@ -693,6 +567,8 @@ class ControladorProductos{
 
 						   "idSubCategoria"=>$datos["subCategoria"],
 
+						   "idSubCategoria2"=>$datos["subCategoria2"],
+
 						   "tipo"=>$datos["tipo"],
 
 						   "detalles"=>$datos["detalles"],
@@ -752,6 +628,8 @@ class ControladorProductos{
 						   "idCategoria"=>$datos["categoria"],
 
 						   "idSubCategoria"=>$datos["subCategoria"],
+
+						   "idSubCategoria2"=>$datos["subCategoria2"],
 
 						   "tipo"=>$datos["tipo"],
 
@@ -1445,6 +1323,8 @@ class ControladorProductos{
 
 								   "idSubCategoria"=>$datos["subCategoria"],
 
+								   "idSubCategoria2"=>$datos["subCategoria2"],
+
 								   "tipo"=>$datos["tipo"],
 
 								   "detalles"=>$datos["detalles"],
@@ -1506,6 +1386,8 @@ class ControladorProductos{
 								   "idCategoria"=>$datos["categoria"],
 
 								   "idSubCategoria"=>$datos["subCategoria"],
+
+								   "idSubCategoria2"=>$datos["subCategoria2"],
 
 								   "tipo"=>$datos["tipo"],
 

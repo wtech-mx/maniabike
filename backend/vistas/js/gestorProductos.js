@@ -267,6 +267,53 @@ $(".seleccionarCategoria").change(function(){
 })
 
 /*=============================================
+SELECCIONAR SUBCATEGORÍA2
+=============================================*/
+
+$(".seleccionarCategoria2").change(function(){
+
+	var categoria = $(this).val();
+
+	$(".seleccionarSubCategoria2").html("");
+
+	$("#modalEditarProducto .seleccionarSubCategoria2").html("");
+
+	var datos = new FormData();
+	datos.append("idCategoria", categoria);
+
+	 $.ajax({
+	    url:"ajax/subsubcategorias.ajax.php",
+	    method:"POST",
+	    data: datos,
+	    cache: false,
+	    contentType: false,
+	    processData: false,
+	    dataType: "json",
+	    success:function(respuesta){
+
+	    	// console.log("respuesta", respuesta);
+
+	    	$(".entradaSubcategoria2").show();
+
+	    	respuesta.forEach(funcionForEach);
+
+	        function funcionForEach(item, index){
+
+	        	$(".seleccionarSubCategoria2").append(
+
+    				'<option value="'+item["id"]+'">'+item["subcategoria2"]+'</option>'
+
+    			)
+
+	        }
+
+	    }
+
+	})
+
+})
+
+/*=============================================
 SUBIENDO LA FOTO DE PORTADA
 =============================================*/
 
@@ -527,6 +574,7 @@ $(".guardarProducto").click(function(){
 	   $(".seleccionarTipo").val() != "" &&
 	   $(".seleccionarCategoria").val() != "" &&
 	   $(".seleccionarSubCategoria").val() != "" &&
+	   $(".seleccionarSubCategoria2").val() != "" &&
 	   $(".descripcionProducto").val() != "" &&
 	   $(".pClavesProducto").val() != ""){
 
@@ -651,6 +699,7 @@ function agregarMiProducto(imagen){
 		var seleccionarTipo = $(".seleccionarTipo").val();
 	   	var seleccionarCategoria = $(".seleccionarCategoria").val();
 	    var seleccionarSubCategoria = $(".seleccionarSubCategoria").val();
+	    var seleccionarSubCategoria2 = $(".seleccionarSubCategoria2").val();
 	    var descripcionProducto = $(".descripcionProducto").val();
 	    var pClavesProducto = $(".pClavesProducto").val();
 	    var precio = $(".precio").val();
@@ -689,6 +738,7 @@ function agregarMiProducto(imagen){
 		datosProducto.append("detalles", detallesString);
 		datosProducto.append("seleccionarCategoria", seleccionarCategoria);
 		datosProducto.append("seleccionarSubCategoria", seleccionarSubCategoria);
+		datosProducto.append("seleccionarSubCategoria2", seleccionarSubCategoria2);
 		datosProducto.append("descripcionProducto", descripcionProducto);
 		datosProducto.append("pClavesProducto", pClavesProducto);
 		datosProducto.append("precio", precio);
@@ -995,6 +1045,69 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 			}
 
 			/*=============================================
+			TRAEMOS LA SUBCATEGORIA2
+			=============================================*/
+
+			if(respuesta[0]["id_subcategoria2"] != 0){
+
+				var datosSubCategoria2 = new FormData();
+				datosSubCategoria2.append("idSubCategoria2", respuesta[0]["id_subcategoria2"]);
+
+				$.ajax({
+
+						url:"ajax/subsubcategorias.ajax.php",
+						method: "POST",
+						data: datosSubCategoria2,
+						cache: false,
+						contentType: false,
+						processData: false,
+						dataType: "json",
+						success: function(respuesta){
+
+							$("#modalEditarProducto .optionEditarSubCategoria2").val(respuesta[0]["id"]);
+							$("#modalEditarProducto .optionEditarSubCategoria2").html(respuesta[0]["subcategoria2"]);
+
+							var datosCategoria = new FormData();
+							datosCategoria.append("idSubCategoria", respuesta[0]["id_SubCategoria"]);
+
+							$.ajax({
+
+							    url:"ajax/subsubcategorias.ajax.php",
+								method: "POST",
+								data: datosCategoria,
+								cache: false,
+								contentType: false,
+								processData: false,
+								dataType: "json",
+								success: function(respuesta){
+
+									respuesta.forEach(funcionForEach);
+
+							        function funcionForEach(item, index){
+
+						    			$("#modalEditarProducto .seleccionarSubCategoria2").append(
+
+						    				'<option value="'+item["id"]+'">'+item["subcategoria2"]+'</option>'
+
+						    			)
+
+						    		}
+
+								}
+
+							})
+
+						}
+
+					})
+
+			}else{
+
+				$("#modalEditarProducto  .optionEditarSubCategoria2").html("SIN SUB-CATEGORÍA");
+
+			}
+
+			/*=============================================
 			TRAEMOS DATOS DE CABECERA
 			=============================================*/
 
@@ -1178,6 +1291,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 					   $("#modalEditarProducto .seleccionarTipo").val() != "" &&
 					   $("#modalEditarProducto .seleccionarCategoria").val() != "" &&
 					   $("#modalEditarProducto .seleccionarSubCategoria").val() != "" &&
+					   $("#modalEditarProducto .seleccionarSubCategoria2").val() != "" &&
 					   $("#modalEditarProducto .descripcionProducto").val() != "" &&
 					   $("#modalEditarProducto .pClavesProducto").val() != ""){
 
@@ -1321,8 +1435,9 @@ function editarMiProducto(imagen){
 	var tituloProducto = $("#modalEditarProducto .tituloProducto").val();
 	var rutaProducto = $("#modalEditarProducto .rutaProducto").val();
 	var seleccionarTipo = $("#modalEditarProducto .seleccionarTipo").val();
-		var seleccionarCategoria = $("#modalEditarProducto .seleccionarCategoria").val();
+	var seleccionarCategoria = $("#modalEditarProducto .seleccionarCategoria").val();
 	var seleccionarSubCategoria = $("#modalEditarProducto .seleccionarSubCategoria").val();
+	var seleccionarSubCategoria2 = $("#modalEditarProducto .seleccionarSubCategoria2").val();
 	var descripcionProducto = $("#modalEditarProducto .descripcionProducto").val();
 	var pClavesProducto = $("#modalEditarProducto .pClavesProducto").val();
 	var precio = $("#modalEditarProducto .precio").val();
@@ -1370,6 +1485,7 @@ function editarMiProducto(imagen){
 	datosProducto.append("detalles", detallesString);
 	datosProducto.append("seleccionarCategoria", seleccionarCategoria);
 	datosProducto.append("seleccionarSubCategoria", seleccionarSubCategoria);
+	datosProducto.append("seleccionarSubCategoria2", seleccionarSubCategoria2);
 	datosProducto.append("descripcionProducto", descripcionProducto);
 	datosProducto.append("pClavesProducto", pClavesProducto);
 	datosProducto.append("precio", precio);
