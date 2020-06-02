@@ -7,6 +7,7 @@ BANNER
 $servidor = Ruta::ctrRutaServidor();
 $url = Ruta::ctrRuta();
 
+var_dump($servidor);
 $ruta = $rutas[0];
 
 $banner = ControladorProductos::ctrMostrarBanner($ruta);
@@ -351,7 +352,7 @@ LISTAR PRODUCTOS
 
 				$Categoria = ControladorProductos::ctrMostrarSubCategorias($item1, $valor1);
 
-				if(!$subcategoria || !$categoria){
+				if(!$subcategoria || !$Categoria){
 
 					$subCategoria2 = ControladorProductos::ctrMostrarSubCategorias2($item1, $valor1);
 
@@ -361,7 +362,10 @@ LISTAR PRODUCTOS
 				}else if(!$categoria || !$subcategoria2){
 
 					$item2 = "id_subcategoria";
-					$valor2 = $subCategoria[0]["id"];
+					$valor2 = $subCategoria["id"];
+
+					var_dump($item2);
+					var_dump($valo2);
 
 				}else{
 
