@@ -1,13 +1,10 @@
 <!--=====================================
 BANNER
 ======================================-->
-
 <?php
-
 $servidor = Ruta::ctrRutaServidor();
 $url = Ruta::ctrRuta();
 
-var_dump($servidor);
 $ruta = $rutas[0];
 
 $banner = ControladorProductos::ctrMostrarBanner($ruta);
@@ -348,31 +345,30 @@ LISTAR PRODUCTOS
 				$item1 = "ruta";
 				$valor1 = $rutas[0];
 
-				$subcategoria = ControladorProductos::ctrMostrarCategorias($item1, $valor1);
+				$categoria = ControladorProductos::ctrMostrarCategorias($item1, $valor1);
 
-				$Categoria = ControladorProductos::ctrMostrarSubCategorias($item1, $valor1);
+				if(!$categoria){
 
-				if(!$subcategoria || !$Categoria){
+					$subCategoria = ControladorProductos::ctrMostrarSubCategorias($item1, $valor1);
 
-					$subCategoria2 = ControladorProductos::ctrMostrarSubCategorias2($item1, $valor1);
 
-					$item2 = "id_subcategoria2";
-					$valor2 = $subCategoria2[0]["id"];
-
-				}else if(!$categoria || !$subcategoria2){
 
 					$item2 = "id_subcategoria";
-					$valor2 = $subCategoria["id"];
-
-					var_dump($item2);
-					var_dump($valo2);
+					$valor2 = $subCategoria[0]["id"];
 
 				}else{
 
 					$item2 = "id_categoria";
-					$valor2 = $Categoria["id"];
+					$valor2 = $categoria["id"];
 
 				}
+
+				if(!$categoria){
+					$subCategoria2 = ControladorProductos::ctrMostrarSubCategorias2($item1, $valor1);
+					$item2 = [0][1];
+					$valor2 = $subCategoria2["id"];
+				}
+
 			}
 
 
