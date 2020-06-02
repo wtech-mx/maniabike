@@ -1,7 +1,5 @@
 <?php
 
-
-
 require_once "../controladores/productos.controlador.php";
 require_once "../modelos/productos.modelo.php";
 
@@ -10,6 +8,9 @@ require_once "../modelos/categorias.modelo.php";
 
 require_once "../controladores/subcategorias.controlador.php";
 require_once "../modelos/subcategorias.modelo.php";
+
+require_once "../controladores/subcategorias.controlador2.php";
+require_once "../modelos/subcategorias.modelo2.php";
 
 require_once "../controladores/cabeceras.controlador.php";
 require_once "../modelos/cabeceras.modelo.php";
@@ -98,6 +99,8 @@ class AjaxProductos{
 
 	public $seleccionarSubCategoria;
 
+	public $seleccionarSubCategoria2;
+
 	public $descripcionProducto;
 
 	public $pClavesProducto;
@@ -161,6 +164,8 @@ class AjaxProductos{
 			"categoria"=>$this->seleccionarCategoria,
 
 			"subCategoria"=>$this->seleccionarSubCategoria,
+
+			"subCategoria2"=>$this->seleccionarSubCategoria2,
 
 			"descripcionProducto"=>$this->descripcionProducto,
 
@@ -271,6 +276,8 @@ class AjaxProductos{
 			"categoria"=>$this->seleccionarCategoria,
 
 			"subCategoria"=>$this->seleccionarSubCategoria,
+
+			"subCategoria2"=>$this->seleccionarSubCategoria2,
 
 			"descripcionProducto"=>$this->descripcionProducto,
 
@@ -428,6 +435,8 @@ if(isset($_POST["tituloProducto"])){
 
 	$producto -> seleccionarSubCategoria = $_POST["seleccionarSubCategoria"];
 
+	$producto -> seleccionarSubCategoria2 = $_POST["seleccionarSubCategoria2"];
+
 	$producto -> descripcionProducto = $_POST["descripcionProducto"];
 
 	$producto -> pClavesProducto = $_POST["pClavesProducto"];
@@ -575,6 +584,8 @@ if(isset($_POST["id"])){
 	$editarProducto -> seleccionarCategoria = $_POST["seleccionarCategoria"];
 
 	$editarProducto -> seleccionarSubCategoria = $_POST["seleccionarSubCategoria"];
+
+	$editarProducto -> seleccionarSubCategoria2 = $_POST["seleccionarSubCategoria2"];
 
 	$editarProducto -> descripcionProducto = $_POST["descripcionProducto"];
 

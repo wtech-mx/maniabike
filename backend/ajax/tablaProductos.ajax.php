@@ -5,8 +5,8 @@ require_once "../modelos/productos.modelo.php";
 require_once "../controladores/categorias.controlador.php";
 require_once "../modelos/categorias.modelo.php";
 
-require_once "../controladores/subsubcategorias.controlador.php";
-require_once "../modelos/subsubcategorias.modelo.php";
+require_once "../controladores/subcategorias.controlador2.php";
+require_once "../modelos/subcategorias.modelo2.php";
 
 require_once "../controladores/subcategorias.controlador.php";
 require_once "../modelos/subcategorias.modelo.php";
@@ -57,10 +57,10 @@ class TablaProductos{
 
       /*=============================================
         TRAER LAS SUBCATEGORÍAS2
-        =============================================*/
-      $item2 = "id";
-      $valor2 = $productos[$i]["id_subcategoria"];
-      $subcategorias2 = ControladorSubCategorias2::ctrMostrarSubCategorias2($item2, $valor2);
+      =============================================*/
+      $item4 = "id";
+      $valor4 = $productos[$i]["id_subcategoria2"];
+      $subcategorias2 = ControladorSubCategorias2::ctrMostrarSubCategorias2($item4, $valor4);
 
       if($subcategorias2[0]["subcategoria2"] == ""){
         $subcategoria2 = "SIN SUB-SUBCATEGORÍA";

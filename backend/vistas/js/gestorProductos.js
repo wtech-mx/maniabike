@@ -266,52 +266,6 @@ $(".seleccionarCategoria").change(function(){
 
 })
 
-/*=============================================
-SELECCIONAR SUBCATEGORÍA2
-=============================================*/
-
-$(".seleccionarCategoria2").change(function(){
-
-	var categoria = $(this).val();
-
-	$(".seleccionarSubCategoria2").html("");
-
-	$("#modalEditarProducto .seleccionarSubCategoria2").html("");
-
-	var datos = new FormData();
-	datos.append("idCategoria", categoria);
-
-	 $.ajax({
-	    url:"ajax/subsubcategorias.ajax.php",
-	    method:"POST",
-	    data: datos,
-	    cache: false,
-	    contentType: false,
-	    processData: false,
-	    dataType: "json",
-	    success:function(respuesta){
-
-	    	// console.log("respuesta", respuesta);
-
-	    	$(".entradaSubcategoria2").show();
-
-	    	respuesta.forEach(funcionForEach);
-
-	        function funcionForEach(item, index){
-
-	        	$(".seleccionarSubCategoria2").append(
-
-    				'<option value="'+item["id"]+'">'+item["subcategoria2"]+'</option>'
-
-    			)
-
-	        }
-
-	    }
-
-	})
-
-})
 
 /*=============================================
 SUBIENDO LA FOTO DE PORTADA
@@ -1048,6 +1002,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 			TRAEMOS LA SUBCATEGORIA2
 			=============================================*/
 
+
 			if(respuesta[0]["id_subcategoria2"] != 0){
 
 				var datosSubCategoria2 = new FormData();
@@ -1055,7 +1010,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 				$.ajax({
 
-						url:"ajax/subsubcategorias.ajax.php",
+						url:"ajax/subcategorias2.ajax.php",
 						method: "POST",
 						data: datosSubCategoria2,
 						cache: false,
@@ -1067,14 +1022,14 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 							$("#modalEditarProducto .optionEditarSubCategoria2").val(respuesta[0]["id"]);
 							$("#modalEditarProducto .optionEditarSubCategoria2").html(respuesta[0]["subcategoria2"]);
 
-							var datosCategoria = new FormData();
-							datosCategoria.append("idSubCategoria", respuesta[0]["id_SubCategoria"]);
+							var datosSubCategoria = new FormData();
+							datosSubCategoria.append("idSubCategoria", respuesta[0]["id_subcategoria"]);
 
 							$.ajax({
 
-							    url:"ajax/subsubcategorias.ajax.php",
+								url:"ajax/subcategorias2.ajax.php",
 								method: "POST",
-								data: datosCategoria,
+								data: datosSubCategoria,
 								cache: false,
 								contentType: false,
 								processData: false,
@@ -1103,7 +1058,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 			}else{
 
-				$("#modalEditarProducto  .optionEditarSubCategoria2").html("SIN SUB-CATEGORÍA");
+				$("#modalEditarProducto  .optionEditarSubCategoria2").html("SIN SUBCATEGORÍA");
 
 			}
 

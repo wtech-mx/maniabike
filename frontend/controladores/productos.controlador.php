@@ -31,6 +31,20 @@ class ControladorProductos{
 	}
 
 	/*=============================================
+	MOSTRAR SUBCATEGORÍAS2
+	=============================================*/
+
+	static public function ctrMostrarSubCategorias2($item, $valor){
+
+		$tabla = "subcategorias2";
+
+		$respuesta = ModeloProductos::mdlMostrarSubCategorias2($tabla, $item, $valor);
+
+		return $respuesta;
+
+	}
+
+	/*=============================================
 	MOSTRAR PRODUCTOS
 	=============================================*/
 

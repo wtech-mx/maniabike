@@ -29,7 +29,7 @@ class ModeloProductos{
 			return $stmt -> fetchAll();
 
 		}
-		
+
 		$stmt -> close();
 
 		$stmt = null;
@@ -41,6 +41,26 @@ class ModeloProductos{
 	=============================================*/
 
 	static public function mdlMostrarSubCategorias($tabla, $item, $valor){
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+		$stmt -> execute();
+
+		return $stmt -> fetchAll();
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	/*=============================================
+	MOSTRAR SUB-CATEGORÍAS2
+	=============================================*/
+
+	static public function mdlMostrarSubCategorias2($tabla, $item, $valor){
 
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
@@ -210,10 +230,10 @@ class ModeloProductos{
 		if($stmt -> execute()){
 
 			return "ok";
-		
+
 		}else{
 
-			return "error";	
+			return "error";
 
 		}
 

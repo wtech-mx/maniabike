@@ -140,6 +140,22 @@ if(isset($_GET["ruta"])){
 	}
 
 	/*=============================================
+	URL'S AMIGABLES DE SUBCATEGORÍAS 2
+	=============================================*/
+
+	$rutaSubCategorias2 = ControladorProductos::ctrMostrarSubCategorias2($item, $valor);
+
+	foreach ($rutaSubCategorias2 as $key => $value) {
+
+		if($rutas[0] == $value["ruta"]){
+
+			$ruta = $rutas[0];
+
+		}
+
+	}
+
+	/*=============================================
 	URL'S AMIGABLES DE PRODUCTOS
 	=============================================*/
 

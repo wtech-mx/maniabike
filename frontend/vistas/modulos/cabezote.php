@@ -12,7 +12,7 @@ if(isset($_SESSION["validarSesion"])){
 	if($_SESSION["validarSesion"] == "ok"){
 
 		echo '<script>
-		
+
 			localStorage.setItem("usuario","'.$_SESSION["id"].'");
 
 		</script>';
@@ -76,7 +76,7 @@ if($cliente->getAccessToken()){
  	$respuesta = ControladorUsuarios::ctrRegistroRedesSociales($datos);
 
  	echo '<script>
-		
+
 	setTimeout(function(){
 
 		window.location = localStorage.getItem("rutaActual");
@@ -94,24 +94,24 @@ TOP
 ======================================-->
 
 <div class="container-fluid barraSuperior" id="top">
-	
+
 	<div class="container">
-		
+
 		<div class="row">
-	
+
 			<!--=====================================
 			SOCIAL
 			======================================-->
 
 			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 social">
-				
-				<ul>	
+
+				<ul>
 
 					<?php
 
 					$social = ControladorPlantilla::ctrEstiloPlantilla();
 
-					$jsonRedesSociales = json_decode($social["redesSociales"],true);		
+					$jsonRedesSociales = json_decode($social["redesSociales"],true);
 
 					foreach ($jsonRedesSociales as $key => $value) {
 
@@ -126,7 +126,7 @@ TOP
 					}
 
 					?>
-			
+
 				</ul>
 
 			</div>
@@ -136,7 +136,7 @@ TOP
 			======================================-->
 
 			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 registro">
-				
+
 				<ul>
 
 				<?php
@@ -212,12 +212,12 @@ TOP
 				}
 
 				?>
-	
+
 				</ul>
 
-			</div>	
+			</div>
 
-		</div>	
+		</div>
 
 	</div>
 
@@ -228,23 +228,23 @@ HEADER
 ======================================-->
 
 <header class="container-fluid">
-	
+
 	<div class="container">
-		
+
 		<div class="row" id="cabezote">
 
 			<!--=====================================
 			LOGOTIPO
 			======================================-->
-			
+
 			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="logotipo">
-				
+
 				<a href="<?php echo $url; ?>">
-						
+
 					<img src="<?php echo $servidor.$social["logo"]; ?>" class="img-responsive">
 
 				</a>
-				
+
 			</div>
 
 			<!--=====================================
@@ -252,19 +252,19 @@ HEADER
 			======================================-->
 
 			<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
-					
+
 				<!--=====================================
 				BOTÓN CATEGORÍAS
 				======================================-->
 
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 backColor" id="btnCategorias">
-					
+
 					<p>CATEGORÍAS
-					
+
 						<span class="pull-right">
 							<i class="fa fa-bars" aria-hidden="true"></i>
 						</span>
-					
+
 					</p>
 
 				</div>
@@ -272,17 +272,17 @@ HEADER
 				<!--=====================================
 				BUSCADOR
 				======================================-->
-				
+
 				<div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-12" id="buscador">
-					
-					<input type="search" name="buscar" class="form-control" placeholder="Buscar...">	
+
+					<input type="search" name="buscar" class="form-control" placeholder="Buscar...">
 
 					<span class="input-group-btn">
-						
+
 						<a href="<?php echo $url; ?>buscador/1/recientes">
 
 							<button class="btn btn-default backColor" type="submit">
-								
+
 								<i class="fa fa-search"></i>
 
 							</button>
@@ -292,7 +292,7 @@ HEADER
 					</span>
 
 				</div>
-			
+
 			</div>
 
 			<!--=====================================
@@ -300,18 +300,18 @@ HEADER
 			======================================-->
 
 			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="carrito">
-				
+
 				<a href="<?php echo $url;?>carrito-de-compras">
 
-					<button class="btn btn-default pull-left backColor"> 
-						
-						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-					
-					</button>
-				
-				</a>	
+					<button class="btn btn-default pull-left backColor">
 
-				<p>TU CESTA <span class="cantidadCesta"></span> <br> MXN $ <span class="sumaCesta"></span></p>	
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
+					</button>
+
+				</a>
+
+				<p>TU CESTA <span class="cantidadCesta"></span> <br> MXN $ <span class="sumaCesta"></span></p>
 
 			</div>
 
@@ -333,13 +333,13 @@ HEADER
 				foreach ($categorias as $key => $value) {
 
 					if ($value["estado"] != 0) {
-					
+
 					echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
-							
+
 							<h4>
 								<a href="'.$url.$value["ruta"].'" class="pixelCategorias" titulo="'.$value["categoria"].'">'.$value["categoria"].'</a>
 							</h4>
-							
+
 							<hr>
 
 							<ul>';
@@ -349,12 +349,24 @@ HEADER
 							$valor = $value["id"];
 
 							$subcategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
-							
+
 							foreach ($subcategorias as $key => $value) {
-									
-									echo '<li><a href="'.$url.$value["ruta"].'" class="pixelSubCategorias" titulo="'.$value["subcategoria"].'">'.$value["subcategoria"].'</a></li>';
-								}	
-								
+
+									echo '<li><h4><a href="'.$url.$value["ruta"].'" class="pixelSubCategorias" titulo="'.$value["subcategoria"].'">'.$value["subcategoria"].'</a></h4></li>';
+								}
+							'<hr>';
+
+						    $item2 = "id_subcategoria";
+
+							$valor2 = $value["id"];
+
+							$subcategorias2 = ControladorProductos::ctrMostrarSubCategorias2($item2, $valor2);
+							'<hr>';
+							foreach ($subcategorias2 as $key => $value) {
+
+									echo '<hr><li><a href="'.$url.$value["ruta"].'" class="pixelSubCategorias2 text-muted" titulo="'.$value["subcategoria2"].'">'.$value["subcategoria2"].'</a></li>';
+								}
+
 							echo '</ul>
 
 						</div>';
@@ -362,7 +374,7 @@ HEADER
 
 				}
 
-			?>	
+			?>
 
 		</div>
 
@@ -383,13 +395,13 @@ VENTANA MODAL PARA EL REGISTRO
         	<h3 class="backColor">REGISTRARSE</h3>
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        	
+
 			<!--=====================================
 			REGISTRO FACEBOOK
 			======================================-->
 
 			<div class="col-sm-6 col-xs-12 facebook">
-				
+
 				<p>
 				  <i class="fa fa-facebook"></i>
 					Registro con Facebook
@@ -403,7 +415,7 @@ VENTANA MODAL PARA EL REGISTRO
 			<a href="<?php echo $rutaGoogle; ?>">
 
 				<div class="col-sm-6 col-xs-12 google">
-					
+
 					<p>
 					  <i class="fa fa-google"></i>
 						Registro con Google
@@ -417,17 +429,17 @@ VENTANA MODAL PARA EL REGISTRO
 			======================================-->
 
 			<form method="post" onsubmit="return registroUsuario()">
-				
+
 			<hr>
 
 				<div class="form-group">
-					
+
 					<div class="input-group">
-						
+
 						<span class="input-group-addon">
-							
+
 							<i class="glyphicon glyphicon-user"></i>
-						
+
 						</span>
 
 						<input type="text" class="form-control text-uppercase" id="regUsuario" name="regUsuario" placeholder="Nombre Completo" required>
@@ -437,13 +449,13 @@ VENTANA MODAL PARA EL REGISTRO
 				</div>
 
 				<div class="form-group">
-					
+
 					<div class="input-group">
-						
+
 						<span class="input-group-addon">
-							
+
 							<i class="glyphicon glyphicon-envelope"></i>
-						
+
 						</span>
 
 						<input type="email" class="form-control" id="regEmail" name="regEmail" placeholder="Correo Electrónico" required>
@@ -453,13 +465,13 @@ VENTANA MODAL PARA EL REGISTRO
 				</div>
 
 				<div class="form-group">
-					
+
 					<div class="input-group">
-						
+
 						<span class="input-group-addon">
-							
+
 							<i class="glyphicon glyphicon-lock"></i>
-						
+
 						</span>
 
 						<input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="Contraseña" required>
@@ -473,13 +485,13 @@ VENTANA MODAL PARA EL REGISTRO
 				======================================-->
 
 				<div class="checkBox">
-					
+
 					<label>
-						
+
 						<input id="regPoliticas" type="checkbox">
-					
+
 							<small>
-								
+
 								Al registrarse, usted acepta nuestras condiciones de uso y políticas de privacidad
 
 								<br>
@@ -498,19 +510,19 @@ VENTANA MODAL PARA EL REGISTRO
 					$registro -> ctrRegistroUsuario();
 
 				?>
-				
-				<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">	
+
+				<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
 
 			</form>
 
         </div>
 
         <div class="modal-footer">
-          
+
 			¿Ya tienes una cuenta registrada? | <strong><a href="#modalIngreso" data-dismiss="modal" data-toggle="modal">Ingresar</a></strong>
 
         </div>
-      
+
     </div>
 
 </div>
@@ -528,13 +540,13 @@ VENTANA MODAL PARA EL INGRESO
         	<h3 class="backColor">INGRESAR</h3>
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        	
+
 			<!--=====================================
 			INGRESO FACEBOOK
 			======================================-->
 
 			<div class="col-sm-6 col-xs-12 facebook">
-				
+
 				<p>
 				  <i class="fa fa-facebook"></i>
 					Ingreso con Facebook
@@ -546,9 +558,9 @@ VENTANA MODAL PARA EL INGRESO
 			INGRESO GOOGLE
 			======================================-->
 			<a href="<?php echo $rutaGoogle; ?>">
-			
+
 				<div class="col-sm-6 col-xs-12 google">
-					
+
 					<p>
 					  <i class="fa fa-google"></i>
 						Ingreso con Google
@@ -563,17 +575,17 @@ VENTANA MODAL PARA EL INGRESO
 			======================================-->
 
 			<form method="post">
-				
+
 			<hr>
 
 				<div class="form-group">
-					
+
 					<div class="input-group">
-						
+
 						<span class="input-group-addon">
-							
+
 							<i class="glyphicon glyphicon-envelope"></i>
-						
+
 						</span>
 
 						<input type="email" class="form-control" id="ingEmail" name="ingEmail" placeholder="Correo Electrónico" required>
@@ -583,13 +595,13 @@ VENTANA MODAL PARA EL INGRESO
 				</div>
 
 				<div class="form-group">
-					
+
 					<div class="input-group">
-						
+
 						<span class="input-group-addon">
-							
+
 							<i class="glyphicon glyphicon-lock"></i>
-						
+
 						</span>
 
 						<input type="password" class="form-control" id="ingPassword" name="ingPassword" placeholder="Contraseña" required>
@@ -598,7 +610,7 @@ VENTANA MODAL PARA EL INGRESO
 
 				</div>
 
-				
+
 
 				<?php
 
@@ -606,13 +618,13 @@ VENTANA MODAL PARA EL INGRESO
 					$ingreso -> ctrIngresoUsuario();
 
 				?>
-				
-				<input type="submit" class="btn btn-default backColor btn-block btnIngreso" value="ENVIAR">	
+
+				<input type="submit" class="btn btn-default backColor btn-block btnIngreso" value="ENVIAR">
 
 				<br>
 
 				<center>
-					
+
 					<a href="#modalPassword" data-dismiss="modal" data-toggle="modal">¿Olvidaste tu contraseña?</a>
 
 				</center>
@@ -622,11 +634,11 @@ VENTANA MODAL PARA EL INGRESO
         </div>
 
         <div class="modal-footer">
-          
+
 			¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
 
         </div>
-      
+
     </div>
 
 </div>
@@ -645,7 +657,7 @@ VENTANA MODAL PARA OLVIDO DE CONTRASEÑA
         	<h3 class="backColor">SOLICITUD DE NUEVA CONTRASEÑA</h3>
 
            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        	
+
 			<!--=====================================
 			OLVIDO CONTRASEÑA
 			======================================-->
@@ -655,20 +667,20 @@ VENTANA MODAL PARA OLVIDO DE CONTRASEÑA
 				<label class="text-muted">Escribe el correo electrónico con el que estás registrado y allí te enviaremos una nueva contraseña:</label>
 
 				<div class="form-group">
-					
+
 					<div class="input-group">
-						
+
 						<span class="input-group-addon">
-							
+
 							<i class="glyphicon glyphicon-envelope"></i>
-						
+
 						</span>
-					
+
 						<input type="email" class="form-control" id="passEmail" name="passEmail" placeholder="Correo Electrónico" required>
 
 					</div>
 
-				</div>			
+				</div>
 
 				<?php
 
@@ -676,19 +688,19 @@ VENTANA MODAL PARA OLVIDO DE CONTRASEÑA
 					$password -> ctrOlvidoPassword();
 
 				?>
-				
-				<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">	
+
+				<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
 
 			</form>
 
         </div>
 
         <div class="modal-footer">
-          
+
 			¿No tienes una cuenta registrada? | <strong><a href="#modalRegistro" data-dismiss="modal" data-toggle="modal">Registrarse</a></strong>
 
         </div>
-      
+
     </div>
 
 </div>

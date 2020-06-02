@@ -413,13 +413,29 @@ MODAL AGREGAR PRODUCTO
             AGREGAR SUBCATEGORÍA2
             ======================================-->
 
-            <div class="form-group  entradaSubcategoria2" style="display:none">
+            <div class="form-group">
 
-               <div class="input-group">
+                <div class="input-group">
 
                   <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
                   <select class="form-control input-lg seleccionarSubCategoria2">
+
+                    <option value="">Selecionar Sub-subcategoría</option>
+
+                    <?php
+
+                    $item = null;
+                    $valor = null;
+
+                    $subcategorias2 = ControladorSubCategorias2::ctrMostrarSubCategorias2($item, $valor);
+
+                    foreach ($subcategorias2 as $key => $value) {
+
+                      echo '<option value="'.$value["id"].'">'.$value["subcategoria2"].'</option>';
+                    }
+
+                    ?>
 
                   </select>
 
