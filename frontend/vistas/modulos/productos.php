@@ -5,6 +5,7 @@ BANNER
 $servidor = Ruta::ctrRutaServidor();
 $url = Ruta::ctrRuta();
 
+
 $ruta = $rutas[0];
 
 $banner = ControladorProductos::ctrMostrarBanner($ruta);
@@ -320,7 +321,6 @@ LISTAR PRODUCTOS
 			/*=============================================
 			LLAMADO DE PRODUCTOS DE CATEGORÍAS, SUBCATEGORÍAS Y DESTACADOS
 			=============================================*/
-
 			if($rutas[0] == "articulos-gratis"){
 
 				$item2 = "precio";
@@ -350,11 +350,18 @@ LISTAR PRODUCTOS
 				if(!$categoria){
 
 					$subCategoria = ControladorProductos::ctrMostrarSubCategorias($item1, $valor1);
+					$subCategoria2 = ControladorProductos::ctrMostrarSubCategorias2($item1, $valor1);
 
-
-
+					if ($subCategoria == array(size==0)) {
 					$item2 = "id_subcategoria";
 					$valor2 = $subCategoria[0]["id"];
+
+					}else{
+					$item2 = "id_subcategoria2";
+					$valor2 = $subCategoria2[0]["id"];
+					}
+
+
 
 				}else{
 
@@ -362,13 +369,6 @@ LISTAR PRODUCTOS
 					$valor2 = $categoria["id"];
 
 				}
-
-				if(!$categoria){
-					$subCategoria2 = ControladorProductos::ctrMostrarSubCategorias2($item1, $valor1);
-					$item2 = [0][1];
-					$valor2 = $subCategoria2[0];
-				}
-
 			}
 
 
