@@ -364,15 +364,9 @@ HEADER
 
 							foreach ($subcategorias2 as $key => $value) {
 
-								echo '
-								<li>
-								<hr>
-								<a class="text-muted" href="'.$url.$value["ruta"].'" class="pixelSubCategorias2 text-muted" titulo="'.$value["subcategoria2"].'">'.$value["subcategoria2"].'
-								</a>
-
-								</li>';
+								echo '<li>-<a class="text-muted" href="'.$url.$value["ruta"].'" class="pixelSubCategorias2 text-muted" titulo="'.$value["subcategoria2"].'">'.$value["subcategoria2"].'</a></li>';
 							}
-							'<hr>';
+
 
 							echo '</ul>
 

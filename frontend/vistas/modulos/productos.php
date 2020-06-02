@@ -347,11 +347,18 @@ LISTAR PRODUCTOS
 				$item1 = "ruta";
 				$valor1 = $rutas[0];
 
-				$categoria = ControladorProductos::ctrMostrarCategorias($item1, $valor1);
+				$subcategoria = ControladorProductos::ctrMostrarCategorias($item1, $valor1);
 
-				if(!$categoria){
+				$Categoria = ControladorProductos::ctrMostrarSubCategorias($item1, $valor1);
 
-					$subCategoria = ControladorProductos::ctrMostrarSubCategorias($item1, $valor1);
+				if(!$subcategoria || !$categoria){
+
+					$subCategoria2 = ControladorProductos::ctrMostrarSubCategorias2($item1, $valor1);
+
+					$item2 = "id_subcategoria2";
+					$valor2 = $subCategoria2[0]["id"];
+
+				}else if(!$categoria || !$subcategoria2){
 
 					$item2 = "id_subcategoria";
 					$valor2 = $subCategoria[0]["id"];
@@ -359,7 +366,7 @@ LISTAR PRODUCTOS
 				}else{
 
 					$item2 = "id_categoria";
-					$valor2 = $categoria["id"];
+					$valor2 = $Categoria["id"];
 
 				}
 			}
