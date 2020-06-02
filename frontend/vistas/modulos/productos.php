@@ -366,7 +366,7 @@ LISTAR PRODUCTOS
 				if(!$categoria){
 					$subCategoria2 = ControladorProductos::ctrMostrarSubCategorias2($item1, $valor1);
 					$item2 = [0][1];
-					$valor2 = $subCategoria2["id"];
+					$valor2 = $subCategoria2[0];
 				}
 
 			}
