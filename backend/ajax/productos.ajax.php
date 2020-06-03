@@ -107,6 +107,10 @@ class AjaxProductos{
 
 	public $precio;
 
+	public $costo;
+	public $utilidad;
+	public $comision;
+
 	public $ancho;
 
 	public $altura;
@@ -172,6 +176,10 @@ class AjaxProductos{
 			"pClavesProducto"=>$this->pClavesProducto,
 
 			"precio"=>$this->precio,
+
+			"costo"=>$this->costo,
+			"utilidad"=>$this->utilidad,
+			"comision"=>$this->comision,
 
 			"ancho"=>$this->ancho,
 
@@ -284,6 +292,10 @@ class AjaxProductos{
 			"pClavesProducto"=>$this->pClavesProducto,
 
 			"precio"=>$this->precio,
+
+			"costo"=>$this->costo,
+			"utilidad"=>$this->utilidad,
+			"comision"=>$this->comision,
 
 			"ancho"=>$this->ancho,
 
@@ -442,6 +454,8 @@ if(isset($_POST["tituloProducto"])){
 	$producto -> pClavesProducto = $_POST["pClavesProducto"];
 
 	$producto -> precio = $_POST["precio"];
+
+
 
 	$producto -> ancho = $_POST["ancho"];
 

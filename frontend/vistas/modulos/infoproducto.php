@@ -578,6 +578,8 @@ INFOPRODUCTOS
 									'.$infoproducto["entrega"].' días hábiles para la entrega |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventas"].' ventas |
+									<i class="fa fa-cubes" style="margin:0px 5px"></i>
+									'.$infoproducto["stock"].' disponibles |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].' </span> personas
 
