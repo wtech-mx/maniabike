@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-12-2019 a las 06:44:13
+-- Tiempo de generación: 04-06-2020 a las 03:34:45
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -96,10 +95,109 @@ INSERT INTO `cabeceras` (`id`, `ruta`, `titulo`, `descripcion`, `palabrasClaves`
 (2, 'desarrollo-web', 'Desarrollo Web', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam accusantium enim esse eos officiis sit officia', 'Lorem ipsum, dolor sit amet, consectetur, adipisicing, elit, Quisquam, accusantium, enim, esse', 'vistas/img/cabeceras/web.jpg', '2017-11-17 14:59:28'),
 (3, 'peliculas', 'peliculas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris felis velit, volutpat nec molestie id, tempus eu enim. V', 'lorem,ipsum,sit', 'vistas/img/cabeceras/peliculas.jpg', '2018-03-15 22:22:27'),
 (4, 'bicicletas', 'bicicletas', 'bicicleta azul', 'azul,rojo,gratis', 'vistas/img/cabeceras/bicicletas.jpg', '2019-12-05 23:45:15'),
-(5, 'faros', 'FAROS', 'faros', 'faros, gratis', 'vistas/img/cabeceras/faros.jpg', '2019-12-06 06:01:17'),
-(6, 'faros-montana', 'Faros montaña', 'faros para montaña', 'faro,montaña,amarilla', 'vistas/img/cabeceras/faros-montana.jpg', '2019-12-06 00:24:03'),
+(5, 'categoria-3', 'categoria 3', 'categoria 3 descp', 'categoria 3 pc', 'vistas/img/cabeceras/faros.jpg', '2020-05-31 05:21:36'),
 (7, 'faro-amarilla', 'faro amarilla', 'faro amarilla', 'amarilla,faro,blanca,gratis', 'vistas/img/cabeceras/faro-amarilla.jpg', '2019-12-06 00:25:54'),
-(8, 'bicicleta', 'bicicleta', 'jbsd hjdf', 'rojo,gratis', 'vistas/img/cabeceras/bicicleta.jpg', '2019-12-06 03:04:04');
+(8, 'bicicleta', 'bicicleta', 'jbsd hjdf', 'rojo,gratis', 'vistas/img/cabeceras/bicicleta.jpg', '2019-12-06 03:04:04'),
+(10, 'efsdf', 'efsdf', 'dsf', 'sdfds', 'vistas/img/cabeceras/default/default.jpg', '2020-05-28 02:00:57'),
+(11, 'efsdf', 'efsdf', 'dsf', 'sdfds', 'vistas/img/cabeceras/default/default.jpg', '2020-05-28 02:01:25'),
+(12, 'efsdf', 'efsdf', 'dsf', 'sdfds', 'vistas/img/cabeceras/default/default.jpg', '2020-05-28 02:02:05'),
+(13, 'gdfg', 'gdfg', 'dfgdfg', 'gdfg', 'vistas/img/cabeceras/default/default.jpg', '2020-05-28 02:04:51'),
+(14, 'dsfs', 'dsfs', 'dsf', 'sdfs', 'vistas/img/cabeceras/default/default.jpg', '2020-05-29 02:22:01'),
+(15, 'asa', 'asa', 'asasas', 'sas', 'vistas/img/cabeceras/default/default.jpg', '2020-05-29 02:23:02'),
+(16, 'asa', 'asa', 'asasas', 'sas', 'vistas/img/cabeceras/default/default.jpg', '2020-05-29 02:23:18'),
+(17, 'asa', 'asa', 'asasas', 'sas', 'vistas/img/cabeceras/default/default.jpg', '2020-05-29 02:23:31'),
+(18, 'dsf', 'dsf', 'sdf', 'sdf', 'vistas/img/cabeceras/default/default.jpg', '2020-05-29 03:21:01'),
+(19, 'dsf', 'dsf', 'sdf', 'sdf', 'vistas/img/cabeceras/default/default.jpg', '2020-05-29 03:22:05'),
+(20, 'dsf', 'dsf', 'sdf', 'sdf', 'vistas/img/cabeceras/default/default.jpg', '2020-05-29 03:30:35'),
+(21, 'poigtuy', 'poigtuy', 'sasgdfgdfegdfgdfg', 'asas,sdfsdfs', 'undefined', '2020-05-29 04:25:45'),
+(22, 'prueba2', 'Prueba2', 'Hola Prueba de jhjghj,\r\nhytfghfgthgfhfghfghfghfgh', '11,j1,1,15', 'undefined', '2020-06-01 18:45:24'),
+(23, 'prueba-todo', 'PRUEBA TODO', 'holakuuuuuuuuuuuuuu\r\nkhjhjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', 'DFSDFDFD,DSF,SDFF', 'undefined', '2020-06-01 18:41:49'),
+(24, 'fgfd', 'fgfd', 'descragrrrrrrrrrrrrrrrrrrhbj\nb gggggggggggggggggf\nbfggggggggggggggggggggb', 'asdaaa,pv', 'undefined', '2020-06-01 18:27:51'),
+(25, 'categoria-2-nane-', 'categoria 2 nane ', 'categoria 2 desc', 'categoria 2 pc', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:21:14'),
+(26, 'categoria-1-name', 'categoria 1 name', 'categoria 1 descp', 'categoria 1 pc', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:20:53'),
+(27, 'subcategoria-3', 'subcategoria 3', 'subcategoria 3', 'subcategoria 3', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 03:45:36'),
+(28, 'subcategoria-2', 'subcategoria 2', 'subcategoria 2', 'subcategoria 2', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 03:45:48'),
+(29, 'subcategoria-1', 'subcategoria 1', 'subcategoria-1', 'fghf', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 03:44:13'),
+(36, 'stok', 'stok', 'stokstok', 'stok', 'vistas/img/cabeceras/default/default.jpg', '2020-05-30 20:24:15'),
+(37, 'fgdf', 'FGDF', 'FGD', 'DFGD', 'vistas/img/cabeceras/default/default.jpg', '2020-05-30 20:51:44'),
+(38, 'fgdf', 'FGDF', 'FGD', 'DFGD', 'vistas/img/cabeceras/default/default.jpg', '2020-05-30 23:35:18'),
+(39, 'cdfdsf', 'cdfdsf', 'sdfs', 'dsfs', 'vistas/img/cabeceras/default/default.jpg', '2020-05-30 23:46:34'),
+(40, 'fgdf', 'FGDF', 'sfesdf', 'dsfs', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 01:49:43'),
+(41, 'fgdf', 'FGDF', 'sfesdf', 'dsfs', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 01:49:46'),
+(42, 'ssdfs', 'ssdfs', 'dfd', 'dsfs', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 03:32:34'),
+(43, 'ssdfs', 'ssdfs', 'dfd', 'dsfs', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 03:32:48'),
+(44, 'ssdfs', 'ssdfs', 'dfd', 'dsfs', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 03:32:59'),
+(45, 'ssdfs', 'ssdfs', 'dfd', 'dsfs', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 03:33:20'),
+(46, 'ssdfs', 'ssdfs', 'dfd', 'dsfs', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 03:34:13'),
+(47, 'ssdfs', 'ssdfs', 'dfd', 'dsfs', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 03:34:19'),
+(48, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:41:41'),
+(49, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:41:46'),
+(50, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:41:50'),
+(51, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:41:58'),
+(52, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:42:45'),
+(53, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:42:52'),
+(54, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:43:34'),
+(55, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:43:42'),
+(56, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:45:36'),
+(57, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:48:48'),
+(58, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:49:06'),
+(59, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:49:19'),
+(60, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:49:26'),
+(61, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:49:36'),
+(62, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:49:47'),
+(63, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:49:59'),
+(64, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:55:04'),
+(65, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:55:09'),
+(66, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:55:30'),
+(67, 'ssdfs', 'ssdfs', 'cvb', 'cvb', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 05:55:50'),
+(68, 'prub', 'PRUB', 'PRUB', 'PRUB', 'vistas/img/cabeceras/prub.jpg', '2020-05-31 13:56:05'),
+(69, 'prub', 'PRUB', 'PRUB', 'PRUB', 'vistas/img/cabeceras/prub.jpg', '2020-05-31 13:56:09'),
+(73, 'ssdfs', 'ssdfs', 'sdf', 'sdf', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 14:37:20'),
+(74, 'ssdfs', 'ssdfs', 'sdf', 'sdf', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 14:39:21'),
+(75, 'ssdfs', 'ssdfs', 'sdf', 'sdf', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 14:39:41'),
+(76, 'ssdfs', 'ssdfs', 'fghff', 'gh', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 14:39:58'),
+(77, 'ssdfs', 'ssdfs', 'fghff', 'gh', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 14:42:26'),
+(78, 'ssdfs', 'ssdfs', 'fghff', 'gh', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 14:42:33'),
+(79, 'ssdfs', 'ssdfs', 'fghff', 'gh', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 14:42:38'),
+(80, 'gre', 'gre', 'fgd', 'dfgd', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 14:42:54'),
+(81, 'gre', 'gre', 'fgd', 'dfgd', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 14:43:13'),
+(84, 'as', 'as', 'asas', 'sas', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 17:30:38'),
+(85, 'as', 'as', 'asas', 'sas', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 17:30:46'),
+(86, 'as', 'as', 'asas', 'sas', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 17:30:56'),
+(87, 'ssdfs', 'ssdfs', 'jnmkhjk', 'hjkh', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 17:44:51'),
+(89, 'fgdf', 'FGDF', 'gfh', 'gfhf', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 18:29:27'),
+(90, 'fgdf', 'FGDF', 'gfh', 'gfhf', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 18:30:16'),
+(91, 'fgdf', 'FGDF', 'gfh', 'gfhf', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 18:30:41'),
+(92, 'fgdf', 'FGDF', 'gfh', 'gfhf', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 18:30:45'),
+(93, 'asasas', 'asasas', 'asas', 'asa', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 18:30:57'),
+(94, 'asasas', 'asasas', 'asas', 'asa', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 18:31:01'),
+(95, 'asasas', 'asasas', 'asas', 'asa', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 18:31:05'),
+(96, 'asasas', 'asasas', 'asas', 'asa', 'vistas/img/cabeceras/default/default.jpg', '2020-05-31 18:34:07'),
+(97, 'hg', 'hg', 'ghj', 'ghj', 'vistas/img/cabeceras/default/default.jpg', '2020-06-01 18:46:46'),
+(98, 'hg', 'hg', 'ghj', 'ghj', 'vistas/img/cabeceras/default/default.jpg', '2020-06-01 18:46:50'),
+(99, 'hg', 'hg', 'fgh', 'fgh', 'vistas/img/cabeceras/hg.jpg', '2020-06-01 22:35:59'),
+(100, 'hg', 'hg', 'fgh', 'fgh', 'vistas/img/cabeceras/hg.jpg', '2020-06-01 22:39:38'),
+(101, 'hg', 'hg', 'fgh', 'fgh', 'vistas/img/cabeceras/hg.jpg', '2020-06-01 22:39:45'),
+(105, 'ersder', 'ersder', 'hgyjgggggggggg', 'uhui', 'undefined', '2020-06-02 03:27:58'),
+(106, 'ad', 'ad', 'af', 'dfg', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 01:27:26'),
+(107, 'jlo', 'jlo', 'uyik', 'yui', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 01:28:01'),
+(108, 'gtgft', 'gtgft', 'tygyt', 'hui', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 03:31:26'),
+(109, 'nñññññ', 'ññññññ', 'tgftt', 'hyuh', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 03:33:19'),
+(110, 'hjbhjb', 'hjbhjb', 'hgfh', 'fhg', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 03:34:17'),
+(111, 'jjjjjjjj', 'jjjjjjjj', 'njjjjjjjjj', 'jju', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 03:37:39'),
+(112, 'hgf', 'hgf', 'fgh', 'fgh', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 03:46:10'),
+(113, 'jy', 'jy', 'jy', 'tyj', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 03:54:56'),
+(116, 'look-like-readable-english', 'look like readable English', 'This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\n\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"', 'jgh', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 04:19:10'),
+(117, 'lorem-ipsum-passage', 'Lorem Ipsum passage', 'This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"', 'hose inte', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 04:22:04'),
+(118, 'subsub1', 'Subsub1', 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer u', 'anera,galería', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 22:49:22'),
+(119, 'subsub2', 'subsub2', 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\".', 'contenido', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 22:50:37'),
+(120, 'subsub2', 'subsub2', 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\".', 'punto', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 22:52:32'),
+(121, 'subsub2', 'subsub2', 'No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum', 'asd', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 22:54:15'),
+(122, 'subsub3', 'subsub3', 'porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinido', 'hgfh', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 22:56:24'),
+(123, 'subsub2', 'subsub2', 'porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinido', 'sdf', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 22:57:43'),
+(124, 'subsub33', 'subsub33', 'porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinido', 'hrt', 'vistas/img/cabeceras/default/default.jpg', '2020-06-02 22:59:28'),
+(125, 'sub2sub', 'sub2sub', 'porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinido', 'fgh', 'undefined', '2020-06-02 23:03:51'),
+(127, 'dfgb', 'dfgb', 'bgf', 'fgb', 'vistas/img/cabeceras/default/default.jpg', '2020-06-04 00:49:23');
 
 -- --------------------------------------------------------
 
@@ -125,7 +223,9 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `categoria`, `ruta`, `estado`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `fecha`) VALUES
-(7, 'FAROS', 'faros', 1, 0, 0, 0, '', '0000-00-00 00:00:00', '2019-12-06 00:22:40');
+(7, 'CATEGORIA ', 'categoria', 1, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 00:14:10'),
+(8, 'CATEGORIA 2', 'categoria-2', 1, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 00:14:21'),
+(9, 'CATEGORIA 3', 'categoria-3', 1, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 00:14:33');
 
 -- --------------------------------------------------------
 
@@ -192,7 +292,7 @@ CREATE TABLE `comercio` (
 --
 
 INSERT INTO `comercio` (`id`, `impuesto`, `envioNacional`, `envioInternacional`, `tasaMinimaNal`, `tasaMinimaInt`, `pais`, `modoPaypal`, `clienteIdPaypal`, `llaveSecretaPaypal`, `modoPayu`, `merchantIdPayu`, `accountIdPayu`, `apiKeyPayu`) VALUES
-(1, 19, 1, 2, 10, 15, 'MX', 'sandbox', 'AecffvSZfOgj6g1MkrVmz12ACMES2-InggmWCpU5CblR-z5WwkYBYjmLsh9yPRLuRape1ahjqpcJet4N', 'EAx1SVMHGV6MJKwl-pnOSzaJASlAINZdYRdS--wkgaPYLevcGw88V0PU_W_rg00xLkBknybCjsO_xzA0', 'live', 508029, 512321, '4Vj8eK4rloUd272L48hsrarnUA');
+(1, 15, 150, 250, 110, 120, 'MX', 'sandbox', 'AecffvSZfOgj6g1MkrVmz12ACMES2-InggmWCpU5CblR-z5WwkYBYjmLsh9yPRLuRape1ahjqpcJet4N', 'EAx1SVMHGV6MJKwl-pnOSzaJASlAINZdYRdS--wkgaPYLevcGw88V0PU_W_rg00xLkBknybCjsO_xzA0', 'live', 508029, 512321, '4Vj8eK4rloUd272L48hsrarnUA');
 
 -- --------------------------------------------------------
 
@@ -220,7 +320,7 @@ CREATE TABLE `compras` (
 --
 
 INSERT INTO `compras` (`id`, `id_usuario`, `id_producto`, `envio`, `metodo`, `email`, `direccion`, `pais`, `cantidad`, `detalle`, `pago`, `fecha`) VALUES
-(29, 1, 502, 10, 'paypal', 'sb-0fivk657767@personal.example.com', 'Calle Juarez 1, Miguel Hidalgo, Ciudad de Mexico, 11580', 'MX', 1, NULL, '2', '2019-12-06 06:30:22');
+(29, 2, 13, 10, 'paypal', 'sb-0fivk657767@personal.example.com', 'Calle Juarez 1, Miguel Hidalgo, Ciudad de Mexico, 11580', 'MX', 2, NULL, '2', '2020-06-02 19:58:03');
 
 -- --------------------------------------------------------
 
@@ -267,7 +367,7 @@ CREATE TABLE `notificaciones` (
 --
 
 INSERT INTO `notificaciones` (`id`, `nuevosUsuarios`, `nuevasVentas`, `nuevasVisitas`) VALUES
-(1, 0, 1, 6);
+(1, 0, 0, 6);
 
 -- --------------------------------------------------------
 
@@ -307,6 +407,7 @@ CREATE TABLE `productos` (
   `id` int(11) NOT NULL,
   `id_categoria` int(11) NOT NULL,
   `id_subcategoria` int(11) NOT NULL,
+  `id_subcategoria2` int(11) NOT NULL,
   `tipo` text COLLATE utf8_spanish_ci NOT NULL,
   `ruta` text COLLATE utf8_spanish_ci NOT NULL,
   `estado` int(11) NOT NULL,
@@ -316,6 +417,14 @@ CREATE TABLE `productos` (
   `multimedia` text COLLATE utf8_spanish_ci NOT NULL,
   `detalles` text COLLATE utf8_spanish_ci NOT NULL,
   `precio` float NOT NULL,
+  `costo` float NOT NULL,
+  `utilidad` float NOT NULL,
+  `comision` float NOT NULL,
+  `paypal` float NOT NULL,
+  `ancho` float NOT NULL DEFAULT 0,
+  `altura` float NOT NULL DEFAULT 0,
+  `largo` float NOT NULL,
+  `stock` int(111) NOT NULL,
   `portada` text COLLATE utf8_spanish_ci NOT NULL,
   `vistas` int(11) NOT NULL,
   `ventas` int(11) NOT NULL,
@@ -328,7 +437,6 @@ CREATE TABLE `productos` (
   `descuentoOferta` int(11) NOT NULL,
   `imgOferta` text COLLATE utf8_spanish_ci NOT NULL,
   `finOferta` datetime NOT NULL,
-  `peso` float NOT NULL,
   `entrega` float NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -337,9 +445,12 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `tipo`, `ruta`, `estado`, `titulo`, `titular`, `descripcion`, `multimedia`, `detalles`, `precio`, `portada`, `vistas`, `ventas`, `vistasGratis`, `ventasGratis`, `ofertadoPorCategoria`, `ofertadoPorSubCategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `peso`, `entrega`, `fecha`) VALUES
-(502, 7, 22, 'fisico', 'faro-amarilla', 1, 'faro amarilla', 'faro amarilla...', 'faro amarilla', '[{\"foto\":\"vistas/img/multimedia/faro-amarilla/9.jpg\"},{\"foto\":\"vistas/img/multimedia/faro-amarilla/7.jpg\"},{\"foto\":\"vistas/img/multimedia/faro-amarilla/8.jpg\"}]', '{\"Color\":[\"amarilla\",\"blanca\"],\"Marca\":[\"mn\",\"bnn\"]}', 8, 'vistas/img/productos/faro-amarilla.jpg', 19, 8, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 12, 2, '2019-12-06 06:02:10'),
-(503, 7, 22, 'fisico', 'bicicleta', 1, 'bicicleta', 'jbsd hjdf...', 'jbsd hjdf', '[{\"foto\":\"vistas/img/multimedia/bicicleta/5dccf4af52288.png\"},{\"foto\":\"vistas/img/multimedia/bicicleta/5dccf3a66f463.png\"}]', '{\"Color\":[\"azul\",\"rojo\",\"verde\"],\"Marca\":[\"bmn\",\"pol\",\"sss\"]}', 13, 'vistas/img/productos/bicicleta.png', 3, 1, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 29, 3, '2019-12-06 03:27:59');
+INSERT INTO `productos` (`id`, `id_categoria`, `id_subcategoria`, `id_subcategoria2`, `tipo`, `ruta`, `estado`, `titulo`, `titular`, `descripcion`, `multimedia`, `detalles`, `precio`, `costo`, `utilidad`, `comision`, `paypal`, `ancho`, `altura`, `largo`, `stock`, `portada`, `vistas`, `ventas`, `vistasGratis`, `ventasGratis`, `ofertadoPorCategoria`, `ofertadoPorSubCategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `entrega`, `fecha`) VALUES
+(17, 7, 24, 32, 'fisico', 'subsub11', 1, 'Subsub11', 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica ...', 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer u', '[{\"foto\":\"vistas/img/multimedia/subsub1/ayuda.jpg\"}]', '{\"Color\":[\"d\"],\"Marca\":[\"s\"],\"Medidas\":[\"d\"]}', 260, 0, 0, 0, 0, 5, 6, 5, 10, 'vistas/img/productos/subsub1.jpg', 5, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, '2020-06-02 23:50:43'),
+(21, 9, 26, 33, 'fisico', 'subsub3', 1, 'subsub3', 'porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos...', 'porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinido', '[{\"foto\":\"vistas/img/multimedia/subsub3/esit_6.jpg\"}]', '{\"Color\":[\"hfgt\"],\"Marca\":[\"fgh\"],\"Medidas\":[\"52\"]}', 230, 0, 0, 0, 0, 526, 566, 262, 10, 'vistas/img/productos/subsub3.jpg', 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 2, '2020-06-02 22:56:24'),
+(23, 9, 26, 34, 'fisico', 'subsub33', 1, 'subsub33', 'porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos...', 'porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinido', '[{\"foto\":\"vistas/img/multimedia/subsub33/producto3.jpg\"}]', '{\"Color\":[\"xbf\"],\"Marca\":[\"dfb\"],\"Medidas\":[\"dfb\"]}', 263, 0, 0, 0, 0, 54, 45, 45, 1, 'vistas/img/productos/subsub33.jpg', 2, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, '2020-06-02 23:07:33'),
+(24, 8, 25, 35, 'fisico', 'sub2sub', 1, 'sub2sub', 'porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos...', 'porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinido', '[{\"foto\":\"vistas/img/multimedia/sub2sub/sus.jpg\"}]', '{\"Color\":[\"hgf\"],\"Marca\":[\"fhg\"],\"Medidas\":[\"256\"]}', 26, 0, 0, 0, 0, 51, 51, 51, 1, 'vistas/img/productos/sub2sub.jpg', 1, 0, 0, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 1, '2020-06-02 23:07:43'),
+(26, 9, 26, 34, 'fisico', 'dfgb', 1, 'dfgb', 'bgf...', 'bgf', '[{\"foto\":\"vistas/img/multimedia/dfgb/esit_6.jpg\"}]', '{\"Color\":[\"bgf\"],\"Marca\":[\"fgb\"],\"Medidas\":[\"25\"]}', 0, 30, 0.3, 4, 0.4, 255, 452, 452, 25, 'vistas/img/productos/dfgb.jpg', 0, 0, 1, 0, 0, 0, 0, 0, 0, '', '0000-00-00 00:00:00', 3, '2020-06-04 00:57:56');
 
 -- --------------------------------------------------------
 
@@ -399,7 +510,43 @@ CREATE TABLE `subcategorias` (
 --
 
 INSERT INTO `subcategorias` (`id`, `subcategoria`, `id_categoria`, `ruta`, `estado`, `ofertadoPorCategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `fecha`) VALUES
-(22, 'Faros montaña', 7, 'faros-montana', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2019-12-06 00:24:04');
+(24, 'subcategoria ', 7, 'subcategoria', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 22:42:34'),
+(25, 'subcategoria 2', 8, 'subcategoria-2', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-05-31 03:45:48'),
+(26, 'subcategoria 3', 9, 'subcategoria-3', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 22:42:44');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `subcategorias2`
+--
+
+CREATE TABLE `subcategorias2` (
+  `id` int(11) NOT NULL,
+  `subcategoria2` text COLLATE utf8_spanish_ci NOT NULL,
+  `id_subcategoria` int(11) NOT NULL,
+  `ruta` text COLLATE utf8_spanish_ci NOT NULL,
+  `estado` int(11) NOT NULL,
+  `ofertadoPorSubcategoria` int(11) NOT NULL,
+  `oferta` int(11) NOT NULL,
+  `precioOferta` float NOT NULL,
+  `descuentoOferta` int(11) NOT NULL,
+  `imgOferta` text COLLATE utf8_spanish_ci NOT NULL,
+  `finOferta` datetime NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `subcategorias2`
+--
+
+INSERT INTO `subcategorias2` (`id`, `subcategoria2`, `id_subcategoria`, `ruta`, `estado`, `ofertadoPorSubcategoria`, `oferta`, `precioOferta`, `descuentoOferta`, `imgOferta`, `finOferta`, `fecha`) VALUES
+(27, 'subsub3 hg', 26, 'subsub3-hg', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 22:45:09'),
+(30, 'subsub2 ad', 25, 'subsub2-ad', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 22:44:08'),
+(31, 'subsub2 jlo', 25, 'subsub2-jlo', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 22:44:36'),
+(32, 'subsub1', 24, 'subsub1', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 22:43:13'),
+(33, 'subsub3 ññ', 26, 'subsub3-ññ', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 22:45:29'),
+(34, 'subsub3', 26, 'subsub3', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 22:45:38'),
+(35, 'subsub2 jy', 25, 'subsub2-jy', 1, 0, 0, 0, 0, '', '0000-00-00 00:00:00', '2020-06-02 22:44:52');
 
 -- --------------------------------------------------------
 
@@ -421,16 +568,19 @@ CREATE TABLE `usuarios` (
   `emailfac` text COLLATE utf8_spanish_ci NOT NULL,
   `cp` int(11) NOT NULL,
   `rfc` text COLLATE utf8_spanish_ci NOT NULL,
-  `regimenfiscal` int(11) NOT NULL
+  `regimenfiscal` text COLLATE utf8_spanish_ci NOT NULL,
+  `correofact` text COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `password`, `email`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`, `nombrefiscal`, `emailfac`, `cp`, `rfc`, `regimenfiscal`) VALUES
-(2, 'Francisco gomez', '$2a$07$asxx54ahjppf45sd87a5auxq/SS293XhTEeizKWMnfhnpfay0AALe', 'pepe@gmail.com', 'directo', '', 0, '6b0becddecd5a06042b3f8078c97f2e0', '2019-12-06 06:42:28', 'SAT', 'web@gmail.com', 7560, 'EIO09FHDJ', 90),
-(17, 'sheila', '$2a$07$asxx54ahjppf45sd87a5auSFuHPq3ZGSopXFgdE2d.w3JOLfYhtKu', 'sheila@gmail.com', 'directo', '', 0, 'd3731f6d859b1101d09263d8bb9a09fe', '2019-12-06 05:07:50', '', '', 0, '', 0);
+INSERT INTO `usuarios` (`id`, `nombre`, `password`, `email`, `modo`, `foto`, `verificacion`, `emailEncriptado`, `fecha`, `nombrefiscal`, `emailfac`, `cp`, `rfc`, `regimenfiscal`, `correofact`) VALUES
+(2, 'pepe', '$2a$07$asxx54ahjppf45sd87a5auxq/SS293XhTEeizKWMnfhnpfay0AALe', 'pepe@gmail.com', 'directo', '', 0, '6b0becddecd5a06042b3f8078c97f2e0', '2019-12-16 05:32:20', '', '', 0, '', '', ''),
+(17, 'sheila', '$2a$07$asxx54ahjppf45sd87a5auSFuHPq3ZGSopXFgdE2d.w3JOLfYhtKu', 'sheila@gmail.com', 'directo', '', 0, 'd3731f6d859b1101d09263d8bb9a09fe', '2019-12-13 03:00:16', '', '', 0, '', 'fisica', ''),
+(18, 'Adrian W-Tech', 'null', 'dinopiza@gmail.com', 'google', 'https://lh3.googleusercontent.com/a-/AAuE7mBQ9Kj9bSjm2PRHgCg32IPDfY6FOvJp9H4rhxGPFHc=s96-c', 0, 'null', '2019-12-16 05:24:26', '', 'web@gmail.com', 1220, 'rahj980403hdfmrs02', 'fosica', 'facrt@prueba.com'),
+(19, 'josue Ramirez', 'null', 'adrianwebtech@gmail.com', 'google', 'https://lh3.googleusercontent.com/a-/AAuE7mBNdxlAC9mKtmtM2l0iZm4UT2EqUdNM6kxtfyh8=s96-c', 0, 'null', '2020-02-25 04:34:45', '', '', 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -624,7 +774,8 @@ ALTER TABLE `plantilla`
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_categoria` (`id_categoria`);
 
 --
 -- Indices de la tabla `slide`
@@ -636,6 +787,12 @@ ALTER TABLE `slide`
 -- Indices de la tabla `subcategorias`
 --
 ALTER TABLE `subcategorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `subcategorias2`
+--
+ALTER TABLE `subcategorias2`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -664,7 +821,7 @@ ALTER TABLE `visitaspersonas`
 -- AUTO_INCREMENT de la tabla `administradores`
 --
 ALTER TABLE `administradores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `banner`
@@ -676,13 +833,13 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT de la tabla `cabeceras`
 --
 ALTER TABLE `cabeceras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
@@ -700,7 +857,7 @@ ALTER TABLE `comercio`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `deseos`
@@ -724,7 +881,7 @@ ALTER TABLE `plantilla`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=504;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `slide`
@@ -736,13 +893,19 @@ ALTER TABLE `slide`
 -- AUTO_INCREMENT de la tabla `subcategorias`
 --
 ALTER TABLE `subcategorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT de la tabla `subcategorias2`
+--
+ALTER TABLE `subcategorias2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `visitaspaises`
