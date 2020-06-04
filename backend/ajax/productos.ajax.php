@@ -110,6 +110,7 @@ class AjaxProductos{
 	public $costo;
 	public $utilidad;
 	public $comision;
+	public $paypal;
 
 	public $ancho;
 
@@ -180,6 +181,7 @@ class AjaxProductos{
 			"costo"=>$this->costo,
 			"utilidad"=>$this->utilidad,
 			"comision"=>$this->comision,
+			"paypal"=>$this->paypal,
 
 			"ancho"=>$this->ancho,
 
@@ -296,6 +298,7 @@ class AjaxProductos{
 			"costo"=>$this->costo,
 			"utilidad"=>$this->utilidad,
 			"comision"=>$this->comision,
+			"paypal"=>$this->paypal,
 
 			"ancho"=>$this->ancho,
 
@@ -455,7 +458,10 @@ if(isset($_POST["tituloProducto"])){
 
 	$producto -> precio = $_POST["precio"];
 
-
+	$producto -> costo = $_POST["costo"];
+	$producto -> utilidad = $_POST["utilidad"];
+	$producto -> comision = $_POST["comision"];
+	$producto -> paypal = $_POST["paypal"];
 
 	$producto -> ancho = $_POST["ancho"];
 
@@ -606,6 +612,11 @@ if(isset($_POST["id"])){
 	$editarProducto -> pClavesProducto = $_POST["pClavesProducto"];
 
 	$editarProducto -> precio = $_POST["precio"];
+
+	$editarProducto -> costo = $_POST["costo"];
+	$editarProducto -> utilidad = $_POST["utilidad"];
+	$editarProducto -> comision = $_POST["comision"];
+	$editarProducto -> paypal = $_POST["paypal"];
 
 	$editarProducto -> ancho = $_POST["ancho"];
 

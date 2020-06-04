@@ -657,6 +657,10 @@ function agregarMiProducto(imagen){
 	    var descripcionProducto = $(".descripcionProducto").val();
 	    var pClavesProducto = $(".pClavesProducto").val();
 	    var precio = $(".precio").val();
+	    var costo = $(".costo").val();
+	    var utilidad = $(".utilidad").val();
+	    var comision = $(".comision").val();
+	    var paypal = $(".paypal").val();
 	    var ancho = $(".ancho").val();
 	    var altura = $(".altura").val();
 	    var largo = $(".largo").val();
@@ -696,6 +700,10 @@ function agregarMiProducto(imagen){
 		datosProducto.append("descripcionProducto", descripcionProducto);
 		datosProducto.append("pClavesProducto", pClavesProducto);
 		datosProducto.append("precio", precio);
+		datosProducto.append("costo", costo);
+		datosProducto.append("utilidad", utilidad);
+		datosProducto.append("comision", comision);
+		datosProducto.append("paypal", paypal);
 		datosProducto.append("ancho", ancho);
 		datosProducto.append("altura", altura);
 		datosProducto.append("largo", largo);
@@ -1145,6 +1153,10 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 			CARGAMOS EL PRECIO, ANCHO, ALTURA, LARGO ,stock Y DIAS DE ENTREGA
 			=============================================*/
 			$("#modalEditarProducto .precio").val(respuesta[0]["precio"]);
+			$("#modalEditarProducto .costo").val(respuesta[0]["costo"]);
+			$("#modalEditarProducto .utilidad").val(respuesta[0]["utilidad"]);
+			$("#modalEditarProducto .comision").val(respuesta[0]["comision"]);
+			$("#modalEditarProducto .paypal").val(respuesta[0]["paypal"]);
 			$("#modalEditarProducto .ancho").val(respuesta[0]["ancho"]);
 			$("#modalEditarProducto .altura").val(respuesta[0]["altura"]);
 			$("#modalEditarProducto .largo").val(respuesta[0]["largo"]);
@@ -1396,6 +1408,10 @@ function editarMiProducto(imagen){
 	var descripcionProducto = $("#modalEditarProducto .descripcionProducto").val();
 	var pClavesProducto = $("#modalEditarProducto .pClavesProducto").val();
 	var precio = $("#modalEditarProducto .precio").val();
+	var costo = $("#modalEditarProducto .costo").val();
+	var utilidad = $("#modalEditarProducto .utilidad").val();
+	var comision = $("#modalEditarProducto .comision").val();
+	var paypal = $("#modalEditarProducto .paypal").val();
 	var ancho = $("#modalEditarProducto .ancho").val();
 	var altura = $("#modalEditarProducto .altura").val();
 	var largo = $("#modalEditarProducto .largo").val();
@@ -1444,6 +1460,10 @@ function editarMiProducto(imagen){
 	datosProducto.append("descripcionProducto", descripcionProducto);
 	datosProducto.append("pClavesProducto", pClavesProducto);
 	datosProducto.append("precio", precio);
+	datosProducto.append("costo", costo);
+	datosProducto.append("utilidad", utilidad);
+	datosProducto.append("comision", comision);
+	datosProducto.append("paypal", paypal);
 	datosProducto.append("ancho", ancho);
 	datosProducto.append("altura", altura);
 	datosProducto.append("largo", largo);

@@ -587,6 +587,11 @@ class ControladorProductos{
 
 						   "precio"=> $datos["precio"],
 
+						   "costo"=> $datos["costo"],
+						   "utilidad"=> $datos["utilidad"],
+						   "comision"=> $datos["comision"],
+						   "paypal"=> $datos["paypal"],
+
 						   "ancho"=> $datos["ancho"],
 
 						   "altura"=> $datos["altura"],
@@ -648,6 +653,11 @@ class ControladorProductos{
 						   "palabrasClaves"=> $datos["pClavesProducto"],
 
 						   "precio"=> $datos["precio"],
+
+						   "costo"=> $datos["costo"],
+						   "utilidad"=> $datos["utilidad"],
+						   "comision"=> $datos["comision"],
+						   "paypal"=> $datos["paypal"],
 
 						   "ancho"=> $datos["ancho"],
 
@@ -1345,6 +1355,11 @@ class ControladorProductos{
 
 								   "precio"=> $datos["precio"],
 
+								   "costo"=> $datos["costo"],
+								   "utilidad"=> $datos["utilidad"],
+								   "comision"=> $datos["comision"],
+								   "paypal"=> $datos["paypal"],
+
 								   "ancho"=> $datos["ancho"],
 
 								   "altura"=> $datos["altura"],
@@ -1408,6 +1423,11 @@ class ControladorProductos{
 								   "palabrasClaves"=> $datos["pClavesProducto"],
 
 								   "precio"=> $datos["precio"],
+
+								   "costo"=> $datos["costo"],
+								   "utilidad"=> $datos["utilidad"],
+								   "comision"=> $datos["comision"],
+								   "paypal"=> $datos["paypal"],
 
 								   "ancho"=> $datos["ancho"],
 

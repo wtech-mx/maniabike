@@ -513,7 +513,7 @@ MODAL AGREGAR PRODUCTO
 
             <div class="form-group row">
 
-              <!-- PRECIO -->
+              <!-- PRECIO
 
               <div class="col-md-4 col-xs-12">
 
@@ -524,6 +524,70 @@ MODAL AGREGAR PRODUCTO
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
                   <input type="number" placeholder="MXM" class="form-control input-lg precio" min="" step="any">
+
+                </div>
+
+              </div> -->
+
+              <!-- Costo -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Costo</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input type="number" placeholder="MXM" class="form-control input-lg costo" min="" step="any">
+
+                </div>
+
+              </div>
+
+              <!-- Utilidad -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Utilidad</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input value=".30" type="number" placeholder="MXM" class="form-control input-lg utilidad" min="" step="any">
+
+                </div>
+
+              </div>
+
+              <!-- Comision -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Comision</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input value="4" type="number" placeholder="MXM" class="form-control input-lg comision" min="" step="any">
+
+                </div>
+
+              </div>
+
+              <!-- Comision Paypal -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Comision Paypal</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input value=".4" type="number" placeholder="MXM" class="form-control input-lg paypal" min="" step="any">
 
                 </div>
 
@@ -1142,7 +1206,7 @@ MODAL EDITAR PRODUCTO
 
             <div class="form-group row">
 
-              <!-- PRECIO -->
+                            <!-- PRECIO
 
               <div class="col-md-4 col-xs-12">
 
@@ -1152,7 +1216,71 @@ MODAL EDITAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input type="number" class="form-control input-lg precio" min="0" step="any">
+                  <input type="number" placeholder="MXM" class="form-control input-lg precio" min="" step="any">
+
+                </div>
+
+              </div> -->
+
+              <!-- Costo -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Costo</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input type="number" placeholder="MXM" class="form-control input-lg costo" min="" step="any">
+
+                </div>
+
+              </div>
+
+              <!-- Utilidad -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Utilidad</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input value=".30" type="number" placeholder="MXM" class="form-control input-lg utilidad" min="" step="any">
+
+                </div>
+
+              </div>
+
+              <!-- Comision -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Comision</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input value="4" type="number" placeholder="MXM" class="form-control input-lg comision" min="" step="any">
+
+                </div>
+
+              </div>
+
+              <!-- Comision Paypal -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Comision Paypal</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input value=".4" type="number" placeholder="MXM" class="form-control input-lg paypal" min="" step="any">
 
                 </div>
 
