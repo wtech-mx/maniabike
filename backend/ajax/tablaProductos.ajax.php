@@ -334,11 +334,7 @@ class TablaProductos{
   			=============================================*/
  $operacion=$productos[$i]["largo"]*$productos[$i]["altura"]*$productos[$i]["ancho"]/5000;
 
- $porcentaje=$productos[$i]["costo"]*$productos[$i]["utilidad"];
 
- $porcentaje2=$productos[$i]["costo"]*$productos[$i]["paypal"];
-
- $precio=$productos[$i]["costo"]+$porcentaje2+$porcentaje+$productos[$i]["comision"];
 
 			$datosJson .='[
 

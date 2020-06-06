@@ -88,7 +88,7 @@ MODAL AGREGAR PRODUCTO
 
      <div class="modal-content">
 
-       <!-- <form role="form" method="post" enctype="multipart/form-data"> -->
+       <form role="form" method="post" enctype="multipart/form-data"  oninput="w.value=parseInt(a.value)*(b.value)+parseInt(c.value),x.value=parseInt(w.value)+parseInt(a.value)*(d.value),y.value=parseInt(a.value)+parseInt(x.value),z.value=(l.value)*(m.value)*(n.value)/500">
 
          <!--=====================================
         CABEZA DEL MODAL
@@ -539,7 +539,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input type="number" placeholder="MXM" class="form-control input-lg costo" min="" step="any">
+                  <input type="number" placeholder="MXM" class="form-control input-lg costo" min="" step="any"  id="a" name="a">
 
                 </div>
 
@@ -555,7 +555,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input value=".30" type="number" placeholder="MXM" class="form-control input-lg utilidad" min="" step="any">
+                  <input value=".30" type="number" placeholder="MXM" class="form-control input-lg utilidad" min="" step="any" id="b" name="b">
 
                 </div>
 
@@ -571,7 +571,22 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input value="4" type="number" placeholder="MXM" class="form-control input-lg comision" min="" step="any">
+                  <input value="4" type="number" placeholder="MXM" class="form-control input-lg comision" min="" step="any" id="c" name="c">
+
+              </div>
+             </div>
+
+              <!-- Multiplicacion de la utilidad mas la comision -->
+
+              <div class="col-md-4 col-xs-12" style="display: none">
+
+                <div class="panel">Multiplicacion de la utilidad mas la comision</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input value="" type="number" placeholder="MXM" class="form-control input-lg comision" min="" step="any" id="w" name="w">
 
                 </div>
 
@@ -587,7 +602,38 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input value=".4" type="number" placeholder="MXM" class="form-control input-lg paypal" min="" step="any">
+                  <input value=".04" type="number" placeholder="MXM" class="form-control input-lg paypal" min="" step="any" id="d" name="d">
+
+                </div>
+
+              </div>
+              <!-- Comision multiplicacionde resultado po paypal -->
+
+              <div class="col-md-4 col-xs-12"  style="display: none">
+
+                <div class="panel">multiplicacionde resultado po paypal</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input value="" type="number" placeholder="MXM" class="form-control input-lg paypal" min="" step="any" id="x" name="x">
+
+                </div>
+
+              </div>
+
+              <!-- Precio -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Precio</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+
+                  <input type="number" class="form-control input-lg precio" min="" step="any" value="y" placeholder="" id="y" name="y">
 
                 </div>
 
@@ -603,7 +649,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg ancho" min="" step="any" value="" placeholder="cm">
+                  <input type="number" class="form-control input-lg ancho" min="" step="any" value="" placeholder="cm" id="l" name="l">
 
                 </div>
 
@@ -619,7 +665,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg altura" min="" step="any" value="" placeholder="cm">
+                  <input type="number" class="form-control input-lg altura" min="" step="any" value="" placeholder="cm" id="m" name="m">
 
                 </div>
 
@@ -635,7 +681,23 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg largo" min="" step="any" value="" placeholder="cm">
+                  <input type="number" class="form-control input-lg largo" min="" step="any" value="" placeholder="cm" id="n" name="n">
+
+                </div>
+
+              </div>
+
+              <!-- valorV -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Valor Volumetrico</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+
+                  <input type="number" class="form-control input-lg valorV" min="" step="any" value="" placeholder="cm" id="z" name="z">
 
                 </div>
 
@@ -778,7 +840,7 @@ MODAL AGREGAR PRODUCTO
 
         </div>
 
-       <!-- </form> -->
+       </form>
 
     </div>
   </div>
@@ -793,7 +855,8 @@ MODAL EDITAR PRODUCTO
 
    <div class="modal-dialog">
 
-     <div class="modal-content">
+      <div class="modal-content">
+        <form role="form" method="post" enctype="multipart/form-data"  oninput="w.value=parseInt(a.value)*(b.value)+parseInt(c.value),x.value=parseInt(w.value)+parseInt(a.value)*(d.value),y.value=parseInt(a.value)+parseInt(x.value),z.value=(l.value)*(m.value)*(n.value)/500">
 
         <!--=====================================
         CABEZA DEL MODAL
@@ -887,7 +950,7 @@ MODAL EDITAR PRODUCTO
               SUBIR MULTIMEDIA DE PRODUCTO FÍSICO
               ======================================-->
 
-              <div class="row previsualizarImgFisico"></div>
+            <div class="row previsualizarImgFisico"></div>
 
               <div class="multimediaFisica needsclick dz-clickable" style="display:none">
 
@@ -1206,22 +1269,6 @@ MODAL EDITAR PRODUCTO
 
             <div class="form-group row">
 
-                            <!-- PRECIO
-
-              <div class="col-md-4 col-xs-12">
-
-                <div class="panel">PRECIO</div>
-
-                <div class="input-group">
-
-                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
-
-                  <input type="number" placeholder="MXM" class="form-control input-lg precio" min="" step="any">
-
-                </div>
-
-              </div> -->
-
               <!-- Costo -->
 
               <div class="col-md-4 col-xs-12">
@@ -1232,7 +1279,7 @@ MODAL EDITAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input type="number" placeholder="MXM" class="form-control input-lg costo" min="" step="any">
+                  <input type="number" placeholder="MXM" class="form-control input-lg costo" min="" step="any"  id="a" name="a">
 
                 </div>
 
@@ -1248,7 +1295,7 @@ MODAL EDITAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input value=".30" type="number" placeholder="MXM" class="form-control input-lg utilidad" min="" step="any">
+                  <input value=".30" type="number" placeholder="MXM" class="form-control input-lg utilidad" min="" step="any" id="b" name="b">
 
                 </div>
 
@@ -1264,7 +1311,22 @@ MODAL EDITAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input value="4" type="number" placeholder="MXM" class="form-control input-lg comision" min="" step="any">
+                  <input value="4" type="number" placeholder="MXM" class="form-control input-lg comision" min="" step="any" id="c" name="c">
+
+              </div>
+             </div>
+
+              <!-- Multiplicacion de la utilidad mas la comision -->
+
+              <div class="col-md-4 col-xs-12" style="display: none">
+
+                <div class="panel">Multiplicacion de la utilidad mas la comision</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input value="" type="number" placeholder="MXM" class="form-control input-lg comision" min="" step="any" id="w" name="w">
 
                 </div>
 
@@ -1280,7 +1342,40 @@ MODAL EDITAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input value=".4" type="number" placeholder="MXM" class="form-control input-lg paypal" min="" step="any">
+                  <input value=".04" type="number" placeholder="MXM" class="form-control input-lg paypal" min="" step="any" id="d" name="d">
+
+                </div>
+
+              </div>
+              <!-- Comision multiplicacionde resultado po paypal -->
+
+              <div class="col-md-4 col-xs-12"  style="display: none">
+
+                <div class="panel">multiplicacionde resultado po paypal</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input value="" type="number" placeholder="MXM" class="form-control input-lg paypal" min="" step="any" id="x" name="x">
+
+                </div>
+
+              </div>
+
+              <!-- Precio -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Precio
+
+                </div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+
+                  <input type="number" class="form-control input-lg precio" min="" step="any" value="" placeholder="" id="y" name="y">
 
                 </div>
 
@@ -1296,7 +1391,7 @@ MODAL EDITAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg ancho" min="0" step="any" value="0">
+                  <input type="number" class="form-control input-lg ancho" min="" step="any" value="" placeholder="cm" id="l" name="l">
 
                 </div>
 
@@ -1312,7 +1407,7 @@ MODAL EDITAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg altura" min="0" step="any" value="0">
+                  <input type="number" class="form-control input-lg altura" min="" step="any" value="" placeholder="cm" id="m" name="m">
 
                 </div>
 
@@ -1328,11 +1423,28 @@ MODAL EDITAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg largo" min="0" step="any" value="0">
+                  <input type="number" class="form-control input-lg largo" min="" step="any" value="" placeholder="cm" id="n" name="n">
 
                 </div>
 
               </div>
+
+              <!-- valorV -->
+
+              <div class="col-md-4 col-xs-12">
+
+                <div class="panel">Valor Volumetrico</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+
+                  <input type="number" class="form-control input-lg valorV" min="" step="any" value="" placeholder="cm" id="z" name="z">
+
+                </div>
+
+              </div>
+
               <!-- stock -->
 
               <div class="col-md-4 col-xs-12">
@@ -1469,6 +1581,7 @@ MODAL EDITAR PRODUCTO
 
         </div>
 
+          </form>
      </div>
 
    </div>
