@@ -118,6 +118,8 @@ class AjaxProductos{
 
 	public $largo;
 
+	public $pesoV;
+
 	public $stock;
 
 	public $entrega;
@@ -188,6 +190,8 @@ class AjaxProductos{
 			"altura"=>$this->altura,
 
 			"largo"=>$this->largo,
+
+			"pesoV"=>$this->pesoV,
 
 			"stock"=>$this->stock,
 
@@ -305,6 +309,8 @@ class AjaxProductos{
 			"altura"=>$this->altura,
 
 			"largo"=>$this->largo,
+
+			"pesoV"=>$this->pesoV,
 
 			"stock"=>$this->stock,
 
@@ -469,6 +475,8 @@ if(isset($_POST["tituloProducto"])){
 
 	$producto -> largo = $_POST["largo"];
 
+	$producto -> pesoV = $_POST["pesoV"];
+
 	$producto -> stock = $_POST["stock"];
 
 	$producto -> entrega = $_POST["entrega"];
@@ -623,6 +631,8 @@ if(isset($_POST["id"])){
 	$editarProducto -> altura = $_POST["altura"];
 
 	$editarProducto -> largo = $_POST["largo"];
+
+	$editarProducto -> pesoV = $_POST["pesoV"];
 
 	$editarProducto -> stock = $_POST["stock"];
 

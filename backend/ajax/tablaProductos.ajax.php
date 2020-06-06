@@ -332,7 +332,6 @@ class TablaProductos{
   			/*=============================================
   			CONSTRUIR LOS DATOS JSON
   			=============================================*/
- $operacion=$productos[$i]["largo"]*$productos[$i]["altura"]*$productos[$i]["ancho"]/5000;
 
 
 
@@ -355,7 +354,7 @@ class TablaProductos{
 			  	"'.$productos[$i]["ancho"].' cm",
           "'.$productos[$i]["altura"].' cm",
           "'.$productos[$i]["largo"].' cm",
-          "'.$operacion.' kg",
+          "'.$productos[$i]["pesoV"].' kg",
           "'.$productos[$i]["stock"].'",
 			  	"'.$entrega.'",
 			  	"'.$tipoOferta.'",

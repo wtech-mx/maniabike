@@ -687,7 +687,7 @@ MODAL AGREGAR PRODUCTO
 
               </div>
 
-              <!-- valorV -->
+              <!-- pesoV -->
 
               <div class="col-md-4 col-xs-12">
 
@@ -697,7 +697,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg valorV" min="" step="any" value="" placeholder="cm" id="z" name="z">
+                  <input type="number" class="form-control input-lg pesoV" min="" step="any" value="" placeholder="cm" id="z" name="z">
 
                 </div>
 
@@ -1429,7 +1429,7 @@ MODAL EDITAR PRODUCTO
 
               </div>
 
-              <!-- valorV -->
+              <!-- pesoV -->
 
               <div class="col-md-4 col-xs-12">
 
@@ -1439,7 +1439,7 @@ MODAL EDITAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg valorV" min="" step="any" value="" placeholder="cm" id="z" name="z">
+                  <input type="number" class="form-control input-lg pesoV" min="" step="any" value="" placeholder="cm" id="z" name="z">
 
                 </div>
 
