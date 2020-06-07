@@ -10,13 +10,13 @@ $url = Ruta::ctrRuta();
 BREADCRUMB OFERTAS
 ======================================-->
 <div class="container-fluid well well-sm">
-
+	
 	<div class="container">
-
+		
 		<div class="row">
-
+			
 			<ul class="breadcrumb fondoBreadcrumb text-uppercase">
-
+				
 				<li><a href="<?php echo $url;  ?>">INICIO</a></li>
 				<li class="active pagActiva"><?php echo $rutas[0] ?></li>
 
@@ -41,15 +41,15 @@ JUMBOTRON AVISO OFERTA
 			echo '<div class="container-fluid">
 
 					<div class="container">
-
+	
 					 	<div class="jumbotron">
 
 					 		<button type="button" class="close cerrarOfertas" style="margin-top:-50px;"><h1>&times;</h1></button>
 
-					 		<h1 class="text-center">¡Hola!</h1>
+					 		<h1 class="text-center">¡Hola!</h1> 
 
 					 		 <p class="text-center">
-
+					 		 	
 								Tu artículo ha sido asignado a tus compras, pero antes queremos presentarte las siguientes ofertas, si no deseas ver las ofertas y continuar en el artículo que acabas de adquirir haz click en el siguiente botón:
 								<br><br>
 								<a href="'.$url.'perfil">
@@ -65,7 +65,7 @@ JUMBOTRON AVISO OFERTA
 								</a>
 
 					 		 </p>
-
+					 
 					 	</div>
 
 					</div>
@@ -83,7 +83,7 @@ JUMBOTRON AVISO OFERTA
 	<div class="container">
 
 		<div class="row" id="moduloOfertas">
-
+			
 			<?php
 
 			$item = null;
@@ -93,9 +93,9 @@ JUMBOTRON AVISO OFERTA
 
 			$fecha = date('Y-m-d');
 			$hora = date('H:i:s');
-
+			
 			$fechaActual = $fecha.' '.$hora;
-
+			
 			/*=============================================
 			TRAEMOS LAS OFERTAS DE CATEGORÍAS
 			=============================================*/
@@ -118,11 +118,11 @@ JUMBOTRON AVISO OFERTA
 						echo '<div class="col-md-4 col-sm-6 col-xs-12">
 
 							<div class="ofertas">
-
+								
 								<h3 class="text-center text-uppercase">
 
 									¡OFERTA ESPECIAL EN <br>'.$value["categoria"].'!
-
+								
 								</h3>
 
 								<figure>
@@ -135,13 +135,13 @@ JUMBOTRON AVISO OFERTA
 
 
 										echo '<h1 class="text-center text-uppercase">%'.$value["descuentoOferta"].' OFF</h1>';
-
+									
 									}else{
 
 										echo '<h1 class="text-center text-uppercase">$ '.$value["precioOferta"].'</h1>';
 
 									}
-
+			
 
 								echo '</figure>';
 
@@ -159,7 +159,7 @@ JUMBOTRON AVISO OFERTA
 								}
 
 							echo '<center>
-
+								
 								<div class="countdown" finOferta="'.$value["finOferta"].'"></div>
 
 								<a href="'.$url.$value["ruta"].'" class="pixelOferta" titulo="'.$value["categoria"].'">
@@ -169,7 +169,7 @@ JUMBOTRON AVISO OFERTA
 								</a>
 
 							</center>
-
+								
 							</div>
 
 						</div>';
@@ -177,7 +177,7 @@ JUMBOTRON AVISO OFERTA
 					}
 
 				}
-
+				
 			}
 
 			/*=============================================
@@ -202,11 +202,11 @@ JUMBOTRON AVISO OFERTA
 						echo '<div class="col-md-4 col-sm-6 col-xs-12">
 
 							<div class="ofertas">
-
+								
 								<h3 class="text-center text-uppercase">
 
 									¡OFERTA ESPECIAL EN <br>'.$value["subcategoria"].'!
-
+								
 								</h3>
 
 								<figure>
@@ -219,13 +219,13 @@ JUMBOTRON AVISO OFERTA
 
 
 										echo '<h1 class="text-center text-uppercase">%'.$value["descuentoOferta"].' OFF</h1>';
-
+									
 									}else{
 
 										echo '<h1 class="text-center text-uppercase">$ '.$value["precioOferta"].'</h1>';
 
 									}
-
+			
 
 								echo '</figure>';
 
@@ -243,7 +243,7 @@ JUMBOTRON AVISO OFERTA
 								}
 
 							echo '<center>
-
+								
 								<div class="countdown" finOferta="'.$value["finOferta"].'"></div>
 
 								<a href="'.$url.$value["ruta"].'" class="pixelOferta">
@@ -253,7 +253,7 @@ JUMBOTRON AVISO OFERTA
 								</a>
 
 							</center>
-
+								
 							</div>
 
 						</div>';
@@ -261,7 +261,7 @@ JUMBOTRON AVISO OFERTA
 					}
 
 				}
-
+				
 			}
 
 			/*=============================================
@@ -288,11 +288,11 @@ JUMBOTRON AVISO OFERTA
 						echo '<div class="col-md-4 col-sm-6 col-xs-12">
 
 							<div class="ofertas">
-
+								
 								<h3 class="text-center text-uppercase">
 
 									¡OFERTA ESPECIAL EN <br>'.$value["titulo"].'!
-
+								
 								</h3>
 
 								<figure>
@@ -305,13 +305,13 @@ JUMBOTRON AVISO OFERTA
 
 
 										echo '<h1 class="text-center text-uppercase">%'.$value["descuentoOferta"].' OFF</h1>';
-
+									
 									}else{
 
 										echo '<h1 class="text-center text-uppercase">$ '.$value["precioOferta"].'</h1>';
 
 									}
-
+			
 
 								echo '</figure>';
 
@@ -329,7 +329,7 @@ JUMBOTRON AVISO OFERTA
 								}
 
 							echo '<center>
-
+								
 								<div class="countdown" finOferta="'.$value["finOferta"].'"></div>
 
 								<a href="'.$url.$value["ruta"].'" class="pixelOferta">
@@ -339,7 +339,7 @@ JUMBOTRON AVISO OFERTA
 								</a>
 
 							</center>
-
+								
 							</div>
 
 						</div>';
@@ -347,7 +347,7 @@ JUMBOTRON AVISO OFERTA
 					}
 
 				}
-
+				
 			}
 
 
