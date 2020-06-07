@@ -308,7 +308,7 @@ HEADER
 
 				</a>
 
-				<p>TU CESTA <span class="cantidadCesta"></span> <br> USD $ <span class="sumaCesta"></span></p>
+				<p>TU CESTA <span class="cantidadCesta"></span> <br> MXM $ <span class="sumaCesta"></span></p>
 
 			</div>
 
@@ -329,6 +329,8 @@ HEADER
 
 				foreach ($categorias as $key => $value) {
 
+					if ($value["estado"] != 0) {
+
 					echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
 
 							<h4>
@@ -347,12 +349,27 @@ HEADER
 
 							foreach ($subcategorias as $key => $value) {
 
-									echo '<li><a href="'.$url.$value["ruta"].'" class="pixelSubCategorias" titulo="'.$value["subcategoria"].'">'.$value["subcategoria"].'</a></li>';
+									echo '<li><h5><a href="'.$url.$value["ruta"].'" class="pixelSubCategorias" titulo="'.$value["subcategoria"].'">'.$value["subcategoria"].'</a></h5></li>';
 								}
+							'<hr>';
+
+						    $item2 = "id_subcategoria";
+
+							$valor2 = $value["id"];
+
+							$subcategorias2 = ControladorProductos::ctrMostrarSubCategorias2($item2, $valor2);
+
+							foreach ($subcategorias2 as $key => $value) {
+
+								echo '<li>-<a class="text-muted" href="'.$url.$value["ruta"].'" class="pixelSubCategorias2 text-muted" titulo="'.$value["subcategoria2"].'">'.$value["subcategoria2"].'</a></li>';
+							}
+
 
 							echo '</ul>
 
 						</div>';
+						}
+
 				}
 
 			?>
