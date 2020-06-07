@@ -2,16 +2,16 @@
 CARGAR LA TABLA DINÁMICA DE PRODUCTOS
 =============================================*/
 
-// $.ajax({
+$.ajax({
 
-// 	url:"ajax/tablaProductos.ajax.php",
-// 	success:function(respuesta){
+	url:"ajax/tablaProductos.ajax.php",
+	success:function(respuesta){
 
-// 		console.log("respuesta", respuesta);
+		console.log("respuesta", respuesta);
 
-// 	}
+	}
 
-// })
+})
 
 $('.tablaProductos').DataTable({
 
@@ -70,7 +70,7 @@ $('.tablaProductos tbody').on("click", ".btnActivar", function(){
       processData: false,
       success: function(respuesta){
 
-          // console.log("respuesta", respuesta);
+          console.log("respuesta", respuesta);
 
       }
 
@@ -201,7 +201,7 @@ $(".multimediaFisica").dropzone({
 
 			arrayFiles.push(file);
 
-			// console.log("arrayFiles", arrayFiles);
+			console.log("arrayFiles", arrayFiles);
 
 		})
 
@@ -211,7 +211,7 @@ $(".multimediaFisica").dropzone({
 
 			arrayFiles.splice(index, 1);
 
-			// console.log("arrayFiles", arrayFiles);
+			console.log("arrayFiles", arrayFiles);
 
 		})
 
@@ -244,7 +244,7 @@ $(".seleccionarCategoria").change(function(){
 	    dataType: "json",
 	    success:function(respuesta){
 
-	    	// console.log("respuesta", respuesta);
+	    	console.log("respuesta", respuesta);
 
 	    	$(".entradaSubcategoria").show();
 
@@ -731,7 +731,7 @@ function agregarMiProducto(imagen){
 				processData: false,
 				success: function(respuesta){
 
-					// console.log("respuesta", respuesta);
+					 console.log("respuesta", respuesta);
 
 					if(respuesta == "ok"){
 

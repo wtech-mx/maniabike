@@ -156,50 +156,25 @@ class TablaProductos{
 
 
   			/*=============================================
-
 			TRAER MULTIMEDIA
-
   			=============================================*/
-
 
 
   			if($productos[$i]["multimedia"] != null){
 
-
-
   				$multimedia = json_decode($productos[$i]["multimedia"],true);
-
-
 
   				if($multimedia[0]["foto"] != ""){
 
-
-
-  					$vistaMultimedia = "<img src='".$multimedia[0]["foto"]."' class='img-thumbnail imgTablaMultimedia' width='100px'>";
-
-
+  					$vistaMultimedia = "<img src='".$multimedia[0]["foto"]."' class='img-thumbnail imgTablaMultimedia' width='101px'>";
 
   				}else{
-
-
-
-  					$vistaMultimedia = "<img src='http://i3.ytimg.com/vi/".$productos[$i]["multimedia"]."/hqdefault.jpg' class='img-thumbnail imgTablaMultimedia' width='100px'>";
-
-
-
+  					$vistaMultimedia = "<img src='http://i3.ytimg.com/vi/".$productos[$i]["multimedia"]."/hqdefault.jpg' class='img-thumbnail imgTablaMultimedia' width='102px'>";
   				}
-
-
-
-
 
   			}else{
 
-
-
-  				$vistaMultimedia = "<img src='vistas/img/multimedia/default/default.jpg' class='img-thumbnail imgTablaMultimedia' width='100px'>";
-
-
+  				$vistaMultimedia = "<img src='vistas/img/multimedia/default/default.jpg' class='img-thumbnail imgTablaMultimedia' width='103px'>";
 
   			}
 

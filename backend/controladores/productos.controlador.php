@@ -37,7 +37,7 @@ class ControladorProductos{
 
 	/*=============================================
 	SUBIR MULTIMEDIA
-=============================================*/
+	=============================================*/
 	static public function ctrSubirMultimedia($datos, $ruta){
 		if(isset($datos["tmp_name"]) && !empty($datos["tmp_name"])){
 			/*=============================================
@@ -74,55 +74,20 @@ class ControladorProductos{
 			}
 
 			if($datos["type"] == "image/png"){
-
 				/*=============================================
-
 				GUARDAMOS LA IMAGEN EN EL DIRECTORIO
-
 				=============================================*/
-
-
-
 				$rutaMultimedia = $directorio."/".$datos["name"];
-
-
-
 				$origen = imagecreatefrompng($datos["tmp_name"]);
-
-
-
 				$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-
-
 				imagealphablending($destino, FALSE);
-
-
-
 				imagesavealpha($destino, TRUE);
-
-
-
 				imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-
-
 				imagepng($destino, $rutaMultimedia);
-
-
-
 			}
 
-
-
 			return $rutaMultimedia;
-
-
-
 		}
-
-
-
 	}
 
 
@@ -781,279 +746,105 @@ class ControladorProductos{
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $datos["tituloProducto"])  && preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["descripcionProducto"]) ){
 
-
-
 				/*=============================================
-
 				ELIMINAR LAS FOTOS DE MULTIMEDIA DE LA CARPETA
-
 				=============================================*/
-
-
 
 				if($datos["tipo"] == "fisico"){
 
-
-
 					$item = "id";
-
 					$valor = $datos["idProducto"];
-
-
 
 					$traerProductos = ModeloProductos::mdlMostrarProductos("productos", $item, $valor);
 
-
-
 					foreach ($traerProductos as $key => $value) {
 
-
-
 						$multimediaBD = json_decode($value["multimedia"],true);
-
 						$multimediaEditar = json_decode($datos["multimedia"],true);
 
-
-
 						$objectMultimediaBD = array();
-
 						$objectMultimediaEditar = array();
-
-
 
 						foreach ($multimediaBD as $key => $value) {
 
-
-
 						  array_push($objectMultimediaBD, $value["foto"]);
 
-
-
 						}
-
-
 
 						foreach ($multimediaEditar as $key => $value) {
-
-
-
 						  array_push($objectMultimediaEditar, $value["foto"]);
-
-
-
 						}
-
-
 
 						$borrarFoto = array_diff($objectMultimediaBD, $objectMultimediaEditar);
-
-
-
 						foreach ($borrarFoto as $key => $value) {
-
-
-
 							unlink("../".$value);
 
-
-
 						}
-
-
-
 					}
-
-
-
 				}
-
-
-
 				/*=============================================
-
 				VALIDAR IMAGEN PORTADA
-
 				=============================================*/
-
-
-
 				$rutaPortada = "../".$datos["antiguaFotoPortada"];
 
-
-
 				if(isset($datos["fotoPortada"]["tmp_name"]) && !empty($datos["fotoPortada"]["tmp_name"])){
-
-
-
 					/*=============================================
-
 					BORRAMOS ANTIGUA FOTO PORTADA
-
 					=============================================*/
-
-
-
 					unlink("../".$datos["antiguaFotoPortada"]);
 
-
-
 					/*=============================================
-
 					DEFINIMOS LAS MEDIDAS
-
 					=============================================*/
-
-
-
 					list($ancho, $alto) = getimagesize($datos["fotoPortada"]["tmp_name"]);
 
-
-
 					$nuevoAncho = 1280;
-
 					$nuevoAlto = 720;
-
-
-
-
-
 					/*=============================================
-
 					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
-
 					=============================================*/
-
-
-
 					if($datos["fotoPortada"]["type"] == "image/jpeg"){
 
-
-
 						/*=============================================
-
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
-
 						=============================================*/
-
-
-
 						$aleatorio = mt_rand(100,999);
-
-
-
 						$rutaPortada = "../vistas/img/cabeceras/".$datos["rutaProducto"].".jpg";
-
-
-
 						$origen = imagecreatefromjpeg($datos["fotoPortada"]["tmp_name"]);
-
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-
-
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-
-
 						imagejpeg($destino, $rutaPortada);
-
-
-
 					}
-
-
-
 					if($datos["fotoPortada"]["type"] == "image/png"){
 
-
-
 						/*=============================================
-
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
-
 						=============================================*/
-
-
-
 						$aleatorio = mt_rand(100,999);
-
-
-
 						$rutaPortada = "../vistas/img/cabeceras/".$datos["rutaProducto"].".png";
-
-
-
 						$origen = imagecreatefrompng($datos["fotoPortada"]["tmp_name"]);
-
-
-
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-
-
 						imagealphablending($destino, FALSE);
-
-
-
 						imagesavealpha($destino, TRUE);
-
-
-
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-
-
 						imagepng($destino, $rutaPortada);
-
-
-
 					}
-
-
-
 				}
-
-
-
 				/*=============================================
-
-				VALIDAR IMAGEN PRINCIPAL
-
+				VALIDAR IMAGEN PRINCIPA
 				=============================================*/
-
-
-
 				$rutaFotoPrincipal = "../".$datos["antiguaFotoPrincipal"];
-
-
-
 				if(isset($datos["fotoPrincipal"]["tmp_name"]) && !empty($datos["fotoPrincipal"]["tmp_name"])){
-
-
-
 					/*=============================================
-
 					BORRAMOS ANTIGUA FOTO PRINCIPAL
-
 					=============================================*/
-
-
-
 					unlink("../".$datos["antiguaFotoPrincipal"]);
 
-
-
 					/*=============================================
-
 					DEFINIMOS LAS MEDIDAS
-
 					=============================================*/
 
-
-
 					list($ancho, $alto) = getimagesize($datos["fotoPrincipal"]["tmp_name"]);
-
-
 
 					$nuevoAncho = 400;
 
@@ -1061,112 +852,43 @@ class ControladorProductos{
 
 
 
-
-
 					/*=============================================
-
 					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
-
 					=============================================*/
-
-
-
 					if($datos["fotoPrincipal"]["type"] == "image/jpeg"){
-
-
-
 						/*=============================================
-
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
-
 						=============================================*/
 
-
-
 						$aleatorio = mt_rand(100,999);
-
-
-
 						$rutaFotoPrincipal = "../vistas/img/productos/".$datos["rutaProducto"].".jpg";
-
-
-
 						$origen = imagecreatefromjpeg($datos["fotoPrincipal"]["tmp_name"]);
-
-
-
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-
-
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-
-
 						imagejpeg($destino, $rutaFotoPrincipal);
-
-
-
 					}
-
-
 
 					if($datos["fotoPrincipal"]["type"] == "image/png"){
-
-
-
 						/*=============================================
-
 						GUARDAMOS LA IMAGEN EN EL DIRECTORIO
-
 						=============================================*/
-
-
 
 						$aleatorio = mt_rand(100,999);
 
-
-
 						$rutaFotoPrincipal = "../vistas/img/productos/".$datos["rutaProducto"].".png";
-
-
-
 						$origen = imagecreatefrompng($datos["fotoPrincipal"]["tmp_name"]);
-
-
-
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-
-
 						imagealphablending($destino, FALSE);
-
-
-
 						imagesavealpha($destino, TRUE);
-
-
-
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-
-
 						imagepng($destino, $rutaFotoPrincipal);
-
-
-
 					}
-
-
-
 				}
 
 
 
 				/*=============================================
-
 				VALIDAR IMAGEN OFERTA
-
 				=============================================*/
 
 
