@@ -5,7 +5,7 @@ PLANTILLA
 var rutaOculta = $("#rutaOculta").val();
 
 // Herramienta TOOLTIP
-$('[data-toggle="tooltip"]').tooltip(); 
+$('[data-toggle="tooltip"]').tooltip();
 
 $.ajax({
 
@@ -16,11 +16,11 @@ $.ajax({
 		var colorTexto = JSON.parse(respuesta).colorTexto;
 		var barraSuperior = JSON.parse(respuesta).barraSuperior;
 		var textoSuperior = JSON.parse(respuesta).textoSuperior;
-		
+
 		$(".backColor, .backColor a").css({"background": colorFondo,
 											"color": colorTexto})
 
-		$(".barraSuperior, .barraSuperior a").css({"background": barraSuperior, 
+		$(".barraSuperior, .barraSuperior a").css({"background": barraSuperior,
 			                                       "color": textoSuperior})
 
 	}
@@ -84,8 +84,8 @@ $(window).scroll(function(){
 
 		}
 
-	}	
-	
+	}
+
 })
 
 $.scrollUp({
@@ -123,11 +123,11 @@ var pagActual =indice[5];
 if(isNaN(pagActual)){
 
    $("#item1").addClass("active");
-   
+
 }else{
 
    $("#item"+pagActual).addClass("active");
- 
+
 }
 
 
@@ -156,15 +156,15 @@ for(var i = 0; i < finOferta.length; i++){
 
 	endDate: new Date(fechaFinOferta[i]),
 
-	theme: 'flat', 
+	theme: 'flat',
 
-	titleDays: 'Días', 
+	titleDays: 'Días',
 
-	titleHours: 'Horas', 
+	titleHours: 'Horas',
 
-	titleMinutes: 'Minutos', 
+	titleMinutes: 'Minutos',
 
-	titleSeconds: 'Segundos' 
+	titleSeconds: 'Segundos'
 
 
 	});

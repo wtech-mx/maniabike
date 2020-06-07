@@ -14,7 +14,8 @@ class ControladorUsuarios{
 			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["regEmail"]) &&
 			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["regPassword"])){
 
-			   	$encriptar = crypt($_POST["regPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+			   	$encriptar = crypt($_POST["regPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$
+			   		$2a$07$asxx54ahjppf45sd87a5auxq/SS293XhTEeizKWMnfhnpfay0AALe');
 
 			   	$encriptarEmail = md5($_POST["regEmail"]);
 
@@ -32,23 +33,13 @@ class ControladorUsuarios{
 
 				if($respuesta == "ok"){
 
-			/*=============================================
-			ACTUALIZAR NOTIFICACIONES NUEVOS USUARIOS
-			=============================================*/
-
-			$traerNotificaciones = ControladorNotificaciones::ctrMostrarNotificaciones();
-
-			$nuevoUsusario = $traerNotificaciones["nuevosUsuarios"] + 1;
-
-			ModeloNotificaciones::mdlActualizarNotificaciones("notificaciones", "nuevosUsuarios", $nuevoUsuario);
-
 					/*=============================================
 					VERIFICACIÓN CORREO ELECTRÓNICO
 					=============================================*/
 
 					date_default_timezone_set("America/Bogota");
 
-					$url = Ruta::ctrRuta();	
+					$url = Ruta::ctrRuta();
 
 					$mail = new PHPMailer;
 
@@ -65,18 +56,18 @@ class ControladorUsuarios{
 					$mail->addAddress($_POST["regEmail"]);
 
 					$mail->msgHTML('<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
-						
+
 						<center>
-							
-							<img style="padding:20px; width:10%" src="http://tutorialesatualcance.com/tienda/logo.png">
+
+							<img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png">
 
 						</center>
 
 						<div style="position:relative; margin:auto; width:600px; background:white; padding:20px">
-						
+
 							<center>
-							
-							<img style="padding:20px; width:15%" src="http://tutorialesatualcance.com/tienda/icon-email.png">
+
+							<img style="padding:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-email.png">
 
 							<h3 style="font-weight:100; color:#999">VERIFIQUE SU DIRECCIÓN DE CORREO ELECTRÓNICO</h3>
 
@@ -106,7 +97,7 @@ class ControladorUsuarios{
 
 					if(!$envio){
 
-						echo '<script> 
+						echo '<script>
 
 							swal({
 								  title: "¡ERROR!",
@@ -127,7 +118,7 @@ class ControladorUsuarios{
 
 					}else{
 
-						echo '<script> 
+						echo '<script>
 
 							swal({
 								  title: "¡OK!",
@@ -152,7 +143,7 @@ class ControladorUsuarios{
 
 			}else{
 
-				echo '<script> 
+				echo '<script>
 
 						swal({
 							  title: "¡ERROR!",
@@ -206,34 +197,6 @@ class ControladorUsuarios{
 	}
 
 	/*=============================================
-	MOSTRAR DATOS-FACTURACION
-	=============================================*/
-
-	static public function ctrMostrarfact($item, $valor){
-
-		$tabla = "facturacion";
-
-		$respuesta = ModeloUsuarios::ctrMostrarfact($tabla, $item, $valor);
-
-		return $respuesta;
-
-	}
-
-	/*=============================================
-	ACTUALIZAR  DATOS-FACTURACION
-	=============================================*/
-
-	static public function ctrActualizarfact($id, $item, $valor){
-
-		$tabla = "facturacion";
-
-		$respuesta = ModeloUsuarios::mdlActualizarfact($tabla, $id, $item, $valor);
-
-		return $respuesta;
-
-	}
-
-	/*=============================================
 	INGRESO DE USUARIO
 	=============================================*/
 
@@ -267,9 +230,9 @@ class ControladorUsuarios{
 							},
 
 							function(isConfirm){
-									 if (isConfirm) {	   
+									 if (isConfirm) {
 									    history.back();
-									  } 
+									  }
 							});
 
 							</script>';
@@ -285,7 +248,7 @@ class ControladorUsuarios{
 						$_SESSION["modo"] = $respuesta["modo"];
 
 						echo '<script>
-							
+
 							window.location = localStorage.getItem("rutaActual");
 
 						</script>';
@@ -305,9 +268,9 @@ class ControladorUsuarios{
 							},
 
 							function(isConfirm){
-									 if (isConfirm) {	   
+									 if (isConfirm) {
 									    window.location = localStorage.getItem("rutaActual");
-									  } 
+									  }
 							});
 
 							</script>';
@@ -316,7 +279,7 @@ class ControladorUsuarios{
 
 			}else{
 
-				echo '<script> 
+				echo '<script>
 
 						swal({
 							  title: "¡ERROR!",
@@ -399,7 +362,7 @@ class ControladorUsuarios{
 
 						date_default_timezone_set("America/Bogota");
 
-						$url = Ruta::ctrRuta();	
+						$url = Ruta::ctrRuta();
 
 						$mail = new PHPMailer;
 
@@ -416,18 +379,18 @@ class ControladorUsuarios{
 						$mail->addAddress($_POST["passEmail"]);
 
 						$mail->msgHTML('<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
-	
+
 								<center>
-									
-									<img style="padding:20px; width:10%" src="http://tutorialesatualcance.com/tienda/logo.png">
+
+									<img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png">
 
 								</center>
 
 								<div style="position:relative; margin:auto; width:600px; background:white; padding:20px">
-								
+
 									<center>
-									
-									<img style="padding:20px; width:15%" src="http://tutorialesatualcance.com/tienda/icon-pass.png">
+
+									<img style="padding:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-pass.png">
 
 									<h3 style="font-weight:100; color:#999">SOLICITUD DE NUEVA CONTRASEÑA</h3>
 
@@ -457,7 +420,7 @@ class ControladorUsuarios{
 
 						if(!$envio){
 
-							echo '<script> 
+							echo '<script>
 
 								swal({
 									  title: "¡ERROR!",
@@ -478,7 +441,7 @@ class ControladorUsuarios{
 
 						}else{
 
-							echo '<script> 
+							echo '<script>
 
 								swal({
 									  title: "¡OK!",
@@ -503,7 +466,7 @@ class ControladorUsuarios{
 
 				}else{
 
-					echo '<script> 
+					echo '<script>
 
 						swal({
 							  title: "¡ERROR!",
@@ -527,7 +490,7 @@ class ControladorUsuarios{
 
 			}else{
 
-				echo '<script> 
+				echo '<script>
 
 						swal({
 							  title: "¡ERROR!",
@@ -569,7 +532,7 @@ class ControladorUsuarios{
 
 			if($respuesta0["modo"] != $datos["modo"]){
 
-				echo '<script> 
+				echo '<script>
 
 						swal({
 							  title: "¡ERROR!",
@@ -597,16 +560,6 @@ class ControladorUsuarios{
 		}else{
 
 			$respuesta1 = ModeloUsuarios::mdlRegistroUsuario($tabla, $datos);
-
-			/*=============================================
-			ACTUALIZAR NOTIFICACIONES NUEVOS USUARIOS
-			=============================================*/
-
-			$traerNotificaciones = ControladorNotificaciones::ctrMostrarNotificaciones();
-
-			$nuevoUsuario = $traerNotificaciones["nuevosUsuarios"] + 1;
-
-			ModeloNotificaciones::mdlActualizarNotificaciones("notificaciones", "nuevosUsuarios", $nuevoUsuario);
 
 		}
 
@@ -675,7 +628,7 @@ class ControladorUsuarios{
 				if(!empty($_POST["fotoUsuario"])){
 
 					unlink($_POST["fotoUsuario"]);
-				
+
 				}else{
 
 					mkdir($directorio, 0755);
@@ -689,7 +642,7 @@ class ControladorUsuarios{
 				list($ancho, $alto) = getimagesize($_FILES["datosImagen"]["tmp_name"]);
 
 				$nuevoAncho = 500;
-				$nuevoAlto = 500;	
+				$nuevoAlto = 500;
 
 				$aleatorio = mt_rand(100, 999);
 
@@ -724,7 +677,7 @@ class ControladorUsuarios{
 					$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 					imagealphablending($destino, FALSE);
-    			
+
 					imagesavealpha($destino, TRUE);
 
 					imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -765,7 +718,7 @@ class ControladorUsuarios{
 				$_SESSION["password"] = $datos["password"];
 				$_SESSION["modo"] = $_POST["modoUsuario"];
 
-				echo '<script> 
+				echo '<script>
 
 						swal({
 							  title: "¡OK!",
@@ -790,6 +743,7 @@ class ControladorUsuarios{
 		}
 
 	}
+
 
 	/*=============================================
 	MOSTRAR COMPRAS
@@ -853,9 +807,9 @@ class ControladorUsuarios{
 								},
 
 								function(isConfirm){
-										 if (isConfirm) {	   
+										 if (isConfirm) {
 										   history.back();
-										  } 
+										  }
 								});
 
 							  </script>';
@@ -875,14 +829,14 @@ class ControladorUsuarios{
 						},
 
 						function(isConfirm){
-								 if (isConfirm) {	   
+								 if (isConfirm) {
 								   history.back();
-								  } 
+								  }
 						});
 
 					  </script>';
 
-				}	
+				}
 
 			}else{
 
@@ -897,9 +851,9 @@ class ControladorUsuarios{
 					},
 
 					function(isConfirm){
-							 if (isConfirm) {	   
+							 if (isConfirm) {
 							   history.back();
-							  } 
+							  }
 					});
 
 				  </script>';
@@ -959,7 +913,7 @@ class ControladorUsuarios{
 
 		if(isset($_GET["id"])){
 
-			$tabla1 = "usuarios";		
+			$tabla1 = "usuarios";
 			$tabla2 = "comentarios";
 			$tabla3 = "compras";
 			$tabla4 = "deseos";
@@ -974,7 +928,7 @@ class ControladorUsuarios{
 			}
 
 			$respuesta = ModeloUsuarios::mdlEliminarUsuario($tabla1, $id);
-			
+
 			ModeloUsuarios::mdlEliminarComentarios($tabla2, $id);
 
 			ModeloUsuarios::mdlEliminarCompras($tabla3, $id);
@@ -996,14 +950,151 @@ class ControladorUsuarios{
 						},
 
 						function(isConfirm){
-								 if (isConfirm) {	   
+								 if (isConfirm) {
 								   window.location = "'.$url.'salir";
-								  } 
+								  }
 						});
 
 					  </script>';
 
 		    }
+
+		}
+
+	}
+
+	/*=============================================
+	FORMULARIO CONTACTENOS
+	=============================================*/
+
+	public function ctrFormularioContactenos(){
+
+		if(isset($_POST['mensajeContactenos'])){
+
+			if(preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nombreContactenos"]) &&
+			preg_match('/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["mensajeContactenos"]) &&
+			preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["emailContactenos"])){
+
+				/*=============================================
+				ENVÍO CORREO ELECTRÓNICO
+				=============================================*/
+
+					date_default_timezone_set("America/Bogota");
+
+					$url = Ruta::ctrRuta();
+
+					$mail = new PHPMailer;
+
+					$mail->CharSet = 'UTF-8';
+
+					$mail->isMail();
+
+					$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+
+					$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+
+					$mail->Subject = "Ha recibido una consulta";
+
+					$mail->addAddress("contacto@tiendaenlinea.com");
+
+					$mail->msgHTML('
+
+						<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
+
+						<center><img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png"></center>
+
+						<div style="position:relative; margin:auto; width:600px; background:white; padding-bottom:20px">
+
+							<center>
+
+							<img style="padding-top:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-email.png">
+
+
+							<h3 style="font-weight:100; color:#999;">HA RECIBIDO UNA CONSULTA</h3>
+
+							<hr style="width:80%; border:1px solid #ccc">
+
+							<h4 style="font-weight:100; color:#999; padding:0px 20px; text-transform:uppercase">'.$_POST["nombreContactenos"].'</h4>
+
+							<h4 style="font-weight:100; color:#999; padding:0px 20px;">De: '.$_POST["emailContactenos"].'</h4>
+
+							<h4 style="font-weight:100; color:#999; padding:0px 20px">'.$_POST["mensajeContactenos"].'</h4>
+
+							<hr style="width:80%; border:1px solid #ccc">
+
+							</center>
+
+						</div>
+
+					</div>');
+
+					$envio = $mail->Send();
+
+					if(!$envio){
+
+						echo '<script>
+
+							swal({
+								  title: "¡ERROR!",
+								  text: "¡Ha ocurrido un problema enviando el mensaje!",
+								  type:"error",
+								  confirmButtonText: "Cerrar",
+								  closeOnConfirm: false
+								},
+
+								function(isConfirm){
+
+									if(isConfirm){
+										history.back();
+									}
+							});
+
+						</script>';
+
+					}else{
+
+						echo '<script>
+
+							swal({
+							  title: "¡OK!",
+							  text: "¡Su mensaje ha sido enviado, muy pronto le responderemos!",
+							  type: "success",
+							  confirmButtonText: "Cerrar",
+							  closeOnConfirm: false
+							},
+
+							function(isConfirm){
+									 if (isConfirm) {
+											history.back();
+										}
+							});
+
+						</script>';
+
+					}
+
+			}else{
+
+				echo'<script>
+
+					swal({
+						  title: "¡ERROR!",
+						  text: "¡Problemas al enviar el mensaje, revise que no tenga caracteres especiales!",
+						  type: "error",
+						  confirmButtonText: "Cerrar",
+						  closeOnConfirm: false
+					},
+
+					function(isConfirm){
+							 if (isConfirm) {
+							   	window.location =  history.back();
+							  }
+					});
+
+					</script>';
+
+
+			}
 
 		}
 
