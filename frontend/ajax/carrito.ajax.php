@@ -12,7 +12,7 @@ class AjaxCarrito{
 
 	/*=============================================
 	MÉTODO PAYPAL
-	=============================================*/	
+	=============================================*/
 
 	public $divisa;
 	public $total;
@@ -52,13 +52,36 @@ class AjaxCarrito{
 	MÉTODO PAYU
 	=============================================*/
 
+	public function ajaxTraerComercioPayu(){
 
+		$respuesta = ControladorCarrito::ctrMostrarTarifas();
+
+		echo json_encode($respuesta);
+	}
+
+	/*=============================================
+	VERIFICAR QUE NO TENGA EL PRODUCTO ADQUIRIDO
+	=============================================*/
+
+	public $idUsuario;
+	public $idProducto;
+
+	public function ajaxVerificarProducto(){
+
+		$datos = array("idUsuario"=>$this->idUsuario,
+					   "idProducto"=>$this->idProducto);
+
+		$respuesta = ControladorCarrito::ctrVerificarProducto($datos);
+
+		echo json_encode($respuesta);
+
+	}
 
 }
 
 /*=============================================
 MÉTODO PAYPAL
-=============================================*/	
+=============================================*/
 
 if(isset($_POST["divisa"])){
 
@@ -74,7 +97,7 @@ if(isset($_POST["divisa"])){
 
 		$verificarProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
 
-		$divisa = file_get_contents("http://free.currconv.com/api/v7/convert?q=USD_".$_POST["divisa"]."&compact=ultra&apiKey=631a2ee7118a10541b4b");
+		$divisa = file_get_contents("http://free.currconv.com/api/v7/convert?q=USD_".$_POST["divisa"]."&compact=ultra&apiKey=a01ebaf9a1c69eb4ff79");
 
 		$jsonDivisa = json_decode($divisa, true);
 
@@ -83,7 +106,7 @@ if(isset($_POST["divisa"])){
 		if($verificarProductos["precioOferta"] == 0){
 
 			$precio = $verificarProductos["precio"]*$conversion;
-		
+
 		}else{
 
 			$precio = $verificarProductos["precioOferta"]*$conversion;
@@ -125,5 +148,68 @@ if(isset($_POST["divisa"])){
 
 /*=============================================
 MÉTODO PAYU
-=============================================*/	
+=============================================*/
 
+if(isset($_POST["metodoPago"]) && $_POST["metodoPago"] == "payu"){
+
+	$idProductos = explode("," , $_POST["idProductoArray"]);
+	$cantidadProductos = explode("," , $_POST["cantidadArray"]);
+	$precioProductos = explode("," , $_POST["valorItemArray"]);
+
+	$item = "id";
+
+	for($i = 0; $i < count($idProductos); $i ++){
+
+		$valor = $idProductos[$i];
+
+		$verificarProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
+
+		$divisa = file_get_contents("http://free.currconv.com/api/v7/convert?q=USD_".$_POST["divisaPayu"]."&compact=ultra&apiKey=a01ebaf9a1c69eb4ff79");
+
+		$jsonDivisa = json_decode($divisa, true);
+
+		$conversion = number_format($jsonDivisa["USD_".$_POST["divisaPayu"]],2);
+
+		if($verificarProductos["precioOferta"] == 0){
+
+			$precio = $verificarProductos["precio"]*$conversion;
+
+		}else{
+
+			$precio = $verificarProductos["precioOferta"]*$conversion;
+
+		}
+
+		$verificarSubTotal = $cantidadProductos[$i]*$precio;
+
+		// echo number_format($verificarSubTotal,2)."<br>";
+		// echo number_format($precioProductos[$i],2)."<br>";
+
+		// return;
+
+		if(number_format($verificarSubTotal,2) != number_format($precioProductos[$i],2)){
+
+			echo "carrito-de-compras";
+
+			return;
+
+		}
+
+	}
+
+	$payu = new AjaxCarrito();
+	$payu -> ajaxTraerComercioPayu();
+
+}
+
+/*=============================================
+VERIFICAR QUE NO TENGA EL PRODUCTO ADQUIRIDO
+=============================================*/
+
+if(isset($_POST["idUsuario"])){
+
+	$deseo = new AjaxCarrito();
+	$deseo -> idUsuario = $_POST["idUsuario"];
+	$deseo -> idProducto = $_POST["idProducto"];
+	$deseo ->ajaxVerificarProducto();
+}

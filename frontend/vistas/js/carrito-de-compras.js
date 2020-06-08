@@ -114,7 +114,7 @@ for(var i = 0; i < indice.length; i++){
 
 								'<br>'+
 
-								'<p class="precioCarritoCompra text-center">MXN $<span>'+precio+'</span></p>'+
+								'<p class="precioCarritoCompra text-center">MXM $<span>'+precio+'</span></p>'+
 
 							'</div>'+
 
@@ -140,7 +140,7 @@ for(var i = 0; i < indice.length; i++){
 
 								'<p class="subTotal'+index+' subtotales">'+
 
-									'<strong>MXN $<span>'+(Number(item.cantidad)*Number(precio))+'</span></strong>'+
+									'<strong>MXM $<span>'+(Number(item.cantidad)*Number(precio))+'</span></strong>'+
 
 								'</p>'+
 
@@ -221,7 +221,7 @@ $(".agregarCarrito").click(function(){
 			if($(seleccionarDetalle[i]).val() == ""){
 
 				swal({
-					  title: "Debe seleccionar caracteristicas del producto",
+					  title: "Debe seleccionar Talla y Color",
 					  text: "",
 					  type: "warning",
 					  showCancelButton: false,
@@ -423,7 +423,7 @@ $(document).on("change", ".cantidadItem", function(){
 	var idProducto = $(this).attr("idProducto");
 	var item = $(this).attr("item");
 
-	$(".subTotal"+item).html('<strong>MXN $<span>'+(cantidad*precio)+'</span></strong>');
+	$(".subTotal"+item).html('<strong>MXM $<span>'+(cantidad*precio)+'</span></strong>');
 
 	/*=============================================
 	ACTUALIZAR LA CANTIDAD EN EL LOCALSTORAGE
@@ -491,7 +491,7 @@ function sumaSubtotales(){
 
 	var sumaTotal = arraySumaSubtotales.reduce(sumaArraySubtotales);
 
-	$(".sumaSubTotal").html('<strong>MXN $<span>'+(sumaTotal).toFixed(2)+'</span></strong>');
+	$(".sumaSubTotal").html('<strong>MXM $<span>'+(sumaTotal).toFixed(2)+'</span></strong>');
 
 	$(".sumaCesta").html((sumaTotal).toFixed(2));
 
@@ -648,8 +648,6 @@ $("#btnCheckout").click(function(){
 
 		$(".formEnvio").show();
 
-		$(".formrecojertienda").show();
-
 		$(".btnPagar").attr("tipo","fisico");
 
 		$.ajax({
@@ -687,19 +685,6 @@ $("#btnCheckout").click(function(){
 			var tasaPais = $("#tasaPais").val();
 
 			if(pais == tasaPais){
-
-				var resultadoPeso = sumaTotalPeso * $("#recojertienda").val();
-
-				if(resultadoPeso < $("#tasaMinimaNal").val()){
-
-					$(".valorTotalEnvio").html($("#tasaMinimaNal").val());
-					$(".valorTotalEnvio").attr("valor", $("#tasaMinimaNal").val());
-
-				}else{
-
-					$(".valorTotalEnvio").html(resultadoPeso);
-					$(".valorTotalEnvio").attr("valor",resultadoPeso);
-				}
 
 				var resultadoPeso = sumaTotalPeso * $("#envioNacional").val();
 
@@ -808,20 +793,20 @@ function divisas(metodoPago){
 
 	if(metodoPago == "paypal"){
 
-		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'+
-			                       '<option value="USD">USD</option>'+
+		$("#cambiarDivisa").append('<option value="MXM">MXM</option>'+
 			                       '<option value="EUR">EUR</option>'+
 			                       '<option value="GBP">GBP</option>'+
+			                       '<option value="MXN">MXN</option>'+
 			                       '<option value="JPY">JPY</option>'+
 			                       '<option value="CAD">CAD</option>'+
 			                       '<option value="BRL">BRL</option>')
 
 	}else{
 
-		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'+
-			                       '<option value="USD">USD</option>'+
+		$("#cambiarDivisa").append('<option value="MXM">MXM</option>'+
 			                       '<option value="PEN">PEN</option>'+
 			                       '<option value="COP">COP</option>'+
+			                       '<option value="MXN">MXN</option>'+
 			                       '<option value="CLP">CLP</option>'+
 			                       '<option value="ARS">ARS</option>'+
 			                       '<option value="BRL">BRL</option>')
@@ -837,7 +822,7 @@ function divisas(metodoPago){
 CAMBIO DE DIVISA
 =============================================*/
 
-var divisaBase = "MXN";
+var divisaBase = "MXM";
 
 $("#cambiarDivisa").change(function(){
 
@@ -863,11 +848,11 @@ $("#cambiarDivisa").change(function(){
 	    dataType:"jsonp",
 	    success:function(respuesta){
 
-	    	var conversion = (respuesta["MXN_"+divisa]).toFixed(2);
+	    	var conversion = (respuesta["MXM_"+divisa]).toFixed(2);
 
 	    	$(".cambioDivisa").html(divisa);
 
-	    	if(divisa == "MXN"){
+	    	if(divisa == "MXM"){
 
 	    		$(".valorSubtotal").html($(".valorSubtotal").attr("valor"))
 		    	$(".valorTotalEnvio").html($(".valorTotalEnvio").attr("valor"))
@@ -1212,7 +1197,7 @@ $(".agregarGratis").click(function(){
 						if($(seleccionarDetalle[i]).val() == ""){
 
 								swal({
-									  title: "Debe seleccionar caracteristicas del producto",
+									  title: "Debe seleccionar Talla y Color",
 									  text: "",
 									  type: "warning",
 									  showCancelButton: false,

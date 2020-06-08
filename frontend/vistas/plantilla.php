@@ -106,6 +106,8 @@
 
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/sweetalert.css">
 
+	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/dscountdown.css">
+
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
