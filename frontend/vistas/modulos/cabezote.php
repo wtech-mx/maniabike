@@ -348,7 +348,19 @@ HEADER
 							foreach ($subcategorias as $key => $value) {
 
 									echo '<li><a href="'.$url.$value["ruta"].'" class="pixelSubCategorias" titulo="'.$value["subcategoria"].'">'.$value["subcategoria"].'</a></li>';
-								}
+
+
+							$item2 = "id_subcategoria";
+
+							$valor2 = $value["id"];
+
+							$subcategorias2 = ControladorProductos::ctrMostrarSubCategorias2($item2, $valor2);
+
+							foreach ($subcategorias2 as $key => $value) {
+
+									echo '<li>*<a href="'.$url.$value["ruta"].'" class="pixelSubCategorias2 text-muted" titulo="'.$value["subcategoria2"].'">'.$value["subcategoria2"].'</a></li>';
+							}
+							}
 
 							echo '</ul>
 
