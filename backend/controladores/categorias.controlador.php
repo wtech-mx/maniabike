@@ -45,7 +45,7 @@ class ControladorCategorias{
 
 					/*=============================================
 					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
-					=============================================*/	
+					=============================================*/
 
 					if($_FILES["fotoPortada"]["type"] == "image/jpeg"){
 
@@ -55,7 +55,7 @@ class ControladorCategorias{
 
 						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaCategoria"].".jpg";
 
-						$origen = imagecreatefromjpeg($_FILES["fotoPortada"]["tmp_name"]);	
+						$origen = imagecreatefromjpeg($_FILES["fotoPortada"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -73,12 +73,12 @@ class ControladorCategorias{
 
 						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaCategoria"].".png";
 
-						$origen = imagecreatefrompng($_FILES["fotoPortada"]["tmp_name"]);						
+						$origen = imagecreatefrompng($_FILES["fotoPortada"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-    			
+
     					imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -109,7 +109,7 @@ class ControladorCategorias{
 
 					/*=============================================
 					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
-					=============================================*/	
+					=============================================*/
 
 					if($_FILES["fotoOferta"]["type"] == "image/jpeg"){
 
@@ -119,7 +119,7 @@ class ControladorCategorias{
 
 						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaCategoria"].".jpg";
 
-						$origen = imagecreatefromjpeg($_FILES["fotoOferta"]["tmp_name"]);	
+						$origen = imagecreatefromjpeg($_FILES["fotoOferta"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -137,12 +137,12 @@ class ControladorCategorias{
 
 						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaCategoria"].".png";
 
-						$origen = imagecreatefrompng($_FILES["fotoOferta"]["tmp_name"]);						
+						$origen = imagecreatefrompng($_FILES["fotoOferta"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-    			
+
     					imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -169,7 +169,7 @@ class ControladorCategorias{
 								   "oferta"=>1,
 								   "precioOferta"=>$_POST["precioOferta"],
 								   "descuentoOferta"=>$_POST["descuentoOferta"],
-								   "imgOferta"=>$rutaOferta,								   
+								   "imgOferta"=>$rutaOferta,
 								   "finOferta"=>$_POST["finOferta"]);
 
 
@@ -185,7 +185,7 @@ class ControladorCategorias{
 								   "oferta"=>0,
 								   "precioOferta"=>0,
 								   "descuentoOferta"=>0,
-								   "imgOferta"=>"",								   
+								   "imgOferta"=>"",
 								   "finOferta"=>"");
 
 
@@ -274,7 +274,7 @@ class ControladorCategorias{
 
 					/*=============================================
 					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
-					=============================================*/	
+					=============================================*/
 
 					if($_FILES["fotoPortada"]["type"] == "image/jpeg"){
 
@@ -284,7 +284,7 @@ class ControladorCategorias{
 
 						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaCategoria"].".jpg";
 
-						$origen = imagecreatefromjpeg($_FILES["fotoPortada"]["tmp_name"]);	
+						$origen = imagecreatefromjpeg($_FILES["fotoPortada"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -302,12 +302,12 @@ class ControladorCategorias{
 
 						$rutaPortada = "vistas/img/cabeceras/".$_POST["rutaCategoria"].".png";
 
-						$origen = imagecreatefrompng($_FILES["fotoPortada"]["tmp_name"]);						
+						$origen = imagecreatefrompng($_FILES["fotoPortada"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-    			
+
     					imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -344,7 +344,7 @@ class ControladorCategorias{
 
 					/*=============================================
 					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
-					=============================================*/	
+					=============================================*/
 
 					if($_FILES["fotoOferta"]["type"] == "image/jpeg"){
 
@@ -354,7 +354,7 @@ class ControladorCategorias{
 
 						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaCategoria"].".jpg";
 
-						$origen = imagecreatefromjpeg($_FILES["fotoOferta"]["tmp_name"]);	
+						$origen = imagecreatefromjpeg($_FILES["fotoOferta"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
@@ -372,12 +372,12 @@ class ControladorCategorias{
 
 						$rutaOferta = "vistas/img/ofertas/".$_POST["rutaCategoria"].".png";
 
-						$origen = imagecreatefrompng($_FILES["fotoOferta"]["tmp_name"]);						
+						$origen = imagecreatefrompng($_FILES["fotoOferta"]["tmp_name"]);
 
 						$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
 						imagealphablending($destino, FALSE);
-    			
+
     					imagesavealpha($destino, TRUE);
 
 						imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
@@ -406,8 +406,8 @@ class ControladorCategorias{
 								   "oferta"=>1,
 								   "precioOferta"=>$_POST["precioOferta"],
 								   "descuentoOferta"=>$_POST["descuentoOferta"],
-								   "imgOferta"=>$rutaOferta,								   
-								   "finOferta"=>$_POST["finOferta"]);					
+								   "imgOferta"=>$rutaOferta,
+								   "finOferta"=>$_POST["finOferta"]);
 
 				}else{
 
@@ -423,7 +423,7 @@ class ControladorCategorias{
 								   "oferta"=>0,
 								   "precioOferta"=>0,
 								   "descuentoOferta"=>0,
-								   "imgOferta"=>"",								   
+								   "imgOferta"=>"",
 								   "finOferta"=>"");
 
 					if($_POST["antiguaFotoOferta"] != ""){
@@ -434,12 +434,12 @@ class ControladorCategorias{
 
 				}
 
-				ModeloSubCategorias::mdlActualizarOfertaSubcategorias("subcategorias", $datos, "ofertadoPorCategoria");	
-				
+				ModeloSubCategorias::mdlActualizarOfertaSubcategorias("subcategorias", $datos, "ofertadoPorCategoria");
+
 				$traerProductos = ModeloProductos::mdlMostrarProductos("productos", "id_categoria", $datos["id"]);
 
 				foreach ($traerProductos as $key => $value) {
-					
+
 					if($datos["oferta"] != 0 && $datos["precioOferta"] == 0){
 
 						if($value["precio"] != 0){
@@ -463,7 +463,7 @@ class ControladorCategorias{
 
 							$precioOfertaActualizado = $datos["precioOferta"];
 							$descuentoOfertaActualizado = 100 - ($datos["precioOferta"]*100/$value["precio"]);
-	
+
 
 						}else{
 
@@ -471,14 +471,14 @@ class ControladorCategorias{
 							$descuentoOfertaActualizado = 0;
 
 						}
-						
+
 					}
 
 					ModeloProductos::mdlActualizarOfertaProductos("productos", $datos, "ofertadoPorCategoria", $precioOfertaActualizado, $descuentoOfertaActualizado, $value["id"]);
 
 				}
 
-				
+
 				ModeloCabeceras::mdlEditarCabecera("cabeceras", $datos);
 
 				$respuesta = ModeloCategorias::mdlEditarCategoria("categorias", $datos);
@@ -540,7 +540,7 @@ class ControladorCategorias{
 
 			if($_GET["imgOferta"] != ""){
 
-				unlink($_GET["imgOferta"]);		
+				unlink($_GET["imgOferta"]);
 
 			}
 
@@ -550,7 +550,7 @@ class ControladorCategorias{
 
 			if($_GET["imgPortada"] != "" && $_GET["imgPortada"] != "vistas/img/cabeceras/default/default.jpg"){
 
-				unlink($_GET["imgPortada"]);		
+				unlink($_GET["imgPortada"]);
 
 			}
 
@@ -593,8 +593,8 @@ class ControladorCategorias{
 					$item2 = "id";
 					$valor2 = $value["id"];
 
-					ModeloProductos::mdlActualizarProductos("productos", $item1, $valor1, $item2, $valor2);	
-				
+					ModeloProductos::mdlActualizarProductos("productos", $item1, $valor1, $item2, $valor2);
+
 				}
 
 			}
@@ -620,7 +620,7 @@ class ControladorCategorias{
 
 				</script>';
 
-			}		
+			}
 
 
 		}

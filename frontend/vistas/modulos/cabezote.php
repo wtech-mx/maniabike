@@ -328,6 +328,7 @@ HEADER
 				$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
 				foreach ($categorias as $key => $value) {
+					if ($value["estado"] != 0) {
 
 					echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
 
@@ -365,6 +366,8 @@ HEADER
 							echo '</ul>
 
 						</div>';
+
+					}
 				}
 
 			?>

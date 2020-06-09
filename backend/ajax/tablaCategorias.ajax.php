@@ -29,7 +29,7 @@ class TablaCategorias{
 			REVISAR ESTADO
 			=============================================*/
 
-			if( $categorias[$i][4] == 0){
+			if( $categorias[$i]["estado"] == 0){
 
 				$colorEstado = "btn-danger";
 				$textoEstado = "Desactivado";
@@ -43,7 +43,7 @@ class TablaCategorias{
 
 			}
 
-		 	$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estadoCategoria='".$estadoCategoria."' idCategoria='".$categorias[$i][0]."'>".$textoEstado."</button>";
+		 	$estado = "<button class='btn ".$colorEstado." btn-xs btnActivar' estadoCategoria='".$estadoCategoria."' idCategoria='".$categorias[$i]["id"]."'>".$textoEstado."</button>";
 
 		 	/*=============================================
 			REVISAR IMAGEN PORTADA

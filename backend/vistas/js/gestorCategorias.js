@@ -6,7 +6,7 @@ CARGAR LA TABLA DINÁMICA DE CATEGORÍAS
 
 // 	url:"ajax/tablaCategorias.ajax.php",
 // 	success:function(respuesta){
-		
+
 // 		console.log("respuesta", respuesta);
 
 // 	}
@@ -69,11 +69,11 @@ $(".tablaCategorias tbody").on("click", ".btnActivar", function(){
 	  	cache: false,
       	contentType: false,
       	processData: false,
-      	success: function(respuesta){ 
-      	    
+      	success: function(respuesta){
+
       	    // console.log("respuesta", respuesta);
 
-      	} 	 
+      	}
 
   	});
 
@@ -83,7 +83,7 @@ $(".tablaCategorias tbody").on("click", ".btnActivar", function(){
   		$(this).addClass('btn-danger');
   		$(this).html('Desactivado');
   		$(this).attr('estadoCategoria',1);
-  	
+
   	}else{
 
   		$(this).addClass('btn-success');
@@ -118,14 +118,14 @@ $(".validarCategoria").change(function(){
 	    processData: false,
 	    dataType: "json",
 	    success:function(respuesta){
-	    	
+
 	    	// console.log("respuesta", respuesta);
 
 	    	if(respuesta){
 
 	    		$(".validarCategoria").parent().after('<div class="alert alert-warning">Esta categoría ya existe en la base de datos</div>')
 	    		$(".validarCategoria").val("");
-	    	}   
+	    	}
 
 	    }
 
@@ -205,7 +205,7 @@ $(".fotoPortada").change(function(){
   		datosImagen.readAsDataURL(imagen);
 
   		$(datosImagen).on("load", function(event){
-		
+
   			var rutaImagen = event.target.result;
 
   			$(".previsualizarPortada").attr("src", rutaImagen);
@@ -310,7 +310,7 @@ $(".fotoOferta").change(function(){
   		datosImagen.readAsDataURL(imagen);
 
   		$(datosImagen).on("load", function(event){
-		
+
   			var rutaImagen = event.target.result;
 
   			$(".previsualizarOferta").attr("src", rutaImagen);
@@ -344,7 +344,7 @@ $(".tablaCategorias tbody").on("click", ".btnEditarCategoria", function(){
 		success: function(respuesta){
 
 			$("#modalEditarCategoria .editarIdCategoria").val(respuesta["id"]);
-			
+
 			$("#modalEditarCategoria .tituloCategoria").val(respuesta["categoria"]);
 			$("#modalEditarCategoria .rutaCategoria").val(respuesta["ruta"]);
 
@@ -361,7 +361,7 @@ $(".tablaCategorias tbody").on("click", ".btnEditarCategoria", function(){
 			/*=============================================
 			TRAEMOS DATOS DE CABECERA
 			=============================================*/
-					
+
 			var datosCabecera = new FormData();
 			datosCabecera.append("ruta", respuesta["ruta"]);
 
@@ -377,7 +377,7 @@ $(".tablaCategorias tbody").on("click", ".btnEditarCategoria", function(){
 				success: function(respuesta){
 
 					$("#modalEditarCategoria .editarIdCabecera").val(respuesta["id"]);
-					
+
 					/*=============================================
 					CARGAMOS LA DESCRIPCION
 					=============================================*/
@@ -393,7 +393,7 @@ $(".tablaCategorias tbody").on("click", ".btnEditarCategoria", function(){
 						$(".editarPalabrasClaves").html(
 
 							'<div class="input-group">'+
-                
+
 			                '<span class="input-group-addon"><i class="fa fa-key"></i></span>'+
 
 			                '<input type="text" class="form-control input-lg pClavesCategoria tagsInput" data-role="tagsinput" value="'+respuesta["palabrasClaves"]+'" name="pClavesCategoria" required>'+
@@ -413,7 +413,7 @@ $(".tablaCategorias tbody").on("click", ".btnEditarCategoria", function(){
 						$(".editarPalabrasClaves").html(
 
 							'<div class="input-group">'+
-                
+
 			                '<span class="input-group-addon"><i class="fa fa-key"></i></span>'+
 
 			                '<input type="text" class="form-control input-lg pClavesCategoria tagsInput" data-role="tagsinput" value="" placeholder="Ingresar palabras claves"  name="pClavesCategoria" required>'+
@@ -475,7 +475,7 @@ $(".tablaCategorias tbody").on("click", ".btnEditarCategoria", function(){
 
 				$("#modalEditarCategoria .antiguaFotoOferta").val(respuesta["imgOferta"]);
 
-				$("#modalEditarCategoria .finOferta").val(respuesta["finOferta"]);		
+				$("#modalEditarCategoria .finOferta").val(respuesta["finOferta"]);
 
 			}else{
 
