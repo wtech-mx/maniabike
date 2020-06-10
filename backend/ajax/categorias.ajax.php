@@ -13,7 +13,7 @@ class AjaxCategorias{
 
   /*=============================================
   ACTIVAR CATEGORIA
-  =============================================*/	
+  =============================================*/
 
   public $activarCategoria;
   public $activarId;
@@ -25,15 +25,15 @@ class AjaxCategorias{
 
     ModeloProductos::mdlActualizarProductos("productos", "estado", $this->activarCategoria, "id_categoria", $this->activarId);
 
-  	$respuesta = ModeloCategorias::mdlActualizarCategoria("categorias", "estado", $this->activarCategoria, "id", $this->activarId);
+    $respuesta = ModeloCategorias::mdlActualizarCategoria("categorias", "estado", $this->activarCategoria, "id", $this->activarId);
 
-  	echo $respuesta;
+    echo $respuesta;
 
   }
 
   /*=============================================
   VALIDAR NO REPETIR CATEGORÍA
-  =============================================*/ 
+  =============================================*/
 
   public $validarCategoria;
 
@@ -50,7 +50,7 @@ class AjaxCategorias{
 
   /*=============================================
   EDITAR CATEGORIA
-  =============================================*/ 
+  =============================================*/
 
   public $idCategoria;
 
@@ -73,10 +73,10 @@ ACTIVAR CATEGORIA
 
 if(isset($_POST["activarCategoria"])){
 
-	$activarCategoria = new AjaxCategorias();
-	$activarCategoria -> activarCategoria = $_POST["activarCategoria"];
-	$activarCategoria -> activarId = $_POST["activarId"];
-	$activarCategoria -> ajaxActivarCategoria();
+  $activarCategoria = new AjaxCategorias();
+  $activarCategoria -> activarCategoria = $_POST["activarCategoria"];
+  $activarCategoria -> activarId = $_POST["activarId"];
+  $activarCategoria -> ajaxActivarCategoria();
 
 }
 
