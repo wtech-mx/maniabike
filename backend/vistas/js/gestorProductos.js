@@ -20,7 +20,7 @@ $('.tablaProductos').DataTable({
 	"retrieve": true,
 	"processing": true,
     "language": {
-
+    		"language": "idioma_espanol",
 			"sProcessing":     "Procesando...",
 			"sLengthMenu":     "Mostrar _MENU_ registros",
 			"sZeroRecords":    "No se encontraron resultados",
@@ -732,6 +732,19 @@ function agregarMiProducto(imagen){
 				success: function(respuesta){
 
 					 console.log("respuesta", respuesta);
+
+						swal({
+						  type: "success",
+						  title: "El producto ha sido guardado correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+							if (result.value) {
+
+							window.location = "productos";
+
+							}
+						})
 
 					if(respuesta == "ok"){
 
@@ -1506,6 +1519,20 @@ function editarMiProducto(imagen){
 			processData: false,
 			success: function(respuesta){
 
+					swal({
+					  type: "success",
+					  title: "El producto ha sido cambiado correctamente",
+					  showConfirmButton: true,
+					  confirmButtonText: "Cerrar"
+					  }).then(function(result){
+						if (result.value) {
+
+						localStorage.removeItem("multimediaFisica");
+						localStorage.clear();
+						window.location = "productos";
+
+						}
+					})
 
 				if(respuesta == "ok"){
 

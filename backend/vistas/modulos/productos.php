@@ -119,7 +119,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
 
-                  <input type="text" class="form-control input-lg validarProducto tituloProducto"  placeholder="Ingresar título producto">
+                  <input type="text" maxlength="1000" class="form-control input-lg validarProducto tituloProducto"  placeholder="Ingresar título producto">
 
                 </div>
 
@@ -135,7 +135,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-link"></i></span>
 
-                  <input type="text" class="form-control input-lg rutaProducto" placeholder="Ruta url del producto" readonly>
+                  <input type="text" maxlength="1000" class="form-control input-lg rutaProducto" placeholder="Ruta url del producto" readonly>
 
                 </div>
 
@@ -453,7 +453,7 @@ MODAL AGREGAR PRODUCTO
 
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
-                <textarea type="text" maxlength="320" rows="3" class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción producto"></textarea>
+                <textarea type="text" maxlength="1000" rows="6" class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción producto"></textarea>
 
               </div>
 
@@ -503,7 +503,7 @@ MODAL AGREGAR PRODUCTO
 
               <p class="help-block">Tamaño recomendado 400px * 450px <br> Peso máximo de la foto 2MB</p>
 
-              <img src="vistas/img/productos/default/default.jpg" class="img-thumbnail previsualizarPrincipal" width="200px">
+               <img src="vistas/img/productos/default/default.jpg" class="img-thumbnail previsualizarPrincipal" width="200px">
 
             </div>
 
@@ -1208,7 +1208,7 @@ MODAL EDITAR PRODUCTO
 
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
-                <textarea type="text" maxlength="320" rows="3" class="form-control input-lg descripcionProducto"></textarea>
+                <textarea type="text" maxlength="1000" rows="6" class="form-control input-lg descripcionProducto"></textarea>
 
               </div>
 
@@ -1574,6 +1574,8 @@ MODAL EDITAR PRODUCTO
         ======================================-->
 
         <div class="modal-footer">
+
+          <div class="preload"></div>
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
