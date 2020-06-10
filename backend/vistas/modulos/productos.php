@@ -343,7 +343,7 @@ MODAL AGREGAR PRODUCTO
 
               <!-- Medidas -->
 
-              <div class="form-group row">
+<!--               <div class="form-group row">
 
                 <div class="col-xs-3">
                   <input class="form-control input-lg" type="text" value="Medidas" readonly>
@@ -353,7 +353,7 @@ MODAL AGREGAR PRODUCTO
                     <input class="form-control input-lg tagsInput detalleMedidas" data-role="tagsinput" type="text" placeholder="Separe valores con coma">
                 </div>
 
-              </div>
+              </div> -->
 
             </div>
 
@@ -1110,17 +1110,17 @@ MODAL EDITAR PRODUCTO
 
               <!-- Medidas -->
 
-              <div class="form-group row">
+<!--               <div class="form-group row">
 
                 <div class="col-xs-3">
                   <input class="form-control input-lg" type="text" value="Medidas" readonly>
                 </div>
 
                 <div class="col-xs-9 editarMedidas">
-                  <!--   <input class="form-control input-lg tagsInput detalleMedidas" data-role="tagsinput" type="text" placeholder="Separe valores con coma"> -->
+                    <input class="form-control input-lg tagsInput detalleMedidas" data-role="tagsinput" type="text" placeholder="Separe valores con coma">
                 </div>
 
-              </div>
+              </div> -->
 
             </div>
 
