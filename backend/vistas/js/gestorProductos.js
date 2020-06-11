@@ -154,6 +154,22 @@ $(".tituloProducto").change(function(){
 })
 
 /*=============================================
+RUTA PRODUCTO
+=============================================*/
+
+function limpiarDesc(texto2){
+  var texto2 = texto2.toLowerCase();
+  texto2 = texto2.replace(/(\n)/g, ' ');
+  return texto2;
+}
+
+$(".descripcionProducto").change(function(){
+
+	$(".descripcionProducto").val(limpiarDesc($(".descripcionProducto").val()));
+
+})
+
+/*=============================================
 AGREGAR MULTIMEDIA
 =============================================*/
 
@@ -647,7 +663,6 @@ function agregarMiProducto(imagen){
 		/*=============================================
 		ALMACENAMOS TODOS LOS CAMPOS DE PRODUCTO
 		=============================================*/
-
 		var tituloProducto = $(".tituloProducto").val();
 		var rutaProducto = $(".rutaProducto").val();
 		var seleccionarTipo = $(".seleccionarTipo").val();
