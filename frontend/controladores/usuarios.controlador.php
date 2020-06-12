@@ -708,6 +708,12 @@ class ControladorUsuarios{
 						   "interior" => $_POST["editarInterior"],
 						   "calle1" => $_POST["editarCalle1"],
 						   "calle2" => $_POST["editarCalle2"],
+						   "numero" => $_POST["editarNumero"],
+						   "nombrefiscal" => $_POST["editarNombrefiscal"],
+						   "emailfac" => $_POST["editarEmailfac"],
+						   "cp" => $_POST["editarCp"],
+						   "rfc" => $_POST["editarRfc"],
+						   "regimenfiscal" => $_POST["editarRegimenfiscal"],
 						   "descripcion" => $_POST["editarDescripcion"],
 						   "password" => $password,
 						   "foto" => $ruta,
@@ -732,6 +738,12 @@ class ControladorUsuarios{
 				$_SESSION["interior"] = $datos["interior"];
 				$_SESSION["calle1"] = $datos["calle1"];
 				$_SESSION["calle2"] = $datos["calle2"];
+				$_SESSION["numero"] = $datos["numero"];
+				$_SESSION["nombrefiscal"] = $datos["nombrefiscal"];
+				$_SESSION["emailfac"] = $datos["emailfac"];
+				$_SESSION["cp"] = $datos["cp"];
+				$_SESSION["rfc"] = $datos["rfc"];
+				$_SESSION["regimenfical"] = $datos["regimenfical"];
 				$_SESSION["descripcion"] = $datos["descripcion"];
 				$_SESSION["password"] = $datos["password"];
 				$_SESSION["modo"] = $_POST["modoUsuario"];

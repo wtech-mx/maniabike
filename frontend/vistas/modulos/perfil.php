@@ -661,19 +661,26 @@ SECCIÓN PERFIL
 
 
 
-							<div class="row">
-								  <div class="col-lg-6">
+								<div class="row">
+								  <div class="col-lg-3">
 								  	<label class="control-label text-muted text-uppercase" for="editarNombre">Cambiar Nombre:</label>
 								    <div class="input-group">
 								      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								      <input type="text" class="form-control"  value="'.$_SESSION["nombre"].'" readonly>
 								    </div>
 								  </div>
-								  <div class="col-lg-6">
+								  <div class="col-lg-3">
 								  	<label class="control-label text-muted text-uppercase" for="editarEmail">Cambiar Correo Electrónico:</label>
 								    <div class="input-group">
 								    	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 								     <input type="text" class="form-control"  value="'.$_SESSION["email"].'" readonly>
+								    </div>
+								  </div>
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarNumero">Numero:</label>
+								    <div class="input-group">
+								    	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+								     <input type="text" class="form-control" id="editarNumero" name="editarNumero" value="'.$_SESSION["Numero"].'">
 								    </div>
 								  </div>
 								</div>
@@ -772,6 +779,50 @@ SECCIÓN PERFIL
 								  </div>
 								</div>
 
+
+								<h1>Datos de Facturacion</h1>
+
+								<div class="row">
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarNombrefiscal">Nombre fiscal:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+								      <input type="text" class="form-control" id="editarNombrefiscal" name="editarNombrefiscal" value="'.$_SESSION["nombrefiscal"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarEmailfac">Email factura:</label>
+								    <div class="input-group">
+								    	<span class="input-group-addon"><i class="fa fa-street-view" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarEmailfac" name="editarEmailfac"  value="'.$_SESSION["emailfac"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarCp">Codigo Postal:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarCp" name="editarCp" value="'.$_SESSION["cp"].' ">
+								    </div>
+								  </div>
+								</div>
+
+								<div class="row">
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarRfc">rfc:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-map-o" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarRfc" name="editarRfc" value="'.$_SESSION["Rfc"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarRegimenfiscal">Regimen fiscal:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarRegimenfiscal" name="editarRegimenfiscal" value="'.$_SESSION["regimenfiscal"].' ">
+								    </div>
+								  </div>
+								</div>
+
 								<button type="submit" class="btn btn-default backColor btn-md pull-left">Actualizar Datos</button>
 						</div>';
 
@@ -783,18 +834,25 @@ SECCIÓN PERFIL
 							echo '<h1>Datos de cuenta</h1>
 
 							<div class="row">
-								  <div class="col-lg-6">
+								  <div class="col-lg-3">
 								  	<label class="control-label text-muted text-uppercase" for="editarNombre">Cambiar Nombre:</label>
 								    <div class="input-group">
 								      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 								      <input type="text" class="form-control" id="editarNombre" name="editarNombre" value="'.$_SESSION["nombre"].'">
 								    </div>
 								  </div>
-								  <div class="col-lg-6">
+								  <div class="col-lg-3">
 								  	<label class="control-label text-muted text-uppercase" for="editarEmail">Cambiar Correo Electrónico:</label>
 								    <div class="input-group">
 								    	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 								      <input type="text" class="form-control" id="editarEmail" name="editarEmail" value="'.$_SESSION["email"].'">
+								    </div>
+								  </div>
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarNumero">Numero:</label>
+								    <div class="input-group">
+								    	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+								     <input type="text" class="form-control" id="editarNumero" name="editarNumero" value="'.$_SESSION["Numero"].'">
 								    </div>
 								  </div>
 								</div>
@@ -902,6 +960,48 @@ SECCIÓN PERFIL
 								</div>
 
 
+								<h1>Datos de Facturacion</h1>
+
+								<div class="row">
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarNombrefiscal">Nombre fiscal:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+								      <input type="text" class="form-control" id="editarNombrefiscal" name="editarNombrefiscal" value="'.$_SESSION["nombrefiscal"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarEmailfac">Email factura:</label>
+								    <div class="input-group">
+								    	<span class="input-group-addon"><i class="fa fa-street-view" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarEmailfac" name="editarEmailfac"  value="'.$_SESSION["emailfac"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarCp">Codigo Postal:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarCp" name="editarCp" value="'.$_SESSION["cp"].' ">
+								    </div>
+								  </div>
+								</div>
+
+								<div class="row">
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarRfc">rfc:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-map-o" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarRfc" name="editarRfc" value="'.$_SESSION["Rfc"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarRegimenfiscal">Regimen fiscal:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarRegimenfiscal" name="editarRegimenfiscal" value="'.$_SESSION["regimenfiscal"].' ">
+								    </div>
+								  </div>
+								</div>
 
 								<button type="submit" class="btn btn-default backColor btn-md pull-left">Actualizar Datos</button>
 						</div>';
