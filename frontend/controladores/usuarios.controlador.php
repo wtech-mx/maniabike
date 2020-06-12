@@ -246,7 +246,21 @@ class ControladorUsuarios{
 						$_SESSION["email"] = $respuesta["email"];
 						$_SESSION["password"] = $respuesta["password"];
 						$_SESSION["modo"] = $respuesta["modo"];
-
+						$_SESSION["codigo"] = $respuesta["codigo"];
+						$_SESSION["Numero"] = $respuesta["Numero"];
+						$_SESSION["estado"] = $respuesta["estado"];
+						$_SESSION["colonia"] = $respuesta["colonia"];
+						$_SESSION["calle"] = $respuesta["calle"];
+						$_SESSION["exterior"] = $respuesta["exterior"];
+						$_SESSION["interior"] = $respuesta["interior"];
+						$_SESSION["calle1"] = $respuesta["calle1"];
+						$_SESSION["calle2"] = $respuesta["calle2"];
+						$_SESSION["descripcion"] = $respuesta["descripcion"];
+						$_SESSION["nombrefiscal"] = $respuesta["nombrefiscal"];
+						$_SESSION["emailfac"] = $respuesta["emailfac"];
+						$_SESSION["cp"] = $respuesta["cp"];
+						$_SESSION["Rfc"] = $respuesta["Rfc"];
+						$_SESSION["regimenfiscal"] = $respuesta["regimenfiscal"];
 						echo '<script>
 
 							window.location = localStorage.getItem("rutaActual");
@@ -743,7 +757,7 @@ class ControladorUsuarios{
 				$_SESSION["emailfac"] = $datos["emailfac"];
 				$_SESSION["cp"] = $datos["cp"];
 				$_SESSION["rfc"] = $datos["rfc"];
-				$_SESSION["regimenfical"] = $datos["regimenfical"];
+				$_SESSION["regimenfiscal"] = $datos["regimenfiscal"];
 				$_SESSION["descripcion"] = $datos["descripcion"];
 				$_SESSION["password"] = $datos["password"];
 				$_SESSION["modo"] = $_POST["modoUsuario"];

@@ -597,6 +597,7 @@ SECCIÓN PERFIL
 							      <input type="hidden" value="'.$_SESSION["modo"].'" name="modoUsuario" id="modoUsuario">';
 
 
+
 							if($_SESSION["modo"] == "directo"){
 
 								if($_SESSION["foto"] != ""){
@@ -838,21 +839,21 @@ SECCIÓN PERFIL
 								  	<label class="control-label text-muted text-uppercase" for="editarNombre">Cambiar Nombre:</label>
 								    <div class="input-group">
 								      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								      <input type="text" class="form-control" id="editarNombre" name="editarNombre" value="'.$_SESSION["nombre"].'">
+								      <input type="text" class="form-control" id="editarNombre" name="editarNombre" value="'.$_SESSION["nombre"].'" readonly>
 								    </div>
 								  </div>
 								  <div class="col-lg-3">
-								  	<label class="control-label text-muted text-uppercase" for="editarEmail">Cambiar Correo Electrónico:</label>
+								  	<label class="control-label text-muted text-uppercase" for="editarEmail">Correo Electrónico:</label>
 								    <div class="input-group">
 								    	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-								      <input type="text" class="form-control" id="editarEmail" name="editarEmail" value="'.$_SESSION["email"].'">
+								      <input type="text" class="form-control" id="editarEmail" name="editarEmail" value="'.$_SESSION["email"].'" readonly>
 								    </div>
 								  </div>
 								  <div class="col-lg-3">
 								  	<label class="control-label text-muted text-uppercase" for="editarNumero">Numero:</label>
 								    <div class="input-group">
 								    	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-								     <input type="text" class="form-control" id="editarNumero" name="editarNumero" value="'.$_SESSION["Numero"].'">
+								     <input type="text" class="form-control" id="editarNumero" name="editarNumero" value="'.$_SESSION["numero"].'">
 								    </div>
 								  </div>
 								</div>
