@@ -10,7 +10,7 @@ $servidor = Ruta::ctrRutaServidor();
 if(!isset($_SESSION["validarSesion"])){
 
 	echo '<script>
-	
+
 		window.location = "'.$url.'";
 
 	</script>';
@@ -26,13 +26,13 @@ BREADCRUMB PERFIL
 ======================================-->
 
 <div class="container-fluid well well-sm">
-	
+
 	<div class="container">
-		
+
 		<div class="row">
-			
+
 			<ul class="breadcrumb fondoBreadcrumb text-uppercase">
-				
+
 				<li><a href="<?php echo $url;  ?>">INICIO</a></li>
 				<li class="active pagActiva"><?php echo $rutas[0] ?></li>
 
@@ -53,27 +53,27 @@ SECCIÓN PERFIL
 	<div class="container">
 
 		<ul class="nav nav-tabs">
-		  
-	  		<li class="active">	  			
+
+	  		<li class="active">
 			  	<a data-toggle="tab" href="#compras">
 			  	<i class="fa fa-list-ul"></i> MIS COMPRAS</a>
 	  		</li>
 
-	  		<li> 				
+	  		<li>
 		  		<a data-toggle="tab" href="#deseos">
 		  		<i class="fa fa-gift"></i> MI LISTA DE DESEOS</a>
 	  		</li>
 
-	  		<li>				
+	  		<li>
 	  			<a data-toggle="tab" href="#perfil">
 	  			<i class="fa fa-user"></i> EDITAR PERFIL</a>
 	  		</li>
 
-	  		<li>				
+	  		<li>
 		 	 	<a href="<?php echo $url; ?>ofertas">
 		 	 	<i class="fa fa-star"></i>	VER OFERTAS</a>
 	  		</li>
-		
+
 		</ul>
 
 		<div class="tab-content">
@@ -83,7 +83,7 @@ SECCIÓN PERFIL
 			======================================-->
 
 	  		<div id="compras" class="tab-pane fade in active">
-		    
+
 				<div class="panel-group">
 
 				<?php
@@ -96,9 +96,9 @@ SECCIÓN PERFIL
 					if(!$compras){
 
 						echo '<div class="col-xs-12 text-center error404">
-				               
+
 				    		<h1><small>¡Oops!</small></h1>
-				    
+
 				    		<h2>Aún no tienes compras realizadas en esta tienda</h2>
 
 				  		</div>';
@@ -114,15 +114,15 @@ SECCIÓN PERFIL
 							$productos = ControladorProductos::ctrListarProductos($ordenar, $item, $valor);
 
 							foreach ($productos as $key => $value2) {
-							
+
 								echo '<div class="panel panel-default">
-									    
+
 									    <div class="panel-body">
 
 											<div class="col-md-2 col-sm-6 col-xs-12">
 
 												<figure>
-												
+
 													<img class="img-thumbnail" src="'.$servidor.$value2["portada"].'">
 
 												</figure>
@@ -215,7 +215,7 @@ SECCIÓN PERFIL
 
 															<div class="progress-bar progress-bar-warning" role="progressbar" style="width:50.0%">
 																<i class="fa fa-check"></i>Despachado
-															</div>														
+															</div>
 
 															<div class="progress-bar progress-bar-danger" role="progressbar" style="width:50.0%">
 																<i class="fa fa-clock-o"></i> Recojer en tienda
@@ -223,7 +223,7 @@ SECCIÓN PERFIL
 
 														</div>';
 
-													}	
+													}
 
 													if($value1["envio"] == 4){
 
@@ -232,7 +232,7 @@ SECCIÓN PERFIL
 
 															<div class="progress-bar progress-bar-warning" role="progressbar" style="width:50.0%">
 																<i class="fa fa-check"></i>Despachado
-															</div>														
+															</div>
 
 															<div class="progress-bar progress-bar-danger" role="progressbar" style="width:50.0%">
 																<i class="fa fa-check"></i> Recojer en tienda
@@ -241,11 +241,11 @@ SECCIÓN PERFIL
 
 														</div>';
 
-													}											
+													}
 
 												echo '<h4 class="pull-right"><small>Comprado el '.substr($value1["fecha"],0,-8).'</small></h4>
 
-																
+
 											</div>
 
 											<div class="col-md-4 col-xs-12">';
@@ -255,11 +255,11 @@ SECCIÓN PERFIL
 
 											$comentarios = ControladorUsuarios::ctrMostrarComentariosPerfil($datos);
 
-												
+
 												echo '<div class="pull-right">
 
 													<a class="calificarProducto" href="#modalComentarios" data-toggle="modal" idComentario="'.$comentarios["id"].'">
-													
+
 														<button class="btn btn-default backColor">Calificar Producto</button>
 
 													</a>
@@ -368,8 +368,8 @@ SECCIÓN PERFIL
 
 
 													}
-												
-														
+
+
 													echo '</h3>
 
 
@@ -381,7 +381,7 @@ SECCIÓN PERFIL
 
 														</small>
 
-													
+
 													</p>
 
 												</div>
@@ -393,12 +393,12 @@ SECCIÓN PERFIL
 									</div>';
 
 							}
-							
+
 						}
 					}
 				?>
-				  
-				
+
+
 
 				</div>
 
@@ -409,7 +409,7 @@ SECCIÓN PERFIL
 			======================================-->
 
 		  	<div id="deseos" class="tab-pane fade">
-		    	
+
 			<?php
 
 				$item = $_SESSION["id"];
@@ -419,13 +419,13 @@ SECCIÓN PERFIL
 				if(!$deseos){
 
 					echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center error404">
-				               
+
 			    		<h1><small>¡Oops!</small></h1>
-			    
+
 			    		<h2>Aún no tiene productos en su lista de deseos</h2>
 
 			  		</div>';
-				
+
 				}else{
 
 					foreach ($deseos as $key => $value1) {
@@ -439,13 +439,13 @@ SECCIÓN PERFIL
 						echo '<ul class="grid0">';
 
 							foreach ($productos as $key => $value2) {
-							
+
 							echo '<li class="col-md-3 col-sm-6 col-xs-12">
 
 									<figure>
-										
+
 										<a href="'.$url.$value2["ruta"].'" class="pixelProducto">
-											
+
 											<img src="'.$servidor.$value2["portada"].'" class="img-responsive">
 
 										</a>
@@ -453,11 +453,11 @@ SECCIÓN PERFIL
 									</figure>
 
 									<h4>
-							
+
 										<small>
-											
+
 											<a href="'.$url.$value2["ruta"].'" class="pixelProducto">
-												
+
 												'.$value2["titulo"].'<br>
 
 												<span style="color:rgba(0,0,0,0)">-</span>';
@@ -474,9 +474,9 @@ SECCIÓN PERFIL
 
 												}
 
-											echo '</a>	
+											echo '</a>
 
-										</small>			
+										</small>
 
 									</h4>
 
@@ -493,13 +493,13 @@ SECCIÓN PERFIL
 											echo '<h2 style="margin-top:-10px">
 
 													<small>
-								
+
 														<strong class="oferta" style="font-size:12px">MXN $'.$value2["precio"].'</strong>
 
 													</small>
 
 													<small>$'.$value2["precioOferta"].'</small>
-												
+
 												</h2>';
 
 										}else{
@@ -507,17 +507,17 @@ SECCIÓN PERFIL
 											echo '<h2 style="margin-top:-10px"><small>MXN $'.$value2["precio"].'</small></h2>';
 
 										}
-										
+
 									}
-													
+
 									echo '</div>
 
 									<div class="col-xs-6 enlaces">
-										
+
 										<div class="btn-group pull-right">
-											
+
 											<button type="button" class="btn btn-danger btn-xs quitarDeseo" idDeseo="'.$value1["id"].'" data-toggle="tooltip" title="Quitar de mi lista de deseos">
-												
+
 												<i class="fa fa-heart" aria-hidden="true"></i>
 
 											</button>';
@@ -545,13 +545,13 @@ SECCIÓN PERFIL
 											}
 
 											echo '<a href="'.$url.$value2["ruta"].'" class="pixelProducto">
-											
+
 												<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
-													
+
 													<i class="fa fa-eye" aria-hidden="true"></i>
 
-												</button>	
-											
+												</button>
+
 											</a>
 
 										</div>
@@ -576,19 +576,19 @@ SECCIÓN PERFIL
 			<!--=====================================
 			PESTAÑA PERFIL
 			======================================-->
-		  	
+
 		  	<div id="perfil" class="tab-pane fade">
-		    	
+
 				<div class="row">
-					
+
 					<form method="post" enctype="multipart/form-data">
-					
+
 						<div class="col-md-3 col-sm-4 col-xs-12 text-center">
-							
+
 							<br>
 
 							<figure id="imgPerfil">
-								
+
 							<?php
 
 							echo '<input type="hidden" value="'.$_SESSION["id"].'" id="idUsuario" name="idUsuario">
@@ -608,12 +608,12 @@ SECCIÓN PERFIL
 									echo '<img src="'.$servidor.'vistas/img/usuarios/default/anonymous.png" class="img-thumbnail">';
 
 								}
-					
+
 
 							}else{
 
 								echo '<img src="'.$_SESSION["foto"].'" class="img-thumbnail">';
-							}		
+							}
 
 							?>
 
@@ -624,11 +624,11 @@ SECCIÓN PERFIL
 							<?php
 
 							if($_SESSION["modo"] == "directo"){
-							
+
 							echo '<button type="button" class="btn btn-default" id="btnCambiarFoto">
-									
+
 									Cambiar foto de perfil
-									
+
 									</button>';
 
 							}
@@ -636,27 +636,27 @@ SECCIÓN PERFIL
 							?>
 
 							<div id="subirImagen">
-								
+
 								<input type="file" class="form-control" id="datosImagen" name="datosImagen">
 
 								<img class="previsualizar">
 
 							</div>
 
-						</div>	
+						</div>
 
 						<div class="col-md-9 col-sm-8 col-xs-12">
 
 						<br>
-							
+
 						<?php
 
 						if($_SESSION["modo"] != "directo"){
 
 							echo '<label class="control-label text-muted text-uppercase">Nombre:</label>
-									
+
 									<div class="input-group">
-								
+
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 										<input type="text" class="form-control"  value="'.$_SESSION["nombre"].'" readonly>
 
@@ -665,9 +665,9 @@ SECCIÓN PERFIL
 									<br>
 
 									<label class="control-label text-muted text-uppercase">Correo electrónico:</label>
-									
+
 									<div class="input-group">
-								
+
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 										<input type="text" class="form-control"  value="'.$_SESSION["email"].'" readonly>
 
@@ -675,24 +675,127 @@ SECCIÓN PERFIL
 
 									<br>
 
+								<label class="control-label text-muted text-uppercase" for="editarCodigo">Codigo Postal:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarCodigo" name="editarCodigo" value="'.$_SESSION["codigo"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarEstado">Estado:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarEstado" name="editarEstado"  value="'.$_SESSION["estado"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarColonia">Colonia:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarColonia" name="editarColonia" value="'.$_SESSION["colonia"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarCalle">Calle:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarCalle" name="editarCalle" value="'.$_SESSION["calle"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarExterior">Numero Exterior:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarExterior" name="editarExterior" value="'.$_SESSION["exterior"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarInterior">Numero Interior:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarInterior" name="editarInterior" value="'.$_SESSION["interior"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarCalle1">Calle1:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarCalle1" name="editarCalle1" value="'.$_SESSION["calle1"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarCalle2">Calle 2:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarCalle2" name="editarCalle2" value="'.$_SESSION["calle2"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarDescripcion">Descripcion:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarDescripcion" name="editarDescripcion" value="'.$_SESSION["descripcion"].' ">
+
+									</div>
+
+								<br>
+
 									<label class="control-label text-muted text-uppercase">Modo de registro en el sistema:</label>
-									
+
 									<div class="input-group">
-								
+
 										<span class="input-group-addon"><i class="fa fa-'.$_SESSION["modo"].'"></i></span>
 										<input type="text" class="form-control text-uppercase"  value="'.$_SESSION["modo"].'" readonly>
 
 									</div>
 
-									<br>';
-		
+									<br>
+
+								<button type="submit" class="btn btn-default backColor btn-md pull-left">Actualizar Datos</button>';
+
+
+
 
 						}else{
 
 							echo '<label class="control-label text-muted text-uppercase" for="editarNombre">Cambiar Nombre:</label>
-									
+
 									<div class="input-group">
-								
+
 										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 										<input type="text" class="form-control" id="editarNombre" name="editarNombre" value="'.$_SESSION["nombre"].'">
 
@@ -703,9 +806,108 @@ SECCIÓN PERFIL
 								<label class="control-label text-muted text-uppercase" for="editarEmail">Cambiar Correo Electrónico:</label>
 
 								<div class="input-group">
-								
+
 										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 										<input type="text" class="form-control" id="editarEmail" name="editarEmail" value="'.$_SESSION["email"].'">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarCodigo">Codigo Postal:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarCodigo" name="editarCodigo" value="'.$_SESSION["codigo"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarEstado">Estado:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarEstado" name="editarEstado"  value="'.$_SESSION["estado"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarColonia">Colonia:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarColonia" name="editarColonia" value="'.$_SESSION["colonia"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarCalle">Calle:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarCalle" name="editarCalle" value="'.$_SESSION["calle"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarExterior">Numero Exterior:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarExterior" name="editarExterior" value="'.$_SESSION["exterior"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarInterior">Numero Interior:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarInterior" name="editarInterior" value="'.$_SESSION["interior"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarCalle1">Calle1:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarCalle1" name="editarCalle1" value="'.$_SESSION["calle1"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarCalle2">Calle 2:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarCalle2" name="editarCalle2" value="'.$_SESSION["calle2"].' ">
+
+									</div>
+
+								<br>
+
+								<label class="control-label text-muted text-uppercase" for="editarDescripcion">Descripcion:</label>
+
+								<div class="input-group">
+
+										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+										<input type="text" class="form-control" id="editarDescripcion" name="editarDescripcion" value="'.$_SESSION["descripcion"].' ">
 
 									</div>
 
@@ -714,7 +916,7 @@ SECCIÓN PERFIL
 								<label class="control-label text-muted text-uppercase" for="editarPassword">Cambiar Contraseña:</label>
 
 								<div class="input-group">
-								
+
 										<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 										<input type="text" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe la nueva contraseña">
 
@@ -735,7 +937,7 @@ SECCIÓN PERFIL
 							$actualizarPerfil = new ControladorUsuarios();
 							$actualizarPerfil->ctrActualizarPerfil();
 
-						?>					
+						?>
 
 					</form>
 
@@ -746,7 +948,7 @@ SECCIÓN PERFIL
 							$borrarUsuario = new ControladorUsuarios();
 							$borrarUsuario->ctrEliminarUsuario();
 
-						?>	
+						?>
 
 				</div>
 
@@ -763,11 +965,11 @@ VENTANA MODAL PARA COMENTARIOS
 ======================================-->
 
 <div  class="modal fade modalFormulario" id="modalComentarios" role="dialog">
-	
+
 	<div class="modal-content modal-dialog">
-		
+
 		<div class="modal-body modalTitulo">
-			
+
 			<h3 class="backColor">CALIFICA ESTE PRODUCTO</h3>
 
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -775,7 +977,7 @@ VENTANA MODAL PARA COMENTARIOS
 			<form method="post" onsubmit="return validarComentario()">
 
 				<input type="hidden" value="" id="idComentario" name="idComentario">
-				
+
 				<h1 class="text-center" id="estrellas">
 
 		       		<i class="fa fa-star text-success" aria-hidden="true"></i>
@@ -802,13 +1004,13 @@ VENTANA MODAL PARA COMENTARIOS
 				</div>
 
 				<div class="form-group">
-			  		
+
 			  		<label for="comment" class="text-muted">Tu opinión acerca de este producto: <span><small>(máximo 300 caracteres)</small></span></label>
-			  		
+
 			  		<textarea class="form-control" rows="5" id="comentario" name="comentario" maxlength="300" required></textarea>
 
 			  		<br>
-					
+
 					<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
 
 				</div>
@@ -825,7 +1027,7 @@ VENTANA MODAL PARA COMENTARIOS
 		</div>
 
 		<div class="modal-footer">
-      	
+
       	</div>
 
 	</div>

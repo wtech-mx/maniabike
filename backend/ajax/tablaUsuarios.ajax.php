@@ -7,9 +7,9 @@ class TablaUsuarios{
 
  	/*=============================================
   	MOSTRAR LA TABLA DE USUARIOS
-  	=============================================*/ 
+  	=============================================*/
 
-	public function mostrarTabla(){	
+	public function mostrarTabla(){
 
 		$item = null;
  		$valor = null;
@@ -17,7 +17,7 @@ class TablaUsuarios{
  		$usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
  		$datosJson = '{
-		 
+
 	 	"data": [ ';
 
 	 	for($i = 0; $i < count($usuarios); $i++){
@@ -76,6 +76,15 @@ class TablaUsuarios{
 				      "'.$foto.'",
 				      "'.$estado.'",
 				      "'.$usuarios[$i]["fecha"].'",
+				      "'.$usuarios[$i]["codigo"].'",
+				      "'.$usuarios[$i]["estado"].'",
+				      "'.$usuarios[$i]["colonia"].'",
+				      "'.$usuarios[$i]["calle"].'",
+				      "'.$usuarios[$i]["exterior"].'",
+				      "'.$usuarios[$i]["interior"].'",
+				      "'.$usuarios[$i]["calle1"].'",
+				      "'.$usuarios[$i]["calle2"].'",
+				      "'.$usuarios[$i]["descripcion"].'",
 				      "'.$usuarios[$i]["nombrefiscal"].'",
 				      "'.$usuarios[$i]["emailfac"].'",
 				      "'.$usuarios[$i]["rfc"].'",
@@ -88,8 +97,8 @@ class TablaUsuarios{
 	 	$datosJson = substr($datosJson, 0, -1);
 
 		$datosJson.=  ']
-			  
-		}'; 
+
+		}';
 
 		echo $datosJson;
 
@@ -99,7 +108,7 @@ class TablaUsuarios{
 
 /*=============================================
 ACTIVAR TABLA DE VENTAS
-=============================================*/ 
+=============================================*/
 $activar = new TablaUsuarios();
 $activar -> mostrarTabla();
 
