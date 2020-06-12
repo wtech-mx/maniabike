@@ -653,9 +653,13 @@ SECCIÓN PERFIL
 
 						<?php
 
-						if($_SESSION["modo"] != "directo"){
+						if($_SESSION["verificacion"] == 1){
+
+
 
 							echo '<h1>Datos de cuenta RS</h1>
+
+
 
 							<div class="row">
 								  <div class="col-lg-6">
