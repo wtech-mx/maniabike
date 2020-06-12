@@ -241,6 +241,7 @@ class ControladorUsuarios{
 
 						$_SESSION["validarSesion"] = "ok";
 						$_SESSION["id"] = $respuesta["id"];
+						$_SESSION["verificacion "] = $respuesta["verificacion "];
 						$_SESSION["nombre"] = $respuesta["nombre"];
 						$_SESSION["foto"] = $respuesta["foto"];
 						$_SESSION["email"] = $respuesta["email"];
@@ -592,6 +593,21 @@ class ControladorUsuarios{
 				$_SESSION["email"] = $respuesta2["email"];
 				$_SESSION["password"] = $respuesta2["password"];
 				$_SESSION["modo"] = $respuesta2["modo"];
+						$_SESSION["codigo"] = $respuesta2["codigo"];
+						$_SESSION["numero"] = $respuesta2["numero"];
+						$_SESSION["estado"] = $respuesta2["estado"];
+						$_SESSION["colonia"] = $respuesta2["colonia"];
+						$_SESSION["calle"] = $respuesta2["calle"];
+						$_SESSION["exterior"] = $respuesta2["exterior"];
+						$_SESSION["interior"] = $respuesta2["interior"];
+						$_SESSION["calle1"] = $respuesta2["calle1"];
+						$_SESSION["calle2"] = $respuesta2["calle2"];
+						$_SESSION["descripcion"] = $respuesta2["descripcion"];
+						$_SESSION["nombrefiscal"] = $respuesta2["nombrefiscal"];
+						$_SESSION["emailfac"] = $respuesta2["emailfac"];
+						$_SESSION["cp"] = $respuesta2["cp"];
+						$_SESSION["rfc"] = $respuesta2["rfc"];
+						$_SESSION["regimenfiscal"] = $respuesta2["regimenfiscal"];
 
 				echo "ok";
 
@@ -604,6 +620,21 @@ class ControladorUsuarios{
 				$_SESSION["email"] = $respuesta2["email"];
 				$_SESSION["password"] = $respuesta2["password"];
 				$_SESSION["modo"] = $respuesta2["modo"];
+						$_SESSION["codigo"] = $respuesta2["codigo"];
+						$_SESSION["numero"] = $respuesta2["numero"];
+						$_SESSION["estado"] = $respuesta2["estado"];
+						$_SESSION["colonia"] = $respuesta2["colonia"];
+						$_SESSION["calle"] = $respuesta2["calle"];
+						$_SESSION["exterior"] = $respuesta2["exterior"];
+						$_SESSION["interior"] = $respuesta2["interior"];
+						$_SESSION["calle1"] = $respuesta2["calle1"];
+						$_SESSION["calle2"] = $respuesta2["calle2"];
+						$_SESSION["descripcion"] = $respuesta2["descripcion"];
+						$_SESSION["nombrefiscal"] = $respuesta2["nombrefiscal"];
+						$_SESSION["emailfac"] = $respuesta2["emailfac"];
+						$_SESSION["cp"] = $respuesta2["cp"];
+						$_SESSION["rfc"] = $respuesta2["rfc"];
+						$_SESSION["regimenfiscal"] = $respuesta2["regimenfiscal"];
 
 				echo "<span style='color:white'>ok</span>";
 
@@ -741,6 +772,7 @@ class ControladorUsuarios{
 
 				$_SESSION["validarSesion"] = "ok";
 				$_SESSION["id"] = $datos["id"];
+				$_SESSION["verificacion "] = $datos["verificacion "];
 				$_SESSION["nombre"] = $datos["nombre"];
 				$_SESSION["foto"] = $datos["foto"];
 				$_SESSION["email"] = $datos["email"];
