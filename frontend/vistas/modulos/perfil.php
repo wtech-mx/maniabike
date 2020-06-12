@@ -649,288 +649,262 @@ SECCIÓN PERFIL
 
 						<br>
 
+
+
 						<?php
 
 						if($_SESSION["modo"] != "directo"){
 
-							echo '<label class="control-label text-muted text-uppercase">Nombre:</label>
+							echo '<h1>Datos de cuenta RS</h1>
 
-									<div class="input-group">
+							<div class="row">
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarNombre">Cambiar Nombre:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								      <input type="text" class="form-control"  value="'.$_SESSION["nombre"].'" readonly>
+								    </div>
+								  </div>
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarEmail">Cambiar Correo Electrónico:</label>
+								    <div class="input-group">
+								    	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+								     <input type="text" class="form-control"  value="'.$_SESSION["email"].'" readonly>
+								    </div>
+								  </div>
+								</div>
 
-										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control"  value="'.$_SESSION["nombre"].'" readonly>
 
-									</div>
 
-									<br>
+								<div class="row">
+								  <div class="col-lg-12">
+								  	<label class="control-label text-muted text-uppercase" for="editarPassword">Cambiar Contraseña:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+								      <input type="text" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe la nueva contraseña">
+								    </div>
+								  </div>
+								</div>
 
-									<label class="control-label text-muted text-uppercase">Correo electrónico:</label>
+								<hr>
 
-									<div class="input-group">
+								<h1>Datos de domicilio</h1>
 
-										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control"  value="'.$_SESSION["email"].'" readonly>
+								<div class="row">
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarCodigo">Codigo Postal:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+								      <input type="text" class="form-control" id="editarCodigo" name="editarCodigo" value="'.$_SESSION["codigo"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarEstado">Estado:</label>
+								    <div class="input-group">
+								    	<span class="input-group-addon"><i class="fa fa-street-view" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarEstado" name="editarEstado"  value="'.$_SESSION["estado"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarColonia">Colonia:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarColonia" name="editarColonia" value="'.$_SESSION["colonia"].' ">
+								    </div>
+								  </div>
+								</div>
 
-									</div>
+								<div class="row">
+								  <div class="col-lg-12">
+								  	<label class="control-label text-muted text-uppercase" for="editarCalle">Calle:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-map-o" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarCalle" name="editarCalle" value="'.$_SESSION["calle"].' ">
+								    </div>
+								  </div>
+								</div>
 
-									<br>
+								<div class="row">
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarExterior">Numero Exterior:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarExterior" name="editarExterior" value="'.$_SESSION["exterior"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarInterior">Numero Interior:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarInterior" name="editarInterior" value="'.$_SESSION["interior"].' ">
+								    </div>
+								  </div>
+								</div>
 
-								<label class="control-label text-muted text-uppercase" for="editarCodigo">Codigo Postal:</label>
+								<div class="row">
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarCalle1">Entre Calle1:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-exchange" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarCalle1" name="editarCalle1" value="'.$_SESSION["calle1"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarCalle2">Entre Calle 2:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-exchange" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarCalle2" name="editarCalle2" value="'.$_SESSION["calle2"].' ">
+								    </div>
+								  </div>
+								</div>
 
-								<div class="input-group">
+								<div class="row">
+								  <div class="col-lg-12">
+								  	<label class="control-label text-muted text-uppercase" for="editarDescripcion">Descripcion:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-file-text" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarDescripcion" name="editarDescripcion" value="'.$_SESSION["descripcion"].' ">
+								    </div>
+								  </div>
+								</div>
 
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarCodigo" name="editarCodigo" value="'.$_SESSION["codigo"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarEstado">Estado:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarEstado" name="editarEstado"  value="'.$_SESSION["estado"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarColonia">Colonia:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarColonia" name="editarColonia" value="'.$_SESSION["colonia"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarCalle">Calle:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarCalle" name="editarCalle" value="'.$_SESSION["calle"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarExterior">Numero Exterior:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarExterior" name="editarExterior" value="'.$_SESSION["exterior"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarInterior">Numero Interior:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarInterior" name="editarInterior" value="'.$_SESSION["interior"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarCalle1">Calle1:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarCalle1" name="editarCalle1" value="'.$_SESSION["calle1"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarCalle2">Calle 2:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarCalle2" name="editarCalle2" value="'.$_SESSION["calle2"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarDescripcion">Descripcion:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarDescripcion" name="editarDescripcion" value="'.$_SESSION["descripcion"].' ">
-
-									</div>
-
-								<br>
-
-									<label class="control-label text-muted text-uppercase">Modo de registro en el sistema:</label>
-
-									<div class="input-group">
-
-										<span class="input-group-addon"><i class="fa fa-'.$_SESSION["modo"].'"></i></span>
-										<input type="text" class="form-control text-uppercase"  value="'.$_SESSION["modo"].'" readonly>
-
-									</div>
-
-									<br>
-
-								<button type="submit" class="btn btn-default backColor btn-md pull-left">Actualizar Datos</button>';
+								<button type="submit" class="btn btn-default backColor btn-md pull-left">Actualizar Datos</button>
+						</div>';
 
 
 
 
 						}else{
 
-							echo '<label class="control-label text-muted text-uppercase" for="editarNombre">Cambiar Nombre:</label>
+							echo '<h1>Datos de cuenta</h1>
 
-									<div class="input-group">
+							<div class="row">
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarNombre">Cambiar Nombre:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								      <input type="text" class="form-control" id="editarNombre" name="editarNombre" value="'.$_SESSION["nombre"].'">
+								    </div>
+								  </div>
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarEmail">Cambiar Correo Electrónico:</label>
+								    <div class="input-group">
+								    	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+								      <input type="text" class="form-control" id="editarEmail" name="editarEmail" value="'.$_SESSION["email"].'">
+								    </div>
+								  </div>
+								</div>
 
-										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-										<input type="text" class="form-control" id="editarNombre" name="editarNombre" value="'.$_SESSION["nombre"].'">
+								<div class="row">
+								  <div class="col-lg-12">
+								  	<label class="control-label text-muted text-uppercase" for="editarPassword">Cambiar Contraseña:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+								      <input type="text" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe la nueva contraseña">
+								    </div>
+								  </div>
+								</div>
 
-									</div>
+								<div class="row">
+								  <div class="col-lg-12">
+								  	<label class="control-label text-muted text-uppercase">Modo de registro en el sistema:</label>
+								    <div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-'.$_SESSION["modo"].'"></i></span>
+										<input type="text" class="form-control text-uppercase"  value="'.$_SESSION["modo"].'" readonly>
+								    </div>
+								  </div>
+								</div>
 
-								<br>
+								<hr>
 
-								<label class="control-label text-muted text-uppercase" for="editarEmail">Cambiar Correo Electrónico:</label>
+								<h1>Datos de domicilio</h1>
 
-								<div class="input-group">
+								<div class="row">
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarCodigo">Codigo Postal:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+								      <input type="text" class="form-control" id="editarCodigo" name="editarCodigo" value="'.$_SESSION["codigo"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarEstado">Estado:</label>
+								    <div class="input-group">
+								    	<span class="input-group-addon"><i class="fa fa-street-view" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarEstado" name="editarEstado"  value="'.$_SESSION["estado"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarColonia">Colonia:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarColonia" name="editarColonia" value="'.$_SESSION["colonia"].' ">
+								    </div>
+								  </div>
+								</div>
 
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarEmail" name="editarEmail" value="'.$_SESSION["email"].'">
+								<div class="row">
+								  <div class="col-lg-12">
+								  	<label class="control-label text-muted text-uppercase" for="editarCalle">Calle:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-map-o" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarCalle" name="editarCalle" value="'.$_SESSION["calle"].' ">
+								    </div>
+								  </div>
+								</div>
 
-									</div>
+								<div class="row">
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarExterior">Numero Exterior:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarExterior" name="editarExterior" value="'.$_SESSION["exterior"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarInterior">Numero Interior:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarInterior" name="editarInterior" value="'.$_SESSION["interior"].' ">
+								    </div>
+								  </div>
+								</div>
 
-								<br>
+								<div class="row">
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarCalle1">Entre Calle1:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-exchange" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarCalle1" name="editarCalle1" value="'.$_SESSION["calle1"].' ">
+								    </div>
+								  </div>
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarCalle2">Entre Calle 2:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-exchange" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarCalle2" name="editarCalle2" value="'.$_SESSION["calle2"].' ">
+								    </div>
+								  </div>
+								</div>
 
-								<label class="control-label text-muted text-uppercase" for="editarCodigo">Codigo Postal:</label>
+								<div class="row">
+								  <div class="col-lg-12">
+								  	<label class="control-label text-muted text-uppercase" for="editarDescripcion">Descripcion:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-file-text" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarDescripcion" name="editarDescripcion" value="'.$_SESSION["descripcion"].' ">
+								    </div>
+								  </div>
+								</div>
 
-								<div class="input-group">
 
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarCodigo" name="editarCodigo" value="'.$_SESSION["codigo"].' ">
 
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarEstado">Estado:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarEstado" name="editarEstado"  value="'.$_SESSION["estado"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarColonia">Colonia:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarColonia" name="editarColonia" value="'.$_SESSION["colonia"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarCalle">Calle:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarCalle" name="editarCalle" value="'.$_SESSION["calle"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarExterior">Numero Exterior:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarExterior" name="editarExterior" value="'.$_SESSION["exterior"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarInterior">Numero Interior:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarInterior" name="editarInterior" value="'.$_SESSION["interior"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarCalle1">Calle1:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarCalle1" name="editarCalle1" value="'.$_SESSION["calle1"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarCalle2">Calle 2:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarCalle2" name="editarCalle2" value="'.$_SESSION["calle2"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarDescripcion">Descripcion:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-										<input type="text" class="form-control" id="editarDescripcion" name="editarDescripcion" value="'.$_SESSION["descripcion"].' ">
-
-									</div>
-
-								<br>
-
-								<label class="control-label text-muted text-uppercase" for="editarPassword">Cambiar Contraseña:</label>
-
-								<div class="input-group">
-
-										<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-										<input type="text" class="form-control" id="editarPassword" name="editarPassword" placeholder="Escribe la nueva contraseña">
-
-									</div>
-
-								<br>
-
-								<button type="submit" class="btn btn-default backColor btn-md pull-left">Actualizar Datos</button>';
+								<button type="submit" class="btn btn-default backColor btn-md pull-left">Actualizar Datos</button>
+						</div>';
 
 						}
 
 						?>
-
-						</div>
 
 						<?php
 
