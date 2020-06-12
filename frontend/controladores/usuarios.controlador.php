@@ -700,6 +700,15 @@ class ControladorUsuarios{
 
 			$datos = array("nombre" => $_POST["editarNombre"],
 						   "email" => $_POST["editarEmail"],
+						   "codigo" => $_POST["editarCodigo"],
+						   "estado" => $_POST["editarEstado"],
+						   "colonia" => $_POST["editarColonia"],
+						   "calle" => $_POST["editarCalle"],
+						   "exterior" => $_POST["editarExterior"],
+						   "interior" => $_POST["editarInterior"],
+						   "calle1" => $_POST["editarCalle1"],
+						   "calle2" => $_POST["editarCalle2"],
+						   "descripcion" => $_POST["editarDescripcion"],
 						   "password" => $password,
 						   "foto" => $ruta,
 						   "id" => $_POST["idUsuario"]);
@@ -715,6 +724,15 @@ class ControladorUsuarios{
 				$_SESSION["nombre"] = $datos["nombre"];
 				$_SESSION["foto"] = $datos["foto"];
 				$_SESSION["email"] = $datos["email"];
+				$_SESSION["codigo"] = $datos["codigo"];
+				$_SESSION["estado"] = $datos["estado"];
+				$_SESSION["colonia"] = $datos["colonia"];
+				$_SESSION["calle"] = $datos["calle"];
+				$_SESSION["exterior"] = $datos["exterior"];
+				$_SESSION["interior"] = $datos["interior"];
+				$_SESSION["calle1"] = $datos["calle1"];
+				$_SESSION["calle2"] = $datos["calle2"];
+				$_SESSION["descripcion"] = $datos["descripcion"];
 				$_SESSION["password"] = $datos["password"];
 				$_SESSION["modo"] = $_POST["modoUsuario"];
 

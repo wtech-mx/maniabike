@@ -10,11 +10,20 @@ class ModeloUsuarios{
 
 	static public function mdlRegistroUsuario($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, password, email, foto, modo, verificacion, emailEncriptado) VALUES (:nombre, :password, :email, :foto, :modo, :verificacion, :emailEncriptado)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, password, email, codigo, estado, colonia, calle, exterior, interior, calle1, calle2, descripcion, foto, modo, verificacion, emailEncriptado) VALUES (:nombre, :password, :email, :codigo, :estado, :colonia, :calle, :exterior, :interior, :calle1, :calle2, :descripcion, :foto, :modo, :verificacion, :emailEncriptado)");
 
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
 		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
+		$stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_STR);
+		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
+		$stmt->bindParam(":colonia", $datos["colonia"], PDO::PARAM_STR);
+		$stmt->bindParam(":calle", $datos["calle"], PDO::PARAM_STR);
+		$stmt->bindParam(":exterior", $datos["exterior"], PDO::PARAM_STR);
+		$stmt->bindParam(":interior", $datos["interior"], PDO::PARAM_STR);
+		$stmt->bindParam(":calle1", $datos["calle1"], PDO::PARAM_STR);
+		$stmt->bindParam(":calle2", $datos["calle2"], PDO::PARAM_STR);
+		$stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
 		$stmt->bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
 		$stmt->bindParam(":modo", $datos["modo"], PDO::PARAM_STR);
 		$stmt->bindParam(":verificacion", $datos["verificacion"], PDO::PARAM_INT);
@@ -27,7 +36,7 @@ class ModeloUsuarios{
 		}else{
 
 			return "error";
-		
+
 		}
 
 		$stmt->close();
@@ -56,7 +65,7 @@ class ModeloUsuarios{
 		}else{
 
 			return "error";
-		
+
 		}
 
 		$stmt->close();
@@ -175,10 +184,19 @@ class ModeloUsuarios{
 
 	static public function mdlActualizarPerfil($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, email = :email, password = :password, foto = :foto WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, email = :email, codigo = :codigo, estado = :estado, colonia = :colonia, calle = :calle, exterior = :exterior, interior = :interior, calle1 = :calle1, calle2 = :calle2, descripcion = :descripcion, password = :password, foto = :foto WHERE id = :id");
 
 		$stmt -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt -> bindParam(":email", $datos["email"], PDO::PARAM_STR);
+		$stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_STR);
+		$stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
+		$stmt->bindParam(":colonia", $datos["colonia"], PDO::PARAM_STR);
+		$stmt->bindParam(":calle", $datos["calle"], PDO::PARAM_STR);
+		$stmt->bindParam(":exterior", $datos["exterior"], PDO::PARAM_STR);
+		$stmt->bindParam(":interior", $datos["interior"], PDO::PARAM_STR);
+		$stmt->bindParam(":calle1", $datos["calle1"], PDO::PARAM_STR);
+		$stmt->bindParam(":calle2", $datos["calle2"], PDO::PARAM_STR);
+		$stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
 		$stmt -> bindParam(":password", $datos["password"], PDO::PARAM_STR);
 		$stmt -> bindParam(":foto", $datos["foto"], PDO::PARAM_STR);
 		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
@@ -293,7 +311,7 @@ class ModeloUsuarios{
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (id_usuario, id_producto) VALUES (:id_usuario, :id_producto)");
 
 		$stmt->bindParam(":id_usuario", $datos["idUsuario"], PDO::PARAM_INT);
-		$stmt->bindParam(":id_producto", $datos["idProducto"], PDO::PARAM_INT);	
+		$stmt->bindParam(":id_producto", $datos["idProducto"], PDO::PARAM_INT);
 
 		if($stmt -> execute()){
 
@@ -475,13 +493,13 @@ class ModeloUsuarios{
 		$stmt->bindParam(":id_usuario", $datos["idUsuario"], PDO::PARAM_INT);
 		$stmt->bindParam(":id_producto", $datos["idProducto"], PDO::PARAM_INT);
 
-		if($stmt->execute()){ 
+		if($stmt->execute()){
 
-			return "ok"; 
+			return "ok";
 
-		}else{ 
+		}else{
 
-			return "error"; 
+			return "error";
 
 		}
 
