@@ -37,7 +37,7 @@ class ControladorUsuarios{
 					VERIFICACIÓN CORREO ELECTRÓNICO
 					=============================================*/
 
-					date_default_timezone_set("America/Bogota");
+					date_default_timezone_set("América/Mexico_City");
 
 					$url = Ruta::ctrRuta();
 
@@ -47,9 +47,9 @@ class ControladorUsuarios{
 
 					$mail->isMail();
 
-					$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+					$mail->setFrom('bicimaniamixcoac@gmail.com', 'ManiaBike');
 
-					$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+					$mail->addReplyTo('bicimaniamixcoac@gmail.com', 'ManiaBike');
 
 					$mail->Subject = "Por favor verifique su dirección de correo electrónico";
 
@@ -59,7 +59,7 @@ class ControladorUsuarios{
 
 						<center>
 
-							<img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png">
+							<img style="padding:20px; width:10%" src="https://maniabikes.com.mx/maniabike/backend/vistas/img/plantilla/logo.png">
 
 						</center>
 
@@ -67,13 +67,13 @@ class ControladorUsuarios{
 
 							<center>
 
-							<img style="padding:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-email.png">
+							<img style="padding:20px; width:15%" src="https://maniabikes.com.mx/maniabike/backend/vistas/img/plantilla/logo.png">
 
 							<h3 style="font-weight:100; color:#999">VERIFIQUE SU DIRECCIÓN DE CORREO ELECTRÓNICO</h3>
 
 							<hr style="border:1px solid #ccc; width:80%">
 
-							<h4 style="font-weight:100; color:#999; padding:0 20px">Para comenzar a usar su cuenta de Tienda Virtual, debe confirmar su dirección de correo electrónico</h4>
+							<h4 style="font-weight:100; color:#999; padding:0 20px">Para comenzar a usar su cuenta de ManiaBike, debe confirmar su dirección de correo electrónico</h4>
 
 							<a href="'.$url.'verificar/'.$encriptarEmail.'" target="_blank" style="text-decoration:none">
 
@@ -247,7 +247,7 @@ class ControladorUsuarios{
 						$_SESSION["password"] = $respuesta["password"];
 						$_SESSION["modo"] = $respuesta["modo"];
 						$_SESSION["codigo"] = $respuesta["codigo"];
-						$_SESSION["Numero"] = $respuesta["Numero"];
+						$_SESSION["numero"] = $respuesta["numero"];
 						$_SESSION["estado"] = $respuesta["estado"];
 						$_SESSION["colonia"] = $respuesta["colonia"];
 						$_SESSION["calle"] = $respuesta["calle"];
@@ -259,7 +259,7 @@ class ControladorUsuarios{
 						$_SESSION["nombrefiscal"] = $respuesta["nombrefiscal"];
 						$_SESSION["emailfac"] = $respuesta["emailfac"];
 						$_SESSION["cp"] = $respuesta["cp"];
-						$_SESSION["Rfc"] = $respuesta["Rfc"];
+						$_SESSION["rfc"] = $respuesta["rfc"];
 						$_SESSION["regimenfiscal"] = $respuesta["regimenfiscal"];
 						echo '<script>
 
@@ -374,7 +374,7 @@ class ControladorUsuarios{
 						CAMBIO DE CONTRASEÑA
 						=============================================*/
 
-						date_default_timezone_set("America/Bogota");
+						date_default_timezone_set("América/Mexico_City");
 
 						$url = Ruta::ctrRuta();
 
@@ -384,9 +384,9 @@ class ControladorUsuarios{
 
 						$mail->isMail();
 
-						$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+						$mail->setFrom('bicimaniamixcoac@gmail.com', 'ManiaBike');
 
-						$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+						$mail->addReplyTo('bicimaniamixcoac@gmail.com', 'ManiaBike');
 
 						$mail->Subject = "Solicitud de nueva contraseña";
 
@@ -396,7 +396,7 @@ class ControladorUsuarios{
 
 								<center>
 
-									<img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png">
+									<img style="padding:20px; width:10%" src="https://maniabikes.com.mx/maniabike/backend/vistas/img/plantilla/logo.png">
 
 								</center>
 
@@ -404,7 +404,7 @@ class ControladorUsuarios{
 
 									<center>
 
-									<img style="padding:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-pass.png">
+									<img style="padding:20px; width:15%" src="https://maniabikes.com.mx/maniabike/backend/vistas/img/plantilla/logo.png">
 
 									<h3 style="font-weight:100; color:#999">SOLICITUD DE NUEVA CONTRASEÑA</h3>
 
@@ -1033,9 +1033,9 @@ class ControladorUsuarios{
 
 					$mail->isMail();
 
-					$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+					$mail->setFrom('bicimaniamixcoac@gmail.com', 'ManiaBike');
 
-					$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+					$mail->addReplyTo('bicimaniamixcoac@gmail.com', 'ManiaBike');
 
 					$mail->Subject = "Ha recibido una consulta";
 
@@ -1045,13 +1045,13 @@ class ControladorUsuarios{
 
 						<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
 
-						<center><img style="padding:20px; width:10%" src="http://www.tutorialesatualcance.com/tienda/logo.png"></center>
+						<center><img style="padding:20px; width:10%" src="https://maniabikes.com.mx/maniabike/backend/vistas/img/plantilla/logo.png"></center>
 
 						<div style="position:relative; margin:auto; width:600px; background:white; padding-bottom:20px">
 
 							<center>
 
-							<img style="padding-top:20px; width:15%" src="http://www.tutorialesatualcance.com/tienda/icon-email.png">
+							<img style="padding-top:20px; width:15%" src="https://maniabikes.com.mx/maniabike/backend/vistas/img/plantilla/logo.png">
 
 
 							<h3 style="font-weight:100; color:#999;">HA RECIBIDO UNA CONSULTA</h3>

@@ -681,7 +681,7 @@ SECCIÓN PERFIL
 								  	<label class="control-label text-muted text-uppercase" for="editarNumero">Numero:</label>
 								    <div class="input-group">
 								    	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-								     <input type="text" class="form-control" id="editarNumero" name="editarNumero" value="'.$_SESSION["Numero"].'">
+								     <input type="text" class="form-control" id="editarNumero" name="editarNumero" value="'.$_SESSION["numero"].'">
 								    </div>
 								  </div>
 								</div>
@@ -809,10 +809,10 @@ SECCIÓN PERFIL
 
 								<div class="row">
 								  <div class="col-lg-6">
-								  	<label class="control-label text-muted text-uppercase" for="editarRfc">rfc:</label>
+								  	<label class="control-label text-muted text-uppercase" for="editarRfc">RFC:</label>
 								    <div class="input-group">
 								      <span class="input-group-addon"><i class="fa fa-map-o" aria-hidden="true"></i></span>
-								      <input type="text" class="form-control" id="editarRfc" name="editarRfc" value="'.$_SESSION["Rfc"].' ">
+								      <input type="text" class="form-control" id="editarRfc" name="editarRfc" value="'.$_SESSION["rfc"].' ">
 								    </div>
 								  </div>
 								  <div class="col-lg-6">
@@ -992,7 +992,7 @@ SECCIÓN PERFIL
 								  	<label class="control-label text-muted text-uppercase" for="editarRfc">rfc:</label>
 								    <div class="input-group">
 								      <span class="input-group-addon"><i class="fa fa-map-o" aria-hidden="true"></i></span>
-								      <input type="text" class="form-control" id="editarRfc" name="editarRfc" value="'.$_SESSION["Rfc"].' ">
+								      <input type="text" class="form-control" id="editarRfc" name="editarRfc" value="'.$_SESSION["rfc"].' ">
 								    </div>
 								  </div>
 								  <div class="col-lg-6">
