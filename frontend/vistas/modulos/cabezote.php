@@ -336,7 +336,7 @@ HEADER
 					echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
 
 							<h4>
-								<a href="'.$url.$value["ruta"].'" class="pixelCategorias" titulo="'.$value["categoria"].'">'.$value["categoria"].'</a>
+								<i class="fa fa-caret-square-o-down"> </i><a href="'.$url.$value["ruta"].'" class="pixelCategorias" titulo="'.$value["categoria"].'"> '.$value["categoria"].'</a>
 							</h4>
 
 							<hr>
@@ -351,7 +351,14 @@ HEADER
 
 							foreach ($subcategorias as $key => $value) {
 
-									echo '<li><a href="'.$url.$value["ruta"].'" class="pixelSubCategorias" titulo="'.$value["subcategoria"].'">'.$value["subcategoria"].'</a></li>';
+								// echo '<li><i class="fa fa-caret-down"></i><a href="'.$url.$value["ruta"].'" class="pixelSubCategorias" titulo="'.$value["subcategoria"].'"> '.$value["subcategoria"].'</a></li>';
+
+								echo '<div class="btn-group">
+										  <a a href="'.$url.$value["ruta"].'" class="btn btn-default" style="border-color: transparent;">'.$value["subcategoria"].'</a>
+										  <a type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: block;border-color: transparent;box-shadow: inset 0 3px 5px rgba(0,0,0,0);">
+										    <span class="caret"></span>
+
+										  </a>';
 
 
 							$item2 = "id_subcategoria";
@@ -359,11 +366,14 @@ HEADER
 							$valor2 = $value["id"];
 
 							$subcategorias2 = ControladorProductos::ctrMostrarSubCategorias2($item2, $valor2);
+									echo '<ul class="dropdown-menu">';
+											foreach ($subcategorias2 as $key => $value) {
+								            echo '<li><a href="'.$url.$value["ruta"].'">
+								            '.$value["subcategoria2"].
+								            '</a></li>';
+											}
+								   echo '</ul>';
 
-							foreach ($subcategorias2 as $key => $value) {
-
-									echo '<li>*<a href="'.$url.$value["ruta"].'" class="pixelSubCategorias2 text-muted" titulo="'.$value["subcategoria2"].'">'.$value["subcategoria2"].'</a></li>';
-							}
 							}
 
 							echo '</ul>
