@@ -1337,7 +1337,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 						</button>
 
-						<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="404" imagen="http://localhost/backend/vistas/img/productos/cursos/curso05.jpg" titulo="Curso de Bootstrap" precio="10" tipo="virtual" peso="0"  data-toggle="tooltip" title="Agregar al carrito de compras">
+						<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="404" imagen="http://localhost/backend/vistas/img/productos/cursos/curso05.jpg" titulo="Curso de Bootstrap" precio="10" tipo="virtual" pesoV="0"  data-toggle="tooltip" title="Agregar al carrito de compras">
 							
 							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
@@ -1423,7 +1423,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 						</button>
 
-						<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="404" imagen="http://localhost/backend/vistas/img/productos/cursos/curso04.jpg" titulo="Curso de Canvas y Javascript" precio="10" tipo="virtual" peso="0"  data-toggle="tooltip" title="Agregar al carrito de compras">
+						<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="404" imagen="http://localhost/backend/vistas/img/productos/cursos/curso04.jpg" titulo="Curso de Canvas y Javascript" precio="10" tipo="virtual" pesoV="0"  data-toggle="tooltip" title="Agregar al carrito de compras">
 							
 							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
@@ -1509,7 +1509,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 						</button>
 
-						<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="404" imagen="http://localhost/backend/vistas/img/productos/cursos/curso02.jpg" titulo="Aprende Javascript desde cero" precio="10" tipo="virtual" peso="0"  data-toggle="tooltip" title="Agregar al carrito de compras">
+						<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="404" imagen="http://localhost/backend/vistas/img/productos/cursos/curso02.jpg" titulo="Aprende Javascript desde cero" precio="10" tipo="virtual" pesoV="0"  data-toggle="tooltip" title="Agregar al carrito de compras">
 							
 							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
@@ -1595,7 +1595,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 						</button>
 
-						<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="404" imagen="http://localhost/backend/vistas/img/productos/cursos/curso03.jpg" titulo="Curso de jQuery" precio="10" tipo="virtual" peso="0"  data-toggle="tooltip" title="Agregar al carrito de compras">
+						<button type="button" class="btn btn-default btn-xs agregarCarrito" idProducto="404" imagen="http://localhost/backend/vistas/img/productos/cursos/curso03.jpg" titulo="Curso de jQuery" precio="10" tipo="virtual" pesoV="0"  data-toggle="tooltip" title="Agregar al carrito de compras">
 							
 							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
@@ -1687,7 +1687,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 					  		</button>
 
-					  		<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="404" imagen="http://localhost/backend/vistas/img/productos/cursos/curso05.jpg" titulo="Curso de Bootstrap" precio="10" tipo="virtual" peso="0" data-toggle="tooltip" title="Agregar al carrito de compras">
+					  		<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="404" imagen="http://localhost/backend/vistas/img/productos/cursos/curso05.jpg" titulo="Curso de Bootstrap" precio="10" tipo="virtual" pesoV="0" data-toggle="tooltip" title="Agregar al carrito de compras">
 
 								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 

@@ -257,7 +257,7 @@ LISTAR PRODUCTOS
 
 										if($value["oferta"] != 0){
 
-											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" pesoV="'.$value["pesoV"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
 
 											<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
@@ -265,7 +265,7 @@ LISTAR PRODUCTOS
 
 										}else{
 
-											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+											echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" pesoV="'.$value["pesoV"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
 
 											<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
@@ -407,7 +407,7 @@ LISTAR PRODUCTOS
 
 											if($value["oferta"] != 0){
 
-												echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+												echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" pesoV="'.$value["pesoV"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
 
 												<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
@@ -415,7 +415,7 @@ LISTAR PRODUCTOS
 
 											}else{
 
-												echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+												echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" pesoV="'.$value["pesoV"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
 
 												<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 

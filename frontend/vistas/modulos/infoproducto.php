@@ -52,7 +52,6 @@ INFOPRODUCTOS
 				if($infoproducto["tipo"] == "fisico"){
 
 					echo '<div class="col-md-5 col-sm-6 col-xs-12 visorImg">
-
 							<figure class="visor">';
 
 							if($multimedia != null){
@@ -64,9 +63,7 @@ INFOPRODUCTOS
 								}
 
 								echo '</figure>
-
 								<div class="flexslider">
-
 								  <ul class="slides">';
 
 								for($i = 0; $i < count($multimedia); $i ++){
@@ -80,9 +77,7 @@ INFOPRODUCTOS
 							}
 
 							  echo '</ul>
-
 							</div>
-
 						</div>';
 
 				}else{
@@ -92,9 +87,7 @@ INFOPRODUCTOS
 					=============================================*/
 
 					echo '<div class="col-sm-6 col-xs-12">
-
 						<iframe class="videoPresentacion" src="https://www.youtube.com/embed/'.$infoproducto["multimedia"].'?rel=0&autoplay=0" width="100%" frameborder="0" allowfullscreen></iframe>
-
 					</div>';
 
 				}
@@ -181,36 +174,25 @@ INFOPRODUCTOS
 				<?php
 
 					echo '<div class="comprarAhora" style="display:none">
-
-
 						<button class="btn btn-default backColor quitarItemCarrito" idProducto="'.$infoproducto["id"].'"></button>
-
 						<p class="tituloCarritoCompra text-left">'.$infoproducto["titulo"].'</p>';
 
 
 						if($infoproducto["oferta"] == 0){
 
 							echo'<input class="cantidadItem" value="1" tipo="'.$infoproducto["tipo"].'" precio="'.$infoproducto["precio"].'" idProducto="'.$infoproducto["id"].'">
-
 							<p class="subTotal'.$infoproducto["id"].' subtotales">
-
 								<strong>MXN $<span>'.$infoproducto["precio"].'</span></strong>
-
 							</p>
-
 							<div class="sumaSubTotal"><span>'.$infoproducto["precio"].'</span></div>';
 
 
 						}else{
 
 							echo'<input class="cantidadItem" value="1" tipo="'.$infoproducto["tipo"].'" precio="'.$infoproducto["precioOferta"].'" idProducto="'.$infoproducto["id"].'">
-
 							<p class="subTotal'.$infoproducto["id"].' subtotales">
-
 								<strong>MXN $<span>'.$infoproducto["precioOferta"].'</span></strong>
-
 							</p>
-
 							<div class="sumaSubTotal"><span>'.$infoproducto["precioOferta"].'</span></div>';
 
 
@@ -240,15 +222,10 @@ INFOPRODUCTOS
 						}else{
 
 							echo '<h1 class="text-muted text-uppercase">'.$infoproducto["titulo"].'
-
 							<br>
-
 							<small>
-
 								<span class="label label-warning">Nuevo</span>
-
 							</small>
-
 							</h1>';
 
 						}
@@ -262,15 +239,12 @@ INFOPRODUCTOS
 						if($fechaNueva > $infoproducto["fecha"]){
 
 							echo '<h1 class="text-muted text-uppercase">'.$infoproducto["titulo"].'
-
 							<br>';
 
 							if($infoproducto["precio"] != 0){
 
 								echo '<small>
-
 									<span class="label label-warning">'.$infoproducto["descuentoOferta"].'% off</span>
-
 								</small>';
 
 							}
@@ -280,7 +254,6 @@ INFOPRODUCTOS
 						}else{
 
 							echo '<h1 class="text-muted text-uppercase">'.$infoproducto["titulo"].'
-
 							<br>';
 
 							if($infoproducto["precio"] != 0){
@@ -288,7 +261,6 @@ INFOPRODUCTOS
 								echo '<small>
 									<span class="label label-warning">Nuevo</span>
 									<span class="label label-warning">'.$infoproducto["descuentoOferta"].'% off</span>
-
 								</small>';
 
 							}
@@ -315,19 +287,12 @@ INFOPRODUCTOS
 						}else{
 
 							echo '<h2 class="text-muted">
-
 								<span>
-
 									<strong class="oferta">MXN $'.$infoproducto["precio"].'</strong>
-
 								</span>
-
 								<span>
-
 									$'.$infoproducto["precioOferta"].'
-
 								</span>
-
 							</h2>';
 
 						}
@@ -359,12 +324,10 @@ INFOPRODUCTOS
 
 						if($infoproducto["tipo"] == "fisico"){
 
-							if($detalles["Medidas"]!=null){
+							/*if($detalles["Medidas"]!=null){
 
 								echo '<div class="col-md-3 col-xs-12">
-
 									<select class="form-control seleccionarDetalle" id="seleccionarMedidas">
-
 										<option value="">Medidas</option>';
 
 										for($i = 0; $i <= count($detalles["Medidas"]); $i++){
@@ -374,17 +337,14 @@ INFOPRODUCTOS
 										}
 
 									echo '</select>
-
 								</div>';
 
-							}
+							}*/
 
 							if($detalles["Color"]!=null){
 
 								echo '<div class="col-md-3 col-xs-12">
-
 									<select class="form-control seleccionarDetalle" id="seleccionarColor">
-
 										<option value="">Color</option>';
 
 										for($i = 0; $i <= count($detalles["Color"]); $i++){
@@ -394,7 +354,6 @@ INFOPRODUCTOS
 										}
 
 									echo '</select>
-
 								</div>';
 
 							}
@@ -402,9 +361,7 @@ INFOPRODUCTOS
 							if($detalles["Marca"]!=null){
 
 								echo '<div class="col-md-3 col-xs-12">
-
 									<select class="form-control seleccionarDetalle" id="seleccionarMarca">
-
 										<option value="">Marca</option>';
 
 										for($i = 0; $i <= count($detalles["Marca"]); $i++){
@@ -414,7 +371,6 @@ INFOPRODUCTOS
 										}
 
 									echo '</select>
-
 								</div>';
 
 							}
@@ -422,7 +378,6 @@ INFOPRODUCTOS
 						}else{
 
 							echo '<div class="col-xs-12">
-
 								<li>
 									<i style="margin-right:10px" class="fa fa-play-circle"></i> '.$detalles["Clases"].'
 								</li>
@@ -441,7 +396,6 @@ INFOPRODUCTOS
 								<li>
 									<i style="margin-right:10px" class="fa fa-trophy"></i> '.$detalles["Certificado"].'
 								</li>
-
 							</div>';
 
 						}
@@ -457,73 +411,51 @@ INFOPRODUCTOS
 						if($infoproducto["precio"] == 0){
 
 							echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
-
 								<hr>
-
 								<span class="label label-default" style="font-weight:100">
-
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									Entrega inmediata |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' inscritos |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].'</span> personas
-
 								</span>
-
 							</h4>
-
 							<h4 class="col-lg-0 col-md-0 col-xs-12">
-
 								<hr>
-
 								<small>
-
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									Entrega inmediata <br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' inscritos <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].'</span> personas
-
 								</small>
-
 							</h4>';
 
 						}else{
 
 							echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
-
 								<hr>
-
 								<span class="label label-default" style="font-weight:100">
-
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									Entrega inmediata |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventas"].' ventas |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].' </span> personas
-
 								</span>
-
 							</h4>
-
 							<h4 class="col-lg-0 col-md-0 col-xs-12">
-
 								<hr>
-
 								<small>
-
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									Entrega inmediata <br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventas"].' ventas <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].'</span> personas
-
 								</small>
-
 							</h4>';
 
 						}
@@ -533,47 +465,33 @@ INFOPRODUCTOS
 						if($infoproducto["precio"] == 0){
 
 							echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
-
 								<hr>
-
 								<span class="label label-default" style="font-weight:100">
-
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									'.$infoproducto["entrega"].' días hábiles para la entrega  |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' solicitudes  |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].'</span> personas
-
 								</span>
-
 							</h4>
-
 							<h4 class="col-lg-0 col-md-0 col-xs-12">
-
 								<hr>
-
 								<small>
-
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									'.$infoproducto["entrega"].' días hábiles para la entrega  <br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' solicitudes  <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].' </span> personas
-
 								</small>
-
 							</h4>';
 
 						}else{
 
 							echo '<h4 class="col-md-12 col-sm-0 col-xs-0">
-
 								<hr>
-
 								<span class="label label-default" style="font-weight:100">
-
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									'.$infoproducto["entrega"].' días hábiles para la entrega |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
@@ -582,26 +500,18 @@ INFOPRODUCTOS
 									'.$infoproducto["stock"].' disponibles |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].' </span> personas
-
 								</span>
-
 							</h4>
-
 							<h4 class="col-lg-0 col-md-0 col-xs-12">
-
 								<hr>
-
 								<small>
-
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									'.$infoproducto["entrega"].' días hábiles para la entrega <br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventas"].' ventas <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].'</span> personas
-
 								</small>
-
 							</h4>';
 
 						}
@@ -633,15 +543,10 @@ INFOPRODUCTOS
 							}else{
 
 								echo '<button class="btn btn-default btn-block btn-lg backColor agregarGratis" idProducto="'.$infoproducto["id"].'" idUsuario="'.$_SESSION["id"].'" tipo="'.$infoproducto["tipo"].'" titulo="'.$infoproducto["titulo"].'">SOLICITAR AHORA</button>
-
 									<br>
-
 									<div class="col-xs-12 panel panel-info text-left">
-
 									<strong>¡Atención!</strong>
-
 										El producto a solicitar es totalmente gratuito y se enviará a la dirección solicitada, sólo se cobrará los cargos de envío.
-
 									</div>
 								';
 
@@ -650,9 +555,7 @@ INFOPRODUCTOS
 						}else{
 
 							echo '<a href="#modalIngreso" data-toggle="modal">
-
 								<button class="btn btn-default btn-block btn-lg backColor">	SOLICITAR AHORA</button>
-
 							</a>';
 
 						}
@@ -682,7 +585,6 @@ INFOPRODUCTOS
 							}
 
 							echo '</div>
-
 								<div class="col-md-6 col-xs-12">';
 
 								if($infoproducto["oferta"] != 0){
@@ -697,11 +599,8 @@ INFOPRODUCTOS
 								}
 
 								echo   '<small>ADICIONAR AL CARRITO</small>
-
 									<i class="fa fa-shopping-cart col-md-0"></i>
-
 									</button>
-
 								</div>';
 						}else{
 
@@ -719,11 +618,8 @@ INFOPRODUCTOS
 
 
 									echo 'ADICIONAR AL CARRITO
-
 									<i class="fa fa-shopping-cart"></i>
-
 									</button>
-
 								</div>';
 
 						}
@@ -937,11 +833,8 @@ INFOPRODUCTOS
 				$usuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
 
 				echo '<div class="panel-group col-md-3 col-sm-6 col-xs-12 alturaComentarios">
-
 					<div class="panel panel-default">
-
 				      <div class="panel-heading text-uppercase">
-
 				      	'.$usuario["nombre"].'
 				      	<span class="text-right">';
 
@@ -964,11 +857,8 @@ INFOPRODUCTOS
 				      	}
 
 				      	echo '</span>
-
 				      </div>
-
 				      <div class="panel-body"><small>'.$value["comentario"].'</small></div>
-
 				      <div class="panel-footer">';
 
 				      	switch($value["calificacion"]){
@@ -1056,9 +946,7 @@ INFOPRODUCTOS
 						}
 
 				      echo '</div>
-
 				    </div>
-
 				</div>';
 
 			}
@@ -1101,13 +989,9 @@ ARTÏCULOS RELACIONADOS
 					$rutaArticulosDestacados = ControladorProductos::ctrMostrarSubcategorias($item, $valor);
 
 					echo '<a href="'.$url.$rutaArticulosDestacados[0]["ruta"].'">
-
 						<button class="btn btn-default backColor pull-right">
-
 							VER MÁS <span class="fa fa-chevron-right"></span>
-
 						</button>
-
 					</a>';
 
 				?>
@@ -1136,11 +1020,8 @@ ARTÏCULOS RELACIONADOS
 			if(!$relacionados){
 
 				echo '<div class="col-xs-12 error404">
-
 					<h1><small>¡Oops!</small></h1>
-
 					<h2>No hay productos relacionados</h2>
-
 				</div>';
 
 			}else{
@@ -1152,27 +1033,16 @@ ARTÏCULOS RELACIONADOS
 				if($value["estado"] != 0){
 
 					echo '<li class="col-md-3 col-sm-6 col-xs-12">
-
 						<figure>
-
 							<a href="'.$url.$value["ruta"].'" class="pixelProducto">
-
 								<img src="'.$servidor.$value["portada"].'" class="img-responsive">
-
 							</a>
-
 						</figure>
-
 						'.$value["id"].'
-
 						<h4>
-
 							<small>
-
 								<a href="'.$url.$value["ruta"].'" class="pixelProducto">
-
 									'.$value["titulo"].'<br>
-
 									<span style="color:rgba(0,0,0,0)">-</span>';
 
 									$fecha = date('Y-m-d');
@@ -1192,11 +1062,8 @@ ARTÏCULOS RELACIONADOS
 									}
 
 								echo '</a>
-
 							</small>
-
 						</h4>
-
 						<div class="col-xs-6 precio">';
 
 						if($value["precio"] == 0){
@@ -1208,15 +1075,10 @@ ARTÏCULOS RELACIONADOS
 							if($value["oferta"] != 0){
 
 								echo '<h2>
-
 										<small>
-
 											<strong class="oferta">MXN $'.$value["precio"].'</strong>
-
 										</small>
-
 										<small>$'.$value["precioOferta"].'</small>
-
 									</h2>';
 
 							}else{
@@ -1228,15 +1090,10 @@ ARTÏCULOS RELACIONADOS
 						}
 
 						echo '</div>
-
 						<div class="col-xs-6 enlaces">
-
 							<div class="btn-group pull-right">
-
 								<button type="button" class="btn btn-default btn-xs deseos" idProducto="'.$value["id"].'" data-toggle="tooltip" title="Agregar a mi lista de deseos">
-
 									<i class="fa fa-heart" aria-hidden="true"></i>
-
 								</button>';
 
 								if($value["tipo"] == "virtual" && $value["precio"] != 0){
@@ -1244,17 +1101,13 @@ ARTÏCULOS RELACIONADOS
 									if($value["oferta"] != 0){
 
 										echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" pesoV="'.$value["pesoV"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
-
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-
 										</button>';
 
 									}else{
 
 										echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" pesoV="'.$value["pesoV"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
-
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-
 										</button>';
 
 									}
@@ -1262,19 +1115,12 @@ ARTÏCULOS RELACIONADOS
 								}
 
 								echo '<a href="'.$url.$value["ruta"].'" class="pixelProducto">
-
 									<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
-
 										<i class="fa fa-eye" aria-hidden="true"></i>
-
 									</button>
-
 								</a>
-
 							</div>
-
 						</div>
-
 					</li>';
 
 				}
@@ -1316,7 +1162,6 @@ VENTANA MODAL PARA CHECKOUT
 				      <input type="hidden" id="tasaMinimaNal" value="'.$respuesta["tasaMinimaNal"].'">
 				      <input type="hidden" id="tasaMinimaInt" value="'.$respuesta["tasaMinimaInt"].'">
 				      <input type="hidden" id="tasaPais" value="'.$respuesta["pais"].'">
-
 				';
 
 				?>
@@ -1481,7 +1326,6 @@ VENTANA MODAL PARA CHECKOUT
 if($infoproducto["tipo"] == "fisico"){
 
 	echo '<script type="application/ld+json">
-
 			{
 			  "@context": "http://schema.org/",
 			  "@type": "Product",
@@ -1496,15 +1340,12 @@ if($infoproducto["tipo"] == "fisico"){
 
 			  echo '],
 			  "description": "'.$infoproducto["descripcion"].'"
-
 			}
-
 		</script>';
 
 }else{
 
 	echo '<script type="application/ld+json">
-
 			{
 			  "@context": "http://schema.org",
 			  "@type": "Course",
@@ -1516,7 +1357,6 @@ if($infoproducto["tipo"] == "fisico"){
 			    "sameAs": "'.$url.$infoproducto["ruta"].'"
 			  }
 			}
-
 		</script>';
 
 }
