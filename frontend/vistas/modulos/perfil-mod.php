@@ -531,7 +531,7 @@ SECCIÓN PERFIL
 
 												if($value2["oferta"] != 0){
 
-													echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value2["id"].'" imagen="'.$servidor.$value2["portada"].'" titulo="'.$value2["titulo"].'" precio="'.$value2["precioOferta"].'" tipo="'.$value2["tipo"].'" pesoV="'.$value2["pesoV"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+													echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value2["id"].'" imagen="'.$servidor.$value2["portada"].'" titulo="'.$value2["titulo"].'" precio="'.$value2["precioOferta"].'" tipo="'.$value2["tipo"].'" peso="'.$value2["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
 
 													<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
@@ -539,7 +539,7 @@ SECCIÓN PERFIL
 
 												}else{
 
-													echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value2["id"].'" imagen="'.$servidor.$value2["portada"].'" titulo="'.$value2["titulo"].'" precio="'.$value2["precio"].'" tipo="'.$value2["tipo"].'" pesoV="'.$value2["pesoV"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+													echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value2["id"].'" imagen="'.$servidor.$value2["portada"].'" titulo="'.$value2["titulo"].'" precio="'.$value2["precio"].'" tipo="'.$value2["tipo"].'" peso="'.$value2["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
 
 													<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 

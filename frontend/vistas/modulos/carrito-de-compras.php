@@ -234,12 +234,12 @@ VENTANA MODAL PARA CHECKOUT
 
 				<br>
 
-			<!--	<div class="formrecojertienda row">
+				<div class="formrecojertienda row">
 					
 					<h4 class="text-center well text-muted text-uppercase">Recojer en tienda</h4>
 
 					<figure class="col-xs-6">
-
+						
 						<center>
 							
 							<input id="recojertienda" type="radio" name="recojertienda" value="recojertienda" checked>
@@ -265,7 +265,7 @@ VENTANA MODAL PARA CHECKOUT
 
 					</figure>
 
-				</div> -->
+				</div>
 
 				<br>
 
