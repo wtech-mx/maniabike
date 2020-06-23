@@ -679,7 +679,7 @@ function agregarMiProducto(imagen){
 	    var ancho = $(".ancho").val();
 	    var altura = $(".altura").val();
 	    var largo = $(".largo").val();
-	    var pesoV = $(".pesoV").val();
+	    var peso = $(".peso").val();
 	    var stock = $(".stock").val();
 	    var entrega = $(".entrega").val();
 	    var selActivarOferta = $(".selActivarOferta").val();
@@ -723,7 +723,7 @@ function agregarMiProducto(imagen){
 		datosProducto.append("ancho", ancho);
 		datosProducto.append("altura", altura);
 		datosProducto.append("largo", largo);
-		datosProducto.append("pesoV", pesoV);
+		datosProducto.append("peso", peso);
 		datosProducto.append("stock", stock);
 		datosProducto.append("entrega", entrega);
 
@@ -1190,7 +1190,7 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 			$("#modalEditarProducto .ancho").val(respuesta[0]["ancho"]);
 			$("#modalEditarProducto .altura").val(respuesta[0]["altura"]);
 			$("#modalEditarProducto .largo").val(respuesta[0]["largo"]);
-			$("#modalEditarProducto .pesoV").val(respuesta[0]["pesoV"]);
+			$("#modalEditarProducto .peso").val(respuesta[0]["peso"]);
 			$("#modalEditarProducto .stock").val(respuesta[0]["stock"]);
 			$("#modalEditarProducto .entrega").val(respuesta[0]["entrega"]);
 
@@ -1446,7 +1446,7 @@ function editarMiProducto(imagen){
 	var ancho = $("#modalEditarProducto .ancho").val();
 	var altura = $("#modalEditarProducto .altura").val();
 	var largo = $("#modalEditarProducto .largo").val();
-	var pesoV = $("#modalEditarProducto .pesoV").val();
+	var peso = $("#modalEditarProducto .peso").val();
 	var stock = $("#modalEditarProducto .stock").val();
 	var entrega = $("#modalEditarProducto .entrega").val();
 	var selActivarOferta = $("#modalEditarProducto .selActivarOferta").val();
@@ -1499,7 +1499,7 @@ function editarMiProducto(imagen){
 	datosProducto.append("ancho", ancho);
 	datosProducto.append("altura", altura);
 	datosProducto.append("largo", largo);
-	datosProducto.append("pesoV", pesoV);
+	datosProducto.append("peso", peso);
 	datosProducto.append("stock", stock);
 	datosProducto.append("entrega", entrega);
 

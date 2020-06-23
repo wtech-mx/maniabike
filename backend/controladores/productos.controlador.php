@@ -563,7 +563,7 @@ class ControladorProductos{
 
 						   "largo"=> $datos["largo"],
 
-						   "pesoV"=> $datos["pesoV"],
+						   "peso"=> $datos["peso"],
 
 						   "stock"=> $datos["stock"],
 
@@ -632,7 +632,7 @@ class ControladorProductos{
 
 						   "largo"=> $datos["largo"],
 
-						   "pesoV"=> $datos["pesoV"],
+						   "peso"=> $datos["peso"],
 
 						   "stock"=> $datos["stock"],
 
@@ -1092,7 +1092,7 @@ class ControladorProductos{
 
 								   "largo"=> $datos["largo"],
 
-								   "pesoV"=> $datos["pesoV"],
+								   "peso"=> $datos["peso"],
 
 								   "stock"=> $datos["stock"],
 
@@ -1163,7 +1163,7 @@ class ControladorProductos{
 
 								   "largo"=> $datos["largo"],
 
-								   "pesoV"=> $datos["pesoV"],
+								   "peso"=> $datos["peso"],
 
 								   "stock"=> $datos["stock"],
 

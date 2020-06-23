@@ -697,7 +697,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg pesoV" min="" step="any" value="" placeholder="cm" id="z" name="z">
+                  <input type="number" class="form-control input-lg peso" min="" step="any" value="" placeholder="cm" id="z" name="z">
 
                 </div>
 
@@ -1439,7 +1439,7 @@ MODAL EDITAR PRODUCTO
 
                   <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
 
-                  <input type="number" class="form-control input-lg pesoV" min="" step="any" value="" placeholder="cm" id="z" name="z">
+                  <input type="number" class="form-control input-lg peso" min="" step="any" value="" placeholder="cm" id="z" name="z">
 
                 </div>
 
