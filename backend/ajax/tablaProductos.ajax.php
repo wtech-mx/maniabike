@@ -330,7 +330,7 @@ class TablaProductos{
 			  	"'.$productos[$i]["ancho"].' cm",
           "'.$productos[$i]["altura"].' cm",
           "'.$productos[$i]["largo"].' cm",
-          "'.$productos[$i]["pesoV"].' kg",
+          "'.$productos[$i]["peso"].' kg",
           "'.$productos[$i]["stock"].'",
 			  	"'.$entrega.'",
 			  	"'.$tipoOferta.'",
