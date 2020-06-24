@@ -173,6 +173,8 @@ VENTANA MODAL PARA CHECKOUT
 
 				$respuesta = ControladorCarrito::ctrMostrarTarifas();
 
+//				var_dump($respuesta);
+
 				echo '<input type="hidden" id="tasaImpuesto" value="'.$respuesta["impuesto"].'">
 					  <input type="hidden" id="envioNacional" value="'.$respuesta["envioNacional"].'">
 				      <input type="hidden" id="envioInternacional" value="'.$respuesta["envioInternacional"].'">
@@ -234,38 +236,38 @@ VENTANA MODAL PARA CHECKOUT
 
 				<br>
 
-				<div class="formrecojertienda row">
-					
-					<h4 class="text-center well text-muted text-uppercase">Recojer en tienda</h4>
-
-					<figure class="col-xs-6">
-						
-						<center>
-							
-							<input id="recojertienda" type="radio" name="recojertienda" value="recojertienda" checked>
-
-						</center>	
-						
-						<img  src="<?php echo $url; ?>vistas/img/plantilla/negocio.jpg" class="img-thumbnail">
-
-						<a class="btn btn-primary btn-lg btn-block" target="blank" href="https://goo.gl/maps/JmMCr7BKAHQxrTi77" title="" style="color: #fff;">Ver Direccion</a>
-						
-	
-					</figure>
-
-					<figure class="col-xs-6">
-						
-						<center>
-							
-							<input id="recojertienda-no" type="radio" name="recojertienda" value="recojertienda-no">
-
-						</center>	
-						
-						<img src="<?php echo $url; ?>vistas/img/plantilla/negocio-no.jpg" class="img-thumbnail">		
-
-					</figure>
-
-				</div>
+<!--				<div class="formrecojertienda row">-->
+<!--					-->
+<!--					<h4 class="text-center well text-muted text-uppercase">Recojer en tienda</h4>-->
+<!---->
+<!--					<figure class="col-xs-6">-->
+<!--						-->
+<!--						<center>-->
+<!--							-->
+<!--							<input id="recojertienda" type="radio" name="recojertienda" value="recojertienda" checked>-->
+<!---->
+<!--						</center>	-->
+<!--						-->
+<!--						<img  src="--><?php //echo $url; ?><!--vistas/img/plantilla/negocio.jpg" class="img-thumbnail" width="50%">-->
+<!---->
+<!--						<a class="btn btn-primary btn-lg btn-block" target="blank" href="https://goo.gl/maps/JmMCr7BKAHQxrTi77" title="" style="color: #fff;">Ver Direccion</a>-->
+<!--						-->
+<!--	-->
+<!--					</figure>-->
+<!---->
+<!--					<figure class="col-xs-6">-->
+<!--						-->
+<!--						<center>-->
+<!--							-->
+<!--							<input id="recojertienda-no" type="radio" name="recojertienda" value="recojertienda-no">-->
+<!---->
+<!--						</center>	-->
+<!--						-->
+<!--						<img src="--><?php //echo $url; ?><!--vistas/img/plantilla/negocio-no.jpg" class="img-thumbnail"  width="50%">-->
+<!---->
+<!--					</figure>-->
+<!---->
+<!--				</div>-->
 
 				<br>
 
@@ -305,8 +307,8 @@ VENTANA MODAL PARA CHECKOUT
 								</tr>
 
 								<tr>
-									<td>Envío</td>	
-									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalEnvio" valor="0">0</span></td>	
+									<td>Envío</td>
+									<td><span class="cambioDivisa">MXN</span> $<span class="valorTotalEnvio" valor="0">0</span></td>
 								</tr>
 
 								<tr>

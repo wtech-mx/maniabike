@@ -359,25 +359,25 @@ INFOPRODUCTOS
 
 						if($infoproducto["tipo"] == "fisico"){
 
-							if($detalles["Medidas"]!=null){
-
-								echo '<div class="col-md-3 col-xs-12">
-
-									<select class="form-control seleccionarDetalle" id="seleccionarMedidas">
-
-										<option value="">Medidas</option>';
-
-										for($i = 0; $i <= count($detalles["Medidas"]); $i++){
-
-											echo '<option value="'.$detalles["Medidas"][$i].'">'.$detalles["Medidas"][$i].'</option>';
-
-										}
-
-									echo '</select>
-
-								</div>';
-
-							}
+//							if($detalles["Medidas"]!=null){
+//
+//								echo '<div class="col-md-3 col-xs-12">
+//
+//									<select class="form-control seleccionarDetalle" id="seleccionarMedidas">
+//
+//										<option value="">Medidas</option>';
+//
+//										for($i = 0; $i <= count($detalles["Medidas"]); $i++){
+//
+//											echo '<option value="'.$detalles["Medidas"][$i].'">'.$detalles["Medidas"][$i].'</option>';
+//
+//										}
+//
+//									echo '</select>
+//
+//								</div>';
+//
+//							}
 
 							if($detalles["Color"]!=null){
 

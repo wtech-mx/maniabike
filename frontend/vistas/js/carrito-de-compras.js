@@ -114,7 +114,7 @@ for(var i = 0; i < indice.length; i++){
 
 								'<br>'+
 
-								'<p class="precioCarritoCompra text-center">MXM $<span>'+precio+'</span></p>'+
+								'<p class="precioCarritoCompra text-center">MXN $<span>'+precio+'</span></p>'+
 
 							'</div>'+
 
@@ -140,7 +140,7 @@ for(var i = 0; i < indice.length; i++){
 
 								'<p class="subTotal'+index+' subtotales">'+
 
-									'<strong>MXM $<span>'+(Number(item.cantidad)*Number(precio))+'</span></strong>'+
+									'<strong>MXN $<span>'+(Number(item.cantidad)*Number(precio))+'</span></strong>'+
 
 								'</p>'+
 
@@ -199,6 +199,7 @@ $(".agregarCarrito").click(function(){
 	var precio = $(this).attr("precio");
 	var tipo = $(this).attr("tipo");
 	var peso = $(this).attr("peso");
+	console.log(peso);
 
 	var agregarAlCarrito = false;
 
@@ -302,6 +303,7 @@ $(".agregarCarrito").click(function(){
 
 		var cantidadCesta = Number($(".cantidadCesta").html()) + 1;
 		var sumaCesta = Number($(".sumaCesta").html()) + Number(precio);
+		console.log(sumaCesta);
 
 		$(".cantidadCesta").html(cantidadCesta);
 		$(".sumaCesta").html(sumaCesta);
@@ -368,6 +370,7 @@ $(document).on("click", ".quitarItemCarrito", function(){
 			var pesoArray = $(idProducto[i]).attr("peso");
 			var tipoArray = $(cantidad[i]).attr("tipo");
 			var cantidadArray = $(cantidad[i]).val();
+			console.log(pesoArray);
 
 			listaCarrito.push({"idProducto":idProductoArray,
 						   "imagen":imagenArray,
@@ -423,7 +426,7 @@ $(document).on("change", ".cantidadItem", function(){
 	var idProducto = $(this).attr("idProducto");
 	var item = $(this).attr("item");
 
-	$(".subTotal"+item).html('<strong>MXM $<span>'+(cantidad*precio)+'</span></strong>');
+	$(".subTotal"+item).html('<strong>MXN $<span>'+(cantidad*precio)+'</span></strong>');
 
 	/*=============================================
 	ACTUALIZAR LA CANTIDAD EN EL LOCALSTORAGE
@@ -491,7 +494,7 @@ function sumaSubtotales(){
 
 	var sumaTotal = arraySumaSubtotales.reduce(sumaArraySubtotales);
 
-	$(".sumaSubTotal").html('<strong>MXM $<span>'+(sumaTotal).toFixed(2)+'</span></strong>');
+	$(".sumaSubTotal").html('<strong>MXN $<span>'+(sumaTotal).toFixed(2)+'</span></strong>');
 
 	$(".sumaCesta").html((sumaTotal).toFixed(2));
 
@@ -594,20 +597,23 @@ $("#btnCheckout").click(function(){
 		var tituloArray = $(titulo[i]).html();
 		var cantidadArray = $(cantidad[i]).val();
 		var subtotalArray = $(subtotal[i]).html();
+		console.log(pesoArray);
 
 		/*=============================================
-		EVALUAR EL PESO DE ACUERDO A LA CANTIDAD DE PRODUCTOS
+		EVALUAR EL PESOV DE ACUERDO A LA CANTIDAD DE PRODUCTOS
 		=============================================*/
 
 		cantidadPeso[i] = pesoArray * cantidadArray;
 
 		function sumaArrayPeso(total, numero){
+			console.log(sumaArrayPeso);
 
 			return total + numero;
 
 		}
 
 		var sumaTotalPeso = cantidadPeso.reduce(sumaArrayPeso);
+		console.log(sumaTotalPeso);
 
 		/*=============================================
 		MOSTRAR PRODUCTOS DEFINITIVOS A COMPRAR
@@ -708,10 +714,12 @@ $("#btnCheckout").click(function(){
 					$(".valorTotalEnvio").html($("#tasaMinimaInt").val());
 					$(".valorTotalEnvio").attr("valor",$("#tasaMinimaInt").val());
 
+
 				}else{
 
 					$(".valorTotalEnvio").html(resultadoPeso);
 					$(".valorTotalEnvio").attr("valor",resultadoPeso);
+
 				}
 
 			}
@@ -742,11 +750,18 @@ function sumaTotalCompra(){
 	                     Number($(".valorTotalImpuesto").html());
 
 
+	console.log(Number($(".valorSubtotal").html()));
+	console.log(Number($(".valorTotalEnvio").html()));
+	console.log(Number($(".valorTotalImpuesto").html()));
+	console.log(sumaTotalTasas);
+
+
 	$(".valorTotalCompra").html((sumaTotalTasas).toFixed(2));
 	$(".valorTotalCompra").attr("valor",(sumaTotalTasas).toFixed(2));
 
 	localStorage.setItem("total",hex_md5($(".valorTotalCompra").html()));
 }
+
 
 /*=============================================
 /*=============================================
@@ -793,20 +808,18 @@ function divisas(metodoPago){
 
 	if(metodoPago == "paypal"){
 
-		$("#cambiarDivisa").append('<option value="MXM">MXM</option>'+
+		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'+
 			                       '<option value="EUR">EUR</option>'+
 			                       '<option value="GBP">GBP</option>'+
-			                       '<option value="MXN">MXN</option>'+
 			                       '<option value="JPY">JPY</option>'+
 			                       '<option value="CAD">CAD</option>'+
 			                       '<option value="BRL">BRL</option>')
 
 	}else{
 
-		$("#cambiarDivisa").append('<option value="MXM">MXM</option>'+
+		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'+
 			                       '<option value="PEN">PEN</option>'+
 			                       '<option value="COP">COP</option>'+
-			                       '<option value="MXN">MXN</option>'+
 			                       '<option value="CLP">CLP</option>'+
 			                       '<option value="ARS">ARS</option>'+
 			                       '<option value="BRL">BRL</option>')
@@ -822,7 +835,7 @@ function divisas(metodoPago){
 CAMBIO DE DIVISA
 =============================================*/
 
-var divisaBase = "MXM";
+var divisaBase = "MXN";
 
 $("#cambiarDivisa").change(function(){
 
@@ -840,7 +853,7 @@ $("#cambiarDivisa").change(function(){
 
 	$.ajax({
 
-		url: "http://free.currconv.com/api/v7/convert?q="+divisaBase+"_"+divisa+"&compact=ultra&apiKey=a01ebaf9a1c69eb4ff79",
+		url: "http://free.currconv.com/api/v7/convert?q="+divisaBase+"_"+divisa+"&compact=ultra&apiKey=a236c5197f54179be414",
 		type:"GET",
 		cache: false,
 	    contentType: false,
@@ -848,11 +861,11 @@ $("#cambiarDivisa").change(function(){
 	    dataType:"jsonp",
 	    success:function(respuesta){
 
-	    	var conversion = (respuesta["MXM_"+divisa]).toFixed(2);
+	    	var conversion = (respuesta["MXN_"+divisa]).toFixed(2);
 
 	    	$(".cambioDivisa").html(divisa);
 
-	    	if(divisa == "MXM"){
+	    	if(divisa == "MXN"){
 
 	    		$(".valorSubtotal").html($(".valorSubtotal").attr("valor"))
 		    	$(".valorTotalEnvio").html($(".valorTotalEnvio").attr("valor"))
