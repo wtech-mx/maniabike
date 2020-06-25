@@ -51,6 +51,89 @@ class ModeloUsuarios{
 	}
 
 	/*=============================================
+	REGISTRO DE FACTURACION
+	=============================================*/
+
+	static public function mdlfact($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombrefiscal, email, rfc, cp, regimenfiscal) VALUES (:nombrefiscal, :email, :rfc, :cp, :regimenfiscal)");
+
+		$stmt->bindParam(":nombrefiscal", $datos["nombrefiscal"], PDO::PARAM_STR);
+		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
+		$stmt->bindParam(":rfc", $datos["rfc"], PDO::PARAM_STR);
+		$stmt->bindParam(":cp	", $datos["cp	"], PDO::PARAM_STR);
+		$stmt->bindParam(":regimenfiscal", $datos["regimenfiscal"], PDO::PARAM_STR);
+
+		if($stmt->execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+
+		}
+
+		$stmt->close();
+		$stmt = null;
+
+	}
+
+	/*=============================================
+	MOSTRAR FACTURACION
+	=============================================*/
+
+	static public function mdlMostrarfact($tabla, $item, $valor){
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
+
+	/*=============================================
+	ACTUALIZAR FACTURACION
+	=============================================*/
+
+	static public function mdlActualizarfact($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombrefiscal = :nombrefiscal, email = :email, rfc = :rfc, cp = :cp, regimenfiscal = :regimenfiscal,WHERE id = :id");
+
+		$stmt -> bindParam(":nombrefiscal", $datos["nombrefiscal"], PDO::PARAM_STR);
+		$stmt -> bindParam(":email", $datos["email"], PDO::PARAM_STR);
+		$stmt -> bindParam(":rfc", $datos["rfc"], PDO::PARAM_STR);
+		$stmt -> bindParam(":cp", $datos["cp"], PDO::PARAM_STR);
+		$stmt -> bindParam(":id", $datos["id"], PDO::PARAM_INT);
+		$stmt -> bindParam(":regimenfiscal", $datos["regimenfiscal"], PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+
+		}else{
+
+			return "error";
+
+		}
+
+		$stmt-> close();
+
+		$stmt = null;
+
+	}
+
+
+
+	/*=============================================
 	MOSTRAR USUARIO
 	=============================================*/
 

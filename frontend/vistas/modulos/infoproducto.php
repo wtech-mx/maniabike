@@ -183,7 +183,7 @@ INFOPRODUCTOS
 					echo '<div class="comprarAhora" style="display:none">
 
 
-						<button class="btn btn-default backColor quitarItemCarrito" idProducto="'.$infoproducto["id"].'"></button>
+						<button class="btn btn-default backColor quitarItemCarrito" idProducto="'.$infoproducto["id"].'" peso="'.$infoproducto["peso"].'"></button>
 
 						<p class="tituloCarritoCompra text-left">'.$infoproducto["titulo"].'</p>';
 
@@ -348,7 +348,6 @@ INFOPRODUCTOS
 
 				<hr>
 
-				<h4 class="text-muted text-uppercase">Seleccione Caracteristicas del Producto</h4>
 				<div class="form-group row">
 
 				<?php
@@ -359,25 +358,25 @@ INFOPRODUCTOS
 
 						if($infoproducto["tipo"] == "fisico"){
 
-//							if($detalles["Medidas"]!=null){
-//
-//								echo '<div class="col-md-3 col-xs-12">
-//
-//									<select class="form-control seleccionarDetalle" id="seleccionarMedidas">
-//
-//										<option value="">Medidas</option>';
-//
-//										for($i = 0; $i <= count($detalles["Medidas"]); $i++){
-//
-//											echo '<option value="'.$detalles["Medidas"][$i].'">'.$detalles["Medidas"][$i].'</option>';
-//
-//										}
-//
-//									echo '</select>
-//
-//								</div>';
-//
-//							}
+							/*if($detalles["Talla"]!=null){
+
+								echo '<div class="col-md-3 col-xs-12">
+
+									<select class="form-control seleccionarDetalle" id="seleccionarTalla">
+
+										<option value="">Talla</option>';
+
+										for($i = 0; $i <= count($detalles["Talla"]); $i++){
+
+											echo '<option value="'.$detalles["Talla"][$i].'">'.$detalles["Talla"][$i].'</option>';
+
+										}
+
+									echo '</select>
+
+								</div>';
+
+							}*/
 
 							if($detalles["Color"]!=null){
 
@@ -578,7 +577,7 @@ INFOPRODUCTOS
 									'.$infoproducto["entrega"].' días hábiles para la entrega |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventas"].' ventas |
-									<i class="fa fa-cubes" style="margin:0px 5px"></i>
+									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									'.$infoproducto["stock"].' disponibles |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
 									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistas"].' </span> personas
@@ -713,7 +712,7 @@ INFOPRODUCTOS
 
 								}else{
 
-									echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$infoproducto["id"].'" imagen="'.$servidor.$infoproducto["portada"].'" titulo="'.$infoproducto["titulo"].'" precio="'.$infoproducto["precio"].'" tipo="'.$infoproducto["tipo"].'">';
+									echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$infoproducto["id"].'" imagen="'.$servidor.$infoproducto["portada"].'" titulo="'.$infoproducto["titulo"].'" precio="'.$infoproducto["precio"].'" tipo="'.$infoproducto["tipo"].'" peso="'.$infoproducto["peso"].'">';
 
 								}
 

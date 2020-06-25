@@ -14,8 +14,7 @@ class ControladorUsuarios{
 			   preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["regEmail"]) &&
 			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["regPassword"])){
 
-			   	$encriptar = crypt($_POST["regPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$
-			   		$2a$07$asxx54ahjppf45sd87a5auxq/SS293XhTEeizKWMnfhnpfay0AALe');
+			   	$encriptar = crypt($_POST["regPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
 
 			   	$encriptarEmail = md5($_POST["regEmail"]);
 
@@ -33,11 +32,21 @@ class ControladorUsuarios{
 
 				if($respuesta == "ok"){
 
+			/*=============================================
+			ACTUALIZAR NOTIFICACIONES NUEVOS USUARIOS
+			=============================================*/
+
+			$traerNotificaciones = ControladorNotificaciones::ctrMostrarNotificaciones();
+
+			$nuevoUsusario = $traerNotificaciones["nuevosUsuarios"] + 1;
+
+			ModeloNotificaciones::mdlActualizarNotificaciones("notificaciones", "nuevosUsuarios", $nuevoUsuario);
+
 					/*=============================================
 					VERIFICACIÓN CORREO ELECTRÓNICO
 					=============================================*/
 
-					date_default_timezone_set("América/Mexico_City");
+					date_default_timezone_set("America/Bogota");
 
 					$url = Ruta::ctrRuta();
 
@@ -47,9 +56,9 @@ class ControladorUsuarios{
 
 					$mail->isMail();
 
-					$mail->setFrom('bicimaniamixcoac@gmail.com', 'ManiaBike');
+					$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
 
-					$mail->addReplyTo('bicimaniamixcoac@gmail.com', 'ManiaBike');
+					$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
 
 					$mail->Subject = "Por favor verifique su dirección de correo electrónico";
 
@@ -59,7 +68,7 @@ class ControladorUsuarios{
 
 						<center>
 
-							<img style="padding:20px; width:10%" src="https://maniabikes.com.mx/maniabike/backend/vistas/img/plantilla/logo.png">
+							<img style="padding:20px; width:10%" src="http://tutorialesatualcance.com/tienda/logo.png">
 
 						</center>
 
@@ -67,13 +76,13 @@ class ControladorUsuarios{
 
 							<center>
 
-							<img style="padding:20px; width:15%" src="https://maniabikes.com.mx/maniabike/backend/vistas/img/plantilla/logo.png">
+							<img style="padding:20px; width:15%" src="http://tutorialesatualcance.com/tienda/icon-email.png">
 
 							<h3 style="font-weight:100; color:#999">VERIFIQUE SU DIRECCIÓN DE CORREO ELECTRÓNICO</h3>
 
 							<hr style="border:1px solid #ccc; width:80%">
 
-							<h4 style="font-weight:100; color:#999; padding:0 20px">Para comenzar a usar su cuenta de ManiaBike, debe confirmar su dirección de correo electrónico</h4>
+							<h4 style="font-weight:100; color:#999; padding:0 20px">Para comenzar a usar su cuenta de Tienda Virtual, debe confirmar su dirección de correo electrónico</h4>
 
 							<a href="'.$url.'verificar/'.$encriptarEmail.'" target="_blank" style="text-decoration:none">
 
@@ -197,6 +206,34 @@ class ControladorUsuarios{
 	}
 
 	/*=============================================
+	MOSTRAR DATOS-FACTURACION
+	=============================================*/
+
+	static public function ctrMostrarfact($item, $valor){
+
+		$tabla = "facturacion";
+
+		$respuesta = ModeloUsuarios::ctrMostrarfact($tabla, $item, $valor);
+
+		return $respuesta;
+
+	}
+
+	/*=============================================
+	ACTUALIZAR  DATOS-FACTURACION
+	=============================================*/
+
+	static public function ctrActualizarfact($id, $item, $valor){
+
+		$tabla = "facturacion";
+
+		$respuesta = ModeloUsuarios::mdlActualizarfact($tabla, $id, $item, $valor);
+
+		return $respuesta;
+
+	}
+
+	/*=============================================
 	INGRESO DE USUARIO
 	=============================================*/
 
@@ -262,6 +299,7 @@ class ControladorUsuarios{
 						$_SESSION["cp"] = $respuesta["cp"];
 						$_SESSION["rfc"] = $respuesta["rfc"];
 						$_SESSION["regimenfiscal"] = $respuesta["regimenfiscal"];
+
 						echo '<script>
 
 							window.location = localStorage.getItem("rutaActual");
@@ -375,7 +413,7 @@ class ControladorUsuarios{
 						CAMBIO DE CONTRASEÑA
 						=============================================*/
 
-						date_default_timezone_set("América/Mexico_City");
+						date_default_timezone_set("America/Bogota");
 
 						$url = Ruta::ctrRuta();
 
@@ -385,9 +423,9 @@ class ControladorUsuarios{
 
 						$mail->isMail();
 
-						$mail->setFrom('bicimaniamixcoac@gmail.com', 'ManiaBike');
+						$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
 
-						$mail->addReplyTo('bicimaniamixcoac@gmail.com', 'ManiaBike');
+						$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
 
 						$mail->Subject = "Solicitud de nueva contraseña";
 
@@ -397,7 +435,7 @@ class ControladorUsuarios{
 
 								<center>
 
-									<img style="padding:20px; width:10%" src="https://maniabikes.com.mx/maniabike/backend/vistas/img/plantilla/logo.png">
+									<img style="padding:20px; width:10%" src="http://tutorialesatualcance.com/tienda/logo.png">
 
 								</center>
 
@@ -405,7 +443,7 @@ class ControladorUsuarios{
 
 									<center>
 
-									<img style="padding:20px; width:15%" src="https://maniabikes.com.mx/maniabike/backend/vistas/img/plantilla/logo.png">
+									<img style="padding:20px; width:15%" src="http://tutorialesatualcance.com/tienda/icon-pass.png">
 
 									<h3 style="font-weight:100; color:#999">SOLICITUD DE NUEVA CONTRASEÑA</h3>
 
@@ -575,6 +613,16 @@ class ControladorUsuarios{
 		}else{
 
 			$respuesta1 = ModeloUsuarios::mdlRegistroUsuario($tabla, $datos);
+
+			/*=============================================
+			ACTUALIZAR NOTIFICACIONES NUEVOS USUARIOS
+			=============================================*/
+
+			$traerNotificaciones = ControladorNotificaciones::ctrMostrarNotificaciones();
+
+			$nuevoUsuario = $traerNotificaciones["nuevosUsuarios"] + 1;
+
+			ModeloNotificaciones::mdlActualizarNotificaciones("notificaciones", "nuevosUsuarios", $nuevoUsuario);
 
 		}
 
@@ -819,7 +867,6 @@ class ControladorUsuarios{
 		}
 
 	}
-
 
 	/*=============================================
 	MOSTRAR COMPRAS

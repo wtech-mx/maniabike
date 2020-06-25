@@ -37,13 +37,13 @@ class ModeloCarrito{
 		$stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
 		$stmt->bindParam(":pais", $datos["pais"], PDO::PARAM_STR);
 
-		if($stmt->execute()){ 
+		if($stmt->execute()){
 
-			return "ok"; 
+			return "ok";
 
-		}else{ 
+		}else{
 
-			return "error"; 
+			return "error";
 
 		}
 

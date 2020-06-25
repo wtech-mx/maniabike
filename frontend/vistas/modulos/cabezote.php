@@ -122,7 +122,7 @@ TOP
 									<i class="fa '.$value["red"].' redSocial '.$value["estilo"].'" aria-hidden="true"></i>
 								</a>
 							</li>';
-						}
+							}
 					}
 
 					?>
@@ -311,7 +311,7 @@ HEADER
 
 				</a>
 
-				<p>TU CESTA <span class="cantidadCesta"></span> <br> USD $ <span class="sumaCesta"></span></p>
+				<p>TU CESTA <span class="cantidadCesta"></span> <br> MXN $ <span class="sumaCesta"></span></p>
 
 			</div>
 
@@ -331,12 +331,13 @@ HEADER
 				$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
 				foreach ($categorias as $key => $value) {
+
 					if ($value["estado"] != 0) {
 
 					echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
 
 							<h4>
-								<i class="fa fa-caret-square-o-down"> </i><a href="'.$url.$value["ruta"].'" class="pixelCategorias" titulo="'.$value["categoria"].'"> '.$value["categoria"].'</a>
+								<a href="'.$url.$value["ruta"].'" class="pixelCategorias" titulo="'.$value["categoria"].'">'.$value["categoria"].'</a>
 							</h4>
 
 							<hr>
@@ -379,8 +380,8 @@ HEADER
 							echo '</ul>
 
 						</div>';
+						}
 
-					}
 				}
 
 			?>

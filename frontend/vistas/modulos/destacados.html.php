@@ -810,7 +810,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 						<small>
 						
-							<strong class="oferta">MXN $29</strong>
+							<strong class="oferta">USD $29</strong>
 
 						</small>
 
@@ -890,7 +890,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 						<small>
 						
-							<strong class="oferta">MXN $29</strong>
+							<strong class="oferta">USD $29</strong>
 
 						</small>
 
@@ -970,7 +970,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 						<small>
 						
-							<strong class="oferta">MXN $29</strong>
+							<strong class="oferta">USD $29</strong>
 
 						</small>
 
@@ -1049,7 +1049,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 					
 					<h2>
 
-						<small>MXN $29</small>
+						<small>USD $29</small>
 
 					</h2>
 
@@ -1139,7 +1139,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 
 							<small>
 
-								<strong class="oferta">MXN $29</strong>
+								<strong class="oferta">USD $29</strong>
 
 							</small>  
 
@@ -1315,7 +1315,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 						<small>
 						
-							<strong class="oferta">MXN $100</strong>
+							<strong class="oferta">USD $100</strong>
 
 						</small>
 
@@ -1401,7 +1401,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 						<small>
 						
-							<strong class="oferta">MXN $100</strong>
+							<strong class="oferta">USD $100</strong>
 
 						</small>
 
@@ -1487,7 +1487,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 						<small>
 						
-							<strong class="oferta">MXN $100</strong>
+							<strong class="oferta">USD $100</strong>
 
 						</small>
 
@@ -1573,7 +1573,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 						<small>
 						
-							<strong class="oferta">MXN $100</strong>
+							<strong class="oferta">USD $100</strong>
 
 						</small>
 
@@ -1671,7 +1671,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 
 							<small>
 
-								<strong class="oferta">MXN $100</strong>
+								<strong class="oferta">USD $100</strong>
 
 							</small>  
 

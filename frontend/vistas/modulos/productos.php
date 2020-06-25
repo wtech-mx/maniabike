@@ -1,10 +1,11 @@
 <!--=====================================
 BANNER
 ======================================-->
+
 <?php
+
 $servidor = Ruta::ctrRutaServidor();
 $url = Ruta::ctrRuta();
-
 
 $ruta = $rutas[0];
 
@@ -167,76 +168,15 @@ if($banner != null){
 
 						}
 
+
+
+
+
 					}
+
+
 
 				}
-
-				if($banner["tipo"] == "subcategorias2"){
-
-						$item = "ruta";
-						$valor = $banner["ruta"];
-
-						$ofertas = ControladorProductos::ctrMostrarSubCategorias2($item, $valor);
-
-						if($ofertas[0]["oferta"] == 1){
-
-							echo '<div class="textoBanner textoIzq">
-
-								<h1 style="color:#fff" class="text-uppercase">'.$ofertas[0]["subcategoria2"].'</h1>
-
-							</div>
-
-							<div class="textoBanner textoDer">
-
-								<h1 style="color:#fff">OFERTAS ESPECIALES</h1>';
-
-								if($ofertas[0]["precioOferta"] != 0){
-
-									echo '<h2 style="color:#fff"><strong>Todos los productos a $ '.$ofertas[0]["precioOferta"].'</strong></h2>';
-
-								}
-
-								if($ofertas[0]["descuentoOferta"] != 0){
-
-									echo '<h2 style="color:#fff"><strong>Todos los productos con '.$ofertas[0]["descuentoOferta"].'% OFF</strong></h2>';
-								}
-
-							echo '<h3 class="col-md-0 col-sm-0 col-xs-0" style="color:#fff">
-
-								La oferta termina en<br>
-
-								<div class="countdown2" finOferta="'.$ofertas[0]["finOferta"].'">
-
-
-							</h3>';
-
-							$datetime1 = new DateTime($ofertas[0]["finOferta"]);
-							$datetime2 = new DateTime($fechaActual);
-
-							$interval = date_diff($datetime1, $datetime2);
-
-							$finOferta = $interval->format('%a');
-
-							if($finOferta == 0){
-
-								echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina hoy</h3>';
-
-							}else if($finOferta == 1){
-
-								echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina en '.$finOferta.' día</h3>';
-
-							}else{
-
-								echo '<h3 class="col-lg-0" style="color:#fff">La oferta termina en '.$finOferta.' días</h3>';
-
-							}
-
-
-							echo '</div>';
-
-						}
-
-					}
 
 		echo '</figure>';
 
@@ -382,6 +322,7 @@ LISTAR PRODUCTOS
 			/*=============================================
 			LLAMADO DE PRODUCTOS DE CATEGORÍAS, SUBCATEGORÍAS Y DESTACADOS
 			=============================================*/
+
 			if($rutas[0] == "articulos-gratis"){
 
 				$item2 = "precio";
@@ -411,18 +352,9 @@ LISTAR PRODUCTOS
 				if(!$categoria){
 
 					$subCategoria = ControladorProductos::ctrMostrarSubCategorias($item1, $valor1);
-					$subCategoria2 = ControladorProductos::ctrMostrarSubCategorias2($item1, $valor1);
 
-					if ($subCategoria == array(size==0)) {
 					$item2 = "id_subcategoria";
 					$valor2 = $subCategoria[0]["id"];
-
-					}else{
-					$item2 = "id_subcategoria2";
-					$valor2 = $subCategoria2[0]["id"];
-					}
-
-
 
 				}else{
 
@@ -653,7 +585,7 @@ LISTAR PRODUCTOS
 
 											<small>
 
-												<strong class="oferta">USD $'.$value["precio"].'</strong>
+												<strong class="oferta">MXN $'.$value["precio"].'</strong>
 
 											</small>
 
@@ -663,7 +595,7 @@ LISTAR PRODUCTOS
 
 								}else{
 
-									echo '<h2><small>USD $'.$value["precio"].'</small></h2>';
+									echo '<h2><small>MXN $'.$value["precio"].'</small></h2>';
 
 								}
 
