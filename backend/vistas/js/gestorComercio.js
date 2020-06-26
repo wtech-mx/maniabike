@@ -450,7 +450,7 @@ SELECCIONAR PAIS
 =============================================*/
 
 $.ajax({
-    url:"vistas/js/countries.json",
+    url:"vistas/js/alcaldia.json",
     type: "GET",
     cache: false,
     contentType: false,

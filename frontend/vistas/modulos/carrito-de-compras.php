@@ -222,6 +222,111 @@ VENTANA MODAL PARA CHECKOUT
 
 				</div>
 
+                				<br>
+
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                             <i class="fa fa-chevron-circle-down" aria-hidden="true"></i> DIRECCIÓN
+                            </a>
+                          </h4>
+                        </div>
+
+                        <h5 class="text-center panel-title">
+                            <a href="http://localhost/maniabike/frontend/perfil">
+                                EDITAR EN PERFIL
+                            </a>
+                          </h5>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                              <div class="panel-body">
+                                <div class="row">
+								  <div class="col-lg-3">
+								  	<label class="control-label text-muted text-uppercase" for="editarCodigo">C. Postal:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+								      <input type="text" class="form-control" id="editarCodigo" name="editarCodigo" value="<?php echo $_SESSION["codigo"] ?>" readonly>
+								    </div>
+								  </div>
+								  <div class="col-lg-5">
+								  	<label class="control-label text-muted text-uppercase" for="editarEstado">Estado:</label>
+								    <div class="input-group">
+								    	<span class="input-group-addon"><i class="fa fa-street-view" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarEstado" name="editarEstado"  value="<?php echo $_SESSION["estado"] ?>" readonly>
+								    </div>
+								  </div>
+
+								</div>
+
+								<div class="row">
+                                     <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarColonia">Colonia:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-mouse-pointer" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarColonia" name="editarColonia" value="<?php echo $_SESSION["colonia"] ?>" readonly>
+								    </div>
+								  </div>
+
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarCalle">Calle:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-map-o" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarCalle" name="editarCalle" value="<?php echo $_SESSION["calle"] ?>" readonly>
+								    </div>
+								  </div>
+								</div>
+
+								<div class="row">
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarExterior">Numero Exterior:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarExterior" name="editarExterior" value="<?php echo $_SESSION["exterior"] ?>" readonly>
+								    </div>
+								  </div>
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarInterior">Numero Interior:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarInterior" name="editarInterior" value="<?php echo  $_SESSION["interior"] ?>" readonly>
+								    </div>
+								  </div>
+								</div>
+
+								<div class="row">
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarCalle1">Entre Calle1:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-exchange" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarCalle1" name="editarCalle1" value="<?php echo $_SESSION["calle1"] ?>" readonly>
+								    </div>
+								  </div>
+								  <div class="col-lg-6">
+								  	<label class="control-label text-muted text-uppercase" for="editarCalle2">Entre Calle 2:</label>
+								    <div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-exchange" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarCalle2" name="editarCalle2" value="<?php echo $_SESSION["calle2"] ?>" readonly>
+								    </div>
+								  </div>
+								</div>
+
+								<div class="row">
+								  <div class="col-lg-12">
+								  	<label class="control-label text-muted text-uppercase" for="editarDescripcion">Descripcion:</label>
+								    <div class="input-group">
+								      <span class="input-group-addon"><i class="fa fa-file-text" aria-hidden="true"></i></span>
+								      <input type="text" class="form-control" id="editarDescripcion" name="editarDescripcion" value="<?php echo $_SESSION["descripcion"] ?>" readonly>
+								    </div>
+								  </div>
+								</div>
+
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+
 				<br>
 
 				<div class="listaProductos row">

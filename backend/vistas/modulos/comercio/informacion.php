@@ -43,7 +43,7 @@ $comercio = ControladorComercio::ctrSeleccionarComercio();
 
 	    <div class="form-group">
       
-	      <label for="usr">Envío Nacional:</label>
+	      <label for="usr">Envío CDMX:</label>
 	      
 	      <div class="input-group">
 	        
@@ -58,7 +58,7 @@ $comercio = ControladorComercio::ctrSeleccionarComercio();
 
      	<div class="form-group">
       
-	      <label for="usr">Envío Internacional:</label>
+	      <label for="usr">Envío Estados:</label>
 	      
 	      <div class="input-group">
 	        
@@ -73,7 +73,7 @@ $comercio = ControladorComercio::ctrSeleccionarComercio();
 
 	    <div class="form-group">
       
-	      <label for="usr">Tasa Mínima Nacional:</label>
+	      <label for="usr">Tasa Mínima CDMX:</label>
 	      
 	      <div class="input-group">
 	        
@@ -88,7 +88,7 @@ $comercio = ControladorComercio::ctrSeleccionarComercio();
 
 	 	<div class="form-group">
       
-	      <label for="usr">Tasa Mínima Internacional:</label>
+	      <label for="usr">Tasa Mínima Estados:</label>
 	      
 	      <div class="input-group">
 	        
@@ -103,7 +103,7 @@ $comercio = ControladorComercio::ctrSeleccionarComercio();
 
 	    <div class="form-group">
       
-	      <label for="sel1">Seleccione País:</label>
+	      <label for="sel1">Seleccione Estados:</label>
 
 	      <input type="hidden" id="codigoPais" value="<?php echo $comercio["pais"]; ?>">
 	      

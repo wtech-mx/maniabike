@@ -80,13 +80,12 @@ class Paypal{
 			    ->setPayer($payer)
 			    ->setRedirectUrls($redirectUrls)
 			    ->setTransactions(array($transaction));
-			    
 
 		#Tratar de ejcutar un proceso y si falla ejecutar una rutina de error
 		try {
 		    // traemos las credenciales $apiContext
 		    $payment->create($apiContext);
-
+            var_dump( $payment);
 		   
 		}catch(PayPal\Exception\PayPalConnectionException $ex){
 

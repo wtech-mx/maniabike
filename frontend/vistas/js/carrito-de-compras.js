@@ -639,9 +639,9 @@ $("#btnCheckout").click(function(){
 
 	if(tipoArray.find(checkTipo) == "fisico"){
 
-		$(".seleccionePais").html('<select class="form-control" id="seleccionarPais" required>'+
+		$(".seleccionePais").html('<select class="form-control" id="seleccionarPais">'+
 
-						          '<option value="">Seleccione el país</option>'+
+						          '<option value="">Recoger en tienda</option>'+
 
 					              '</select>');
 
@@ -651,7 +651,7 @@ $("#btnCheckout").click(function(){
 		$(".btnPagar").attr("tipo","fisico");
 
 		$.ajax({
-			url:rutaOculta+"vistas/js/plugins/countries.json",
+			url:rutaOculta+"vistas/js/plugins/alcaldia.json",
 			type: "GET",
 			cache: false,
 			contentType: false,
@@ -715,7 +715,6 @@ $("#btnCheckout").click(function(){
 				}
 
 			}
-
 			sumaTotalCompra();
 			pagarConPayu();
 
@@ -828,13 +827,13 @@ $("#cambiarDivisa").change(function(){
 
 	$(".alert").remove();
 
-	if($("#seleccionarPais").val() == ""){
+	//if($("#seleccionarPais").val() == ""){
 
-		$("#cambiarDivisa").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
+	//	$("#cambiarDivisa").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
 
-		return;
+	//	return;
 
-	}
+	//}
 
 	var divisa = $(this).val();
 
@@ -934,15 +933,15 @@ BOTÓN PAGAR PAYPAL
 
 $(".btnPagar").click(function(){
 
-	var tipo = $(this).attr("tipo");
+//	var tipo = $(this).attr("tipo");
 
-	if(tipo == "fisico" && $("#seleccionarPais").val() == ""){
+//	if(tipo == "fisico" && $("#seleccionarPais").val() == ""){
 
-		$(".btnPagar").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
+//		$(".btnPagar").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
 
-		return;
+//		return;
 
-	}
+//	}
 
 	var divisa = $("#cambiarDivisa").val();
 	var total = $(".valorTotalCompra").html();
@@ -991,7 +990,8 @@ $(".btnPagar").click(function(){
          processData: false,
          success:function(respuesta){
 
-               window.location = respuesta;
+		 	console.log("respuesta", respuesta);
+             //  window.location = respuesta;
 
          }
 
@@ -1009,15 +1009,15 @@ BOTÓN PAGAR PAYU
 
 function pagarConPayu(){
 
-	if($("#seleccionarPais").val() == ""){
+	//if($("#seleccionarPais").val() == ""){
 
-		$(".formPayu").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
+	//	$(".formPayu").after('<div class="alert alert-warning">No ha seleccionado el país de envío</div>');
 
-		$(".formPayu input[name='Submit']").attr("type","button");
+	//	$(".formPayu input[name='Submit']").attr("type","button");
 
-		return;
+	//	return;
 
-	}
+	//}
 
 	var divisa = $("#cambiarDivisa").val();
 	var total = $(".valorTotalCompra").html();
