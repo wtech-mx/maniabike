@@ -25,6 +25,7 @@ class Paypal{
 		$cantidadProductos = str_replace(",","-", $datos["cantidadArray"]);
 		$pagoProductos = str_replace(",","-", $datos["valorItemArray"]);
 
+
 		#Seleccionamos el método de pago
 		$payer = new Payer();
 		$payer->setPaymentMethod("paypal");
@@ -57,7 +58,7 @@ class Paypal{
     	$amount = new Amount();
 		$amount ->setCurrency($datos["divisa"])
 		    	->setTotal($datos["total"])
-		    	->setDetails($details);	
+		    	->setDetails($details);
 
 		#Agregamos las características de la transacción
     	$transaction = new Transaction();
@@ -81,16 +82,17 @@ class Paypal{
 			    ->setRedirectUrls($redirectUrls)
 			    ->setTransactions(array($transaction));
 
+
+
 		#Tratar de ejcutar un proceso y si falla ejecutar una rutina de error
 		try {
 		    // traemos las credenciales $apiContext
 		    $payment->create($apiContext);
-            var_dump( $payment);
-		   
+
 		}catch(PayPal\Exception\PayPalConnectionException $ex){
 
 			echo $ex->getCode(); // Prints the Error Code
-			echo $ex->getData(); // Prints the detailed error message 
+			echo $ex->getData(); // Prints the detailed error message
 			die($ex);
 			return "$url/error";
 
@@ -99,7 +101,7 @@ class Paypal{
 		# utilizamos un foreach para iterar sobre $payment, utilizamos el método llamado getLinks() para obtener todos los enlaces que aparecen en el array $payment y caso de que $Link->getRel() coincida con 'approval_url' extraemos dicho enlace, finalmente enviamos al usuario a esa dirección que guardamos en la variable $redirectUrl on el método getHref();
 
 		foreach ($payment->getLinks() as $link) {
-			
+
 			if($link->getRel() == "approval_url"){
 
 				$redirectUrl = $link->getHref();

@@ -184,9 +184,20 @@ VENTANA MODAL PARA CHECKOUT
 
 					<div class="col-xs-12 seleccionePais">
 
-
-
 					</div>
+
+                    <div class="card text-center p-3">
+                        <br>
+                      <div class="card-body">
+                          <br>
+                          <h5 class="card-title">Ubicacion de Tienda</h5>
+                        <img  src="<?php echo $url; ?>vistas/img/plantilla/negocio.jpg" class="img-thumbnail" width="25%">
+
+                      </div>
+                      <div class="card-footer text-muted">
+                       <a class="btn btn-primary " target="blank" href="https://goo.gl/maps/JmMCr7BKAHQxrTi77" title="" style="color: #fff;">Ver Direccion</a>
+                      </div>
+                    </div>
 
 				</div>
 
@@ -222,34 +233,29 @@ VENTANA MODAL PARA CHECKOUT
 
 				</div>
 
-                				<br>
+                <br>
 
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
-                          <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                             <i class="fa fa-chevron-circle-down" aria-hidden="true"></i> DIRECCIÓN
+                            <h4 class="text-center well text-muted text-uppercase">
+                              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                             <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>  Elige dónde recibir tus compras
                             </a>
-                          </h4>
-                        </div>
 
-                        <h5 class="text-center panel-title">
-                            <a href="http://localhost/maniabike/frontend/perfil">
-                                EDITAR EN PERFIL
-                            </a>
-                          </h5>
+                            </h4>
+                        </div>
                             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                               <div class="panel-body">
                                 <div class="row">
-								  <div class="col-lg-3">
+								  <div class="col-lg-6">
 								  	<label class="control-label text-muted text-uppercase" for="editarCodigo">C. Postal:</label>
 								    <div class="input-group">
 								      <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
 								      <input type="text" class="form-control" id="editarCodigo" name="editarCodigo" value="<?php echo $_SESSION["codigo"] ?>" readonly>
 								    </div>
 								  </div>
-								  <div class="col-lg-5">
+								  <div class="col-lg-6">
 								  	<label class="control-label text-muted text-uppercase" for="editarEstado">Estado:</label>
 								    <div class="input-group">
 								    	<span class="input-group-addon"><i class="fa fa-street-view" aria-hidden="true"></i></span>
@@ -320,6 +326,14 @@ VENTANA MODAL PARA CHECKOUT
 								    </div>
 								  </div>
 								</div>
+
+								<div class="row">
+								  <div class="col-lg-12 text-center"><br>
+								  	<a href="http://localhost/maniabike/frontend/perfil" class="btn btn-success"> EDITAR EN PERFIL</a>
+								  </div>
+								</div>
+
+
 
                                 </div>
                             </div>

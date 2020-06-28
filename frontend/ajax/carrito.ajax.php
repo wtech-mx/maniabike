@@ -52,7 +52,30 @@ class AjaxCarrito{
 	MÉTODO PAYU
 	=============================================*/
 
+	public function ajaxTraerComercioPayu(){
 
+		$respuesta = ControladorCarrito::ctrMostrarTarifas();
+
+		echo json_encode($respuesta);
+	}
+
+	/*=============================================
+	VERIFICAR QUE NO TENGA EL PRODUCTO ADQUIRIDO
+	=============================================*/
+
+	public $idUsuario;
+	public $idProducto;
+
+	public function ajaxVerificarProducto(){
+
+		$datos = array("idUsuario"=>$this->idUsuario,
+					   "idProducto"=>$this->idProducto);
+
+		$respuesta = ControladorCarrito::ctrVerificarProducto($datos);
+
+		echo json_encode($respuesta);
+
+	}
 
 }
 
@@ -74,11 +97,11 @@ if(isset($_POST["divisa"])){
 
 		$verificarProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
 
-		$divisa = file_get_contents("http://free.currconv.com/api/v7/convert?q=USD_".$_POST["divisa"]."&compact=ultra&apiKey=631a2ee7118a10541b4b");
+		$divisa = file_get_contents("https://free.currconv.com/api/v7/convert?q=MXN_".$_POST["divisa"]."&compact=ultra&apiKey=a01ebaf9a1c69eb4ff79");
 
 		$jsonDivisa = json_decode($divisa, true);
 
-		$conversion = number_format($jsonDivisa["USD_".$_POST["divisa"]],2);
+		$conversion = number_format($jsonDivisa["MXN_".$_POST["divisa"]],2);
 
 		if($verificarProductos["precioOferta"] == 0){
 
@@ -141,11 +164,11 @@ if(isset($_POST["metodoPago"]) && $_POST["metodoPago"] == "payu"){
 
 		$verificarProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
 
-		$divisa = file_get_contents("http://free.currconv.com/api/v7/convert?q=USD_".$_POST["divisaPayu"]."&compact=ultra&apiKey=a01ebaf9a1c69eb4ff79");
+		$divisa = file_get_contents("https://free.currconv.com/api/v7/convert?q=MXN_".$_POST["divisaPayu"]."&compact=ultra&apiKey=a01ebaf9a1c69eb4ff79");
 
 		$jsonDivisa = json_decode($divisa, true);
 
-		$conversion = number_format($jsonDivisa["USD_".$_POST["divisaPayu"]],2);
+		$conversion = number_format($jsonDivisa["MXN_".$_POST["divisaPayu"]],2);
 
 		if($verificarProductos["precioOferta"] == 0){
 
@@ -190,4 +213,3 @@ if(isset($_POST["idUsuario"])){
 	$deseo -> idProducto = $_POST["idProducto"];
 	$deseo ->ajaxVerificarProducto();
 }
-

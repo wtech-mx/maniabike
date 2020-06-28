@@ -6,7 +6,7 @@ class ControladorVentas{
 	MOSTRAR TOTAL VENTAS
 	=============================================*/
 
-	public function ctrMostrarTotalVentas(){
+	static public function ctrMostrarTotalVentas(){
 
 		$tabla = "compras";
 
@@ -20,7 +20,7 @@ class ControladorVentas{
 	MOSTRAR VENTAS
 	=============================================*/
 
-	public function ctrMostrarVentas(){
+	static public function ctrMostrarVentas(){
 
 		$tabla = "compras";
 
