@@ -51,6 +51,17 @@ class TablaVentas{
 		$traerCliente = ControladorUsuarios::ctrMostrarUsuarios($item2, $valor2);
 
 		$cliente = $traerCliente["nombre"];
+		$codigo = $traerCliente["codigo"];
+		$estado = $traerCliente["estado"];
+		$colonia = $traerCliente["colonia"];
+		$calle = $traerCliente["calle"];
+		$exterior = $traerCliente["exterior"];
+		$interior = $traerCliente["interior"];
+		$calle1 = $traerCliente["calle1"];
+		$calle2 = $traerCliente["calle2"];
+		$descripcion = $traerCliente["descripcion"];
+
+
 
 		/*=============================================
 		TRAER FOTO CLIENTE
@@ -152,7 +163,7 @@ class TablaVentas{
 			      		"'.$envio.'",
 			      		"'.$metodo.'",	
 			      		"'.$email.'",
-			      		"'.$ventas[$i]["direccion"].'",
+			      		"Estado:'.$estado.'-CP:'.$codigo.'-Colonia:'.$colonia.'-Calle:'.$calle.'-Numero_exterior:'.$exterior.'-Numero_interior:'.$interior.'-Entre_Calle1:'.$calle1.'-Entre_Calle2:'.$calle2.'-Descripcion:'.$descripcion.'",
 			      		"'.$ventas[$i]["RecogerTienda"].'",
 			      		"'.$ventas[$i]["pais"].'",
 			      		"'.$ventas[$i]["fecha"].'"	
