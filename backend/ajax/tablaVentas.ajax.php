@@ -126,6 +126,15 @@ class TablaVentas{
 
 		}
 
+		/*=============================================
+		Traer Cantidad
+		=============================================*/
+        $cantidad = $ventas[$i]["cantidad"];
+
+        /*=============================================
+		Traer detalle
+		=============================================*/
+        $detalle = $ventas[$i]["detalle"];
 
 		/*=============================================
 		DEVOLVER DATOS JSON
@@ -133,6 +142,8 @@ class TablaVentas{
 		$datosJson	 .= '[
 			      		"'.($i+1).'",
 			      		"'.$producto.'",
+			      		"'.$cantidad.'",
+			      		"'.$detalle.'",
 			      		"'.$imgProducto.'",
 			      		"'.$cliente.'",
 			      		"'.$imgCliente.'",

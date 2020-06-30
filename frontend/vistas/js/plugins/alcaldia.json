@@ -1,6 +1,5 @@
-[{"name":"Recoger en Tienda ", "code": "003"},
-  {"name":"Coyoacán", "code": "003"},
-  {"name":"Miguel Hidalgo","code":"016"},
+[{"name":"Coyoacán", "code": "Coyoacán"},
+  {"name":"Miguel Hidalgo","code":"Miguel Hidalgo"},
   {"name":"La Magdalena Contreras","code":"008"},
   {"name":"Tláhuac","code":"011"},
   {"name":"Azcapotzalco","code":"002"},
