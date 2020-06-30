@@ -153,6 +153,7 @@ class TablaVentas{
 			      		"'.$metodo.'",	
 			      		"'.$email.'",
 			      		"'.$ventas[$i]["direccion"].'",
+			      		"'.$ventas[$i]["RecogerTienda"].'",
 			      		"'.$ventas[$i]["pais"].'",
 			      		"'.$ventas[$i]["fecha"].'"	
 			      		],';

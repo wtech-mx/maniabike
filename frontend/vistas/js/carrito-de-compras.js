@@ -642,7 +642,7 @@ $("#btnCheckout").click(function(){
 
 		$(".seleccionePais").html('<select class="form-control" id="seleccionarPais">'+
 
-						          '<option value="">Recoger en Tienda</option>'+
+						          '<option value="">Seleccionar Alcadia de Direccion</option>'+
 
 					              '</select>');
 

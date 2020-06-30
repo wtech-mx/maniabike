@@ -80,6 +80,7 @@ return;
               <th>Metodo</th>
               <th>Email</th>
               <th>Dirección</th>
+              <th>Recoger en Tienda</th>
               <th>País</th>
               <th>Fecha</th>
 
