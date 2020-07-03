@@ -23,6 +23,7 @@ class Paypal{
 		$valorItemArray = explode(",", $datos["valorItemArray"]);
 		$idProductos = str_replace(",","-", $datos["idProductoArray"]);
 		$cantidadProductos = str_replace(",","-", $datos["cantidadArray"]);
+		$RecogerTienda = str_replace(",","-", $datos["RecogerTienda"]);
 		$pagoProductos = str_replace(",","-", $datos["valorItemArray"]);
 
 
@@ -72,7 +73,7 @@ class Paypal{
     	$url = Ruta::ctrRuta();
 
 		$redirectUrls = new RedirectUrls();
-		$redirectUrls->setReturnUrl("$url/index.php?ruta=finalizar-compra&paypal=true&productos=".$idProductos."&cantidad=".$cantidadProductos."&pago=".$pagoProductos)
+		$redirectUrls->setReturnUrl("$url/index.php?ruta=finalizar-compra&paypal=true&productos=".$idProductos."&cantidad=".$cantidadProductos."&RecogerTienda=".$RecogerTienda."&pago=".$pagoProductos)
    				     ->setCancelUrl("$url/carrito-de-compras");
 
    		#Agregamos todas las características del pago

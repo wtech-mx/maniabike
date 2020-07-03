@@ -21,6 +21,7 @@ class AjaxCarrito{
 	public $envio;
 	public $subtotal;
 	public $tituloArray;
+	public $RecogerTienda;
 	public $cantidadArray;
 	public $valorItemArray;
 	public $idProductoArray;
@@ -36,6 +37,7 @@ class AjaxCarrito{
 						"envio"=>$this->envio,
 						"subtotal"=>$this->subtotal,
 						"tituloArray"=>$this->tituloArray,
+						"RecogerTienda"=>$this->RecogerTienda,
 						"cantidadArray"=>$this->cantidadArray,
 						"valorItemArray"=>$this->valorItemArray,
 						"idProductoArray"=>$this->idProductoArray,
