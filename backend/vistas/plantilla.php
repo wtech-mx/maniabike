@@ -136,6 +136,20 @@ session_start();
    <!-- Dropzone http://www.dropzonejs.com/-->
   <script src="vistas/plugins/dropzone/dropzone.js"></script>
 
+    <script src="vistas/js/tinymce/js/tinymce/tinymce.min.js"></script>
+
+  <script>
+  tinymce.init({
+    selector: '#editor',
+    height : "500px",
+    plugins: [
+    'print preview fullpage paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons spellchecker mediaembed pageembed linkchecker powerpaste formatpainter casechange'
+    ],
+    menubar: 'file edit view insert format tools table help',
+    toolbar: 'casechange undo redo  bold italic underline strikethrough  fontselect fontsizeselect formatselect alignleft aligncenter alignright alignjustify outdent indent numlist bullist  forecolor backcolor removeformat pagebreak charmap emoticons fullscreen preview save print insertfile image media template link anchor codesample fullpage ltr rtl styleselect pageembed formatpainter',
+  });
+  </script>
+
 </head>
 
 <body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">

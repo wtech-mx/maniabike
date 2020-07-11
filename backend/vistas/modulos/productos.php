@@ -453,7 +453,8 @@ MODAL AGREGAR PRODUCTO
 
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
-                <textarea type="text" maxlength="1000" rows="6" class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción producto"></textarea>
+                <textarea class="form-control input-lg descripcionProducto" id="editor" ></textarea>
+
 
               </div>
 
@@ -1208,7 +1209,7 @@ MODAL EDITAR PRODUCTO
 
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
-                <textarea type="text" maxlength="1000" rows="6" class="form-control input-lg descripcionProducto"></textarea>
+                 <textarea class="form-control input-lg descripcionProducto" id="editor" ></textarea>
 
               </div>
 
