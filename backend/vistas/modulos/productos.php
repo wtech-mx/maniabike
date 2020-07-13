@@ -42,7 +42,7 @@
                <th>Titulo</th>
                <th>Categoria</th>
                <th>Subcategoria</th>
-                <th>Sub-subcategoria</th>
+               <th>Sub-subcategoria</th>
                <th>Ruta</th>
                <th>Estado</th>
                <th>Tipo</th>
@@ -332,7 +332,7 @@ MODAL AGREGAR PRODUCTO
               <div class="form-group row">
 
                 <div class="col-xs-3">
-                  <input class="form-control input-lg" type="text" value="Marca" readonly>
+                  <input class="form-control input-lg" type="text" value="Marca" readonly >
                 </div>
 
                 <div class="col-xs-9">
@@ -341,19 +341,19 @@ MODAL AGREGAR PRODUCTO
 
               </div>
 
-              <!-- Medidas -->
+              <!-- Recoger -->
 
-<!--               <div class="form-group row">
+              <div class="form-group row" style="display: none">
 
                 <div class="col-xs-3">
-                  <input class="form-control input-lg" type="text" value="Medidas" readonly>
+                  <input class="form-control input-lg" type="hidden" value="Recoger" readonly>
                 </div>
 
                 <div class="col-xs-9">
-                    <input class="form-control input-lg tagsInput detalleMedidas" data-role="tagsinput" type="text" placeholder="Separe valores con coma">
+                    <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" type="hidden" value="0">
                 </div>
 
-              </div> -->
+              </div>
 
             </div>
 
@@ -1109,19 +1109,19 @@ MODAL EDITAR PRODUCTO
 
               </div>
 
-              <!-- Medidas -->
+              <!-- Recoger -->
 
-<!--               <div class="form-group row">
+               <div class="form-group row" style="width: none">
 
                 <div class="col-xs-3">
-                  <input class="form-control input-lg" type="text" value="Medidas" readonly>
+                  <input class="form-control input-lg" type="hidden" value="Recoger" readonly>
                 </div>
 
-                <div class="col-xs-9 editarMedidas">
-                    <input class="form-control input-lg tagsInput detalleMedidas" data-role="tagsinput" type="text" placeholder="Separe valores con coma">
+                <div class="col-xs-9 editarRecoger">
+                    <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" type="hidden" placeholder="Separe valores con coma">
                 </div>
 
-              </div> -->
+              </div>
 
             </div>
 

@@ -184,7 +184,7 @@ VENTANA MODAL PARA CHECKOUT
 					<h4 class="text-center well text-muted text-uppercase">Recoger en Tienda</h4>
 
                     <div class="col-xs-12">
-                        <select class="form-control" id="RecogerTienda" name="RecogerTienda">
+                        <select class="form-control" id="inputGroupSelect01">
                         <option selected value="0">No</option>
                         <option value="1">Si</option>
                       </select>

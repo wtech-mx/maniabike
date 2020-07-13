@@ -196,7 +196,7 @@ class TablaProductos{
 
 
 
-  				/*$talla = json_encode($detalles["Talla"]);*/
+  			$recoger = json_encode($detalles["Recoger"]);
 
 				$color = json_encode($detalles["Color"]);
 
@@ -204,7 +204,7 @@ class TablaProductos{
 
         // $medidas = json_encode($detalles["Medidas"]);
 
-				$vistaDetalles ="Color: ".str_replace(array("[","]",'"'), "", $color)." - Marca: ".str_replace(array("[","]",'"'), "", $marca);
+				$vistaDetalles ="Color: ".str_replace(array("[","]",'"'), "", $color)." - Marca: ".str_replace(array("[","]",'"'), "", $marca)." - Recoger: ".str_replace(array("[","]",'"'), "", $recoger);
         // $vistaDetalles ="Color: ".str_replace(array("[","]",'"'), "", $color)." - Marca: ".str_replace(array("[","]",'"'), "", $marca)." - Medidas: ".str_replace(array("[","]",'"'), "", $medidas);
 
         // var_dump($vistaDetalles);
