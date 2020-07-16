@@ -28,7 +28,6 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
    #recibo los productos comprados
    $productos = explode("-", $_GET['productos']);
    $cantidad = explode("-", $_GET['cantidad']);
-   $RecogerTienda = explode("-", $_GET['RecogerTienda']);
    $pago = explode("-", $_GET['pago']);
 
    #capturamos el Id del pago que arroja Paypal
@@ -65,7 +64,6 @@ if(isset( $_GET['paypal']) && $_GET['paypal'] === 'true'){
                      "email"=>$emailComprador,
                      "direccion"=>$direccion,
                      "pais"=>$pais,
-                     "RecogerTienda"=>$RecogerTienda,
                      "cantidad"=>$cantidad[$i],
                      "detalle"=>$datosUsuario->transactions[0]->item_list->items[$i]->name,
                      "pago"=>$pago[$i]);

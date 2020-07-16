@@ -761,13 +761,14 @@ divisas(metodoPago);
 
 $("input[name='pago']").change(function(){
 
-	if($("#cambiarDivisa").val() != "MXN"){
+	/*if($("#cambiarDivisa").val() != "MXN"){
 
 		$("input[name='pago']").after('<div class="alert alert-warning">Para realizar cambio de pago debe regresar la divisa a USD</div>');
 
 		return;
 
-	}
+	}*/
+
 
 	var metodoPago = $(this).val();
 
@@ -814,7 +815,6 @@ function divisas(metodoPago){
 
 		$("#cambiarDivisa").append('<option value="MXN">MXN</option>'+
 									'<option value="USD">USD</option>'+
-			                       '<option value="MXN">MXN</option>'+
 			                       '<option value="PEN">PEN</option>'+
 			                       '<option value="COP">COP</option>'+
 			                       '<option value="CLP">CLP</option>'+
@@ -832,7 +832,7 @@ function divisas(metodoPago){
 CAMBIO DE DIVISA
 =============================================*/
 
-var divisaBase = "USD";
+var divisaBase = "MXM";
 
 $("#cambiarDivisa").change(function(){
 
@@ -850,7 +850,7 @@ $("#cambiarDivisa").change(function(){
 
 	$.ajax({
 
-		url: "https://free.currconv.com/api/v7/convert?q="+divisaBase+"_"+divisa+"&compact=ultra&apiKey=a01ebaf9a1c69eb4ff79",
+		url: "https://free.currconv.com/api/v7/convert?q="+divisaBase+"_"+divisa+"&compact=ultra&apiKey=9392fca76ce0e7dff8db",
 		type:"GET",
 		cache: false,
 	    contentType: false,
@@ -858,11 +858,11 @@ $("#cambiarDivisa").change(function(){
 	    dataType:"jsonp",
 	    success:function(respuesta){
 
-	    	var conversion = (respuesta["USD_"+divisa]).toFixed(2);
+	    	var conversion = (respuesta["MXM"+divisa]).toFixed(2);
 
 	    	$(".cambioDivisa").html(divisa);
 
-	    	if(divisa == "USD"){
+	    	if(divisa == "MXM"){
 
 	    		$(".valorSubtotal").html($(".valorSubtotal").attr("valor"))
 		    	$(".valorTotalEnvio").html($(".valorTotalEnvio").attr("valor"))
@@ -1001,7 +1001,13 @@ $(".btnPagar").click(function(){
          processData: false,
          success:function(respuesta){
 
+         console.log("respuesta",respuesta);
+
+         //debugger;
                window.location = respuesta;
+
+
+
 
          }
 

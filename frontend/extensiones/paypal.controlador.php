@@ -16,6 +16,8 @@ class Paypal{
 
 	static public function mdlPagoPaypal($datos){
 
+
+
 		require __DIR__ . '/bootstrap.php';
 
 		$tituloArray = explode(",", $datos["tituloArray"]);
@@ -23,9 +25,8 @@ class Paypal{
 		$valorItemArray = explode(",", $datos["valorItemArray"]);
 		$idProductos = str_replace(",","-", $datos["idProductoArray"]);
 		$cantidadProductos = str_replace(",","-", $datos["cantidadArray"]);
-		$RecogerTienda = str_replace(",","-", $datos["RecogerTienda"]);
 		$pagoProductos = str_replace(",","-", $datos["valorItemArray"]);
-
+		$RecogerTienda = str_replace(",","-", $datos["valorItemArray"]);
 
 		#Seleccionamos el método de pago
 		$payer = new Payer();
@@ -72,6 +73,7 @@ class Paypal{
 		#Importante agregar la URL principal en la API developers de Paypal
     	$url = Ruta::ctrRuta();
 
+
 		$redirectUrls = new RedirectUrls();
 		$redirectUrls->setReturnUrl("$url/index.php?ruta=finalizar-compra&paypal=true&productos=".$idProductos."&cantidad=".$cantidadProductos."&RecogerTienda=".$RecogerTienda."&pago=".$pagoProductos)
    				     ->setCancelUrl("$url/carrito-de-compras");
@@ -90,12 +92,14 @@ class Paypal{
 		    // traemos las credenciales $apiContext
 		    $payment->create($apiContext);
 
+
 		}catch(PayPal\Exception\PayPalConnectionException $ex){
 
 			echo $ex->getCode(); // Prints the Error Code
 			echo $ex->getData(); // Prints the detailed error message
 			die($ex);
 			return "$url/error";
+
 
 		}
 
@@ -106,10 +110,12 @@ class Paypal{
 			if($link->getRel() == "approval_url"){
 
 				$redirectUrl = $link->getHref();
+
 			}
 		}
 
 		return $redirectUrl;
+
 	}
 
 }

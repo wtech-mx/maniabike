@@ -500,8 +500,7 @@
             "paypal",
             "rest",
             "sdk"
-        ],
-        "abandoned": true
+        ]
     },
     {
         "name": "phpseclib/phpseclib",
