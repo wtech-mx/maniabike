@@ -39,7 +39,6 @@ class AjaxCarrito{
 						"cantidadArray"=>$this->cantidadArray,
 						"valorItemArray"=>$this->valorItemArray,
 						"idProductoArray"=>$this->idProductoArray,
-                        "redirectUrl"=>$this->redirectUrl,
 					);
 
 				$respuesta = Paypal::mdlPagoPaypal($datos);

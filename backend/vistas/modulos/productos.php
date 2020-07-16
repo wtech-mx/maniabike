@@ -42,7 +42,7 @@
                <th>Titulo</th>
                <th>Categoria</th>
                <th>Subcategoria</th>
-               <th>Sub-subcategoria</th>
+                <th>Sub-subcategoria</th>
                <th>Ruta</th>
                <th>Estado</th>
                <th>Tipo</th>
@@ -332,7 +332,7 @@ MODAL AGREGAR PRODUCTO
               <div class="form-group row">
 
                 <div class="col-xs-3">
-                  <input class="form-control input-lg" type="text" value="Marca" readonly >
+                  <input class="form-control input-lg" type="text" value="Marca" readonly>
                 </div>
 
                 <div class="col-xs-9">
@@ -341,19 +341,19 @@ MODAL AGREGAR PRODUCTO
 
               </div>
 
-              <!-- Recoger
+              <!-- Medidas -->
 
-              <div class="form-group row" style="display: none">
+<!--               <div class="form-group row">
 
                 <div class="col-xs-3">
-                  <input class="form-control input-lg" type="hidden" value="Recoger" readonly>
+                  <input class="form-control input-lg" type="text" value="Medidas" readonly>
                 </div>
 
                 <div class="col-xs-9">
-                    <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" type="hidden" value="No">
+                    <input class="form-control input-lg tagsInput detalleMedidas" data-role="tagsinput" type="text" placeholder="Separe valores con coma">
                 </div>
 
-              </div>-->
+              </div> -->
 
             </div>
 
@@ -454,11 +454,6 @@ MODAL AGREGAR PRODUCTO
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
                 <textarea type="text" maxlength="1000" rows="6" class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción producto"></textarea>
-
-
-                <!--<textarea class="form-control input-lg descripcionProducto" id="editor" ></textarea>-->
-
-
 
               </div>
 
@@ -627,6 +622,7 @@ MODAL AGREGAR PRODUCTO
                 </div>
 
               </div>
+
               <!-- Precio -->
 
               <div class="col-md-4 col-xs-12">
@@ -1112,17 +1108,19 @@ MODAL EDITAR PRODUCTO
 
               </div>
 
-        <!--  <div class="form-group row" style="display: none">
+              <!-- Medidas -->
+
+<!--               <div class="form-group row">
 
                 <div class="col-xs-3">
-                  <input class="form-control input-lg" type="hidden" value="Recoger" readonly>
+                  <input class="form-control input-lg" type="text" value="Medidas" readonly>
                 </div>
 
-                <div class="col-xs-9">
-                    <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" type="hidden" value="No">
+                <div class="col-xs-9 editarMedidas">
+                    <input class="form-control input-lg tagsInput detalleMedidas" data-role="tagsinput" type="text" placeholder="Separe valores con coma">
                 </div>
 
-              </div>-->
+              </div> -->
 
             </div>
 
@@ -1210,12 +1208,7 @@ MODAL EDITAR PRODUCTO
 
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
-
                 <textarea type="text" maxlength="1000" rows="6" class="form-control input-lg descripcionProducto"></textarea>
-
-                 <textarea type="text" maxlength="1000" rows="6" class="form-control input-lg descripcionProducto"></textarea>
-                <!-- <textarea class="form-control input-lg descripcionProducto" id="editor" ></textarea> -->
-
 
               </div>
 

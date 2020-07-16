@@ -164,6 +164,7 @@ class TablaVentas{
 			      		"'.$metodo.'",	
 			      		"'.$email.'",
 			      		"Estado:'.$estado.'-CP:'.$codigo.'-Colonia:'.$colonia.'-Calle:'.$calle.'-Numero_exterior:'.$exterior.'-Numero_interior:'.$interior.'-Entre_Calle1:'.$calle1.'-Entre_Calle2:'.$calle2.'-Descripcion:'.$descripcion.'",
+			      		"'.$ventas[$i]["RecogerTienda"].'",
 			      		"'.$ventas[$i]["pais"].'",
 			      		"'.$ventas[$i]["fecha"].'"	
 			      		],';

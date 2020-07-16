@@ -28,7 +28,7 @@ class ModeloCarrito{
 
 	static public function mdlNuevasCompras($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (id_usuario, id_producto, metodo, email, direccion, pais, cantidad, detalle, pago) VALUES (:id_usuario, :id_producto, :metodo, :email, :direccion, :pais, :cantidad, :detalle, :pago)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (id_usuario, id_producto, metodo, email, direccion, pais, cantidad, detalle, pago, RecogerTienda) VALUES (:id_usuario, :id_producto, :metodo, :email, :direccion, :pais, :cantidad, :detalle, :pago, :RecogerTienda)");
 
 		$stmt->bindParam(":id_usuario", $datos["idUsuario"], PDO::PARAM_INT);
 		$stmt->bindParam(":id_producto", $datos["idProducto"], PDO::PARAM_INT);
@@ -37,6 +37,7 @@ class ModeloCarrito{
 		$stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
 		$stmt->bindParam(":pais", $datos["pais"], PDO::PARAM_STR);
 		$stmt->bindParam(":cantidad", $datos["cantidad"], PDO::PARAM_STR);
+		$stmt->bindParam(":RecogerTienda", $datos["RecogerTienda"], PDO::PARAM_STR);
 		$stmt->bindParam(":detalle", $datos["detalle"], PDO::PARAM_STR);
 		$stmt->bindParam(":pago", $datos["pago"], PDO::PARAM_STR);
 
