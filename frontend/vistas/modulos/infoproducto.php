@@ -358,22 +358,6 @@ INFOPRODUCTOS
 
 						if($infoproducto["tipo"] == "fisico"){
 
-							if($detalles["Recoger"]!=null){
-
-								echo '<div class="col-md-5 col-xs-12">
-
-									<select class="form-control seleccionarDetalle" id="seleccionarRecoger">
-
-										<option value="">Recoger en Tienda</option>
-										<option value="No">No</option>
-										<option value="Si">Si</option>';
-
-									echo '</select>
-
-								</div>';
-
-							}
-
 							if($detalles["Color"]!=null){
 
 								echo '<div class="col-md-3 col-xs-12">
@@ -407,6 +391,22 @@ INFOPRODUCTOS
 											echo '<option value="'.$detalles["Marca"][$i].'">'.$detalles["Marca"][$i].'</option>';
 
 										}
+
+									echo '</select>
+
+								</div>';
+
+							}
+
+							if($detalles["Recoger"]!=null){
+
+								echo '<div class="col-md-5 col-xs-12">
+
+									<select class="form-control seleccionarDetalle" id="seleccionarRecoger">
+
+										<option value="">Recoger en Tienda</option>
+										<option value="No">No</option>
+										<option value="Si">Si</option>';
 
 									echo '</select>
 

@@ -698,8 +698,8 @@ function agregarMiProducto(imagen){
 		}else{
 
 			var detalles = {"Color": $(".detalleColor").tagsinput('items'),
-			       			"Marca": $(".detalleMarca").tagsinput('items')};
-			       			// "Medidas": $(".detalleMedidas").tagsinput('items')};
+			       			"Marca": $(".detalleMarca").tagsinput('items'),
+			       			"Recoger": $(".detalleRecoger").tagsinput('items')};
 
 		}
 
@@ -923,14 +923,14 @@ $('.tablaProductos tbody').on("click", ".btnEditarProducto", function(){
 
 				$("#modalEditarProducto .detalleMarca").tagsinput('items');
 
-				//MEDIDAS
-				// $(".editarMedidas").html(
+				//Recoger
+				 $(".editarRecoger").html(
 
-				// 	'<input class="form-control input-lg tagsInput detalleMedidas" value="'+detalles.Medidas+'" data-role="tagsinput" type="text" style="padding:20px">'
+				 	'<input class="form-control input-lg tagsInput detalleRecoger" value="'+detalles.Recoger+'" data-role="tagsinput" type="text" style="padding:20px">'
 
-				// )
+				 )
 
-				// $("#modalEditarProducto .detalleMedidas").tagsinput('items');
+				 $("#modalEditarProducto .detalleRecoger").tagsinput('items');
 
 				$(".bootstrap-tagsinput").css({"padding":"12px",
 											   "width":"110%"})
@@ -1466,8 +1466,8 @@ function editarMiProducto(imagen){
 
 		var detalles = {/*"Talla": $("#modalEditarProducto .detalleTalla").tagsinput('items'),*/
 		       			"Color": $("#modalEditarProducto .detalleColor").tagsinput('items'),
-		       			"Marca": $("#modalEditarProducto .detalleMarca").tagsinput('items')};
-		       			// "Medidas": $("#modalEditarProducto .detalleMedidas").tagsinput('items')};
+		       			"Marca": $("#modalEditarProducto .detalleMarca").tagsinput('items'),
+		       			"Recoger": $("#modalEditarProducto .detalleRecoger").tagsinput('items')};
 
 	}
 

@@ -202,10 +202,10 @@ class TablaProductos{
 
 				$marca = json_encode($detalles["Marca"]);
 
-        // $medidas = json_encode($detalles["Medidas"]);
+        $recoger = json_encode($detalles["Recoger"]);
 
-				$vistaDetalles ="Color: ".str_replace(array("[","]",'"'), "", $color)." - Marca: ".str_replace(array("[","]",'"'), "", $marca);
-        // $vistaDetalles ="Color: ".str_replace(array("[","]",'"'), "", $color)." - Marca: ".str_replace(array("[","]",'"'), "", $marca)." - Medidas: ".str_replace(array("[","]",'"'), "", $medidas);
+				//$vistaDetalles ="Color: ".str_replace(array("[","]",'"'), "", $color)." - Marca: ".str_replace(array("[","]",'"'), "", $marca);
+          $vistaDetalles ="Color: ".str_replace(array("[","]",'"'), "", $color)." - Marca: ".str_replace(array("[","]",'"'), "", $marca)." - Recoger: ".str_replace(array("[","]",'"'), "", $recoger);
 
         // var_dump($vistaDetalles);
 

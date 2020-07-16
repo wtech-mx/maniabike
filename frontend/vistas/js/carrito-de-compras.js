@@ -219,7 +219,7 @@ $(".agregarCarrito").click(function(){
 			if($(seleccionarDetalle[i]).val() == ""){
 
 				swal({
-					  title: "Debe seleccionar Talla y Color",
+					  title: "Debe seleccionar Marca, Color y Recoger en Tienda",
 					  text: "",
 					  type: "warning",
 					  showCancelButton: false,

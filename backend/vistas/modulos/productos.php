@@ -341,19 +341,18 @@ MODAL AGREGAR PRODUCTO
 
               </div>
 
-              <!-- Recoger
-
+              <!-- Recoger -->
               <div class="form-group row" style="display: none">
 
                 <div class="col-xs-3">
-                  <input class="form-control input-lg" type="hidden" value="Recoger" readonly>
+                  <input class="form-control input-lg" value="Recoger" readonly>
                 </div>
 
                 <div class="col-xs-9">
-                    <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" type="hidden" value="No">
+                    <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" value="No">
                 </div>
 
-              </div>-->
+              </div>
 
             </div>
 
@@ -1110,17 +1109,17 @@ MODAL EDITAR PRODUCTO
 
               </div>
 
-        <!--  <div class="form-group row" style="display: none">
+          <div class="form-group row" style="display: none">
 
                 <div class="col-xs-3">
                   <input class="form-control input-lg" type="hidden" value="Recoger" readonly>
                 </div>
 
                 <div class="col-xs-9">
-                    <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" type="hidden" value="No">
+                  <!--   <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" type="hidden" value="No"> -->
                 </div>
 
-              </div>-->
+              </div>
 
             </div>
 
