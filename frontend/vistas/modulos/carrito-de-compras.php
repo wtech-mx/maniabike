@@ -179,7 +179,7 @@ VENTANA MODAL PARA CHECKOUT
 				?>
 
 
-				<div class="formEnvio row">
+<!--				<div class="formEnvio row">
 
 					<h4 class="text-center well text-muted text-uppercase">Recoger en Tienda</h4>
 
@@ -204,20 +204,17 @@ VENTANA MODAL PARA CHECKOUT
                       </div>
                     </div>
 
-				</div>
-
+				</div> -->
 
 				<div class="formEnvio row">
 
-					<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
+					<h4 class="text-center well text-muted text-uppercase">Información de envío <br>Seleccionar en caso de ser envio </h4>
 
 					<div class="col-xs-12 seleccionePais">
 
 					</div>
 
 				</div>
-
-
 
 				<br>
 
@@ -253,7 +250,8 @@ VENTANA MODAL PARA CHECKOUT
 
                 <br>
 
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="text-center well text-muted text-uppercase">

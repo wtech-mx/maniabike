@@ -341,7 +341,7 @@ MODAL AGREGAR PRODUCTO
 
               </div>
 
-              <!-- Recoger -->
+              <!-- Recoger
 
               <div class="form-group row" style="display: none">
 
@@ -350,10 +350,10 @@ MODAL AGREGAR PRODUCTO
                 </div>
 
                 <div class="col-xs-9">
-                    <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" type="hidden" value="0">
+                    <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" type="hidden" value="No">
                 </div>
 
-              </div>
+              </div>-->
 
             </div>
 
@@ -453,7 +453,9 @@ MODAL AGREGAR PRODUCTO
 
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
-                <textarea class="form-control input-lg descripcionProducto" id="editor" ></textarea>
+                <textarea type="text" maxlength="1000" rows="6" class="form-control input-lg descripcionProducto" placeholder="Ingresar descripción producto"></textarea>
+
+                <!--<textarea class="form-control input-lg descripcionProducto" id="editor" ></textarea>-->
 
 
               </div>
@@ -623,7 +625,6 @@ MODAL AGREGAR PRODUCTO
                 </div>
 
               </div>
-
               <!-- Precio -->
 
               <div class="col-md-4 col-xs-12">
@@ -1109,19 +1110,17 @@ MODAL EDITAR PRODUCTO
 
               </div>
 
-              <!-- Recoger -->
-
-               <div class="form-group row" style="width: none">
+        <!--  <div class="form-group row" style="display: none">
 
                 <div class="col-xs-3">
                   <input class="form-control input-lg" type="hidden" value="Recoger" readonly>
                 </div>
 
-                <div class="col-xs-9 editarRecoger">
-                    <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" type="hidden" placeholder="Separe valores con coma">
+                <div class="col-xs-9">
+                    <input class="form-control input-lg tagsInput detalleRecoger" data-role="tagsinput" type="hidden" value="No">
                 </div>
 
-              </div>
+              </div>-->
 
             </div>
 
@@ -1209,7 +1208,8 @@ MODAL EDITAR PRODUCTO
 
                 <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
 
-                 <textarea class="form-control input-lg descripcionProducto" id="editor" ></textarea>
+                 <textarea type="text" maxlength="1000" rows="6" class="form-control input-lg descripcionProducto"></textarea>
+                <!-- <textarea class="form-control input-lg descripcionProducto" id="editor" ></textarea> -->
 
               </div>
 

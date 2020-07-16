@@ -365,8 +365,8 @@ INFOPRODUCTOS
 									<select class="form-control seleccionarDetalle" id="seleccionarRecoger">
 
 										<option value="">Recoger en Tienda</option>
-										<option value="0">No</option>
-										<option value="1">Si</option>';
+										<option value="No">No</option>
+										<option value="Si">Si</option>';
 
 									echo '</select>
 
@@ -1327,6 +1327,7 @@ VENTANA MODAL PARA CHECKOUT
 					</div>
 
 				</div>
+
 
 				<br>
 
