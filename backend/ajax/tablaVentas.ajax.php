@@ -15,7 +15,7 @@ class TablaVentas{
   MOSTRAR LA TABLA DE VENTAS
   =============================================*/
 
-  public function mostrarTabla(){	
+  public function mostrarTabla(){
 
   	$ventas = ControladorVentas::ctrMostrarVentas();
 
@@ -96,7 +96,7 @@ class TablaVentas{
 		if($ventas[$i]["envio"] == 0 && $tipo == "virtual"){
 
 			$envio = "<button class='btn btn-info btn-xs'>Entrega inmediata</button>";
-		
+
 		}else if($ventas[$i]["envio"] == 0 && $tipo == "fisico"){
 
 			$envio ="<button class='btn btn-danger btn-xs btnEnvio' idVenta='".$ventas[$i]["id"]."' etapa='1'>Despachando el producto</button>";
@@ -108,7 +108,7 @@ class TablaVentas{
         }else if($ventas[$i]["envio"] == 2 && $tipo == "fisico"){
 
 			$envio = "<button class='btn btn-warning btn-xs btnEnvio' idVenta='".$ventas[$i]["id"]."' etapa='3'>Producto entregado</button>";
-		
+
 		}else if($ventas[$i]["envio"] == 3 && $tipo == "fisico"){
 
 			$envio = "<button class='btn btn-warning btn-xs btnEnvio' idVenta='".$ventas[$i]["id"]."' etapa='4'>Despachando</button>";
@@ -126,11 +126,11 @@ class TablaVentas{
 		if($ventas[$i]["metodo"] == "paypal"){
 
 			$metodo = "<img class='img-responsive' src='vistas/img/plantilla/paypal.jpg' width='300px'>";
-		
+
 		}else if($ventas[$i]["metodo"] == "payu"){
 
 			$metodo = "<img class='img-responsive' src='vistas/img/plantilla/payu.jpg' width='300px'>";
-		
+
 		}else{
 
 			$metodo = "GRATIS";
@@ -147,6 +147,8 @@ class TablaVentas{
 		=============================================*/
         $detalle = $ventas[$i]["detalle"];
 
+
+
 		/*=============================================
 		DEVOLVER DATOS JSON
 		=============================================*/
@@ -154,7 +156,7 @@ class TablaVentas{
 			      		"'.($i+1).'",
 			      		"'.$producto.'",
 			      		"'.$cantidad.'",
-			      		"'.$detalle.'",
+			      		"--'.$detalle.'--",
 			      		"'.$imgProducto.'",
 			      		"'.$cliente.'",
 			      		"'.$imgCliente.'",
@@ -164,20 +166,19 @@ class TablaVentas{
 			      		"'.$metodo.'",	
 			      		"'.$email.'",
 			      		"Estado:'.$estado.'-CP:'.$codigo.'-Colonia:'.$colonia.'-Calle:'.$calle.'-Numero_exterior:'.$exterior.'-Numero_interior:'.$interior.'-Entre_Calle1:'.$calle1.'-Entre_Calle2:'.$calle2.'-Descripcion:'.$descripcion.'",
-			      		"'.$ventas[$i]["RecogerTienda"].'",
 			      		"'.$ventas[$i]["pais"].'",
 			      		"'.$ventas[$i]["fecha"].'"	
 			      		],';
 
-	} 
+	}
 
 	$datosJson = substr($datosJson, 0, -1);
 
 	$datosJson.=  ']
 		  
-	}'; 
-  	
-  	echo $datosJson;	
+	}';
+
+  	echo $datosJson;
 
   }
 
@@ -185,7 +186,7 @@ class TablaVentas{
 
 /*=============================================
 ACTIVAR TABLA DE VENTAS
-=============================================*/ 
+=============================================*/
 $activar = new TablaVentas();
-$activar -> mostrarTabla(); 
+$activar -> mostrarTabla();
 

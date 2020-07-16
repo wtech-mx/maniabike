@@ -358,25 +358,21 @@ INFOPRODUCTOS
 
 						if($infoproducto["tipo"] == "fisico"){
 
-							/*if($detalles["Talla"]!=null){
+							if($detalles["Recoger"]!=null){
 
-								echo '<div class="col-md-3 col-xs-12">
+								echo '<div class="col-md-5 col-xs-12">
 
-									<select class="form-control seleccionarDetalle" id="seleccionarTalla">
+									<select class="form-control seleccionarDetalle" id="seleccionarRecoger">
 
-										<option value="">Talla</option>';
-
-										for($i = 0; $i <= count($detalles["Talla"]); $i++){
-
-											echo '<option value="'.$detalles["Talla"][$i].'">'.$detalles["Talla"][$i].'</option>';
-
-										}
+										<option value="">Recoger en Tienda</option>
+										<option value="No">No</option>
+										<option value="Si">Si</option>';
 
 									echo '</select>
 
 								</div>';
 
-							}*/
+							}
 
 							if($detalles["Color"]!=null){
 
@@ -1331,6 +1327,7 @@ VENTANA MODAL PARA CHECKOUT
 					</div>
 
 				</div>
+
 
 				<br>
 

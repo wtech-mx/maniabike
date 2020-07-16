@@ -15,9 +15,9 @@ return;
 ?>
 
 <div class="content-wrapper">
-  
+
    <section class="content-header">
-      
+
     <h1>
       Gestor ventas
     </h1>
@@ -27,7 +27,7 @@ return;
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
       <li class="active">Gestor ventas</li>
-      
+
     </ol>
 
   </section>
@@ -35,10 +35,10 @@ return;
 
   <section class="content">
 
-    <div class="box"> 
+    <div class="box">
 
       <div class="box-header with-border">
-        
+
         <?php
 
         include "inicio/grafico-ventas.php";
@@ -52,7 +52,7 @@ return;
         <div class="box-tools">
 
           <a href="vistas/modulos/reportes.php?reporte=compras">
-            
+
               <button class="btn btn-success">Descargar reporte en Excel</button>
 
           </a>
@@ -60,13 +60,13 @@ return;
         </div>
 
         <br>
-        
+
         <table class="table table-bordered table-striped dt-responsive tablaVentas" width="100%">
-        
+
           <thead>
-            
+
             <tr>
-              
+
               <th style="width:10px">#</th>
               <th>Producto</th>
               <th>Cantidad</th>
@@ -76,17 +76,16 @@ return;
               <th>Foto Cliente</th>
               <th>Venta</th>
               <th>Tipo</th>
-              <th>Proceso de envío</th>         
+              <th>Proceso de envío</th>
               <th>Metodo</th>
               <th>Email</th>
               <th>Dirección</th>
-              <th>Recoger en Tienda</th>
               <th>País</th>
               <th>Fecha</th>
 
             </tr>
 
-          </thead> 
+          </thead>
 
 
         </table>
