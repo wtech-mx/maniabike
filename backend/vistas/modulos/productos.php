@@ -88,7 +88,7 @@ MODAL AGREGAR PRODUCTO
 
      <div class="modal-content">
 
-       <form role="form" method="post" enctype="multipart/form-data"  oninput="w.value=parseInt(a.value)*(b.value)+parseInt(c.value),x.value=parseInt(w.value)+parseInt(a.value)*(d.value),y.value=parseInt(a.value)+parseInt(x.value),z.value=(l.value)*(m.value)*(n.value)/500">
+       <form role="form" method="post" enctype="multipart/form-data"  oninput="w.value=parseFloat(a.value)*(b.value)+parseFloat(c.value),x.value=parseFloat(w.value)+parseFloat(a.value),s.value=parseFloat(x.value)*(d.value),y.value=parseFloat(s.value)+parseFloat(x.value),z.value=(l.value)*(m.value)*(n.value)/500">
 
          <!--=====================================
         CABEZA DEL MODAL
@@ -573,7 +573,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input value="4" type="number" placeholder="MXM" class="form-control input-lg comision" min="" step="any" id="c" name="c">
+                  <input value="5" type="number" placeholder="MXM" class="form-control input-lg comision" min="" step="any" id="c" name="c">
 
               </div>
              </div>
@@ -604,7 +604,7 @@ MODAL AGREGAR PRODUCTO
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
-                  <input value=".04" type="number" placeholder="MXM" class="form-control input-lg paypal" min="" step="any" id="d" name="d">
+                  <input value=".05" type="number" placeholder="MXM" class="form-control input-lg paypal" min="" step="any" id="d" name="d">
 
                 </div>
 
@@ -613,13 +613,29 @@ MODAL AGREGAR PRODUCTO
 
               <div class="col-md-4 col-xs-12"  style="display: none">
 
-                <div class="panel">multiplicacionde resultado po paypal</div>
+                <div class="panel">resultado po paypal</div>
 
                 <div class="input-group">
 
                   <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
                   <input value="" type="number" placeholder="MXM" class="form-control input-lg paypal" min="" step="any" id="x" name="x">
+
+                </div>
+
+              </div>
+
+             <!-- Multiplicacion de la utilidad mas la comision -->
+
+              <div class="col-md-4 col-xs-12"  style="display: none">
+
+                <div class="panel">Multiplicacion de la utilidad mas la comision</div>
+
+                <div class="input-group">
+
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+
+                  <input value="" type="number" placeholder="MXM" class="form-control input-lg comision" min="" step="any" id="s" name="s">
 
                 </div>
 
@@ -632,7 +648,7 @@ MODAL AGREGAR PRODUCTO
 
                 <div class="input-group">
 
-                  <span class="input-group-addon"><i class="fa fa-balance-scale"></i></span>
+                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
 
                   <input type="number" class="form-control input-lg precio" min="" step="any" value="y" placeholder="" id="y" name="y">
 

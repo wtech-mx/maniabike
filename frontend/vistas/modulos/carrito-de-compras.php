@@ -234,11 +234,22 @@ VENTANA MODAL PARA CHECKOUT
 
 					</figure>
 
-					<figure class="col-xs-6">
+<!--					<figure class="col-xs-6">-->
+<!---->
+<!--						<center>-->
+<!---->
+<!--							<input id="checkPayu" type="radio" name="pago" value="payu">-->
+<!---->
+<!--						</center>-->
+<!---->
+<!--						<img src="--><?php //echo $url; ?><!--vistas/img/plantilla/payu.jpg" class="img-thumbnail">-->
+<!---->
+<!--					</figure>-->
+                    <figure class="col-xs-6">
 
 						<center>
 
-							<input id="checkPayu" type="radio" name="pago" value="payu">
+							<input id="checkMp" type="radio" name="pago" value="mp">
 
 						</center>
 
@@ -247,6 +258,8 @@ VENTANA MODAL PARA CHECKOUT
 					</figure>
 
 				</div>
+
+
 
                 <br>
 
@@ -453,6 +466,52 @@ VENTANA MODAL PARA CHECKOUT
 
 					<button class="btn btn-block btn-lg btn-default backColor btnPagar">PAGAR</button>
 
+               <!--=====================================
+                Mercado Pago
+                ======================================-->
+                 <div class="col-12">
+                    <form action="<?php echo $ruta.'carrito-de-compras'; ?>" method="POST">
+                      <script
+                        src="https://www.mercadopago.com.mx/integrations/v1/web-tokenize-checkout.js"
+                        data-public-key="TEST-2e75a20b-7f8b-48cf-b956-404cc16c600e"
+                        data-transaction-amount="100">
+                      </script>
+                    </form>
+                        <?php
+                        if (isset($_REQUEST["token"])){
+
+
+                          $token = $_REQUEST["token"];
+                          $payment_method_id = $_REQUEST["payment_method_id"];
+                          $installments = $_REQUEST["installments"];
+                          $issuer_id = $_REQUEST["issuer_id"];
+
+                            MercadoPago\SDK::setAccessToken("TEST-4584303899483220-112723-e8f21bba312541423e9a04ae5a94a127-236513607");
+
+                            $payment = new MercadoPago\Payment();
+                            $payment->transaction_amount = 100.00;
+                            $payment->token = $token;
+                            $payment->description = "Coa de aluminio ligerot";
+                            $payment->installments = $installments;
+                            $payment->payment_method_id = $payment_method_id;
+                            $payment->issuer_id = $issuer_id;
+                            $payment->payer = array(
+                            "email" => "abelardo@gmail.com"
+                            );
+                            // Guarda y postea el pago
+                            $payment->save();
+                            // Imprime el estado del pago
+                            echo $payment->status;
+
+                            if ($payment->status == "approved"){
+
+                            }
+
+                        }
+                        ?>
+
+                 </div>
+                <!--Fin mercado pago-->
 				</div>
 
 			</div>

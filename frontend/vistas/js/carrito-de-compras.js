@@ -1015,6 +1015,80 @@ $(".btnPagar").click(function(){
 
 })
 
+
+/*=============================================
+/*=============================================
+/*=============================================
+/*=============================================
+/*=============================================
+BOTÓN PAGAR MP
+=============================================*/
+
+$(".btnPagar").click(function(){
+
+	var tipo = $(this).attr("tipo");
+
+	var divisa = $("#cambiarDivisa").val();
+	var total = $(".valorTotalCompra").html();
+	var totalEncriptado = localStorage.getItem("total");
+	var impuesto = $(".valorTotalImpuesto").html();
+	var envio = $(".valorTotalEnvio").html();
+	var subtotal = $(".valorSubtotal").html();
+	var titulo = $(".valorTitulo");
+	var cantidad = $(".valorCantidad");
+	var valorItem = $(".valorItem");
+	var idProducto = $('.cuerpoCarrito button, .comprarAhora button');
+
+	var tituloArray = [];
+	var cantidadArray = [];
+	var valorItemArray = [];
+	var idProductoArray = [];
+
+	for(var i = 0; i < titulo.length; i++){
+
+		tituloArray[i] = $(titulo[i]).html();
+		cantidadArray[i] = $(cantidad[i]).html();
+		valorItemArray[i] = $(valorItem[i]).html();
+		idProductoArray[i] = $(idProducto[i]).attr("idProducto");
+
+	}
+
+	var datos = new FormData();
+
+	datos.append("divisa", divisa);
+	datos.append("total",total);
+	datos.append("totalEncriptado",totalEncriptado);
+	datos.append("impuesto",impuesto);
+	datos.append("envio",envio);
+	datos.append("subtotal",subtotal);
+	datos.append("tituloArray",tituloArray);
+	datos.append("cantidadArray",cantidadArray);
+	datos.append("valorItemArray",valorItemArray);
+	datos.append("idProductoArray",idProductoArray);
+
+	$.ajax({
+		 url:rutaOculta+"ajax/carrito.ajax.php",
+		 method:"POST",
+		 data: datos,
+		 cache: false,
+         contentType: false,
+         processData: false,
+         success:function(respuesta){
+
+         console.log("respuesta",respuesta);
+
+         //debugger;
+               window.location = respuesta;
+
+
+
+
+         }
+
+	})
+
+})
+
 /*=============================================
 /*=============================================
 /*=============================================
